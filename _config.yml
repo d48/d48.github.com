@@ -9,14 +9,13 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
-tagline: Site Tagline
+title : Ryan Regalado
+tagline: Website Developer / User Interface Designer
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+  name : Ryan Regalado
+  email : ryan@design48.net
+  github : design48 
+  twitter : ryanregalado 
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -26,7 +25,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.com
+production_url : http://design48.github.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -81,11 +80,11 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : ryanregalado
     livefyre :
       site_id : 123
     intensedebate :
-      account : 123abc
+      account : ryanregalado 
     facebook :
       appid : 123
       num_posts: 5
@@ -99,7 +98,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-329043-13'
     getclicky :
       site_id : 
     mixpanel :
