@@ -12,16 +12,28 @@
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/screen.css" type="text/css" media="screen, projection" />
 
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://dl.dropbox.com/s/rljip3kb8at341s/md5.js"></script>
+  <script type="text/javascript" src="https://dl.dropbox.com/s/jvzqq9jsxzsdbwm/jquery.gravatar.js"></script>
+
+    <!-- Typekit -->
+   <!-- <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script> -->
+   <!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 </head>
 <body>
 
   <div class="site">
-    <div class="title">
-      <a href="{{ HOME_PATH }}">{{ site.title }}</a>
+      <div id="gravatar"></div>
 
+      <script>
+          $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+      </script>
+
+      <h1 id="site-title"><a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+
+      <span class="blog-description">{{ site.tagline }}</span>
+
+    <div class="title" id="menu">
       <a class="extra" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
       <!-- <a class="extra" href="{{ BASE_PATH }}{{ site.JB.pages_path }}">Pages</a> -->
       <a class="extra" href="{{ BASE_PATH }}/pages.html">Pages</a>
@@ -36,7 +48,7 @@
         <p>
           {{ site.author.name }}<br />
           {{ site.tagline }}<br />
-          <a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a>
+          <!-- <a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a> -->
         </p>
       </div>
       <div class="contact">
@@ -52,8 +64,9 @@
       <!-- </div> -->
     </div>
   </div>
-  <a href="http://github.com/{{ site.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+  <!-- <a href="http://github.com/{{ site.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a> -->
 
   {% include JB/analytics %}
+
 </body>
 </html>
