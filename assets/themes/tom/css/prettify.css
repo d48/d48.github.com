@@ -1,4 +1,7 @@
 /* Pretty printing styles. Used with prettify.js. */
+code,pre{padding:0 3px 2px;font-family:Monaco,Andale Mono,Courier New,monospace;font-size:12px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+code{background-color:#fee9cc;color:rgba(0,0,0,0.75);padding:1px 3px}pre{background-color:#f5f5f5;display:block;padding:8.5px;margin:0 0 18px;line-height:18px;font-size:12px;border:1px solid #ccc;border:1px solid rgba(0,0,0,0.15);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;white-space:pre;white-space:pre-wrap;word-wrap:break-word}
+pre code{background: transparent}
 
 /* SPAN elements with the classes below are added by prettyprint. */
 .pln { color: #000 }  /* plain text */
@@ -32,7 +35,7 @@
 }
 
 /* Put a border around prettyprinted code snippets. */
-pre.prettyprint { padding: 2px; border: 1px solid #888 }
+pre.prettyprint { padding: 20px; border: 1px solid #888 }
 
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
@@ -50,3 +53,5 @@ li.L3,
 li.L5,
 li.L7,
 li.L9 { background: #eee }
+
+
