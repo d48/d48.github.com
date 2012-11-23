@@ -552,6 +552,12 @@ li {
   padding-bottom: 20px;
 }
 
+#fork-me {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
 /* prettify */
 .highlight > pre {
   background-color:#444;

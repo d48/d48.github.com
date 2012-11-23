@@ -43,7 +43,7 @@
       <a class="extra" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
       <a class="extra" href="{{ BASE_PATH }}/pages/about.html">About</a>
     </div>
-  
+
     {{ content }}
   
     <div class="footer">
@@ -62,7 +62,9 @@
       </div>
     </div>
   </div>
-  <!-- <a href="http://github.com/{{ site.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a> -->
+  <a href="http://github.com/{{ site.author.github }}" id="fork-me" >
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="{{ ASSET_PATH }}/images/forkme-right-cyan.png" alt="Fork me on GitHub" />
+  </a>
 
   {% include JB/analytics %}
 
