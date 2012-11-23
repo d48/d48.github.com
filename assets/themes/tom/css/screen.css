@@ -119,7 +119,7 @@ body {
       /* } */
 
       .site .footer {
-        /* font-size: 80%; */
+        clear: both;
         color: #666;
         border-top: 4px solid #eee;
         margin-top: 2em;
@@ -162,7 +162,8 @@ body {
       }
 
       p > code {
-        background-color: #77F9F3;
+        /* background-color: #77F9F3; */
+        background-color: #b5fcf8;
         border: 1px solid #ddd;
         -webkit-border-radius:3px;
         -moz-border-radius:3px;
@@ -445,6 +446,7 @@ body {
       }
 
       .footnotes { margin-top: 30px;  }
+      .footnotes p { font-size: 14px;  }
 
       .meta {
         width: 110px;
@@ -509,7 +511,6 @@ body {
        *    */
 
 li {
-  list-style-type: square;
   color: #333;
   margin-top: 20px;
   margin-bottom: 0;
@@ -545,6 +546,13 @@ li {
   margin-right: 25px;
   float: left;
 
+}
+
+/* Tags list */
+.tags-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 30px;
+  padding-bottom: 20px;
 }
 
 /* prettify */
