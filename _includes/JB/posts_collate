@@ -17,8 +17,6 @@ Usage:
         
 -->{% endcomment %}
 
-<h1><pre> {{ site.JB.sharing }} </pre></h1>
-
 {% if site.JB.posts_collate.provider == "custom" %}
   {% include JB/custom/posts_collate %}
 {% else %}
