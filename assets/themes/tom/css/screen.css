@@ -311,7 +311,7 @@ body {
 
       }
 
-      .post h1 { font-weight: bold; margin: 20px 0 10px; font-size: 22px  }
+      .post h1 { font-weight: bold; margin: 20px 0 10px; font-size: 20px  }
 
       .post h2 { font-weight: bold; margin: 20px 0 10px; font-size: 18px; }
 
@@ -365,21 +365,17 @@ body {
 
       }
 
-      .archive-content {
-        clear: both;
-        margin: 20px 0 40px;
-        width: 920px;
-
+      /* Archive */
+      .archive {
+        list-style-type: none;
       }
 
-      .archive-title {
-        margin: 0;
-
+      .archive a, .archive span {
+        display: block;
       }
 
-      .archive-title h3 {
-        margin: 0;
-
+      .date {
+        font-size: 14px;
       }
 
       .archive-divider {
@@ -401,7 +397,7 @@ body {
 
       .title h3 { 
         color: #5691CD;
-        font-size: 26px; 
+        font-size: 22px; 
         font-weight: normal;
       }
 
