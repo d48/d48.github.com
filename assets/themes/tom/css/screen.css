@@ -19,8 +19,7 @@ body {
   background-color: white;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  /* font: 13.34px helvetica, arial, clean, sans-serif; */
-  /*       *font-size: small; */
+  padding: 0 40px;
   text-align: center;
 }
 
@@ -153,7 +152,7 @@ body {
       /*****************************************************************************/
 
       #post {
-        max-width: 600px;
+        max-width: 700px;
       }
 
       /* standard */
@@ -267,9 +266,7 @@ body {
         background: url(http://dl.dropbox.com/u/3371324/RyanRegalado/lightning.png) no-repeat 860px -70px;
         color: #666666;
         margin: 0px;
-        padding: 20px;
         width: 760px;
-
       }
 
       /* Links & Typography */
@@ -337,7 +334,7 @@ body {
         clear: both;
         margin-top: 30px;
         height: 50px;
-        border-bottom: 1px solid #ccc;
+        /* border-bottom: 1px solid #ccc; */
       }
 
       #menu a {
@@ -362,7 +359,7 @@ body {
       }
 
       .content {
-        /* border-top: 1px solid #ccc; */
+        border-top: 1px solid #ccc;
         clear: both;
         margin: 0 0 60px 0;
         float: left;
@@ -417,8 +414,7 @@ body {
       .body-post {
         float: left;
         margin-left: 20px;
-        /* font: 14px/1.5 Helvetica, Arial, sans-serif; */
-        width: 600px;
+        width: 700px;
 
       }
 
@@ -428,8 +424,7 @@ body {
       }
 
       .body-post img, .body-page img, p img {
-        /* max-width: 760px; */
-        max-width: 600px;
+        max-width: 700px;
         height: auto;
         display: inline-block;
         margin-right: 20px;
@@ -482,7 +477,7 @@ body {
 
 
       ul.tags {
-        w   idth: 460px;
+        width: 700px;
         border-top: 1px solid #ccc; 
         margin: 30px 0 20px 0;
         padding: 20px 0;

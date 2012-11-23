@@ -11,17 +11,17 @@
         <div class="body-post">
             {{content}}
             <!-- if tags -->
-            {{#if_tags}}
-            <!-- <ul class="tags"> -->
-            <!--     {{#tags}} -->
-            <!--     <li><a href="{{base_url}}/tag/{{name}}">{{name}}</a></li> -->
-            <!--     {{/tags}} -->
-            <!-- </ul>   -->
-            {{/if_tags}}
+            {{#if page.tags}}
+            <ul class="tags">
+                {% for tag in page.tags %} 
+                <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{tag}}</a></li>
+                {% endfor %}
+            </ul>  
+            {{/if page.tags}}
             <!-- endif -->
         </div><!--end body-->
     </div><!--end content-->
     <div class="clear"></div>
 </div><!--end post-->
 
-{% include JB/comments %}
+<!--{% include JB/comments %}-->
