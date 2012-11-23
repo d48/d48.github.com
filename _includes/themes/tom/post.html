@@ -1,23 +1,26 @@
 <div class="post">
     <div class="content">
-        <div class="title"><h3><a href="{{permalink}}">{{ page.title}}</a></h3></div>
-        {{#date}}
-        <div class="meta">
-            <span class="date">{{ page.date | date_to_string }}</span>
+        <div class="title"><h3><a href="{{ page.url }}">{{ page.title }}</a></h3></div>
 
-            {% if page.location %}{{ page.location }}{% endif %}
+        <div class="meta">
+            <span class="date">{{ page.date | date: "%b %e, %Y" }}</span>
         </div>
-        {{/date}}
+
         <div class="body-post">
-            {{content}}
+            {% if content %}
+                {{ content }}
+            {% else %}
+                {{ page.content }}
+            {% endif %}
+
             <!-- if tags -->
-            {{#if page.tags}}
+            {% if page.tags %}
             <ul class="tags">
                 {% for tag in page.tags %} 
                 <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{tag}}</a></li>
                 {% endfor %}
             </ul>  
-            {{/if page.tags}}
+            {% endif %}
             <!-- endif -->
         </div><!--end body-->
     </div><!--end content-->
