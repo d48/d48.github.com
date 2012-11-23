@@ -25,7 +25,7 @@ __named functions__ can be defined after the function is called within a scope a
 {% highlight js %}
 // testing function calls and if they are available when called
 assert(myName(), 'works even though defined below');
-assert(myName2(), 'doesn't work since defined below and assigned to variable');
+assert(myName2(), "doesn't work since defined below and assigned to variable");
 
 function myName() { return true; };
 var myName2() = function() { return true; };
@@ -33,4 +33,3 @@ var myName3() = function() { return true; };
 
 assert(myName3(), 'works since defined before this assert called');
 {% endhighlight %}
-
