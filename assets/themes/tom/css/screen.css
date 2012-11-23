@@ -409,7 +409,9 @@ body {
         float: left;
         margin-left: 100px;
         width: 600px;
-
+      }
+      .body-post ul {
+        margin-left: 30px;
       }
 
       .body-page {
@@ -496,12 +498,6 @@ body {
 
       /* Lists */
 
-      /*
-       * ul {
-       *  margin: 0;
-       *    padding: 0
-       *    }
-       *    */
 
 li {
   color: #333;
