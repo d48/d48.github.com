@@ -158,9 +158,6 @@ body {
 
       /* standard */
 
-      #post pre {
-      }
-
       p > code {
         /* background-color: #77F9F3; */
         background-color: #b5fcf8;
@@ -301,7 +298,7 @@ body {
         width: 500px;
         padding: 10px 10px 5px 10px;
         border-left: 3px solid #ccc;
-
+        margin: 10px 0;
       }
 
       h1 { /*float: left;*/ margin-right: 20px;  }
@@ -414,8 +411,8 @@ body {
 
       .body-post {
         float: left;
-        margin-left: 20px;
-        width: 700px;
+        margin-left: 100px;
+        width: 600px;
 
       }
 
@@ -472,7 +469,7 @@ body {
       }
 
       ul.tags {
-        width: 700px;
+        width: 600px;
         border-top: 1px solid #ccc; 
         margin: 30px 0 20px 0;
         padding: 20px 0;
@@ -557,7 +554,7 @@ li {
 
 /* prettify */
 .highlight > pre {
-  background-color:#49483E;
+  background-color:#444;
   display:block;
   padding: 20px;
   margin:0 0 18px;
@@ -578,3 +575,4 @@ li {
   word-wrap:break-word;
 }
 .highlight { background-color: transparent; }
+.highlight .c1 { color: #aaa; }
