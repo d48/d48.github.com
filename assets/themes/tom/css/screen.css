@@ -95,13 +95,11 @@ body {
       }
 
       .site .title a {
-        /* color: #a00; */
-        text-decoration: none;
+        text-decoration: underline;
       }
 
       .site .title a:hover {
-        /* color: black; */
-        text-decoration: underline;
+        text-decoration: none;
       }
 
       .site .title a.extra {
@@ -337,12 +335,14 @@ body {
         float: left;
         margin-right: 20px;
         padding-bottom: 25px;
-        text-decoration: none;
+        text-decoration: underline;
       }
 
       #menu a.active {
         border-bottom: 1px solid #ccc
-
+      }
+      #menu a:hover {
+        text-decoration: none;
       }
 
 
