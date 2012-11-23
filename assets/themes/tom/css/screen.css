@@ -161,11 +161,6 @@ body {
       #post pre {
       }
 
-      #post ul,
-      #post ol {
-        margin-left: 1.35em;
-      }
-
       p > code {
         background-color: #77F9F3;
         border: 1px solid #ddd;
