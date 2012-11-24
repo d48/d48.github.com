@@ -5,7 +5,10 @@ tagline: Website Developer / User Interface Designer
 ---
 {% include JB/setup %}
 
+
 {% assign checkTitle = page.title %}
-{% for page in site.posts %}
+{% for page in paginator.posts %}
 {% include themes/tom/post.html %}
 {% endfor %}
+
+{% include JB/pagination %}
