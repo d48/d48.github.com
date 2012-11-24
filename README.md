@@ -4,7 +4,7 @@ Blog space for Ryan Regalado using [jekyll bootstrap](http://jekyllbootstrap.com
 
 Visit <http://design48.github.com>
 
-:thumbsup Ruby is the bomb
+:thumbsup: Ruby is the bomb
 
 ## Usage
 
