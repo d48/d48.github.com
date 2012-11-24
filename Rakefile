@@ -40,6 +40,30 @@ module JB
   end #Path
 end #JB
 
+
+desc "Draft a new post"
+task :new do
+  puts "What should we call this post for now?"
+  name = STDIN.gets.chomp
+  FileUtils.touch("#{CONFIG['posts']}/#{name}.md")
+
+  open("#{CONFIG['posts']}/#{name}.md", 'a') do |f|
+    f.puts "---"
+    f.puts "layout: post"
+    f.puts "title: \"DRAFT: #{name}\""
+    f.puts "---"
+  end
+end
+
+
+desc "Start up Jekyll"
+task :start do
+  system "jekyll --server"
+end
+
+task :default => :start
+
+
 # Usage: rake post title="A Title" [date="2012-02-09"]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do
