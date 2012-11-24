@@ -549,7 +549,7 @@ pre code {
 /* .highlight > pre, pre code { */
   background-color:#f8f8f8;
   display:block;
-  padding: 20px;
+  padding: 10px;
   margin:0 0 18px;
   line-height:18px;
   font-family: "Menlo", Bitstream Vera Sans Mono, Monaco, Courier New, monospace;
