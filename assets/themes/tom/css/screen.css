@@ -156,8 +156,7 @@ body {
 
       /* standard */
 
-      p > code {
-        /* background-color: #77F9F3; */
+      code {
         background-color: #b5fcf8;
         border: 1px solid #ddd;
         -webkit-border-radius:3px;
@@ -551,7 +550,8 @@ li {
 }
 
 /* prettify */
-.highlight > pre {
+pre code {
+/* .highlight > pre, pre code { */
   background-color:#444;
   display:block;
   padding: 20px;
