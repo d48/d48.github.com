@@ -1,6 +1,5 @@
 ---
 layout: post
-category: woot
 title: "Secrets of a Javascript Ninja"
 tags: [book, notes, dev, web, javascript, js]
 ---

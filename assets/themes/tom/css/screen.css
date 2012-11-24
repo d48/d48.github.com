@@ -362,6 +362,10 @@ body {
       /* Archive */
       .archive {
         list-style-type: none;
+        margin-left: 30px;
+      }
+      .archive li {
+        list-style: disc;
       }
 
       .archive a, .archive span {
