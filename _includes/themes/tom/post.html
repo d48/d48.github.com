@@ -17,7 +17,7 @@
             {% if page.tags %}
             <ul class="tags">
                 {% for tag in page.tags %} 
-                <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{tag}}</a></li>
+                <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}/{{ tag }}">{{tag}}</a></li>
                 {% endfor %}
             </ul>  
             {% endif %}
