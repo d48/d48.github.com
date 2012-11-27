@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MyTestimony design thoughts new post"
+title: "MyTestimony design thoughts"
 description: ""
 category: 
 tags: [mytestimony, design, thoughts]

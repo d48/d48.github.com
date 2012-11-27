@@ -346,6 +346,7 @@ body {
         clear: both;
         margin: 0;
         border-top: 1px solid #ccc;
+        width: 800px;
       }
       .post > .post:first-child {
         border-top: none;
@@ -418,7 +419,7 @@ body {
       }
 
       .body-post img, .body-page img, p img {
-        max-width: 700px;
+        max-width: 600px;
         height: auto;
         display: inline-block;
         margin-right: 20px;
