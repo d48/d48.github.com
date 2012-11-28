@@ -42,7 +42,7 @@ end #JB
 
 
 desc "Draft a new post"
-task :new do
+task :draft do
   puts "What should we call this post for now?"
   name = STDIN.gets.chomp
   FileUtils.touch("#{CONFIG['posts']}/#{name}.md")
