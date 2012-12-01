@@ -43,7 +43,7 @@ var crypto = require('crypto')
   , hash
   ;
 
-hash = crypto.createHmac('md5', secret).update(text).digest('hex');
+hash = crypto.createHmac('md5', secret).update(payload).digest('hex');
 return hash;
 {% endhighlight %}
 
