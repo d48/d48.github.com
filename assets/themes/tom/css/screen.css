@@ -82,7 +82,7 @@ body {
 
       .site {
         /* font-size: 110%; */
-        text-align: justify;
+        text-align: left;
         width: 50em;
         margin: 3em auto 2em auto;
         line-height: 1.5em;
@@ -410,6 +410,7 @@ body {
         width: 600px;
       }
       .body-post ul, .body-post ol {
+        margin-bottom: 20px;
         margin-left: 30px;
       }
 
