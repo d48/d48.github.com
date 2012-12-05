@@ -15,6 +15,6 @@ the specificity value would be 122 (0,1,2,2 or 0122): 100 for #content, 10 for .
 > style attribute is inline-style on an html element like `<p style="color: 
 > red">` or `<styles type="text/css">` block.
   
-* <u>Alternative way:</u> “Count the number of ID attributes in the selector (= a). Count the number of other attributes and pseudo-classes in the selector (= b). Count the number of element names and pseudo-elements in the selector (= c). Concatenating the three numbers **a-b-c gives the specificity**.
+* Alternative way: “Count the number of ID attributes in the selector (= a). Count the number of other attributes and pseudo-classes in the selector (= b). Count the number of element names and pseudo-elements in the selector (= c). Concatenating the three numbers **a-b-c gives the specificity**.
 
-More info from here: <http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know></http:>
+More info from here: <http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know>
