@@ -49,8 +49,26 @@ body {
       }
 
       table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
         font-size: inherit;
         font: 100%;
+        margin: 15px 0;
+      }
+      td, th {
+        border: 1px solid #ccc;
+        padding: 6px 13px;
+        
+      }
+      td {
+        width: 50%;
+      }
+      th {
+        font-weight: bold;
+      }
+      table tr:nth-child(2n) {
+        background-color: #f8f8f8;
       }
 
       /*****************************************************************************/
@@ -160,6 +178,7 @@ body {
         background-color: #b5fcf8;
         color: #666;
         border: 1px solid #ddd;
+        font-size: 15px;
         -webkit-border-radius:3px;
         -moz-border-radius:3px;
         -ms-border-radius:3px;
