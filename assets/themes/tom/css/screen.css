@@ -423,7 +423,7 @@ body {
       .body-post img, .body-page img, p img {
         max-width: 600px;
         height: auto;
-        display: inline-block;
+        display: block;
         margin-right: 20px;
         margin-bottom: 20px
 
