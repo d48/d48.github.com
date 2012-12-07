@@ -25,6 +25,6 @@ Next on my list is to sort out how I want my api to be to this command line tool
 |`$ todo clear`               |Clears out currently selected list.                                    |
 |`$ todo copy`                |Copies current list in a pretty format to the buffer that can be pasted|
 
-Lastly, there's a pull request opened to enable multiple lists that moves the data directory to `$HOME` and also maps an options/command list that reuses the original functions. I like that and will implement that as well.
+Lastly, there's a [pull request](https://github.com/vesln/todo/pull/6) opened to enable multiple lists that moves the data directory to `$HOME` and also maps an options/command list that reuses the original functions. I like that but want my api a little different so will implement that as well.
 
 
