@@ -32,7 +32,8 @@ Then from the command line, where _sig_ is a hash string created from an **[hmac
 
 Make sure this is all on one line
  
-`$ curl -X POST https://api.grooveshark.com/ws3.php?sig=123cc3d7f0f56c201e2b251eb888abc -d '{"method": "startSession","parameters": {},"header": {"wsKey": "uniquekeyfromgrooveshark"}}'`
+`$ curl -X POST https://api.grooveshark.com/ws3.php?sig=123cc3d7f0f56c201e2b251eb888abc \`
+-d '{"method": "startSession","parameters": {},"header": {"wsKey": "uniquekeyfromgrooveshark"}}'
 
 Sample **hmac** function using node.js:
 {% highlight js %}
