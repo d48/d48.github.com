@@ -26,6 +26,32 @@ We are already saving a list of todo items in a json file, we can save this hash
 
 Now when we return back to our todo app to run commands on it, a sense of `state` has been established by pulling this name from the file, and then we can resume with our actions of listing, adding, or removing items from the main data store with this saved name as the key, yeehaw.
 
+**Commands**
+
+The command I want to set up would then look like this:
+
+{% highlight js %}
+$ todo show lists
+
+// returns
+	#1: work
+	#2: groceries
+	#3: inventions
+
+$ todo select 2
+
+// returns
+	'groceries' list selected. Ready for actions
+
+$ todo add "get plums"
+
+// #1 already existed, so returns
+
+	#1: bananas
+	#2: get plums
+
+{% endhighlight %}
+
 # Note
 This is still a work in progress but I'm making small steps to finally get my own todos working at the command line the way I like it.
 
