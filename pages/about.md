@@ -11,9 +11,9 @@ I love all things web and tech. Currently I'm getting heavily into **JavaScript*
 
 Some things you will find are notes on `code`, `articles`, and `books`.
 
-Other items you will see are projects that I'm interested in like `painting`, `drawing` or building `mobile applications`. 
+Other things I'm interested in and have a passiont for are [art](http://d48.io/clients/hoodlum), [racing motorcycles](http://www.ryanregalado.com), and most importantly [God](http://ryanregalado.com/news_aug2008.php).
 
-![My son Jeshua and I](http://dl.dropbox.com/u/3371324/RyanRegalado/Ryan-and-Jeshua-PancakeHouse.jpeg)
+![My son Jeshua and I](http://design48.net/i/Ryan-and-Jeshua-Pancake-House.png)
 My son Jeshua and I - eating at Pancake House in the Philippines
      
 _This website is built using [Jekyll Bootstrap] (http://jekyllbootstrap.com/) [^1]_
