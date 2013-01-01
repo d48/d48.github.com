@@ -1,7 +1,8 @@
 /* blackboard.vim */
 .hll { background-color: #000}
 .c { color: #4f4d4a; font-style: italic } /* Comment */
-.err { color: #ffde00; background-color: #e3d2d2 } /* Error */
+/* .err { color: #ffde00; background-color: #e3d2d2 } /* Error */ 
+.err { color: #ffde00; } /* Error */
 .k { color: #ff9900; font-weight: bold } /* Keyword */
 .o { color: #ff9900; font-weight: bold } /* Operator */
 .cm { color: #4f4d4a; font-style: italic } /* Comment.Multiline */
@@ -19,7 +20,8 @@
 .gu { color: #aaaaaa } /* Generic.Subheading */
 .gt { color: #aa0000 } /* Generic.Traceback */
 .kc { color: #cbfe29; font-weight: bold } /* Keyword.Constant */
-.kd { color: #cbfe29; font-weight: bold } /* Keyword.Declaration */
+/* .kd { color: #cbfe29; font-weight: bold } /* Keyword.Declaration */ 
+.kd { color: #48addd; font-weight: bold } /* Keyword.Declaration */
 .kn { color: #cbfe29; font-weight: bold } /* Keyword.Namespace */
 .kp { color: #cbfe29; font-weight: bold } /* Keyword.Pseudo */
 .kr { color: #cbfe29; font-weight: bold } /* Keyword.Reserved */
@@ -44,16 +46,20 @@
 .mh { color: #009999 } /* Literal.Number.Hex */
 .mi { color: #009999 } /* Literal.Number.Integer */
 .mo { color: #009999 } /* Literal.Number.Oct */
+.nx { color: #d6d2c8 } /* String */
+.p { color: #d6d2c8 } /* metacharacters */
 .sb { color: #d01040 } /* Literal.String.Backtick */
 .sc { color: #d01040 } /* Literal.String.Char */
 .sd { color: #d01040 } /* Literal.String.Doc */
-.s2 { color: #d01040 } /* Literal.String.Double */
+/* .s2 { color: #d01040 } /* Literal.String.Double */
+.s1 { color: #b8f56e } /* Literal.String.Single */
+.s2 { color: #b8f56e } /* Literal.String.Double */
 .se { color: #d01040 } /* Literal.String.Escape */
 .sh { color: #d01040 } /* Literal.String.Heredoc */
 .si { color: #d01040 } /* Literal.String.Interpol */
 .sx { color: #d01040 } /* Literal.String.Other */
 .sr { color: #009926 } /* Literal.String.Regex */
-.s1 { color: #d01040 } /* Literal.String.Single */
+/* .s1 { color: #d01040 } /* Literal.String.Single */ */
 .ss { color: #990073 } /* Literal.String.Symbol */
 .bp { color: #999999 } /* Name.Builtin.Pseudo */
 .vc { color: #cbfe29 } /* Name.Variable.Class */
