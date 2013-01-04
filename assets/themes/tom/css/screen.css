@@ -49,10 +49,6 @@ body {
         text-decoration: underline;
       }
 
-      a:visited {
-        /* color: #a0a; */
-      }
-
       table {
         border-collapse: collapse;
         border-spacing: 0;
@@ -90,8 +86,6 @@ body {
 
       ul.posts span {
         color: #aaa;
-        /* font-family: Monaco, "Courier New", monospace; */
-        /* font-size: 80%; */
       }
 
       /*****************************************************************************/
@@ -177,7 +171,8 @@ body {
       /* standard */
 
       code {
-        background-color: #b5fcf8;
+        /* background-color: #b5fcf8; teal */
+        background-color: #efefef;
         color: #666;
         border: 1px solid #ddd;
         font-size: 15px;
@@ -321,11 +316,8 @@ body {
       ol li { list-style-type: inherit;  }
 
       strong, b {
-        /* font-family: helvetica, sans-serif; */
-        color: #333;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizelegibility;
-
       }
 
       .post h1 { font-weight: bold; margin: 30px 0 10px; font-size: 20px  }
@@ -337,7 +329,6 @@ body {
       .post h4 { font-weight: bold; margin: 20px 0 10px; font-size: 14px  }
 
       .post h1, .post h2 {
-        border-bottom: 1px solid #ccc;
         line-height: 30px;
       }
 
@@ -424,13 +415,19 @@ body {
 
       .title h3 { 
         color: #5691CD;
-        font-size: 20px; 
-        font-weight: normal;
+        font-size: 22px; 
+        font-weight: bold;
+        padding: 20px 0 0 0;
       }
 
       .title h3 a {
-        text-decoration: none;
+        text-decoration: none !important;
       }
+
+      .title h3 a:hover {
+        text-decoration: underline !important;
+      }
+
 
       .body-post {
         float: left;
@@ -496,7 +493,6 @@ body {
 
       ul.tags {
         width: 600px;
-        border-top: 1px solid #ccc; 
         margin: 30px 0 20px 0;
         padding: 20px 0;
 
@@ -528,7 +524,6 @@ body {
 
 
 li {
-  color: #333;
   margin-top: 20px;
   margin-bottom: 0;
 
