@@ -13,12 +13,11 @@ document.onready = function() {
         ;
 
       for(var i = 0, len = images.length; i < len; i++){
-
         // bind i variable to a function not inside the same scope
         (function(index) {
-          var src = images[i].getAttribute('src');
+          var src = images[index].getAttribute('src');
 
-          images[i].addEventListener('click', function setImageClickEvent() {
+          images[index].addEventListener('click', function setImageClickEvent() {
               window.open(src);
           }, false);
 

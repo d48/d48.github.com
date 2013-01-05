@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "New blog layout"
+date: 2013-01-04 21:00:00
 description: ""
 category: 
 tags: [design, blog, layout]
