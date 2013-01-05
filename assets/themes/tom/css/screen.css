@@ -292,6 +292,7 @@ hr {
         font-size: 36px;
         font-weight: normal;
         margin-bottom: 15px;
+        padding-left: 30px;
       }
       #site-title a {
         color: #333;
@@ -359,7 +360,7 @@ hr {
         text-rendering: optimizelegibility;
       }
 
-      .post h1 { font-weight: bold; margin: 0px 0 10px; font-size: 24px  }
+      .post h1 { font-weight: bold; margin: 0px 0 10px; font-size: 20px  }
 
       .post h2 { font-weight: bold; margin: 0px 0 10px; font-size: 20px; }
 
@@ -488,6 +489,7 @@ hr {
       .body-post ul, .body-post ol {
         margin-bottom: 20px;
         margin-left: 30px;
+        max-width: 650px;
       }
 
       .body-page {
