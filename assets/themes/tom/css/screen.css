@@ -501,7 +501,12 @@ hr {
         display: block;
         margin-right: 20px;
         margin-bottom: 20px
+      }
 
+      .body-post img:hover, .body-page img:hover, p img:hover {
+        cursor: pointer;
+        cursor: -moz-zoom-in;
+        cursor: -webkit-zoom-in;
       }
 
       .body-post p, .body-page p {
