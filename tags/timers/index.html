@@ -25,22 +25,29 @@
 </head>
 <body>
 
-  <div class="site">
-      <a href="/" id="gravatar"></a>
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
 
-      <script>
-          $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
-      </script>
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
 
-      <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+        <span class="blog-description">Website Developer / User Interface Designer</span>
 
-      <span class="blog-description">Website Developer / User Interface Designer</span>
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
 
-    <div class="title" id="menu">
-      <a class="extra" href="/pages/about.html">About</a>
-      <a class="extra" href="/archive.html">Archive</a>
+      <ul class="contact">
+          <li><a href="http://github.com/design48/" target="_blank">design48@github</a></li>
+          <li><a href="http://twitter.com/ryanregalado/" target="_blank">@ryanregalado</a></li>
+      </ul>
+
     </div>
 
+  <div class="site">
     
 
 <div class="post">
@@ -48,6 +55,14 @@
         <h2>Posts tagged with &ldquo;timers&rdquo;</h2>
 
         <ul class="archive">
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -322,26 +337,7 @@
     </div>
 </div>
 
-  
-    <div class="footer">
-      <div class="contact">
-        <p>
-          Ryan Regalado<br />
-          Website Developer / User Interface Designer<br />
-          <!-- <a href='mailto:ryan@design48.net'>ryan@design48.net</a> -->
-        </p>
-      </div>
-      <div class="contact">
-        <p>
-          <a href="http://github.com/design48/">github.com/design48</a><br />
-          <a href="http://twitter.com/ryanregalado/">twitter.com/ryanregalado</a><br />
-        </p>
-      </div>
-    </div>
   </div>
-  <a href="http://github.com/design48" id="fork-me" >
-      <img style="position: absolute; top: 0; right: 0; border: 0;" src="/assets/themes/tom/images/forkme-right-cyan.png" alt="Fork me on GitHub" />
-  </a>
 
   
 
