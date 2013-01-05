@@ -24,43 +24,31 @@
 </head>
 <body>
 
+    <div id="header">
+        <a href="{{ HOME_PATH }}" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+
+        <span class="blog-description">{{ site.tagline }}</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="{{ BASE_PATH }}/pages/about.html">About</a>
+            <a class="extra" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/{{ site.author.github }}/" target="_blank">{{ site.author.github }}@github</a></li>
+          <li><a href="http://twitter.com/{{ site.author.twitter }}/" target="_blank">@{{ site.author.twitter }}</a></li>
+      </ul>
+
+    </div>
+
   <div class="site">
-      <a href="{{ HOME_PATH }}" id="gravatar"></a>
-
-      <script>
-          $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
-      </script>
-
-      <h1 id="site-title"><a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
-
-      <span class="blog-description">{{ site.tagline }}</span>
-
-    <div class="title" id="menu">
-      <a class="extra" href="{{ BASE_PATH }}/pages/about.html">About</a>
-      <a class="extra" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
-    </div>
-
     {{ content }}
-  
-    <div class="footer">
-      <div class="contact">
-        <p>
-          {{ site.author.name }}<br />
-          {{ site.tagline }}<br />
-          <!-- <a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a> -->
-        </p>
-      </div>
-      <div class="contact">
-        <p>
-          <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
-          <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
-        </p>
-      </div>
-    </div>
   </div>
-  <a href="http://github.com/{{ site.author.github }}" id="fork-me" >
-      <img style="position: absolute; top: 0; right: 0; border: 0;" src="{{ ASSET_PATH }}/images/forkme-right-cyan.png" alt="Fork me on GitHub" />
-  </a>
 
   {% include JB/analytics %}
 

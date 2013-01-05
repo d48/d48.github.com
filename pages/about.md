@@ -7,6 +7,8 @@ tags: []
 ---
 {% include JB/setup %}
 
+# About
+
 I love all things web and tech. Currently I'm getting heavily into **JavaScript**. This website is a place to put down and record progress, questions, and notes on various things I'm interested in or working on.
 
 Some things you will find are notes on `code`, `articles`, and `books`.

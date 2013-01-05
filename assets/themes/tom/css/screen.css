@@ -6,11 +6,6 @@
 
 /* Global Reset */
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 html, body {
   height: 100%;
 }
@@ -19,13 +14,15 @@ body {
   background-color: white;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 
-  /* font-family:"Proxima Nova Regular", 'Helvetica Neue', Arial, Helvetica, sans-serif;  */
-  /* font-size-adjust:0.488;  */
-  /* font-weight:normal;  */
-
   font-size: 16px;
-  padding: 0 40px;
   text-align: center;
+}
+
+hr {
+  color: #ccc;
+  border: none;
+  border-top: 1px solid #ccc;
+  height: 1px;
 }
 
       h1, h2, h3, h4, h5, h6 {
@@ -38,6 +35,8 @@ body {
 
       p {
         margin: 1em 0;
+        padding-left: 60px;
+        padding-right: 60px;
       }
 
       a {
@@ -94,12 +93,51 @@ body {
       /*
       /*****************************************************************************/
 
+      #header {
+        position: fixed;
+        width: 410px;
+        background-color: #fff;
+        padding: 40px 0 30px;
+        border-right: 1px solid #ccc;
+        min-height: 100%;
+        z-index: 1;
+      }
+
+      .contact {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .contact li {
+        margin-bottom: 30px;
+      }
+
+      .contact a {
+        border-radius: 20px;
+        border: 4px solid #f8f8f8; 
+        color: #999 !important;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 5px 15px;
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        color: #77f8f2 !important;
+        border-color: #77f8f2;
+        text-decoration: none;
+      }
+
       .site {
         /* font-size: 110%; */
         text-align: left;
         width: 50em;
-        margin: 3em auto 2em auto;
+        /* margin: 3em auto 2em auto; */
+        margin-left: 410px;
         line-height: 1.5em;
+        overflow-x: hidden;
+        width: auto;
       }
 
       .title {
@@ -164,10 +202,6 @@ body {
       /*
       /*****************************************************************************/
 
-      #post {
-        max-width: 700px;
-      }
-
       /* standard */
 
       code {
@@ -186,6 +220,20 @@ body {
       }
 
       /* terminal */
+      #post > .post {
+        padding-top: 50px;
+      }
+
+      #post > .post p {
+        max-width: 700px;
+      }
+
+      #post > .post h1 {
+        padding: 0 60px;
+      }
+      .body-post p {
+        padding-left: 0;
+      }
 
       #post pre.terminal {
         border: 1px solid black;
@@ -206,22 +254,18 @@ body {
       }
 
       #disqus_thread {
+        background-color: #fff;
         border-top: 1px solid #ccc;
         clear: both;
         margin-top: 40px;
-        padding-top: 40px;
+        padding: 60px;
       }
       /* Header */
-      #gravatar { 
-        float: left; 
-        margin-right: 15px;
-      }
       #gravatar img {
         border: 7px solid #242424;
         border-radius: 100%;
         -moz-border-radius: 100%;
         -webkit-border-radius: 100%;
-        width: 70px;
 
         -webkit-transition: border-radius 0.5s;
         -moz-transition: border-radius 0.5s;
@@ -243,12 +287,11 @@ body {
       }
 
       #site-title {
-        clear: right;
+        clear: both;
         color: #333;
         font-size: 36px;
         font-weight: normal;
         margin-bottom: 15px;
-        padding-top: 15px;
       }
       #site-title a {
         color: #333;
@@ -271,7 +314,7 @@ body {
         background: url(../images/lightning.png) no-repeat 860px -70px;
         color: #666666;
         margin: 0px;
-        width: 760px;
+        /* width: 760px; */
       }
 
       /* Links & Typography */
@@ -288,10 +331,6 @@ body {
         color: #5691CD;
       }
 
-      a:link:hover, a:active:hover, a:visited:hover {
-        text-decoration: underline;
-      }
-
       a > img {
         margin-bottom: -1px;
 
@@ -304,11 +343,11 @@ body {
       }
 
       blockquote {
-        color: #5691CD;
         width: 500px;
-        padding: 10px 10px 5px 10px;
-        border-left: 3px solid #ccc;
-        margin: 10px 0;
+        padding: 0 20px;
+        border-left: 10px solid #77f8f2;
+        margin-left: 0;
+        margin-bottom: 30px;
       }
 
       h1 { /*float: left;*/ margin-right: 20px;  }
@@ -320,13 +359,13 @@ body {
         text-rendering: optimizelegibility;
       }
 
-      .post h1 { font-weight: bold; margin: 30px 0 10px; font-size: 20px  }
+      .post h1 { font-weight: bold; margin: 0px 0 10px; font-size: 24px  }
 
-      .post h2 { font-weight: bold; margin: 30px 0 10px; font-size: 18px; }
+      .post h2 { font-weight: bold; margin: 0px 0 10px; font-size: 20px; }
 
-      .post h3 { font-weight: bold; margin: 20px 0 10px; font-size: 16px  }
+      .post h3 { font-weight: bold; margin: 0px 0 10px; font-size: 18px  }
 
-      .post h4 { font-weight: bold; margin: 20px 0 10px; font-size: 14px  }
+      .post h4 { font-weight: bold; margin: 0px 0 10px; font-size: 16px  }
 
       .post h1, .post h2 {
         line-height: 30px;
@@ -338,17 +377,15 @@ body {
 
       #menu {
         clear: both;
-        margin-top: 30px;
+        padding-top: 30px;
         height: 50px;
-        /* border-bottom: 1px solid #ccc; */
       }
 
       #menu a {
-        display: block;
-        float: left;
-        margin-right: 20px;
+        margin: 0 10px;
         padding-bottom: 25px;
         text-decoration: underline;
+        text-align: center;
       }
 
       #menu a.active {
@@ -365,21 +402,36 @@ body {
         clear: both;
         margin: 0;
         border-top: 1px solid #ccc;
-        width: 800px;
       }
       .post > .post:first-child {
         border-top: none;
+        margin-top: -50px;
       }
+
 
       .content {
         clear: both;
-        margin: 0 0 60px 0;
         float: left;
-        /* width: 920px; */
-
+        padding: 50px 0 60px 60px;
       }
 
+      .content .body-post > p {
+        max-width: 700px;
+      }
+
+      .content .body-post > h1 {
+        padding-left: 0 !important;
+      }
       /* Archive */
+      .archive-container {
+        padding-left: 60px;
+        padding-bottom: 60px;
+        padding-top: 15px;
+      }
+      
+      .archive-container h1{
+        padding-left: 0 !important;
+      }
       .archive {
         list-style-type: none;
         margin-left: 30px;
@@ -393,7 +445,8 @@ body {
       }
 
       .date {
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: bold;
       }
 
       .archive-divider {
@@ -415,7 +468,7 @@ body {
 
       .title h3 { 
         color: #5691CD;
-        font-size: 22px; 
+        font-size: 24px; 
         font-weight: bold;
         padding: 20px 0 0 0;
       }
@@ -430,9 +483,7 @@ body {
 
 
       .body-post {
-        float: left;
-        margin-left: 100px;
-        width: 600px;
+        padding-top: 50px;
       }
       .body-post ul, .body-post ol {
         margin-bottom: 20px;
@@ -445,7 +496,7 @@ body {
       }
 
       .body-post img, .body-page img, p img {
-        max-width: 600px;
+        max-width: 700px;
         height: auto;
         display: block;
         margin-right: 20px;
@@ -455,8 +506,6 @@ body {
 
       .body-post p, .body-page p {
         margin-top: 0;
-        /* width: 500px; */
-
       }
 
       .body-post li, .body-page li {
@@ -466,7 +515,11 @@ body {
       }
 
       .footnotes { margin-top: 30px;  }
-      .footnotes p { font-size: 14px;  }
+      .footnotes p { 
+        font-size: 14px;  
+        padding-left: 0;
+      }
+      .footnotes ol { padding: 0 80px; }
 
       .meta {
         width: 110px;
@@ -484,11 +537,6 @@ body {
         width: 110px;
         margin-right: 85px;
 
-      }
-
-
-      code {
-        max-width: 700px;
       }
 
       ul.tags {
@@ -576,8 +624,9 @@ li {
 /* Pagination */
 .pagination{
   clear: both;
-  height:36px;
-  margin:18px 0;
+  height:50px;
+  margin:30px 0;
+  padding-right: 80px;
 }
 .pagination ul{
   float:left;margin:0;
@@ -610,7 +659,7 @@ pre code {
   /* background-color:#333;  for pygements-monokai.css */
   background-color:#000;
   display:block;
-  padding: 20px 10px;
+  padding: 30px 10px;
   margin: 30px 0;
   line-height:18px;
   font-family: "Menlo", Bitstream Vera Sans Mono, Monaco, Courier New, monospace;
@@ -630,7 +679,7 @@ pre code {
 
   margin-left: -142px;
   padding-left: 142px;
-  width: 690px;
+  min-width: 2000px;
 }
 .highlight { background-color: transparent; }
 .highlight .c1 { color: #777; }
