@@ -14,7 +14,7 @@ Some updates I made to get it to work were:
 1. Install `rvm`, the ruby version manager
 2. Made sure I was using Ruby version 1.9.2-p320
 3. `$ sudo gem install guard-livereload`
-4. `$ sudo gem install yajl-ruby' for making sure socket listening responded faster
+4. `$ sudo gem install yajl-ruby` for making sure socket listening responded faster
 5. error when running and recommended to `gem install rb-fsevents`
 6. Create new guard file that configured to watch .styl file changes
 
