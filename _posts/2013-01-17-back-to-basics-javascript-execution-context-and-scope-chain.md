@@ -27,6 +27,7 @@ Inside the JavaScript interpeter, there are 2 stages that happen:
   * This is where the `execution content object` is created
 2. Activation / Code Execution stage
 	* Assign values and references to functions, also interpret / execute code.
+  * These var values are assigned as code is executed line by line
 
 The execution context can be seen as an object with these properties:
 {% highlight js %}
