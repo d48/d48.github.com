@@ -61,6 +61,8 @@ catch(e) {
 
 Function literal syntax allows us to supply a name to the declared function by adding a name before the parameter list. Another name for this is an inline function.
 
+Note: inline functions can be named, but those names are only visible within the functions themselves
+
 {% highlight js %}
 var ninja = {
   // `shout` is an inline function
@@ -73,4 +75,6 @@ var samurai = { yell: ninja.yell };
 ninja = {};
 
 assert(samurai.yell(4) == 'hiyaaaa', 'Yes, this method still works because we save reference directly to the inline function that is named `shout`');
+
+assert(typeof shout == "undefined", 'true since can not evaluate inline function outside of its scope directly');
 {% endhighlight %}
