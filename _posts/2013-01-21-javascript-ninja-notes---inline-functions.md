@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "JavaScript Ninja notes - Inline functions"
+title: "JavaScript Ninja notes - Anonymous and Inline functions"
 description: ""
 category: 
-tags: [js, javascript, book, notes, inline, functions]
+tags: [js, javascript, book, notes, inline, functions, anonymous]
 ---
 {% include JB/setup %}
 
@@ -57,7 +57,7 @@ catch(e) {
 {% endhighlight %}
 
 
-## Named anonymouse (inline) functions
+## Named anonymous (inline) functions
 
 Function literal syntax allows us to supply a name to the declared function by adding a name before the parameter list. Another name for this is an inline function.
 
