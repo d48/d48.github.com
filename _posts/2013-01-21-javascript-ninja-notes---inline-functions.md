@@ -33,7 +33,7 @@ catch(e) {
 {% endhighlight %}
 
 
-Given the same object without reference to `this`
+Given the same object without reference to `this`, the assertion will fail
 
 {% highlight js %}
 var ninja = {
