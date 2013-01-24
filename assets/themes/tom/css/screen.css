@@ -262,7 +262,7 @@ hr {
       }
       /* Header */
       #gravatar img {
-        border: 7px solid #242424;
+        border: 7px ridge #242424;
         border-radius: 100%;
         -moz-border-radius: 100%;
         -webkit-border-radius: 100%;
@@ -425,17 +425,23 @@ hr {
       }
       /* Archive */
       .archive-container {
-        padding-left: 60px;
+        /* padding-left: 60px; */
         padding-bottom: 60px;
         padding-top: 15px;
       }
       
-      .archive-container h1{
-        padding-left: 0 !important;
+      .archive-container h1,
+      .archive-container h2,
+      .archive-container h3
+      {
+        padding-left: 60px !important;
       }
       .archive {
+        border-bottom: 1px solid #ccc;
         list-style-type: none;
-        margin-left: 30px;
+        padding-left: 120px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
       }
       .archive li {
         list-style: disc;
