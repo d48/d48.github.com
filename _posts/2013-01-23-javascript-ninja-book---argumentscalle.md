@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JavaScript Ninja book - arguments.callee, !!"
+title: "JavaScript Ninja book - arguments.callee and bang bang construct "
 description: ""
 category: 
 date: 2013-01-22 12:00:00
