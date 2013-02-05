@@ -9,4 +9,4 @@ tags: [sketch, drawing, jeshua, illustration]
 
 I'm working on an image of my son for an illustration piece I'm doing inspired by some magazine design I saw of an illusration as well as my favorite illustrator [David Downton](http://www.daviddownton.com). Here's the progress so far
 
-![Jeshua sketch](http://cl.ly/image/3n2O1B2e3i0P)
+![Jeshua sketch](http://f.cl.ly/items/2q2X1L2U223m1M3m2012/jeshua-sketch.jpg)
