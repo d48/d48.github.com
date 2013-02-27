@@ -19,11 +19,10 @@ Visit <http://d48.github.com>
 
 :thumbsup: Ruby is the bomb
 
+Note:
+I updated the view template theme to mimic what they're doing here <https://svbtle.com/>. I rike it.
+
 ## Usage
 
 For all usage and documentation please see: <http://jekyllbootstrap.com>
 
-
-## Todo
-
-* hook up pagination and only show first 5 posts on homepage
