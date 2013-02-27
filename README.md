@@ -20,7 +20,7 @@ Visit <http://d48.github.com>
 :thumbsup: Ruby is the bomb
 
 Note:
-I updated the view template theme to mimic what they're doing here <https://svbtle.com/>. I rike it.
+I customized the template theme to mimic what they're doing here <https://svbtle.com/> I rike it.
 
 ## Usage
 
