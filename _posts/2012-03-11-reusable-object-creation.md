@@ -5,12 +5,6 @@ tags: [reusable, js, javascript, object, constructor]
 ---
 {% include JB/setup %}
 
-## Patterns
-
-Investigating some Javascript patterns for a pro-bono project I'm working on for a motorcycle racer. I'm new to the patterns so perfect time to research just to familiarize myself and just because I want to know what is best to use and when. It's just for a simple little gallery slider for some Sponsor logos that can be achieved by creating a function but I want to always be able to create something that can be reused as it's a pattern you see all over the web right now with the use of jQuery. 
-
-I will be using jQuery for selectors and templating on Wordpress. 
-
 ## Creating reusable code
 
 * Write object-oriented code and implement object inheritance 
