@@ -1,4 +1,4 @@
------
+---
 layout: post
 title: "Book Notes - Mediator Pattern"
 description: ""
