@@ -10,18 +10,18 @@ tags: [book, programming, refactoring]
 Exercises in refactoring code using:
 
 {% highlight js %}
-  public class Square extends Shape {
-      public Square(double size) {
-          super(size);
-      }
-  }
+public class Square extends Shape {
+    public Square(double size) {
+        super(size);
+    }
+}
  
  
 public class Window {
-  private Shape shape;
-  public Window(Shape shape) {
-    this.shape = shape;
-  }
+    private Shape shape;
+    public Window(Shape shape) {
+        this.shape = shape;
+    }
 }
 {% endhighlight %}
 
