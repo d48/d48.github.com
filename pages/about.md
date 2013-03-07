@@ -13,7 +13,7 @@ I love all things web and tech. Currently I'm getting heavily into **JavaScript*
 
 Some things you will find are notes on `code`, `articles`, and `books`.
 
-Other things I'm interested in and have a passiont for are [art](http://design48.net/clients/hoodlum), [racing motorcycles](http://www.ryanregalado.com), and most importantly [God](http://ryanregalado.com/news_aug2008.php).
+Other things I'm interested in and have a passion for are [art](http://design48.net/clients/hoodlum), [racing motorcycles](http://www.ryanregalado.com), and most importantly [God](http://ryanregalado.com/news_aug2008.php).
 
 ![My son Jeshua and I](http://design48.net/i/Ryan-and-Jeshua-Pancake-House.png)
 My son Jeshua and I - eating at Pancake House in the Philippines
