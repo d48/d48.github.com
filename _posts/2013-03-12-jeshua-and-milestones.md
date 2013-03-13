@@ -11,6 +11,6 @@ Although it's such a simple thing it's very rewarding to watch when your child a
 
 Jeshua, finally at 2 and half years old is able to pedal his tricycle. So simple, but such a joy to see.
 
-Alright kid, when are you going to be ready to race some motorcycles?  :)
+Alright kid, when are you going to be ready to race some motorcycles? :)
 
 {% youtube NLw0OwIBFqU %}
