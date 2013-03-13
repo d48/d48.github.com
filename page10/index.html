@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Website Developer / User Interface Designer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="http://feeds.feedburner.com/" rel="alternate" title="your title" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Website Developer / User Interface Designer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/15/dependency-injection">Dependency Injection</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct 15, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='overview'>Overview</h1>
+
+<p>Dependency Injection, or DI, is a software design pattern that allows a choice of component to be made at run-time rather than at compile time. Often used via a config file, eg. Web.config, package.json, etc.</p>
+
+<p>Has 3 elements:</p>
+
+<ol>
+<li>a <strong>dependent</strong> consumer</li>
+
+<li>a declaration of a component&#8217;s <strong>dependencies</strong> defined as interface contracts</li>
+
+<li>an <strong>injector</strong> sometimes referred to as <strong>provider</strong> or <strong>container</strong> that creates instance of classes that implement a dependency interface on request</li>
+</ol>
+
+<h1 id='benefits'>Benefits</h1>
+
+<ul>
+<li>Can have multiple implementations of a single software component</li>
+
+<li>provide &#8220;mocks&#8221; for unit testing</li>
+
+<li>locating plugin components</li>
+
+<li>initializing software services (eg., config file on heroku to spin up instance)</li>
+</ul>
+
+<h1 id='examples'>Examples</h1>
+
+<ul>
+<li>load plugins dynamically</li>
+
+<li>provide mock objects for testing</li>
+</ul>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/di">di</a></li>
+                 
+                <li><a href="/tags/mock">mock</a></li>
+                 
+                <li><a href="/tags/dependency">dependency</a></li>
+                 
+                <li><a href="/tags/injection">injection</a></li>
+                 
+                <li><a href="/tags/interface">interface</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/14/livereload-notes">guard-livereload notes</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct 14, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='livereload'>livereload</h1>
+
+<p>Was having issues running guard-livereload on updated macbook air machine.</p>
+
+<p><strong>Solution:</strong> reinstall <code>rvm</code> and <code>brew update</code>, stashing <code>/usr/local</code> updates and <code>brew install</code> any missing dependencies/packages that <code>brew doctor</code> mentioned</p>
+
+<p>Running <code>sudo gem install guard-livereload</code> as well as <code>sudo gem install rb-fsevents</code> after from recommendation in running <code>guard</code> fixed everything. Woot</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/guard">guard</a></li>
+                 
+                <li><a href="/tags/livereload">livereload</a></li>
+                 
+                <li><a href="/tags/watch">watch</a></li>
+                 
+                <li><a href="/tags/auto-load">auto-load</a></li>
+                 
+                <li><a href="/tags/auto-refresh">auto-refresh</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/08/nodejs-networking-io">Node.js and networking i/o</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct  8, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='book_notes__learn_nodejs_in_24_hours'>Book notes : Learn Node.js in 24 hours</h1>
+
+<p>The terms <em>synchronous</em> and blocking can be used interchangeably and refer to an example where execution of code stops until a function returns. A script is not able to continue if an operation blocks, and for the end user, this means that they simply have to wait.</p>
+
+<p>The terms <em>asynchronous</em> and non-blocking can also be used interchangeably and refer to the callback-based approach of allowing a script to perform operations in parallel. A script does not need to wait for the outcome of an operation before proceeding as this will be handled by callback when the event happens. Using the asynchronous approach, operations no longer have to happen one after another.</p>
+<div class='highlight'><pre><code class='js'><span class='c1'>// example of synchronous/blocking functions</span>
+<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>(</span><span class='nx'>arg1</span><span class='p'>,</span> <span class='nx'>arg2</span><span class='p'>)</span> <span class='p'>{</span>
+	<span class='c1'>//do something</span>
+	<span class='k'>return</span> <span class='nx'>something</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='kd'>function</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='p'>{</span>
+	<span class='c1'>//do something</span>
+	<span class='k'>return</span> <span class='nx'>somethingElse</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='nx'>myName</span><span class='p'>(</span><span class='nx'>woot</span><span class='p'>,</span><span class='nx'>woot</span><span class='p'>);</span>
+<span class='nx'>myName2</span><span class='p'>();</span>
+
+
+
+
+
+<span class='c1'>// example of asynchronous functions</span>
+
+<span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span>
+<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>(</span><span class='nx'>arg1</span><span class='p'>,</span> <span class='nx'>arg2</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+	<span class='c1'>//do something with args</span>
+	<span class='c1'>//callback stuff to do</span>
+<span class='p'>}</span>
+
+<span class='kd'>function</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='p'>{</span>
+	<span class='nx'>http</span><span class='p'>.</span><span class='nx'>get</span><span class='p'>({</span> <span class='nx'>host</span><span class='o'>:</span> <span class='s1'>&#39;google.com&#39;</span> <span class='p'>},</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>response</span><span class='p'>)</span> <span class='p'>{</span>
+		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;response returned&#39;</span> <span class='o'>+</span> <span class='nx'>response</span><span class='p'>);</span>
+	<span class='p'>}).</span><span class='nx'>on</span><span class='p'>(</span><span class='s1'>&#39;error&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
+		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;there was an error: &#39;</span> <span class='o'>+</span> <span class='nx'>e</span><span class='p'>);</span>
+	<span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/node">node</a></li>
+                 
+                <li><a href="/tags/node.js">node.js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                 
+                <li><a href="/tags/js">js</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/04/pragmatic-book">Pragmatic Programmer book</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct  4, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='book_notes_on_metadata_driven_applications'>Book notes on Meta-Data driven applications</h1>
+
+<p><strong>Metadata</strong> is used to define preferences or configuration details for an application at runtime, not compile time, so as to provide implementation details to achieve greater flexibility in the code, as well as adapt to ever-changing requirements and needs of business use.</p>
+
+<h2 id='goals'>Goals</h2>
+
+<ol>
+<li>to think declaratively (specifying <em>what</em> is to be done, not <em>how</em>)</li>
+
+<li>create highly adaptable and dynamic programs (not get stuck in one way/solution)</li>
+</ol>
+
+<h2 id='why_we_would_use'>Why we would use</h2>
+
+<ul>
+<li>Business policy and rules change</li>
+
+<li>Dodo bird analogy: species that don&#8217;t adapt to the ever-changing environment, die.</li>
+</ul>
+
+<h2 id='how_to_achieve'>How to achieve</h2>
+
+<p>Adopt this general rule:</p>
+
+<blockquote>
+<p>Program for the general case, then provide the specifics somewhere else, outside the compiled code</p>
+</blockquote>
+
+<h2 id='benefits'>Benefits:</h2>
+
+<ul>
+<li>It forces you to decouple your design</li>
+
+<li>Forces you to create a more abstract, robust design by deferring details - providing later outside of the program</li>
+
+<li>Customize the application without recompiling it (ex. CSS can be a type of implementation detail, but more specifically and traditionally a config file in xml or json)</li>
+
+<li>May be able to implement different projects using same application engine but with different metadata (ex., widgets enabled/disabled, language files, dev vs production)</li>
+</ul>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/book">book</a></li>
+                 
+                <li><a href="/tags/pragmatic programmer">pragmatic programmer</a></li>
+                 
+                <li><a href="/tags/metadata">metadata</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/02/agile-development">Agile Development</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct  2, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='overview_of_some_terms'>Overview of some terms</h2>
+
+<ul>
+<li>The <strong>product backlog</strong> is the list of all user stories the team will deliver for the product.</li>
+
+<li>A <strong>user story</strong> describes what the system should do, in a way that emphasizes value to a user or customer. It is usually written in one or two sentences of everyday language.</li>
+
+<li>A best practice for user stories is to write them from the point of view of the user. This template is often used: As <em>who</em>, I want <em>what</em>, so that <em>why</em>.</li>
+
+<li><strong>Story points</strong> are a unit of measure for expressing the overall size of a user story. Story points are relative. A story that is assigned four points should require twice as much effort as a story that is assigned two points.</li>
+</ul>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/agile">agile</a></li>
+                 
+                <li><a href="/tags/scrum">scrum</a></li>
+                 
+                <li><a href="/tags/sprint">sprint</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+			   <a href="/page9">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	    <li class="next">
+		    <a href="/page11">
+			   Older posts >>
+		    </a>
+		</li>
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js">
+      
+  </script>
+
+  
+
+</body>
+</html>
+

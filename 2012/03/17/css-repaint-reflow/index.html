@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Page reflow and repaint caused by CSS</title>
+   <meta name="description" content="Ryan Regalado Website Developer / User Interface Designer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="http://feeds.feedburner.com/" rel="alternate" title="your title" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Website Developer / User Interface Designer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/17/css-repaint-reflow">Page reflow and repaint caused by CSS</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 17, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p>I came across some articles regarding css optimization and found out one of the potential causes for a site bug I came across that causes a &#8220;reflow&#8221; on a mobile website. This is something I need to look into further as this will directly impact how a developer should write code to optimize sites for the desktop and mobile devices.</p>
+
+<h2 id='repaint'>Repaint</h2>
+
+<p>Occurs when changes are made to an element&#8217;s skin that changes visibility, but do not effect its layout.</p>
+
+<p>Examples:</p>
+
+<ul>
+<li>outline</li>
+
+<li>visibility</li>
+
+<li>background color</li>
+</ul>
+
+<p>Repaint is expensive because the browser must verify the visibility of all other nodes in the DOM tree.</p>
+
+<h2 id='reflow'>Reflow</h2>
+
+<p>Even more critical to performance because causes changes that affect layout of a portion or entire page. Reflow of an element causes subsequent reflow to of all child and ancestor elements as well as any elements following it in the DOM.</p>
+
+<p>This can lead to page refresh.</p>
+
+<p>Some causes to page reflow via css:</p>
+
+<ol>
+<li>changing the font</li>
+
+<li>adding or removing a stylesheet</li>
+
+<li>activation of css pseudo classes like :hover</li>
+
+<li>manipulating the class attribute</li>
+
+<li>a script manipulating the DOM</li>
+
+<li>setting a property of the style attribute (inline style)</li>
+</ol>
+
+<h2 id='video_that_show_reflow'>Video that show reflow</h2>
+
+<p><a href='http://www.youtube.com/watch?v=ZTnIxIA5KGw'>Gecko Reflow Visualization - mozilla.org</a></p>
+
+<h3 id='sources'>Sources</h3>
+
+<ol>
+<li>
+<p><a href='http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/'>Reflows &amp; Repaints: CSS Performance making your JavaScript slow?</a></p>
+</li>
+
+<li>
+<p><a href='http://blog.mozilla.com/gen/2009/04/09/how-to-make-your-own-gecko-reflow-video/'>How to make your own Gecko Reflow Video</a></p>
+</li>
+
+<li>
+<p><a href='http://perfectionkills.com/profiling-css-for-fun-and-profit-optimization-notes/'>Profiling CSS for fun and profit. Optimization notes.</a></p>
+</li>
+</ol>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/css">css</a></li>
+                 
+                <li><a href="/tags/repaint">repaint</a></li>
+                 
+                <li><a href="/tags/reflow">reflow</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'ryanregalado'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js">
+      
+  </script>
+
+  
+
+</body>
+</html>
+

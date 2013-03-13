@@ -1,28 +1,2385 @@
----
-layout: nil
-title : Atom Feed
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>{{ site.title }}</title>
- <link href="{{ site.production_url }}/atom.xml" rel="self"/>
- <link href="{{ site.production_url }}"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.production_url }}</id>
+ <title>Ryan Regalado</title>
+ <link href="http://d48.github.com/atom.xml" rel="self"/>
+ <link href="http://d48.github.com"/>
+ <updated>2013-03-12T19:07:48-07:00</updated>
+ <id>http://d48.github.com</id>
  <author>
-   <name>{{ site.author.name }}</name>
-   <email>{{ site.author.email }}</email>
+   <name>Ryan Regalado</name>
+   <email>ryan@design48.net</email>
  </author>
 
- {% for post in site.posts %}
+ 
  <entry>
-   <title>{{ post.title }}</title>
-   <link href="{{ site.production_url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.production_url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <title>Jeshua and milestones</title>
+   <link href="http://d48.github.com/2013/03/12/jeshua-and-milestones"/>
+   <updated>2013-03-12T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2013/03/12/jeshua-and-milestones</id>
+   <content type="html">&lt;p&gt;Although it&amp;#8217;s such a simple thing it&amp;#8217;s very rewarding to watch when your child achieves something they couldn&amp;#8217;t do before.&lt;/p&gt;
+
+&lt;p&gt;Jeshua, finally at 2 and half years old is able to pedal his tricycle. So simple, but such a joy to see.&lt;/p&gt;
+
+&lt;p&gt;Alright kid, when are you going to be ready to race some motorcycles? :)&lt;/p&gt;
+&lt;iframe frameborder='0' height='420' src='http://www.youtube.com/embed/NLw0OwIBFqU' width='560'&gt;        &lt;/iframe&gt;</content>
  </entry>
- {% endfor %}
+ 
+ <entry>
+   <title>JavaScript strict mode</title>
+   <link href="http://d48.github.com/2013/03/08/javascript-strict-mode"/>
+   <updated>2013-03-08T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/03/08/javascript-strict-mode</id>
+   <content type="html">&lt;h2 id='what_is_it'&gt;What is it?&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;strict mode&lt;/code&gt; or &lt;strong&gt;strict variant&lt;/strong&gt; was introduced in ECMAScript 5 to allow developers to opt in using JavaScript features that provided better error condition checking as some situations in property accessing and value assignments created ambiguity and didn&amp;#8217;t throw errors.&lt;/p&gt;
+
+&lt;h2 id='benefits'&gt;Benefits&lt;/h2&gt;
+
+&lt;p&gt;Seeing where your code is prone to errors allows you to debug quicker and also removes any ambiguity. Some cases may protect a developer from creating global variables if not assigned in an object/function scope. Strict mode calls attention to areas that should be fixed immediately.&lt;/p&gt;
+
+&lt;h2 id='where_are_some_improvements_made'&gt;Where are some improvements made?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;prevents accidental globals &lt;code&gt;someUndeclaredVar = &amp;#39;woot&amp;#39;;&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;throws error with duplicate object properties &lt;code&gt;{woot: &amp;#39;hey&amp;#39;, woot: &amp;#39;yo&amp;#39;}&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;errors on attempt to change an immutable property&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='how_to_use'&gt;How to use&lt;/h2&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// declared at top of js file, instructs JavaScript engine to swtich into this mode&lt;/span&gt;
+&lt;span class='s2'&gt;&amp;quot;use strict&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; Don&amp;#8217;t use globally as this may introduce other unexpected errors for files that are dynamically included. Instead, use like the following:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+  &lt;span class='s2'&gt;&amp;quot;use strict&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+
+  &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;someMethod&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;  
+      &lt;span class='c1'&gt;// runs in srict mode&lt;/span&gt;
+  &lt;span class='p'&gt;};&lt;/span&gt;
+
+  
+  &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;someMethod2&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;  
+      &lt;span class='c1'&gt;// runs in srict mode&lt;/span&gt;
+  &lt;span class='p'&gt;};&lt;/span&gt;
+&lt;span class='p'&gt;})();&lt;/span&gt;
+
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;someMethod4&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;  
+  &lt;span class='s2'&gt;&amp;quot;use strict&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='c1'&gt;// runs in strict mode&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;someMethod3&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;  
+&lt;span class='c1'&gt;// does not run in strict mode &lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='reference'&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;More information on &lt;a href='http://dmitrysoshnikov.com/ecmascript/es5-chapter-2-strict-mode/'&gt;ECMA-262-5, Chapter 2. Strict Mode&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Using handleEvent function to bind context</title>
+   <link href="http://d48.github.com/2013/03/07/using-javascripts-handleevent-function"/>
+   <updated>2013-03-07T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/03/07/using-javascripts-handleevent-function</id>
+   <content type="html">&lt;p&gt;The &lt;code&gt;handleEvent&lt;/code&gt; method is called whenever an event occurs of the type for which the &lt;code&gt;EventListener&lt;/code&gt; interface was registered. In this case below, I am explicitly assigning what statements are executed and in which context via &lt;code&gt;handler&lt;/code&gt;. &lt;a href='http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-EventListener'&gt;More on handleEvent from the W3C specification&lt;/a&gt;&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;Core&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+    &lt;span class='nx'&gt;self&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+
+    &lt;span class='nx'&gt;objVar&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;something&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+
+    &lt;span class='nx'&gt;init&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+        &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;handler&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+            &lt;span class='nx'&gt;handleEvent&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+              &lt;span class='nx'&gt;self&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;someMethod&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+            &lt;span class='p'&gt;}&lt;/span&gt;
+        &lt;span class='p'&gt;};&lt;/span&gt;
+        &lt;span class='nx'&gt;el&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;addEventListener&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kc'&gt;false&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='c1'&gt;// some dom element el&lt;/span&gt;
+    &lt;span class='p'&gt;},&lt;/span&gt;
+
+    &lt;span class='nx'&gt;someMethod&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+        &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;objVar&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;...;&lt;/span&gt; &lt;span class='c1'&gt;// do something with objVar&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Invariant Condition</title>
+   <link href="http://d48.github.com/2013/03/03/invariant-condition"/>
+   <updated>2013-03-03T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/03/03/invariant-condition</id>
+   <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Invariant condition&lt;/strong&gt; - In computer science, a condition that can be relied to be true during execution of a program. Invariants are especially useful when reasoning about whether a computer program is correct.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id='examples'&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;Explicit invariants is use of assertions in code. Some OOP languages have special syntax for specifying class invariants. Another example is a loop invariant - a statement of the conditions that should be true on entry into a loop and that are guaranteed to remain true on every iteration of the loop. On exit of the loop both the loop invariant and the loop termination condition can be guaranteed.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Illustration of Jeshua</title>
+   <link href="http://d48.github.com/2013/02/21/illustration-jeshua"/>
+   <updated>2013-02-21T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/02/21/illustration-jeshua</id>
+   <content type="html">&lt;p&gt;I&amp;#8217;m working on an image of my son for an illustration piece I&amp;#8217;m doing inspired by some magazine design I saw of an illusration as well as my favorite illustrator &lt;a href='http://www.daviddownton.com'&gt;David Downton&lt;/a&gt;. Here&amp;#8217;s the progress so far&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Jeshua sketch' src='http://f.cl.ly/items/2q2X1L2U223m1M3m2012/jeshua-sketch.jpg' /&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>JS.everywhere video notes   Desiging JavaScript for Usability</title>
+   <link href="http://d48.github.com/2013/02/20/jseverywhere-video-notes---desiging-javascript-for-usability"/>
+   <updated>2013-02-20T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/02/20/jseverywhere-video-notes---desiging-javascript-for-usability</id>
+   <content type="html">&lt;h1 id='function_type_checking'&gt;Function type checking&lt;/h1&gt;
+
+&lt;p&gt;Instead of writing 2 seperate functions that work on 2 different data types but do the same functionality, like searching for instance, just create a function (or API) that is generic that can do type checking.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;apisearch&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;stack&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;needle&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;isArray&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;stack&lt;/span&gt;&lt;span class='p'&gt;))(&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+      &lt;span class='c1'&gt;//searchArray(stack, needle);&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='k'&gt;else&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+      &lt;span class='c1'&gt;//searchMap(stack, needle);&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>GreenSock notes</title>
+   <link href="http://d48.github.com/2013/02/16/greensock-notes"/>
+   <updated>2013-02-16T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/02/16/greensock-notes</id>
+   <content type="html">&lt;p&gt;I just came across this JavaScript animation framework and I have to say it&amp;#8217;s really easy to use because of the API they created. Here&amp;#8217;s a couple notes from the &amp;#8220;Getting Started&amp;#8221; docs.&lt;/p&gt;
+
+&lt;h2 id='highlights'&gt;Highlights&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Can pause and resume animation with event handlers&lt;/li&gt;
+
+&lt;li&gt;Can animate css properties&lt;/li&gt;
+
+&lt;li&gt;Set delay before animate starts&lt;/li&gt;
+
+&lt;li&gt;Can animate multiple properties and give different timelines for each&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>apache on osx 10.8</title>
+   <link href="http://d48.github.com/2013/02/14/apache-on-osx-108"/>
+   <updated>2013-02-14T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/02/14/apache-on-osx-108</id>
+   <content type="html">&lt;p&gt;Was configuring a local dev environment to test some php files that I&amp;#8217;m symlinking from my &lt;code&gt;~/username/Sites&lt;/code&gt; folder. Need to make sure:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Be sure to add this option in &lt;code&gt;/etc/apache2/users/username.conf&lt;/code&gt; file: &lt;code&gt;Options Indexes Multiviews FollowSymLinks&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;chmod a+rx&lt;/code&gt; on Dropbox directory and project directory&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;sudo /usr/sbin/apachectl restart&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Wootiness.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Principle of Least Astonishment / Surprise</title>
+   <link href="http://d48.github.com/2013/02/12/principle-of-least-astonishment--surprise"/>
+   <updated>2013-02-12T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/02/12/principle-of-least-astonishment--surprise</id>
+   <content type="html">&lt;p&gt;Came across this while reading an article on binding JavaScript context and this was referred to as something to avoid when there are possible conflicts in user interface interactions.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Principle of Least Astonishment&lt;/strong&gt; - or POLA/PLA applies to user interface design, software design, and ergonomics. Also known as &lt;strong&gt;rule&lt;/strong&gt; or &lt;strong&gt;principle of least surprise (POLS)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The principle goal is to exploit users&amp;#8217; pre-existing knowlege as a way to minimize the learning curve by designing interfaces that borrow heavily from &amp;#8220;functionally similar or analagous programs or systems with the users are likely to be familiar&amp;#8221;.&lt;/p&gt;
+
+&lt;p&gt;When two elements of an interface conflict, or are ambiguous, the behavior should be that which will least &amp;#8220;surprise&amp;#8221; the user.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The design should match the user&amp;#8217;s experience, excpectations, and mental models. What is least surprising may depend on the expected audience, user, programmers, or system admins.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Example:&lt;/em&gt; a programmer should try to think of the behavior that will least surpise someone who uses the program, rather than that behavior that is natural from knowing the inner workings of the program.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Illustration - figure and dress study</title>
+   <link href="http://d48.github.com/2013/02/04/illustration-figure-study"/>
+   <updated>2013-02-04T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/02/04/illustration-figure-study</id>
+   <content type="html">&lt;p&gt;Just got some markers and sketch pad in the mail. Starting to loosen up and practice sketching. Study from Instragram photo below&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='figure study' src='http://f.cl.ly/items/30323J0H0a0E44182t2y/illustration-dress-study.jpg' /&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Callbacks in JavaScript</title>
+   <link href="http://d48.github.com/2013/02/01/callbacks-in-javascript"/>
+   <updated>2013-02-01T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/02/01/callbacks-in-javascript</id>
+   <content type="html">&lt;h2 id='notes_from_secrets_of_a_javascript_ninja_book'&gt;Notes from Secrets of a JavaScript Ninja book&lt;/h2&gt;
+
+&lt;p&gt;Given this code:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;loop&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;array&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;fn&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;i&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='mi'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='nx'&gt;i&lt;/span&gt;&lt;span class='o'&gt;&amp;lt;&lt;/span&gt;&lt;span class='nx'&gt;array&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;length&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='nx'&gt;i&lt;/span&gt;&lt;span class='o'&gt;++&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; 
+    &lt;span class='c1'&gt;// pass function back in with arguments &lt;/span&gt;
+    &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;fn&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;call&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;array&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;array&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='nx'&gt;i&lt;/span&gt;&lt;span class='p'&gt;],&lt;/span&gt; &lt;span class='nx'&gt;i&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;===&lt;/span&gt; &lt;span class='kc'&gt;false&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;break&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Callbacks&lt;/strong&gt; are employed in relation to asynchronous, or nondeterminisitc, behavior such as a user clicking a button, an Ajax request completing, or some number of values being found in array.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>JavaScript event delegation</title>
+   <link href="http://d48.github.com/2013/01/31/javascript-event-delegation"/>
+   <updated>2013-01-31T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/31/javascript-event-delegation</id>
+   <content type="html">&lt;h2 id='on_event_delegation'&gt;On event delegation&lt;/h2&gt;
+
+&lt;p&gt;Given this function:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='nb'&gt;document&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;onclick&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;event&lt;/span&gt;&lt;span class='p'&gt;){&lt;/span&gt;
+    &lt;span class='c1'&gt;//IE doesn&amp;#39;t pass in the event object&lt;/span&gt;
+    &lt;span class='nx'&gt;event&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;event&lt;/span&gt; &lt;span class='o'&gt;||&lt;/span&gt; &lt;span class='nb'&gt;window&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;event&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    
+    &lt;span class='c1'&gt;//IE uses srcElement as the target&lt;/span&gt;
+    &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;target&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;event&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;target&lt;/span&gt; &lt;span class='o'&gt;||&lt;/span&gt; &lt;span class='nx'&gt;event&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;srcElement&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;    
+
+    &lt;span class='k'&gt;switch&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;target&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;id&lt;/span&gt;&lt;span class='p'&gt;){&lt;/span&gt;
+        &lt;span class='k'&gt;case&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;help-btn&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt;
+            &lt;span class='nx'&gt;openHelp&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+            &lt;span class='k'&gt;break&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+        &lt;span class='k'&gt;case&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;save-btn&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt;
+            &lt;span class='nx'&gt;saveDocument&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+            &lt;span class='k'&gt;break&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+        &lt;span class='k'&gt;case&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;undo-btn&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt;
+            &lt;span class='nx'&gt;undoChanges&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+            &lt;span class='k'&gt;break&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+        &lt;span class='c1'&gt;//others?&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;All click events are handled by a single function which then &lt;strong&gt;delegates&lt;/strong&gt; to the appropriate function depending on the target of the event.&lt;/p&gt;
+
+&lt;h2 id='benefits'&gt;Benefits&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Fewer functions to manage&lt;/li&gt;
+
+&lt;li&gt;Takes up less memory&lt;/li&gt;
+
+&lt;li&gt;Fewer ties between your code and the DOM&lt;/li&gt;
+
+&lt;li&gt;Don&amp;#8217;t need to worry about removing event handlers when changing the DOM via &lt;code&gt;innerHTML&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Charles Proxy and VPN on Mac OSX</title>
+   <link href="http://d48.github.com/2013/01/28/charles-proxy-and-vpn-on-mac-osx"/>
+   <updated>2013-01-28T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/28/charles-proxy-and-vpn-on-mac-osx</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Charles Proxy&lt;/strong&gt; is a program that allows you to monitor network requests through an HTTP proxy. This is also a great tool to use for debugging and changing up files that get routed from a request. A use case for debugging or general web developement would be that on a production server, if there was a bug happening but not on my local dev machine, I can route the production asset to hit a file on my local dev machine that I suspect is the issue, and it will run the website as if it was obtaining it from the server.&lt;/p&gt;
+
+&lt;p&gt;I have configured Charles Proxy to run on my Mac OSX through my company&amp;#8217;s VPN and there were a few caveats to be aware of:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make sure Charles Proxy is running before connecting to VPN else the program won&amp;#8217;t read the traffic.&lt;/li&gt;
+
+&lt;li&gt;For Remote Mapping files to local, https to http, you need to enable the host on Charles Proxy -&amp;gt; Proxy Settings, e.g., with wildcard &lt;code&gt;*.myremote-host.com&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;Charles Proxy will change up your Mac OSX proxy network settings so you may not be able to connect to the internet even after shutting down the program. Just uncheck the boxes for Web Proxy (HTTP) and Secure Web Proxy (HTTPS) and be sure to close and restart your browser. VPN being on may also be hanging your requests. Either shut that down or restart it as well.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img alt='uncheck boxes for proxy' src='http://f.cl.ly/items/19153u363V1p2C40373F/Screen%20Shot%202013-01-28%20at%207.35.42%20PM.png' /&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>JavaScript Ninja book - arguments.callee and bang bang construct </title>
+   <link href="http://d48.github.com/2013/01/22/javascript-ninja-book---argumentscalle"/>
+   <updated>2013-01-22T04:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/22/javascript-ninja-book---argumentscalle</id>
+   <content type="html">&lt;h2 id='argumentscallee'&gt;arguments.callee&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;arguments.callee&lt;/strong&gt; - this property of a function can serve as a reliable way to always access the function itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;robot&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+  &lt;span class='nx'&gt;dance&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+    &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;n&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt; &lt;span class='o'&gt;?&lt;/span&gt; &lt;span class='nx'&gt;arguments&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;callee&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;eep&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;boop&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='c1'&gt;// `arguments` points to the argument list passed into the function, in this case, `n`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='_operator'&gt;!! operator&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;!!&lt;/code&gt; construct is a way of turning any JavaScript expression into its Boolean equivalent&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='o'&gt;!!&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;hello&amp;quot;&lt;/span&gt; &lt;span class='c1'&gt;//outputs true&lt;/span&gt;
+
+&lt;span class='o'&gt;!!&lt;/span&gt;&lt;span class='mi'&gt;0&lt;/span&gt; &lt;span class='c1'&gt;//outputs false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>JavaScript Ninja notes - Anonymous and Inline functions</title>
+   <link href="http://d48.github.com/2013/01/21/javascript-ninja-notes---inline-functions"/>
+   <updated>2013-01-21T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/21/javascript-ninja-notes---inline-functions</id>
+   <content type="html">&lt;h2 id='_in_a_method'&gt;&lt;code&gt;This&lt;/code&gt; in a method&lt;/h2&gt;
+
+&lt;p&gt;A term frequently applied to functions that are referenced through object properties, the function context refers to teh boject through which the method was invoked. So given the following function, the assertions will evaluate to &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;ninja&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='c1'&gt;// define object property with anonmyous function&lt;/span&gt;
+  &lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;n&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt; &lt;span class='o'&gt;?&lt;/span&gt; &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt; &lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;a&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hiy&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c1'&gt;// make a reference to ninja method&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;samurai&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ninja&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;yell&lt;/span&gt; &lt;span class='p'&gt;};&lt;/span&gt;
+
+&lt;span class='nx'&gt;ninja&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{};&lt;/span&gt;
+
+&lt;span class='k'&gt;try&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nx'&gt;assert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;samurai&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;4&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hiyaaaa&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;this works because of `this` var&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='k'&gt;catch&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;e&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;if ninja.yell did not have this.yell in return, error would be thrown because reference would be gone&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Given the same object without reference to &lt;code&gt;this&lt;/code&gt;, the assertion will fail&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;ninja&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='c1'&gt;// define object property with anonmyous function, but no `this` reference&lt;/span&gt;
+  &lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;n&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt; &lt;span class='o'&gt;?&lt;/span&gt; &lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt; &lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;a&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hiy&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c1'&gt;// make a reference to ninja method&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;samurai&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ninja&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;yell&lt;/span&gt; &lt;span class='p'&gt;};&lt;/span&gt;
+
+&lt;span class='nx'&gt;ninja&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{};&lt;/span&gt;
+
+&lt;span class='k'&gt;try&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nx'&gt;assert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;samurai&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;4&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hiyaaaa&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;this doesnt work because we kill reference to ninja.yell&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='k'&gt;catch&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;e&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;if ninja.yell did not have this.yell in return, error would be thrown because reference would be gone&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='named_anonymous_inline_functions'&gt;Named anonymous (inline) functions&lt;/h2&gt;
+
+&lt;p&gt;Function literal syntax allows us to supply a name to the declared function by adding a name before the parameter list. Another name for this is an inline function.&lt;/p&gt;
+
+&lt;p&gt;Note: inline functions can be named, but those names are only visible within the functions themselves&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;ninja&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='c1'&gt;// `shout` is an inline function&lt;/span&gt;
+  &lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;shout&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;n&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt; &lt;span class='o'&gt;?&lt;/span&gt; &lt;span class='nx'&gt;shout&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;n&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;a&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hiy&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;samurai&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ninja&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;yell&lt;/span&gt; &lt;span class='p'&gt;};&lt;/span&gt;
+&lt;span class='nx'&gt;ninja&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{};&lt;/span&gt;
+
+&lt;span class='nx'&gt;assert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;samurai&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;yell&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;4&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hiyaaaa&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;Yes, this method still works because we save reference directly to the inline function that is named `shout`&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+
+&lt;span class='nx'&gt;assert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;typeof&lt;/span&gt; &lt;span class='nx'&gt;shout&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;undefined&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;true since can not evaluate inline function outside of its scope directly&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Webstorm node.js debug configuration</title>
+   <link href="http://d48.github.com/2013/01/20/webstorm-nodejs-debug-configuration"/>
+   <updated>2013-01-20T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/20/webstorm-nodejs-debug-configuration</id>
+   <content type="html">&lt;p&gt;Some WebStorm IDE configuration settings so that I can debug a node.js application. I didn&amp;#8217;t need to do anything special with MongoDB. Just had to make sure &lt;code&gt;$mongod&lt;/code&gt; was running before I set WebStorm to &lt;code&gt;run&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;node.js app debug config &lt;img alt='node.js app debug config' src='http://design48.net/i/webstorm-debug-setup1.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;node.js remote debug config &lt;img alt='node.js remote debug config' src='http://design48.net/i/webstorm-debug-setup2.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;After clicking on run, set a breakpoint in your node.js app and click on the debug button. You should be good to go and step into code, expecting vars and what not.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>WebStorm IDE and Debugging Node.js app</title>
+   <link href="http://d48.github.com/2013/01/17/webstorm-ide-and-debugging-nodejs-app"/>
+   <updated>2013-01-17T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/17/webstorm-ide-and-debugging-nodejs-app</id>
+   <content type="html">&lt;p&gt;I&amp;#8217;m evaluating &lt;a href='http://www.jetbrains.com/webstorm/'&gt;WebStorm&lt;/a&gt; JavaScript IDE and I have to say it was super easy to setup and use. I&amp;#8217;m working on a command-line app to create and manage &lt;a href='http://github.com/d48/todo'&gt;todo lists&lt;/a&gt; and the usual suspects for debugging node.js like &lt;code&gt;node-inspector&lt;/code&gt; was just clunky to set up.&lt;/p&gt;
+
+&lt;p&gt;Below is a screenshot that shows how I used the &lt;strong&gt;WebStorm&lt;/strong&gt; debugger on my &lt;code&gt;mocha&lt;/code&gt; tests. Suhweeet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='screenshot of webstorm' src='http://design48.net/i/webstorm-screenshot.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Just follow this tutorial to set up the debugger with your &lt;code&gt;node&lt;/code&gt; and &lt;code&gt;mocha&lt;/code&gt; libraries: &lt;a href='http://codebetter.com/glennblock/2013/01/17/debugging-mocha-unit-tests-with-webstorm-step-by-step/'&gt;Debugging Mocha unit tests with WebStorm step-by-step&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Refactoring to Patterns book notes</title>
+   <link href="http://d48.github.com/2013/01/17/refactoring-to-patterns-book-notes"/>
+   <updated>2013-01-17T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/17/refactoring-to-patterns-book-notes</id>
+   <content type="html">&lt;h2 id='tdd_methodology_help_with_the_following'&gt;TDD methodology help with the following&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;keep defect counts low&lt;/li&gt;
+
+&lt;li&gt;refactor without fear&lt;/li&gt;
+
+&lt;li&gt;produce simpler, better code&lt;/li&gt;
+
+&lt;li&gt;program without stress&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='motivation_for_refactoring'&gt;Motivation for refactoring&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;to reduce or remove duplication&lt;/li&gt;
+
+&lt;li&gt;to simplify what is complicated&lt;/li&gt;
+
+&lt;li&gt;to make code better at communicating its intention&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Back to Basics. Javascript Execution Context and Scope Chain</title>
+   <link href="http://d48.github.com/2013/01/17/back-to-basics-javascript-execution-context-and-scope-chain"/>
+   <updated>2013-01-17T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/17/back-to-basics-javascript-execution-context-and-scope-chain</id>
+   <content type="html">&lt;h2 id='notes'&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;I need to wrap my head on the underlying process that&amp;#8217;s happening when JavaScript is parsed and interpreted so I can make better decision in how I&amp;#8217;m declaring variables and functions. I assume this will produce better, quality code with less headache in fixing bugs. As well as provide a performance boost if I know how my function and variable declarations are effecting the execution of the JavaScript.&lt;/p&gt;
+
+&lt;h2 id='execution_context_stack'&gt;Execution Context Stack&lt;/h2&gt;
+
+&lt;p&gt;When a browser begins to run through a JavaScript file, it first enters through a &lt;code&gt;global context&lt;/code&gt; which gets added to a stack. When it enters into a function, it enters a new &lt;code&gt;execution context&lt;/code&gt;, and this gets added on top of the stack. As the script leaves a function or execution context,&lt;/p&gt;
+
+&lt;h2 id='execution_context_detail'&gt;Execution Context detail&lt;/h2&gt;
+
+&lt;p&gt;Inside the JavaScript interpeter, there are 2 stages that happen:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Creation stage&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The function is called but no code gets executed inside yet&lt;/li&gt;
+
+&lt;li&gt;Creates variables, functions, and arguments&lt;/li&gt;
+
+&lt;li&gt;Creates the Scope Chain&lt;/li&gt;
+
+&lt;li&gt;Determines the value of &lt;code&gt;this&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;This is where the &lt;code&gt;execution content object&lt;/code&gt; is created&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Activation / Code Execution stage&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Assign values and references to functions, also interpret / execute code.&lt;/li&gt;
+
+&lt;li&gt;These var values are assigned as code is executed line by line&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The execution context can be seen as an object with these properties:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='nx'&gt;executionContextObj&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='nx'&gt;variableObj&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='cm'&gt;/* func args, parameters, inner var and func declarations */&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+  &lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;scopeChain&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='cm'&gt;/* variableObj + all parent execution context&amp;#39;s variableObj*/&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+  &lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>configuring smtp with att.net</title>
+   <link href="http://d48.github.com/2013/01/16/configuring-smtp-with-attnet"/>
+   <updated>2013-01-16T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/16/configuring-smtp-with-attnet</id>
+   <content type="html">&lt;p&gt;Just saving some config notes about setting up home emails via Outlook on a pc. How come I feel like I don&amp;#8217;t need to do this for a mac? Oh wait, that&amp;#8217;s probably because I don&amp;#8217;t have to.&lt;/p&gt;
+
+&lt;h2 id='anyways'&gt;Anyways&lt;/h2&gt;
+
+&lt;p&gt;In order to use stmp.att.yahoo.com SMTP server, I need to verify the email address I&amp;#8217;m sending from via my att.net email account.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Log onto mail.yahoo.com with that att.net account I received from Uverse&lt;/li&gt;
+
+&lt;li&gt;Go to Mail Options -&amp;gt; Accounts -&amp;gt; Add email. Then save.&lt;/li&gt;
+
+&lt;li&gt;Click on link to verify that I receive in email.&lt;/li&gt;
+
+&lt;li&gt;Now I can configure email program to use yahoo&amp;#8217;s SMTP and set outgoing port to 465 SSL. Woot.&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>note on guard, livreload and rvm ruby</title>
+   <link href="http://d48.github.com/2013/01/11/note-on-guard-livreload-and-rvm-ruby"/>
+   <updated>2013-01-11T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/11/note-on-guard-livreload-and-rvm-ruby</id>
+   <content type="html">&lt;p&gt;I was configuring &lt;code&gt;livereload&lt;/code&gt; on a new computer for local dev work on a web project and I ran into an issue where the Chrome extension wasn&amp;#8217;t reloading and my &lt;code&gt;guard&lt;/code&gt; commands weren&amp;#8217;t working. It was saying that it expects Livereload 2.3 or newer or a server to connect to.&lt;/p&gt;
+
+&lt;p&gt;Some updates I made to get it to work were:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install &lt;code&gt;rvm&lt;/code&gt;, the ruby version manager&lt;/li&gt;
+
+&lt;li&gt;Made sure I was using Ruby version 1.9.2-p320&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;$ sudo gem install guard-livereload&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;$ sudo gem install yajl-ruby&lt;/code&gt; for making sure socket listening responded faster&lt;/li&gt;
+
+&lt;li&gt;error when running and recommended to &lt;code&gt;gem install rb-fsevents&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;Create new guard file that configured to watch .styl file changes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ahhh, itworks now. Hello livereload.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>I haz zoom images via JavaScript closures</title>
+   <link href="http://d48.github.com/2013/01/04/i-haz-zoom-images"/>
+   <updated>2013-01-04T14:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/04/i-haz-zoom-images</id>
+   <content type="html">&lt;p&gt;I wanted to put some click functionality on the images for the blog post so I created a little function to do just that. The nifty little bit is using the JavaScript closure to bind the iterator variable so it&amp;#8217;s unique to each element that I&amp;#8217;m creating a callback for.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;setImageLinks&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;parent&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nb'&gt;document&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getElementById&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;post&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+    &lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;images&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;parent&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getElementsByTagName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+    &lt;span class='p'&gt;;&lt;/span&gt;
+
+  &lt;span class='k'&gt;for&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;i&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;0&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;len&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;images&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;length&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='nx'&gt;i&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='nx'&gt;len&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='nx'&gt;i&lt;/span&gt;&lt;span class='o'&gt;++&lt;/span&gt;&lt;span class='p'&gt;){&lt;/span&gt;
+    &lt;span class='c1'&gt;// bind i variable to a function not inside the same scope&lt;/span&gt;
+    &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;index&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+      &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;src&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;images&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='nx'&gt;index&lt;/span&gt;&lt;span class='p'&gt;].&lt;/span&gt;&lt;span class='nx'&gt;getAttribute&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+
+      &lt;span class='nx'&gt;images&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='nx'&gt;index&lt;/span&gt;&lt;span class='p'&gt;].&lt;/span&gt;&lt;span class='nx'&gt;addEventListener&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;setImageClickEvent&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+        &lt;span class='nb'&gt;window&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;open&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;src&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+      &lt;span class='p'&gt;},&lt;/span&gt; &lt;span class='kc'&gt;false&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;i&lt;/span&gt;&lt;span class='p'&gt;));&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='click_zee_image'&gt;Click zee image&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt='codercat' src='http://design48.net/i/codercat.jpg' /&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>New blog layout</title>
+   <link href="http://d48.github.com/2013/01/04/new-blog-layout"/>
+   <updated>2013-01-04T13:00:00-08:00</updated>
+   <id>http://d48.github.com/2013/01/04/new-blog-layout</id>
+   <content type="html">&lt;h2 id='out_with_the_old'&gt;Out with the old&lt;/h2&gt;
+
+&lt;p&gt;I came across some blog layouts from developers I follow on twitter and I noticed an engine they used that I really like the layout for. So&amp;#8230;I copied it. Here&amp;#8217;s the old and new layout.&lt;/p&gt;
+
+&lt;p&gt;The major differences are that the site identity remains while you scroll through the blog posts. And the code highlighting is more prominent. I love syntax highlighting. Check it out:&lt;/p&gt;
+
+&lt;h2 id='old'&gt;Old&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt='old layout' src='http://design48.net/i/blog-layout-old.png' /&gt;&lt;/p&gt;
+
+&lt;h2 id='new'&gt;New&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt='new layout' src='http://design48.net/i/blog-layout-new.png' /&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>sinon test lib with mocha notes</title>
+   <link href="http://d48.github.com/2012/12/29/mocha-test-lib-notes"/>
+   <updated>2012-12-29T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/12/29/mocha-test-lib-notes</id>
+   <content type="html">&lt;p&gt;Just wanted to save some notes from using sinon library for stubs within the mocha test framework in a node.js app i&amp;#8217;m hacking away at. When trying to run this particular code for stubbing the &lt;code&gt;console.log&lt;/code&gt; method:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='nx'&gt;sinon&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;stub&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;log&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;text&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;string&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='nx'&gt;string&lt;/span&gt; &lt;span class='o'&gt;+=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;#1: general\n&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='nx'&gt;string&lt;/span&gt; &lt;span class='o'&gt;+=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;#2: grocery\n&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+
+  &lt;span class='nx'&gt;text&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;should&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;eql&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;string&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+  &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;restore&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;In my &lt;code&gt;todos&lt;/code&gt; app, I redefine &lt;code&gt;console.log&lt;/code&gt; into a variable called &lt;code&gt;log&lt;/code&gt; for shorthand. This trips up sinon.js in the stubbing mechanisim above. A small inconvenince as this forces me to rewrite my app just so I can cover these test cases. The parameters that the stub method is expecting are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;object&lt;/li&gt;
+
+&lt;li&gt;method&lt;/li&gt;
+
+&lt;li&gt;callback&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Because of this, I just rewrote my output method to export a single string that I can test against since it will ignore multiple console.log calls from a given stubbed method&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// instead of this output&lt;/span&gt;
+&lt;span class='k'&gt;for&lt;/span&gt;&lt;span class='p'&gt;(...)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+	&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;string...&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;	
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c1'&gt;// i wrote this so i can use the sinon.stub&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;string&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='k'&gt;for&lt;/span&gt;&lt;span class='p'&gt;(...)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+	&lt;span class='nx'&gt;string&lt;/span&gt; &lt;span class='o'&gt;+=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;string...&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;		
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;string... string...&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>tmux and conf file</title>
+   <link href="http://d48.github.com/2012/12/26/tmux-and-conf-file"/>
+   <updated>2012-12-26T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/12/26/tmux-and-conf-file</id>
+   <content type="html">&lt;h1 id='notes'&gt;Notes&lt;/h1&gt;
+
+&lt;p&gt;So just taking some notes for myself. I have a new dev machine and when trying to set up my &lt;code&gt;.tmux.conf&lt;/code&gt; file, there was issues when tmux launched in parsing the file. I read somewhere on the net it had to do with some invisible bytes.&lt;/p&gt;
+
+&lt;p&gt;I ended up fixing the parse by just creating a new .tmux.conf file and copy-pasted from my &lt;code&gt;.tmux.conf&lt;/code&gt; file from my &lt;a href='http://github.com/design48/dotfiles'&gt;dotfiles repo&lt;/a&gt; on GitHub. Woot.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>node.js todos with multiple lists</title>
+   <link href="http://d48.github.com/2012/12/16/nodejs-todos-with-multiple-lists"/>
+   <updated>2012-12-16T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/12/16/nodejs-todos-with-multiple-lists</id>
+   <content type="html">&lt;h1 id='some_progress'&gt;Some progress&lt;/h1&gt;
+
+&lt;p&gt;So I&amp;#8217;ve been doing some testing on the json structure for enabling multiple lists on the todo cli tool that I&amp;#8217;ve been hacking away at. There&amp;#8217;s two components to get this working;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;One&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Have a nested object with arrays so can iterate through list names and each lists&amp;#8217;s todo items:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='json sample' src='http://content.screencast.com/users/User48/folders/Jing/media/086178f4-48e4-441f-8204-b41b5db9cfc1/00000101.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Two&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Having a persitent data store to get the selected list name so as to apply actions to. Since there is no sense of state in a node.js cli app we need to create one.&lt;/p&gt;
+
+&lt;p&gt;We are already saving a list of todo items in a json file, we can save this hash of what the &lt;code&gt;current&lt;/code&gt; list is in the same or separate file. I didn&amp;#8217;t want to pollute this existing json file storage of todos so I decided to place it in a separate file.&lt;/p&gt;
+
+&lt;p&gt;Now when we return back to our todo app to run commands on it, a sense of &lt;code&gt;state&lt;/code&gt; has been established by pulling this name from the file, and then we can resume with our actions of listing, adding, or removing items from the main data store with this saved name as the key, yeehaw.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Commands&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The command I want to set up would then look like this:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='nx'&gt;$&lt;/span&gt; &lt;span class='nx'&gt;todo&lt;/span&gt; &lt;span class='nx'&gt;show&lt;/span&gt; &lt;span class='nx'&gt;lists&lt;/span&gt;
+
+&lt;span class='c1'&gt;// returns&lt;/span&gt;
+	&lt;span class='err'&gt;#&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;work&lt;/span&gt;
+	&lt;span class='err'&gt;#&lt;/span&gt;&lt;span class='mi'&gt;2&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;groceries&lt;/span&gt;
+	&lt;span class='err'&gt;#&lt;/span&gt;&lt;span class='mi'&gt;3&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;inventions&lt;/span&gt;
+
+&lt;span class='nx'&gt;$&lt;/span&gt; &lt;span class='nx'&gt;todo&lt;/span&gt; &lt;span class='nx'&gt;select&lt;/span&gt; &lt;span class='mi'&gt;2&lt;/span&gt;
+
+&lt;span class='c1'&gt;// returns&lt;/span&gt;
+	&lt;span class='s1'&gt;&amp;#39;groceries&amp;#39;&lt;/span&gt; &lt;span class='nx'&gt;list&lt;/span&gt; &lt;span class='nx'&gt;selected&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt; &lt;span class='nx'&gt;Ready&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='nx'&gt;actions&lt;/span&gt;
+
+&lt;span class='nx'&gt;$&lt;/span&gt; &lt;span class='nx'&gt;todo&lt;/span&gt; &lt;span class='nx'&gt;add&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;get plums&amp;quot;&lt;/span&gt;
+
+&lt;span class='c1'&gt;// #1 already existed, so returns&lt;/span&gt;
+
+	&lt;span class='err'&gt;#&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;bananas&lt;/span&gt;
+	&lt;span class='err'&gt;#&lt;/span&gt;&lt;span class='mi'&gt;2&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;get&lt;/span&gt; &lt;span class='nx'&gt;plums&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h1 id='note'&gt;Note&lt;/h1&gt;
+
+&lt;p&gt;This is still a work in progress but I&amp;#8217;m making small steps to finally get my own todos working at the command line the way I like it.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='https://github.com/design48/todo/commit/94291cd86a52dc8f31d8c5732e882d5d9f7b2ea5'&gt;Some code for the work in progress&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>mytestimony and mongodb findOne</title>
+   <link href="http://d48.github.com/2012/12/12/mytestimony-and-mongodb-findone"/>
+   <updated>2012-12-12T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/12/12/mytestimony-and-mongodb-findone</id>
+   <content type="html">&lt;p&gt;Working with &lt;strong&gt;mongdob&lt;/strong&gt; on the &lt;a href='http://github.com/design48/mytestimony'&gt;MyTestimony.com web project&lt;/a&gt;, I had a chance to update the routes to include a user clicking on a &lt;em&gt;View&lt;/em&gt; button to open a testimony page.&lt;/p&gt;
+
+&lt;h1 id='mondodb_native_driver_api'&gt;MondoDB native driver api&lt;/h1&gt;
+
+&lt;p&gt;The method to find a testimony with specific id is:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='nx'&gt;db&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;collectionName&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;findOne&lt;/span&gt;&lt;span class='p'&gt;({&lt;/span&gt;&lt;span class='nx'&gt;_id&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;ObjectID&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;generatedstring&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h1 id='screenshots'&gt;Screenshots&lt;/h1&gt;
+
+&lt;p&gt;This allowed me to have button for &lt;em&gt;View&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='button' src='http://f.cl.ly/items/0F0q3D0C0u1V3F0l3s0C/Screen%20Shot%202012-12-12%20at%2012.10.49%20AM.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click to open a testimony page:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='detail' src='http://f.cl.ly/items/10413q2F37153b1H1M1h/Screen%20Shot%202012-12-12%20at%2012.11.37%20AM.png' /&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Updating todo node.js library with event emitter</title>
+   <link href="http://d48.github.com/2012/12/11/updating-todo-with-event-emitter"/>
+   <updated>2012-12-11T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/12/11/updating-todo-with-event-emitter</id>
+   <content type="html">&lt;p&gt;I recently updated a node.js library that allows you to create and manage a todo list at the command line or OSX terminal. This is handy especially when you&amp;#8217;re programming within that environment and want to quickly make a note of an item you need &lt;strong&gt;todo&lt;/strong&gt; of course.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m just getting to learn node.js and I needed a way to have a module update another module to do some functionality upon an &amp;#8220;event&amp;#8221;. Using the &lt;a href='http://nodejs.org/api/events.html'&gt;Event Emitter&lt;/a&gt; class in node.js worked perfect.&lt;/p&gt;
+
+&lt;p&gt;So here&amp;#8217;s the use case, I needed a way to always show the list of todo items upon an action like&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;adding to the list&lt;/li&gt;
+
+&lt;li&gt;removing from the list&lt;/li&gt;
+
+&lt;li&gt;or clearing it out&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The original package didn&amp;#8217;t have it, so I added it using a &lt;strong&gt;custom event&lt;/strong&gt;. Upon a given user action, the object &lt;strong&gt;emits&lt;/strong&gt; an event name to any object that is &lt;strong&gt;listening&lt;/strong&gt;. Each listening object can define what they do upon the event being received. It just so happens I have my object list out all the todo items. Awesome.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='show list upon each action' src='http://content.screencast.com/users/User48/folders/Jing/media/570d6898-8480-46b7-acda-2a182df2dba2/00000090.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href='https://github.com/design48/todo/commit/dec8347b2613979287042706bb05a8d940d5d52a'&gt;source code highlighted&lt;/a&gt; lists out the lines below it that were added&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>todo list at the command line with node.js</title>
+   <link href="http://d48.github.com/2012/12/07/todo-list-at-the-command-line-with-nodejs"/>
+   <updated>2012-12-07T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/12/07/todo-list-at-the-command-line-with-nodejs</id>
+   <content type="html">&lt;h1 id='some_progress'&gt;Some progress&lt;/h1&gt;
+
+&lt;p&gt;I&amp;#8217;ve been making more progress on modifying the todo list app made from this githubber: &lt;a href='https://github.com/vesln/todo'&gt;https://github.com/vesln/todo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Initially they set it up to only be one list. I&amp;#8217;m changing it so it can have multiple lists that you can add to, check off, rename, and delete easily.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='todo list cli tool' src='http://content.screencast.com/users/User48/folders/Jing/media/a8663943-fb10-4e79-9a3c-f438f759e9ed/00000085.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next on my list is to sort out how I want my api to be to this command line tool. I&amp;#8217;m having fun sorting out and working with modules and just some nice practices on organizing the code.&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Command&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;&lt;code&gt;$ todo select &amp;lt;listnumber&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td style='text-align: left;'&gt;Makes specific list active so more actions can be taken&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;&lt;code&gt;$ todo rename &amp;quot;&amp;lt;new name&amp;gt;&amp;quot;&lt;/code&gt;&lt;/td&gt;&lt;td style='text-align: left;'&gt;Rename currently selected list&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;&lt;code&gt;$ todo add &amp;quot;&amp;lt;my todo item&amp;gt;&amp;quot;&lt;/code&gt;&lt;/td&gt;&lt;td style='text-align: left;'&gt;Adds todo to currently selected list&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;&lt;code&gt;$ todo clear&lt;/code&gt;&lt;/td&gt;&lt;td style='text-align: left;'&gt;Clears out currently selected list.&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;&lt;code&gt;$ todo copy&lt;/code&gt;&lt;/td&gt;&lt;td style='text-align: left;'&gt;Copies current list in a pretty format to the buffer that can be pasted&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;Lastly, there&amp;#8217;s a &lt;a href='https://github.com/vesln/todo/pull/6'&gt;pull request&lt;/a&gt; opened to enable multiple lists that moves the data directory to &lt;code&gt;$HOME&lt;/code&gt; and also maps an options/command list that reuses the original functions. I like that but want my api a little different so will implement that as well.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Grooveshark api format</title>
+   <link href="http://d48.github.com/2012/11/30/grooveshark-api-format"/>
+   <updated>2012-11-30T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/30/grooveshark-api-format</id>
+   <content type="html">&lt;h1 id='finally'&gt;Finally!&lt;/h1&gt;
+
+&lt;p&gt;Finally figured out the darn formatting needed for Grooveshark. Either I need a better visual or just need to learn how to read better, but here&amp;#8217;s an example in case anyone needs it with some steps to produce&lt;/p&gt;
+
+&lt;h1 id='json_payload_to_start_a_session'&gt;JSON Payload to start a session&lt;/h1&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// to start a session&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;method&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;startSession&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;parameters&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{},&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;header&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+        &lt;span class='s2'&gt;&amp;quot;wsKey&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;uniquekeyfromgrooveshark&amp;quot;&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='command_line'&gt;Command line&lt;/h2&gt;
+
+&lt;p&gt;Then from the command line, where &lt;em&gt;sig&lt;/em&gt; is a hash string created from an &lt;strong&gt;hmac&lt;/strong&gt; function using:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;unique &lt;em&gt;secret&lt;/em&gt; provided by Grooveshark upon &lt;a href='http://developer.grooveshark.com/api'&gt;api credentials request&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;em&gt;JSON payload&lt;/em&gt; above&lt;/li&gt;
+
+&lt;li&gt;set to &lt;em&gt;md5&lt;/em&gt; format&lt;/li&gt;
+
+&lt;li&gt;digest is &lt;em&gt;hex&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Make sure this is all on one line&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ curl -X POST https://api.grooveshark.com/ws3.php?sig=123cc3d7f0f56c201e2b251eb888abc \&lt;/code&gt; -d &amp;#8216;{&amp;#8220;method&amp;#8221;: &amp;#8220;startSession&amp;#8221;,&amp;#8221;parameters&amp;#8221;: {},&amp;#8221;header&amp;#8221;: {&amp;#8220;wsKey&amp;#8221;: &amp;#8220;uniquekeyfromgrooveshark&amp;#8221;}}&amp;#8217;&lt;/p&gt;
+
+&lt;p&gt;Sample &lt;strong&gt;hmac&lt;/strong&gt; function using node.js:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;crypto&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;crypto&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+  &lt;span class='c1'&gt;// refer to payload format above&lt;/span&gt;
+  &lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;payload&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;{&amp;quot;method&amp;quot;:&amp;quot;startSession&amp;quot;, ...&amp;#39;&lt;/span&gt;
+  &lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;secret&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;abcdeg&amp;#39;&lt;/span&gt;
+  &lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;hash&lt;/span&gt;
+  &lt;span class='p'&gt;;&lt;/span&gt;
+
+&lt;span class='nx'&gt;hash&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;crypto&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;createHmac&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;md5&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;secret&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;update&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;payload&lt;/span&gt;&lt;span class='p'&gt;).&lt;/span&gt;&lt;span class='nx'&gt;digest&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;hex&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;hash&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='response_from_curl_request'&gt;Response from curl request&lt;/h2&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// then cache/reuse this sessionID for future&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;header&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+        &lt;span class='s2'&gt;&amp;quot;hostname&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;someStringABC123&amp;quot;&lt;/span&gt;
+    &lt;span class='p'&gt;},&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;result&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+        &lt;span class='s2'&gt;&amp;quot;success&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+        &lt;span class='s2'&gt;&amp;quot;sessionID&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;777efa594291a1f4d804cb7192abc123&amp;quot;&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Hope this can help someone.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Remember `this` context in JavaScript functions</title>
+   <link href="http://d48.github.com/2012/11/28/remember-js-this-in-functions"/>
+   <updated>2012-11-28T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/28/remember-js-this-in-functions</id>
+   <content type="html">&lt;p&gt;Just need to remind myself of what &lt;code&gt;this&lt;/code&gt; refers to based on function scope and context. Was working through a bug that uses a variable within a namespace called by different functions. Since the function within the callback refers to &lt;code&gt;this.varName&lt;/code&gt;, it&amp;#8217;s context is important and has to be taken care of.&lt;/p&gt;
+
+&lt;p&gt;Given:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;doSomething&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+  &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;attribute&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;what up yo&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;init&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+  &lt;span class='c1'&gt;// this var inside doSomething is as expected to refer to object&lt;/span&gt;
+  &lt;span class='c1'&gt;// instantiated&lt;/span&gt;
+  &lt;span class='nx'&gt;doSomething&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+
+    &lt;span class='nx'&gt;someOtherFunction&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;woot&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+      &lt;span class='c1'&gt;// since this is a callback, the value of `this` var inside&lt;/span&gt;
+      &lt;span class='c1'&gt;// doSomething refers to window, this is not desired&lt;/span&gt;
+      &lt;span class='nx'&gt;doSomething&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+    &lt;span class='p'&gt;});&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>JavaScript function declaration vs function expression</title>
+   <link href="http://d48.github.com/2012/11/27/js-function-declarations"/>
+   <updated>2012-11-27T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/27/js-function-declarations</id>
+   <content type="html">&lt;p&gt;Given the code below:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='nx'&gt;alert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;fn&lt;/span&gt;&lt;span class='p'&gt;());&lt;/span&gt;
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;fn&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; 
+	&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;this is my function declaration&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Even though &lt;code&gt;fn&lt;/code&gt; is defined after the alert method, it will still be evaluated since &lt;strong&gt;function declarations&lt;/strong&gt; are parsed and evaluated before any expressions contained in scope.&lt;/p&gt;
+
+&lt;p&gt;There are some nuances on what makes a function a declaration or an expression. Some more code examples are below to show how this changes:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// function declaration because it&amp;#39;s part of a Program&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;foo&lt;/span&gt;&lt;span class='p'&gt;(){}&lt;/span&gt; 
+
+&lt;span class='c1'&gt;// function expression: due to grouping operator of the outside parens, similar to (var x = 5), this is considered an expression&lt;/span&gt;
+&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;foo&lt;/span&gt;&lt;span class='p'&gt;(){});&lt;/span&gt; 
+
+&lt;span class='c1'&gt;// function expression, since it&amp;#39;s part of an AssignmentExpression&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;bar&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;foo&lt;/span&gt;&lt;span class='p'&gt;(){};&lt;/span&gt; 
+
+&lt;span class='c1'&gt;// function expression, since it&amp;#39;s part of a NewExpression&lt;/span&gt;
+&lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;bar&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{};&lt;/span&gt;  
+
+&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(){&lt;/span&gt; 
+	&lt;span class='c1'&gt;// function declaration, since it&amp;#39;s part of a FunctionBody&lt;/span&gt;
+	&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;bar&lt;/span&gt;&lt;span class='p'&gt;(){};&lt;/span&gt; 	
+&lt;span class='p'&gt;})();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>MyTestimony design thoughts</title>
+   <link href="http://d48.github.com/2012/11/26/mytestimony-design-thoughts"/>
+   <updated>2012-11-26T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/26/mytestimony-design-thoughts</id>
+   <content type="html">&lt;p&gt;Just starting to go through and research different UI ideas for how to render MyTestimony website project I&amp;#8217;m working on. I&amp;#8217;m really excited to be able to have the opportunity to work on a website like this. I feel it honors God and will be a great tool for believers to use as well as help those that don&amp;#8217;t believe to learn about God and get inspired to search further.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#8217;s a sample screenshot of the mock for the wireframe of the home screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='mytestimony.com mockup' src='https://raw.github.com/design48/mytestimony/master/design/wireframes/wireframe-home-v1.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;There&amp;#8217;s still tons of things to do from design to development, to things like content writing so I&amp;#8217;ll just continue to work on it iteratively to keep making some progress. My goal is to complete the beta version by June 8, essentially my spiritual birthday when I came to fully believe and devote my life to Jesus. Thank you God.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Delegation Pattern</title>
+   <link href="http://d48.github.com/2012/11/17/delegation-pattern"/>
+   <updated>2012-11-17T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/17/delegation-pattern</id>
+   <content type="html">&lt;h1 id='definition'&gt;Definition&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Delegation&lt;/strong&gt; pattern is where an object, instead of performing one of its tasks, delegates the task to an associated helper object. The helper object is known as a &lt;strong&gt;delegate&lt;/strong&gt; and is given the responsibility to execute a task for the &lt;strong&gt;delegator&lt;/strong&gt;. This pattern is one of the fundamental abstraction patterns that underlie other software patterns such as &lt;strong&gt;composition&lt;/strong&gt;, &lt;strong&gt;mixins&lt;/strong&gt; and &lt;strong&gt;aspects&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;An example of a delegation pattern in &lt;strong&gt;JavaScript MVC&lt;/strong&gt; is the use of a &lt;em&gt;Sandbox&lt;/em&gt; or &lt;em&gt;Hub&lt;/em&gt; that delegates to a helper object like it&amp;#8217;s Application core which can then delegate again to it&amp;#8217;s Base Library. This is a concept that JavsScript guru Nicholas Zakas presents in his talks regarding &lt;a href='http://www.slideshare.net/nzakas/scalable-javascript-application-architecture'&gt;Scalable Javascript Application Architecture&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Named and anonymous functions</title>
+   <link href="http://d48.github.com/2012/11/15/secrets-js-book"/>
+   <updated>2012-11-15T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/15/secrets-js-book</id>
+   <content type="html">&lt;h1 id='from_secrets_of_a_javascript_ninja_book'&gt;From Secrets of a JavaScript Ninja book&lt;/h1&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// named function&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;myName&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c1'&gt;// anonymous function&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;myName2&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c1'&gt;// anonymous function defined as property&lt;/span&gt;
+&lt;span class='nb'&gt;window&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;myName3&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;named functions&lt;/strong&gt; can be defined after the function is called within a scope and it will be evaluated. This is also called &lt;strong&gt;forward-referencing&lt;/strong&gt;, a property that &lt;strong&gt;anonymous functions&lt;/strong&gt; don&amp;#8217;t have since they are assigned to variable or a property which can&amp;#8217;t be forward-referenced.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;forward-reference&lt;/strong&gt; in regards to functions means that no matter where in the scope that a function is defined, it will be accessible through that scope.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// testing function calls and if they are available when called&lt;/span&gt;
+&lt;span class='nx'&gt;assert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;myName&lt;/span&gt;&lt;span class='p'&gt;(),&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;works even though defined below&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='nx'&gt;assert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;myName2&lt;/span&gt;&lt;span class='p'&gt;(),&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;doesn&amp;#39;t work since defined below and assigned to variable&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;myName&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='p'&gt;};&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;myName2&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='p'&gt;};&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;myName3&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='p'&gt;};&lt;/span&gt;
+
+&lt;span class='nx'&gt;assert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;myName3&lt;/span&gt;&lt;span class='p'&gt;(),&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;works since defined before this assert called&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Serialization definition</title>
+   <link href="http://d48.github.com/2012/11/14/serialization-definition"/>
+   <updated>2012-11-14T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/14/serialization-definition</id>
+   <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;serialization&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;converting an object structure into text/binary form suitable for storing onto disk or transmitting over a network.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;deserialization&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;is the reverse process. Eg., a javascript object into json string&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='nx'&gt;foo&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='mi'&gt;4&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='mi'&gt;7&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='mi'&gt;8&lt;/span&gt;&lt;span class='p'&gt;],&lt;/span&gt; &lt;span class='nx'&gt;bar&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;baz&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c1'&gt;// serialize into json string&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='mi'&gt;4&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='mi'&gt;7&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='mi'&gt;8&lt;/span&gt;&lt;span class='p'&gt;],&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;baz&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>C# Lambda Expression</title>
+   <link href="http://d48.github.com/2012/11/13/lambda-expressions"/>
+   <updated>2012-11-13T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/13/lambda-expressions</id>
+   <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;lambda expression&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An anonymous function that you can use to create delegates or expression tree types. You can write local functions that can be passed as arguments or returned as the value of functions calls. They are particularly useful for writing LINQ query expressions, or .NET&amp;#8217;s feature to query and update data for various data stores.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>First-class functions</title>
+   <link href="http://d48.github.com/2012/11/12/first-class-functions"/>
+   <updated>2012-11-12T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/11/12/first-class-functions</id>
+   <content type="html">&lt;h1 id='definition'&gt;Definition&lt;/h1&gt;
+
+&lt;p&gt;A programming language is said to have &lt;strong&gt;first-class functions&lt;/strong&gt; if it treats its functions as &lt;strong&gt;first-class citizens&lt;/strong&gt;(an object, entity, or value), or an entity that can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned to a variable.&lt;/p&gt;
+
+&lt;p&gt;First-class functions are a necessity in a functional programming style, in which use of higher-order functions is a standard practice.&lt;/p&gt;
+
+&lt;p&gt;In mathematics and computer science, &lt;strong&gt;higher-order functions&lt;/strong&gt; (also functional form, functional, or functor) is a function that does at least one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;take one or more functions as an input&lt;/li&gt;
+
+&lt;li&gt;output a function&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Cross browser JavaScript log function</title>
+   <link href="http://d48.github.com/2012/11/04/cross-browser-js-log-fn"/>
+   <updated>2012-11-04T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/11/04/cross-browser-js-log-fn</id>
+   <content type="html">&lt;h1 id='to_try_for_ie'&gt;To try for IE&lt;/h1&gt;
+
+&lt;p&gt;More from Secrets from a JavaScript Ninja book. A cross-browser function to implement logging in debugging&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;try&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+		&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;apply&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;arguments&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+	&lt;span class='p'&gt;}&lt;/span&gt;
+	&lt;span class='k'&gt;catch&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;e&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+		&lt;span class='k'&gt;try&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+			&lt;span class='nx'&gt;opera&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;postError&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;apply&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;opera&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;arguments&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+		&lt;span class='p'&gt;}&lt;/span&gt;
+		&lt;span class='k'&gt;catch&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;e&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+			&lt;span class='nx'&gt;alert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;Array&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;join&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;call&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;arguments&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class='p'&gt;));&lt;/span&gt;
+		&lt;span class='p'&gt;}&lt;/span&gt;
+	&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>JavaScript Timers from Secrets from a JavaScript Ninja book</title>
+   <link href="http://d48.github.com/woot/2012/11/02/js-timers"/>
+   <updated>2012-11-02T00:00:00-07:00</updated>
+   <id>http://d48.github.com/woot/2012/11/02/js-timers</id>
+   <content type="html">&lt;h1 id='javascript_timers'&gt;Javascript Timers&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JavaScript engines only have a &lt;strong&gt;single thread&lt;/strong&gt;, forcing asynchronous events to&lt;br /&gt;queue waiting for execution.&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;setTimeout&lt;/code&gt; and &lt;code&gt;setInterval&lt;/code&gt; are fundamentally different in how they execute asynchronous code.&lt;/li&gt;
+
+&lt;li&gt;If a timer is blocked from immediately being executed it will be delayed until the next possible time of execution (which will be longer than the desired delay).&lt;/li&gt;
+
+&lt;li&gt;Intervals may execute back-to-back with no delay if they take long enough to execute (longer than the specified delay).&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Secrets of a Javascript Ninja</title>
+   <link href="http://d48.github.com/2012/11/01/javascript-ninja-book"/>
+   <updated>2012-11-01T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/11/01/javascript-ninja-book</id>
+   <content type="html">&lt;h1 id='book_notes'&gt;Book notes&lt;/h1&gt;
+
+&lt;p&gt;Starting to read this book from John Resig. It&amp;#8217;s promising as it cites core of Javascript regarding &lt;strong&gt;objects, function, and closures&lt;/strong&gt;, and how the use of timers and regular expressions in popular javascript libraries can help you write better web applications.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve been digging into coding cross-browser javascript for my current place of work at &lt;a href='http://www.blackline.com'&gt;BlackLine&lt;/a&gt; so I&amp;#8217;m looking forward to learning more of how John contributed to the &lt;em&gt;jQuery&lt;/em&gt; library and insights from those efforts.&lt;/p&gt;
+
+&lt;h1 id='things_to_consider'&gt;Things to consider&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Best practices: testing and perforamnce analysis&lt;/li&gt;
+
+&lt;li&gt;simple assert function will do&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id='quote'&gt;Quote&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Robert Frost wrote that good fences make good neighbors, but in the world of web applications, indeed any programming discipline, good tests make good code.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id='on_testing'&gt;On Testing&lt;/h1&gt;
+
+&lt;p&gt;Good test exhibit 3 characteristics:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Repeatability&lt;/strong&gt; - tests should be highly reproducible and have the same results.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Simplicity&lt;/strong&gt; - tests should focus on one thing.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Independence&lt;/strong&gt; - tests should execute in isolation, break them down in smallest possible unit, which helps determine the source of bugs&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>MongoDB embedded collections</title>
+   <link href="http://d48.github.com/2012/10/25/mongodb-embedded-collections"/>
+   <updated>2012-10-25T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/25/mongodb-embedded-collections</id>
+   <content type="html">&lt;h1 id='designing_mongodb_schemas_with_embedded_and_bucket_structures'&gt;Designing MongoDB Schemas with embedded and bucket structures&lt;/h1&gt;
+
+&lt;p&gt;I found this link to a &lt;a href='https://openshift.redhat.com/community/blogs/designing-mongodb-schemas-with-embedded-non-embedded-and-bucket-structures'&gt;blog article&lt;/a&gt; on how to define your MongoDB schema and make choices for &lt;strong&gt;embedded&lt;/strong&gt; and &lt;strong&gt;non-embedded&lt;/strong&gt; structures, as well as the use of buckets.&lt;/p&gt;
+
+&lt;p&gt;The main takeways are at the conclusion:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The nature of MongoDB and storage strategy is that you have the ability to change the structure. This allows you to move from simple to more complex strategies at will&lt;/li&gt;
+
+&lt;li&gt;Starting simple, can maintain development velocity early and migrate to a more scalable strategy as the need arises. I like this as I will be testing a small feature for the &lt;a href='https://github.com/design48/mytestimony'&gt;mytestimony web app&lt;/a&gt; project I want to implement.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;More and more I&amp;#8217;m liking MongoDB because of the easy nature of working with JSON data, and MongoDB&amp;#8217;s api for database queries are straight forward.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Getting command-T to work in Windows vim</title>
+   <link href="http://d48.github.com/2012/10/24/commandt-window"/>
+   <updated>2012-10-24T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/24/commandt-window</id>
+   <content type="html">&lt;h1 id='some_notes'&gt;some notes&lt;/h1&gt;
+
+&lt;p&gt;Just wanted to record what I did to get command-T working on a windows machine. There were problems with the ruby and gcc compilation of the plugin so I needed to make sure I had the correct versions of each to what the command-T plugin was built.&lt;/p&gt;
+
+&lt;p&gt;So some steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Made sure I installed vim 7.3 with +ruby support&lt;/li&gt;
+
+&lt;li&gt;Made sure I had a Ruby version of 1.9.1 that was used to compile command-T&lt;/li&gt;
+
+&lt;li&gt;Had the gcc compiler so I can remake/compile the command-T plugin with ruby&lt;/li&gt;
+
+&lt;li&gt;Run these commands in the ~.vim/bundle/command-t/ruby/command-t folder&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;$ ruby extconf.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ make&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And then I was able to &lt;code&gt;ctrl+t&lt;/code&gt; while in vim and voila. yay :thumbsup:&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Understanding CSS Specificity</title>
+   <link href="http://d48.github.com/2012/10/17/css-specificity"/>
+   <updated>2012-10-17T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/17/css-specificity</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;CSS Specificity&lt;/strong&gt; is what&amp;#8217;s used by web browsers to determine how the page components and elements should be styled, eg., font size, color, widths, etc. In order for me to remember specificity, here&amp;#8217;s a couple good ways to remember:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element. So in:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;body #content .data img:hover&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;the specificity value would be 122 (0,1,2,2 or 0122): 100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;style attribute is inline-style on an html element like &lt;code&gt;&amp;lt;p style=&amp;quot;color: 
+red&amp;quot;&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;styles type=&amp;quot;text/css&amp;quot;&amp;gt;&lt;/code&gt; block.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alternative way: “Count the number of ID attributes in the selector (= a). Count the number of other attributes and pseudo-classes in the selector (= b). Count the number of element names and pseudo-elements in the selector (= c). Concatenating the three numbers &lt;strong&gt;a-b-c gives the specificity&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More info from here: &lt;a href='http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know'&gt;http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Factory pattern</title>
+   <link href="http://d48.github.com/2012/10/16/factory-pattern"/>
+   <updated>2012-10-16T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/16/factory-pattern</id>
+   <content type="html">&lt;p&gt;Pattern where different objects of a class are created depending on parameters passed through to it. The &lt;em&gt;factory&lt;/em&gt; configures the object based on what is declared.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// example of Factory&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;car&lt;/span&gt;        &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;VehicleMaker&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;car&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;motorcycle&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;VehicleMaker&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;motorcycle&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;bike&lt;/span&gt;       &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;VehicleMaker&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;bike&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+
+&lt;span class='nx'&gt;car&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;info&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt; &lt;span class='c1'&gt;// &amp;#39;car&amp;#39; has 4 wheels and a v6 engine&lt;/span&gt;
+&lt;span class='nx'&gt;motorcycle&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;info&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt; &lt;span class='c1'&gt;// &amp;#39;motorcycle&amp;#39; has 2 wheels and a v-twin engine&lt;/span&gt;
+&lt;span class='nx'&gt;bike&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;info&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt; &lt;span class='c1'&gt;// &amp;#39;bike&amp;#39; has 2 wheels and no engine&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Dependency Injection</title>
+   <link href="http://d48.github.com/2012/10/15/dependency-injection"/>
+   <updated>2012-10-15T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/15/dependency-injection</id>
+   <content type="html">&lt;h1 id='overview'&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;Dependency Injection, or DI, is a software design pattern that allows a choice of component to be made at run-time rather than at compile time. Often used via a config file, eg. Web.config, package.json, etc.&lt;/p&gt;
+
+&lt;p&gt;Has 3 elements:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;a &lt;strong&gt;dependent&lt;/strong&gt; consumer&lt;/li&gt;
+
+&lt;li&gt;a declaration of a component&amp;#8217;s &lt;strong&gt;dependencies&lt;/strong&gt; defined as interface contracts&lt;/li&gt;
+
+&lt;li&gt;an &lt;strong&gt;injector&lt;/strong&gt; sometimes referred to as &lt;strong&gt;provider&lt;/strong&gt; or &lt;strong&gt;container&lt;/strong&gt; that creates instance of classes that implement a dependency interface on request&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id='benefits'&gt;Benefits&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Can have multiple implementations of a single software component&lt;/li&gt;
+
+&lt;li&gt;provide &amp;#8220;mocks&amp;#8221; for unit testing&lt;/li&gt;
+
+&lt;li&gt;locating plugin components&lt;/li&gt;
+
+&lt;li&gt;initializing software services (eg., config file on heroku to spin up instance)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id='examples'&gt;Examples&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;load plugins dynamically&lt;/li&gt;
+
+&lt;li&gt;provide mock objects for testing&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>guard-livereload notes</title>
+   <link href="http://d48.github.com/2012/10/14/livereload-notes"/>
+   <updated>2012-10-14T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/14/livereload-notes</id>
+   <content type="html">&lt;h1 id='livereload'&gt;livereload&lt;/h1&gt;
+
+&lt;p&gt;Was having issues running guard-livereload on updated macbook air machine.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; reinstall &lt;code&gt;rvm&lt;/code&gt; and &lt;code&gt;brew update&lt;/code&gt;, stashing &lt;code&gt;/usr/local&lt;/code&gt; updates and &lt;code&gt;brew install&lt;/code&gt; any missing dependencies/packages that &lt;code&gt;brew doctor&lt;/code&gt; mentioned&lt;/p&gt;
+
+&lt;p&gt;Running &lt;code&gt;sudo gem install guard-livereload&lt;/code&gt; as well as &lt;code&gt;sudo gem install rb-fsevents&lt;/code&gt; after from recommendation in running &lt;code&gt;guard&lt;/code&gt; fixed everything. Woot&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Node.js and networking i/o</title>
+   <link href="http://d48.github.com/2012/10/08/nodejs-networking-io"/>
+   <updated>2012-10-08T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/08/nodejs-networking-io</id>
+   <content type="html">&lt;h1 id='book_notes__learn_nodejs_in_24_hours'&gt;Book notes : Learn Node.js in 24 hours&lt;/h1&gt;
+
+&lt;p&gt;The terms &lt;em&gt;synchronous&lt;/em&gt; and blocking can be used interchangeably and refer to an example where execution of code stops until a function returns. A script is not able to continue if an operation blocks, and for the end user, this means that they simply have to wait.&lt;/p&gt;
+
+&lt;p&gt;The terms &lt;em&gt;asynchronous&lt;/em&gt; and non-blocking can also be used interchangeably and refer to the callback-based approach of allowing a script to perform operations in parallel. A script does not need to wait for the outcome of an operation before proceeding as this will be handled by callback when the event happens. Using the asynchronous approach, operations no longer have to happen one after another.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// example of synchronous/blocking functions&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;myName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;arg1&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;arg2&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='c1'&gt;//do something&lt;/span&gt;
+	&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;something&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;myName2&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='c1'&gt;//do something&lt;/span&gt;
+	&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;somethingElse&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='nx'&gt;myName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;woot&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='nx'&gt;woot&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='nx'&gt;myName2&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+
+
+
+
+
+&lt;span class='c1'&gt;// example of asynchronous functions&lt;/span&gt;
+
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;http&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;myName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;arg1&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;arg2&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='c1'&gt;//do something with args&lt;/span&gt;
+	&lt;span class='c1'&gt;//callback stuff to do&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;myName2&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='nx'&gt;http&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;get&lt;/span&gt;&lt;span class='p'&gt;({&lt;/span&gt; &lt;span class='nx'&gt;host&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;google.com&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;},&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;response&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+		&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;response returned&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;response&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+	&lt;span class='p'&gt;}).&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;error&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;e&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+		&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;there was an error: &amp;#39;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;e&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+	&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Pragmatic Programmer book</title>
+   <link href="http://d48.github.com/2012/10/04/pragmatic-book"/>
+   <updated>2012-10-04T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/04/pragmatic-book</id>
+   <content type="html">&lt;h1 id='book_notes_on_metadata_driven_applications'&gt;Book notes on Meta-Data driven applications&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Metadata&lt;/strong&gt; is used to define preferences or configuration details for an application at runtime, not compile time, so as to provide implementation details to achieve greater flexibility in the code, as well as adapt to ever-changing requirements and needs of business use.&lt;/p&gt;
+
+&lt;h2 id='goals'&gt;Goals&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;to think declaratively (specifying &lt;em&gt;what&lt;/em&gt; is to be done, not &lt;em&gt;how&lt;/em&gt;)&lt;/li&gt;
+
+&lt;li&gt;create highly adaptable and dynamic programs (not get stuck in one way/solution)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='why_we_would_use'&gt;Why we would use&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Business policy and rules change&lt;/li&gt;
+
+&lt;li&gt;Dodo bird analogy: species that don&amp;#8217;t adapt to the ever-changing environment, die.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='how_to_achieve'&gt;How to achieve&lt;/h2&gt;
+
+&lt;p&gt;Adopt this general rule:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Program for the general case, then provide the specifics somewhere else, outside the compiled code&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id='benefits'&gt;Benefits:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It forces you to decouple your design&lt;/li&gt;
+
+&lt;li&gt;Forces you to create a more abstract, robust design by deferring details - providing later outside of the program&lt;/li&gt;
+
+&lt;li&gt;Customize the application without recompiling it (ex. CSS can be a type of implementation detail, but more specifically and traditionally a config file in xml or json)&lt;/li&gt;
+
+&lt;li&gt;May be able to implement different projects using same application engine but with different metadata (ex., widgets enabled/disabled, language files, dev vs production)&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Agile Development</title>
+   <link href="http://d48.github.com/2012/10/02/agile-development"/>
+   <updated>2012-10-02T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/10/02/agile-development</id>
+   <content type="html">&lt;h2 id='overview_of_some_terms'&gt;Overview of some terms&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;product backlog&lt;/strong&gt; is the list of all user stories the team will deliver for the product.&lt;/li&gt;
+
+&lt;li&gt;A &lt;strong&gt;user story&lt;/strong&gt; describes what the system should do, in a way that emphasizes value to a user or customer. It is usually written in one or two sentences of everyday language.&lt;/li&gt;
+
+&lt;li&gt;A best practice for user stories is to write them from the point of view of the user. This template is often used: As &lt;em&gt;who&lt;/em&gt;, I want &lt;em&gt;what&lt;/em&gt;, so that &lt;em&gt;why&lt;/em&gt;.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Story points&lt;/strong&gt; are a unit of measure for expressing the overall size of a user story. Story points are relative. A story that is assigned four points should require twice as much effort as a story that is assigned two points.&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Use case for HTTP method - HEAD</title>
+   <link href="http://d48.github.com/2012/09/19/use-case-for-http-method-head"/>
+   <updated>2012-09-19T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/09/19/use-case-for-http-method-head</id>
+   <content type="html">&lt;h1 id='use_case_for_http_method__head'&gt;Use case for HTTP method - HEAD&lt;/h1&gt;
+
+&lt;p&gt;This method can be used for obtaining metainformation about the entity implied by the request without transferring the entity-body itself. This method is often used for testing hypertext links for validity, accessibility, and recent modification.&lt;/p&gt;
+
+&lt;p&gt;Very cool.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Learning Coffeescript</title>
+   <link href="http://d48.github.com/2012/09/18/coffeescript"/>
+   <updated>2012-09-18T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/09/18/coffeescript</id>
+   <content type="html">&lt;h1 id='learning_coffeescript'&gt;Learning Coffeescript&lt;/h1&gt;
+
+&lt;p&gt;I will be implementing the mytestimony project using Coffeescript to accomplish a few things.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. Learn new technology
+2. Decrease code in repository
+3. Attempt to have code more readable and maintainable&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I just came across this &lt;a href='http://coffeescript.codeschool.com/'&gt;Codeschool&lt;/a&gt; screencast and also this &lt;a href='http://railscasts.com/episodes/267-coffeescript-basics?view=asciicast'&gt;Railscast video&lt;/a&gt;. They both got me jazzed to learn it and can&amp;#8217;t wait to build the app. Now i&amp;#8217;m looking through a few and learning some basics. I really like how clean the language is.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Working with MongoDB</title>
+   <link href="http://d48.github.com/2012/09/01/working-with-mongodb"/>
+   <updated>2012-09-01T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/09/01/working-with-mongodb</id>
+   <content type="html">&lt;h1 id='working_with_mongodb'&gt;Working with MongoDB&lt;/h1&gt;
+
+&lt;p&gt;Today I was looking through the MongoDB docs learning how to create and query a collection, here&amp;#8217;s a few helpful commands to insert, query, and filter through some document sets. I&amp;#8217;m really liking it and forward to building an app for the MyTestimony.com idea I&amp;#8217;ve been wanting to do.&lt;/p&gt;
+
+&lt;p&gt;Given a MongoDB collection below:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='s2'&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ObjectId&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;5042743d26af8681f05582f9&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;testimony&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;This is my sample testimonty&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Ryan&amp;quot;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='s2'&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ObjectId&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;504277f826af8681f0558314&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;testimony&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Once upon a time it was like this&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Reginald&amp;quot;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='s2'&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ObjectId&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;50427d01e4ba90f9269360bf&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Rya&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;testimony&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;God is awesome&amp;quot;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='s2'&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ObjectId&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;50427d3ce4ba90f9269360c0&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Rya&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;testimony&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;God is awesome&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;tags&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
+			&lt;span class='s2'&gt;&amp;quot;cool&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;awesome&amp;quot;&lt;/span&gt;
+			&lt;span class='p'&gt;]&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='s2'&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ObjectId&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;50427d77e4ba90f9269360c1&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Rya&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;testimony&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;God is awesome&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;tags&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
+			&lt;span class='s2'&gt;&amp;quot;cool&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;awesome&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;fantastic&amp;quot;&lt;/span&gt;
+			&lt;span class='p'&gt;]&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='s2'&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ObjectId&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;50428194e4ba90f9269360c2&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Ray&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;testimony&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;God is so faithful&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;tags&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
+			&lt;span class='s2'&gt;&amp;quot;cool&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;awesome&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;fantastic&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+		&lt;span class='s2'&gt;&amp;quot;glorious&amp;quot;&lt;/span&gt;
+			&lt;span class='p'&gt;]&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id='to_obtain_all_documents'&gt;To obtain all documents&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ db.collectioname.find();&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id='to_obtain_all_documents_that_have_tags'&gt;To obtain all documents that have &amp;#8220;tags&amp;#8221;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ db.collectioname.find( { tags: {$exists: true} } );&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id='to_obtain_all_documents_that_have_tags_with_cool_key_in_the_array'&gt;To obtain all documents that have &amp;#8220;tags&amp;#8221; with &amp;#8216;cool&amp;#8217; key in the array&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ db.collectioname.find( { tags: { $all : [&amp;#39;cool&amp;#39;] }} );&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id='to_obtain_first_10_documents_in_a_collection'&gt;To obtain first 10 documents in a collection&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ db.collectioname.find().limit(10);&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id='to_obtain_next_10_documents_in_a_collection_with_offset_of_5'&gt;To obtain next 10 documents in a collection with offset of 5&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ db.collectioname.find().skip(5).limit(10);&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id='to_return_all_documents_only_showing_tags_field'&gt;To return all documents only showing &amp;#8220;tags&amp;#8221; field&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ db.collectioname.find( {}, { tags: 1 } );&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id='to_return_all_documents_only_with_specified_value_only_returning_tags_key'&gt;To return all documents only with specified value only returning &amp;#8220;tags&amp;#8221; key&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ db.collectioname.find( {tags: {$all: [&amp;#39;cool&amp;#39;]} }, {tags: 1} );&lt;/code&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>PHP and pass by reference</title>
+   <link href="http://d48.github.com/2012/08/24/php-pass-reference"/>
+   <updated>2012-08-24T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/08/24/php-pass-reference</id>
+   <content type="html">&lt;h1 id='pass_by_reference'&gt;Pass by reference&lt;/h1&gt;
+
+&lt;p&gt;You can pass a variable by reference to a function so the function can modify the variable. It&amp;#8217;s basically a pointer to the variable so if it&amp;#8217;s modified within a function, it&amp;#8217;s &amp;#8216;globally&amp;#8217; modified or within the scope of execution outside where it&amp;#8217;s referenced. Syntax below:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='o'&gt;&amp;lt;?&lt;/span&gt;&lt;span class='nx'&gt;php&lt;/span&gt; 
+	&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;foo&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='o'&gt;&amp;amp;&lt;/span&gt;&lt;span class='nx'&gt;$arg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+	&lt;span class='p'&gt;{&lt;/span&gt;	
+		&lt;span class='nx'&gt;$arg&lt;/span&gt;&lt;span class='o'&gt;++&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;		
+	&lt;span class='p'&gt;}&lt;/span&gt;
+
+	&lt;span class='nx'&gt;$var&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;5&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='nx'&gt;foo&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;$var&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;	&lt;span class='c1'&gt;// $var is 6&lt;/span&gt;
+&lt;span class='o'&gt;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Tightly Coupled Code</title>
+   <link href="http://d48.github.com/2012/07/29/tightly-coupled"/>
+   <updated>2012-07-29T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/07/29/tightly-coupled</id>
+   <content type="html">&lt;h1 id='tightly_coupled_code'&gt;Tightly Coupled Code&lt;/h1&gt;
+
+&lt;p&gt;Why is this bad? It increases the risk that a change to unrelated code somewhere in the system can effect your code.&lt;/p&gt;
+
+&lt;p&gt;If &lt;em&gt;n objects&lt;/em&gt; know about each other, a change to one object may need the other &lt;em&gt;n-1&lt;/em&gt; objects to be updated.&lt;/p&gt;
+
+&lt;h1 id='law_of_demeter_for_functions'&gt;Law of Demeter for functions&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;attempts to minimize coupling between modules in any given program by limiting an objects reach to another objects&amp;#8217;s methods&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;this law states that any method of an object should only call methods belonging to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;itself&lt;/li&gt;
+
+&lt;li&gt;any parameters passed into the method&lt;/li&gt;
+
+&lt;li&gt;any objects it created&lt;/li&gt;
+
+&lt;li&gt;any directly held component objects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>this in JavaScript</title>
+   <link href="http://d48.github.com/2012/06/29/this-js"/>
+   <updated>2012-06-29T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/06/29/this-js</id>
+   <content type="html">&lt;h2 id='_keyword'&gt;&lt;code&gt;this&lt;/code&gt; keyword&lt;/h2&gt;
+
+&lt;p&gt;When talking about &lt;strong&gt;execution contexts&lt;/strong&gt; for a script, the context contains references to various elements that represent state within a program to be managed according to the current logical scope. So how is the current value of &lt;code&gt;this&lt;/code&gt; determinted in Javascript?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;this&lt;/code&gt; declarted in functions refer to the global context and it would be defined as &lt;code&gt;window&lt;/code&gt; in a browser or &lt;code&gt;global&lt;/code&gt; in Node.&lt;/li&gt;
+
+&lt;li&gt;If you specify &lt;code&gt;use strict&lt;/code&gt; within that function, &lt;code&gt;this&lt;/code&gt; would then be &lt;code&gt;undefined&lt;/code&gt; instead.&lt;/li&gt;
+
+&lt;li&gt;If control enters a constructor like &lt;code&gt;new someObject()&lt;/code&gt;, the &lt;code&gt;this&lt;/code&gt; value will refer to the current object.&lt;/li&gt;
+
+&lt;li&gt;So if a function is called on an object, or by using the &lt;code&gt;new&lt;/code&gt; operator, then the value of &lt;code&gt;this&lt;/code&gt; will be the current instance of the object, otherwise it will be the global context (or &lt;code&gt;undefined&lt;/code&gt; in strict mode).&lt;/li&gt;
+
+&lt;li&gt;The value of &lt;code&gt;this&lt;/code&gt; is dependent on how a function is called.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='examples'&gt;Examples&lt;/h2&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;someName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;x&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+  &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;x&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='nx'&gt;someName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='c1'&gt;// `this` refers to the global object, window&lt;/span&gt;
+
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;someName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;x&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='s1'&gt;&amp;#39;use strict&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+  &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;x&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='nx'&gt;someName&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='c1'&gt;// `this` is undefined&lt;/span&gt;
+
+
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;Box&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;x&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;4&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;y&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='mi'&gt;10&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;rectangle&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;Box&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt; &lt;span class='c1'&gt;// `this` refers to the instance, in this case `rectangle`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Javascript - Types of Data</title>
+   <link href="http://d48.github.com/2012/06/14/types-of-data-js"/>
+   <updated>2012-06-14T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/06/14/types-of-data-js</id>
+   <content type="html">&lt;h2 id='primitive_and_reference_values'&gt;Primitive and Reference Values&lt;/h2&gt;
+
+&lt;p&gt;ECMAScript variables may contain two different types of data: primitive values and reference values. &lt;strong&gt;Primitive values&lt;/strong&gt; are simple atomic pieces of data, while &lt;strong&gt;reference values&lt;/strong&gt; are objects that may be made up of multiple values.&lt;/p&gt;
+
+&lt;p&gt;When a value is assigned to a variable, the JavaScript engine must determine if it&amp;#8217;s a primitive or a reference. The five primitive types were discussed in the previous chapter: Undefi ned, Null, Boolean, Number, and String. These variables are said to be accessed by &lt;strong&gt;value&lt;/strong&gt;, because you are manipulating the actual value stored in the variable.&lt;/p&gt;
+
+&lt;p&gt;Reference values are objects stored in memory. Unlike other languages, JavaScript does not permit direct access of memory locations, so direct manipulation of the object&amp;#8217;s memory space is not allowed. When you manipulate an object, you&amp;#8217;re really working on a reference to that object rather than the actual object itself. For this reason, such values are said to be accessed by &lt;strong&gt;reference&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;How two primitives data types (variables) are assigned reference values (Objects) and are created that point to 2 different areas in the heap:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;a&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nb'&gt;Object&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;b&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;a&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='c1'&gt;// these point to the same object in the heap&lt;/span&gt;
+
+&lt;span class='c1'&gt;// assigning another variable c = new Object(); would point to a different object on the heap&lt;/span&gt;
+&lt;span class='c1'&gt;// which would mean a != c even though the properties within those 2 objects are null or undefined&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img alt='reference values' src='http://content.screencast.com/users/User48/folders/Jing/media/5c64e640-77fb-4660-9689-999cf2e9b7de/2012-06-14_0059.png' /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;heap&lt;/strong&gt;: dynamically allocated memory&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>High-Cohesion</title>
+   <link href="http://d48.github.com/2012/06/10/high-cohesion"/>
+   <updated>2012-06-10T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/06/10/high-cohesion</id>
+   <content type="html">&lt;h2 id='cohesion'&gt;Cohesion&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Cohesion&lt;/strong&gt; is a measure of how strongly-related or focused the responsibilities of a single module are. As applied to object-oriented programming, if the methods that serve the given class tend to be similar in many aspects, then the class is said to have high cohesion. In a highly-cohesive system, code readability and the likelihood of reuse is increased, while complexity is kept manageable.&lt;/p&gt;
+
+&lt;p&gt;To achieve high-cohesion&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Functionality in a class accessed through its methods are similar&lt;/li&gt;
+
+&lt;li&gt;The methods carry out similar activities, using fine-grained or closely related data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;encapsulation&lt;/strong&gt; extent to how much a class or object reveals its implementation details. These are essentially self-contained building blocks that can easily be modified and pieced together to create larger applications.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Book Notes - Mediator Pattern</title>
+   <link href="http://d48.github.com/2012/06/04/js-pattern-mediator"/>
+   <updated>2012-06-04T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/06/04/js-pattern-mediator</id>
+   <content type="html">&lt;h2 id='mediator_pattern'&gt;Mediator Pattern&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Tight coupling&lt;/strong&gt; - When objects know too much about each other and communicate directly; calling each other&amp;#8217;s methods and changing properties.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Mediator pattern promotes &lt;strong&gt;loose coupling&lt;/strong&gt; and helps improve maintainability since updating an object is contained within itself and won&amp;#8217;t effect others. Independent objects (colleagues) do not communicate directly but through a &lt;strong&gt;mediator&lt;/strong&gt; object. When one of the colleagues change state, it notifies the mediator and the mediator handles communicating that change to the colleagues that should know about it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='mediator pattern' src='http://content.screencast.com/users/User48/folders/Jing/media/9d0d4d3b-1f24-4879-9714-eb0b93951baf/00000033.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://jspatterns.com/book/7/mediator.html'&gt;Demo for mediator pattern&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Backbone Notes - Controllers</title>
+   <link href="http://d48.github.com/2012/06/02/backbone-controllers"/>
+   <updated>2012-06-02T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/06/02/backbone-controllers</id>
+   <content type="html">&lt;h2 id='controllers'&gt;Controllers&lt;/h2&gt;
+
+&lt;p&gt;Controllers are an intermediary between models and views which are classically responsible for two tasks: they both update the view when the model changes and update the model when the user manipulates the view.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So does Backbone.js have Controllers?&lt;/em&gt; Not really. Backbone&amp;#8217;s Views typically contain &amp;#8220;controller&amp;#8221; logic, and Routers are used to help manage application state, but neither are true Controllers according to classical MVC.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Book Notes - Observer Pattern</title>
+   <link href="http://d48.github.com/2012/05/30/observer-pattern"/>
+   <updated>2012-05-30T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/05/30/observer-pattern</id>
+   <content type="html">&lt;h2 id='observer_pattern'&gt;Observer Pattern&lt;/h2&gt;
+
+&lt;p&gt;Also called &lt;em&gt;subscriber/publisher&lt;/em&gt; pattern, it&amp;#8217;s mainly used to promote loose coupling between your pieces of code. An object subscribes to anothers object&amp;#8217;s specific activity and gets notified. The subscriber is also called &lt;strong&gt;observer&lt;/strong&gt;, while the object being observed is called &lt;strong&gt;publisher&lt;/strong&gt; or &lt;strong&gt;subject&lt;/strong&gt;. The publisher notifies or calls all the subscribers when an important event occurs and may often pass a message in the form of an event object.&lt;/p&gt;
+
+&lt;p&gt;I believe this is the pattern used in Backbone.js with the models and views setup and how a view essentially watches or has &lt;em&gt;subscribed&lt;/em&gt; for model changes and updates based on that change.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Book Notes - Refactoring</title>
+   <link href="http://d48.github.com/2012/05/16/refactoring"/>
+   <updated>2012-05-16T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/05/16/refactoring</id>
+   <content type="html">&lt;h2 id='book_notes__refactoring__tip'&gt;Book Notes - Refactoring : Tip&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;When you find you have to add a feature to a program, and the program&amp;#8217;s code is not structured in a convenient way to add the feature, first refactor the program to make iteasy to add the feature, then add the feature.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;First Step in Refactoring:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure your refactoring doesn&amp;#8217;t introduce bugs.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Build a set of solid test cases for that code.&lt;/li&gt;
+
+&lt;li&gt;Make the tests self-checking: check for validity of expected value and actual value.&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Book: Pragmatic Programmer</title>
+   <link href="http://d48.github.com/2012/05/13/pragprog-notes"/>
+   <updated>2012-05-13T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/05/13/pragprog-notes</id>
+   <content type="html">&lt;h2 id='book_notes'&gt;Book notes&lt;/h2&gt;
+
+&lt;p&gt;Exercises in refactoring code using:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kr'&gt;public&lt;/span&gt; &lt;span class='kr'&gt;class&lt;/span&gt; &lt;span class='nx'&gt;Square&lt;/span&gt; &lt;span class='kr'&gt;extends&lt;/span&gt; &lt;span class='nx'&gt;Shape&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='kr'&gt;public&lt;/span&gt; &lt;span class='nx'&gt;Square&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kr'&gt;double&lt;/span&gt; &lt;span class='nx'&gt;size&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+        &lt;span class='kr'&gt;super&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;size&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+ 
+ 
+&lt;span class='kr'&gt;public&lt;/span&gt; &lt;span class='kr'&gt;class&lt;/span&gt; &lt;span class='nx'&gt;Window&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='kr'&gt;private&lt;/span&gt; &lt;span class='nx'&gt;Shape&lt;/span&gt; &lt;span class='nx'&gt;shape&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='kr'&gt;public&lt;/span&gt; &lt;span class='nx'&gt;Window&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;Shape&lt;/span&gt; &lt;span class='nx'&gt;shape&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+        &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;shape&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;shape&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Subclassing vs. Delegation. Difference that an object is a &amp;#8216;kind-of&amp;#8217; of something vs. the object &amp;#8216;has-a&amp;#8217; characteristic, respectively.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Circle is a kind-of shape = Use subclasses&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;A Window has-a shape = Delegation&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Book Notes - Code Easy to Test</title>
+   <link href="http://d48.github.com/2012/05/13/code-easy-to-test"/>
+   <updated>2012-05-13T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/05/13/code-easy-to-test</id>
+   <content type="html">&lt;h2 id='unit_testing'&gt;Unit Testing&lt;/h2&gt;
+
+&lt;p&gt;Testing done on each module, in isolation, to verify its behavior. Typically will establish an artificial environment, then invoke routines on the module being tested.&lt;/p&gt;
+
+&lt;h2 id='test_against_contract'&gt;Test Against Contract&lt;/h2&gt;
+
+&lt;p&gt;Test that the module delivers the functionality it promises, over a wide range of test cases and boundary conditions.&lt;/p&gt;
+
+&lt;p&gt;Module may be dependent on other modules, so how do we test? One approach is to test subcomponents contarct in full of a module first thoroughly. Once that has been verified, then the module itself can be tested.&lt;/p&gt;
+
+&lt;p&gt;Hepful in debugging: If Module A tests failed but its dependent modules 1a and 2a tests have passed, can be pretty sure issue is in Module A, and not waste time reexamining its dependent modules. Purpose is to avoid disasters that may come up down the line.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;When you design a module or single routine, design both its contract and the the code to test that contract. This may take care of boundary conditions and other issues.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id='test_harness'&gt;Test Harness&lt;/h2&gt;
+
+&lt;p&gt;Handle common operations such as:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;logging status&lt;/li&gt;
+
+&lt;li&gt;analyzing output for expected results&lt;/li&gt;
+
+&lt;li&gt;selecting and running the tests&lt;/li&gt;
+
+&lt;li&gt;standardized form of failture reporting&lt;/li&gt;
+
+&lt;li&gt;specify setup and cleanup&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In OO languages and envrionments, might create a base class that provides these common operations.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Logs are helpful once application is in production environment to see what&amp;#8217;s going on internally.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Use of &amp;#8216;hot-key&amp;#8217; sequence to launch a diagnostic control window with status message and information. &amp;#8216;Easter Egg&amp;#8217; for debugging.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Markdown Editor</title>
+   <link href="http://d48.github.com/2012/05/05/markdown-editor"/>
+   <updated>2012-05-05T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/05/05/markdown-editor</id>
+   <content type="html">&lt;h2 id='yeah_i_dig_markdown'&gt;Yeah, I dig Markdown&lt;/h2&gt;
+
+&lt;p&gt;Just came across this editor. Pretty slick. Shortcuts for editing and also has export to HTML. Looking into this for automating a hosted blog.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='mouapp' src='http://content.screencast.com/users/User48/folders/Jing/media/24d8fe1e-0f60-43f4-a564-21499c2bf516/00000026.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check it out, it&amp;#8217;s called &lt;a href='http://mouapp.com/'&gt;Mou&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Caching and Akavache</title>
+   <link href="http://d48.github.com/2012/04/29/caching-and-akavache"/>
+   <updated>2012-04-29T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/04/29/caching-and-akavache</id>
+   <content type="html">&lt;h2 id='caching_with_akavache'&gt;Caching with Akavache&lt;/h2&gt;
+
+&lt;p&gt;Github just posted this about Akavache, a library to allow for creating cache store for writing native desktop and mobile application in C#. I&amp;#8217;m creating a web/mobile application that I want to design taking caching and fetching remote data into consideration while still keeping the UI responsive, even in offline mode.&lt;/p&gt;
+
+&lt;p&gt;Learn more about &lt;a href='https://github.com/blog/1113-akavache-is-now-open-source'&gt;Akavache&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>CSS box-sizing to handle cross-browser layout</title>
+   <link href="http://d48.github.com/2012/04/18/css-box-sizing"/>
+   <updated>2012-04-18T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/04/18/css-box-sizing</id>
+   <content type="html">&lt;h2 id='css_and_boxsizing_property'&gt;CSS and box-sizing property&lt;/h2&gt;
+
+&lt;p&gt;I just came across &lt;a href='http://paulirish.com/2012/box-sizing-border-box-ftw/'&gt;this blog post from Paul Irish&lt;/a&gt; and I&amp;#8217;m eager to use this once I&amp;#8217;m on a project that doesn&amp;#8217;t need to support IE7 natively, although there is a polyfill, or &lt;a href='https://github.com/Schepp/box-sizing-polyfill'&gt;plugin/method, available to handle it on github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This basially allows you to define how boxes in your layout will handle padding when content is inside. Before this box-sizing property was used, users would often have to modify their predfined width/height setting to accomodate if content filled up the box or not in order to achieve the final net size that was intended.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If I wanted a 200 pixel wide box and added content in it that had padding of 20 pixels on each side, I would have to update the the css definition for that box to be -40 pixels to final width of 160 pixels.&lt;/p&gt;
+
+&lt;p&gt;Yes, very irritating. I just want to define it once and be done with that. box-sizing to the rescue:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;	&lt;span class='cm'&gt;/* In css file, vendor prefix to handle cross-browser */&lt;/span&gt;
+	&lt;span class='o'&gt;*&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;moz&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;box&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;sizing&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;border&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;box&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;box&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;sizing&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;border&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;box&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='nx'&gt;box&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;sizing&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;border&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='nx'&gt;box&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>I Still Love Design</title>
+   <link href="http://d48.github.com/2012/04/15/love-design"/>
+   <updated>2012-04-15T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/04/15/love-design</id>
+   <content type="html">&lt;h2 id='loving_design'&gt;Loving Design&lt;/h2&gt;
+
+&lt;p&gt;Even though I&amp;#8217;ve been programming a lot lately, I still dig a lot of design. Just came across this goodie:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Video of someone sketching and coloring a treadmill' src='http://www.sketch-a-day.com/wp-content/uploads/2012/03/sketch-a-day-356.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vid on the process here with a Wacom tablet. Gyea&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://www.sketch-a-day.com/posts/sketch-a-day-356/'&gt;http://www.sketch-a-day.com/posts/sketch-a-day-356/&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Modern Database Architecture Model</title>
+   <link href="http://d48.github.com/2012/04/08/modern-db-arch-model"/>
+   <updated>2012-04-08T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/04/08/modern-db-arch-model</id>
+   <content type="html">&lt;h2 id='why_use_nosql'&gt;Why use NoSQL?&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Modern web applications are built to scale out &amp;#8211; add more comodity web servers behind a load balancer to support more users. Scaling out is the core principle behind the cloud computing model: virtual machine instances can easily be added or removed to match demand. Scaling out is less expensive than what traditional relational database management systems or RDBMS offer today; if you need to grow, you would need to buy larger servers.&lt;/p&gt;
+
+&lt;h2 id='software_has_changed'&gt;Software has changed&lt;/h2&gt;
+
+&lt;p&gt;Looking at the last 35 years, software needs have changed. Web and mobile applications have a lot more users transacting. NoSQL technologies enable cost-effective management of data because of its ability to scale and replicate.&lt;/p&gt;
+
+&lt;h2 id='strict_schema'&gt;Strict Schema&lt;/h2&gt;
+
+&lt;p&gt;When dealing with RDBMS technology, you would need to know the data beforehand before storing. Rapidly evolving business and market environment have different needs to address:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A way to capture new information that wasn&amp;#8217;t previously considered&lt;/li&gt;
+
+&lt;li&gt;A way to make rapid changes to an application for its behavior impacting data formats and content&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='terminology'&gt;Terminology&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Auto-sharding&lt;/strong&gt; - sometimes called elasticity, to automatically spread data across servers, without requiring applications to participate. Servers can be added or removed from the data layer without application downtime.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Data replication&lt;/strong&gt; - store multiple copies of data across the cluster to ensure high-availability and support disaster recovery.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NoSQL database&lt;/strong&gt; - also known as scale out database&lt;/p&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;&lt;a href='http://www.couchbase.com/why-nosql/nosql-database'&gt;Couchbase - Post-relational data management for interactive software systems&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>NoSQL Databases</title>
+   <link href="http://d48.github.com/2012/04/06/nosql-databases"/>
+   <updated>2012-04-06T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/04/06/nosql-databases</id>
+   <content type="html">&lt;h2 id='nosql_databases'&gt;NoSQL databases&lt;/h2&gt;
+
+&lt;p&gt;These are considered often by the way they store data: &lt;em&gt;document store, key-value stores, BigTable implementation, and graph databases&lt;/em&gt;, different from their relational database counterparts due to that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. Do not use SQL as their primary language
+2. The data stores may not required fixed table schemas
+3. Do not support join operations
+4. May not give full ACID (atomocity, consistency, isolation, durability) guarantees
+5. Typically scale horizontally = to add more nodes to a system, e.g., adding a new computer to a distributed software application, or scaling from one web server to three.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='mapreduce_function'&gt;Map/Reduce function&lt;/h2&gt;
+
+&lt;p&gt;Used by Google to index the entire World Wide Web. Take a given set to compute or input, Map function used to break and distribute into smaller parts to form computation by worker nodes. Reduce function used to collect or bring these computations together to come to a refined or &lt;em&gt;reduced&lt;/em&gt; result, or output. This software framework usually stores inputs and outputs into a distributed file system.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Sample computation' src='http://content.screencast.com/users/User48/folders/Jing/media/5736b7e3-da11-4800-bd8a-6c830bb56189/2012-04-06_0042.png' /&gt;(Sample computation)&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='c1'&gt;// Map function&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;ticket&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nx'&gt;emit&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kc'&gt;null&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;ticket&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;checkout&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c1'&gt;// Reduce function&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;key&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;checkouts&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;sum&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;checkouts&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='why_the_change_from_traditional_rdbms_solutions'&gt;Why The Change from Traditional RDBMS Solutions&lt;/h2&gt;
+
+&lt;p&gt;Google, Amazon, Twitter and Facebook had significantly different challenges in dealing with data that needed to scale horizontally due to the large volume. Performance and real-time nature more important than consistency, which traditional relational databases spent a high amount of processing time to achieve. &lt;strong&gt;NoSQL-Databases&lt;/strong&gt; are often highly optimized for retrive and append operations and offer little functionality beyond record storage, or &lt;em&gt;key-value stores&lt;/em&gt;.&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id='couchdb_vs_mongodb'&gt;CouchDB vs. MongoDB&lt;sup id='fnref:3'&gt;&lt;a href='#fn:3' rel='footnote'&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;I would try CouchDB over MongoDB for these reasons.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Better for offline storage and then syncing and replicating database once online&lt;/li&gt;
+
+&lt;li&gt;&lt;em&gt;Crash-only&lt;/em&gt; design, where the database can terminate any time and remain consistent.&lt;/li&gt;
+
+&lt;li&gt;Map/Reduce inherent in CouchDB in building all views (performance)&lt;/li&gt;
+
+&lt;li&gt;Mobile embedded databases on phones because of its online/offline replication/sync capabilities.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;&lt;a href='http://en.wikipedia.org/wiki/NoSQL'&gt;Wikipedia: NoSQL Databases&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;p&gt;&lt;a href='http://www.slideshare.net/gabriele.lana/couchdb-vs-mongodb-2982288'&gt;CouchDB vs. MongoDB slides&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:3'&gt;
+&lt;p&gt;&lt;a href='http://www.mongodb.org/display/DOCS/Comparing+Mongo+DB+and+Couch+DB'&gt;Comparing CouchDB vs. MongoDB - from mongodb.org&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:3' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>QUnit: Javascript Unit testing framework and Backbone.js</title>
+   <link href="http://d48.github.com/2012/04/04/qunit-testing"/>
+   <updated>2012-04-04T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/04/04/qunit-testing</id>
+   <content type="html">&lt;h2 id='qunit'&gt;QUnit&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Unit testing framework for Javascript. Using it to test Backbone.js app that I&amp;#8217;m going through.&lt;/p&gt;
+
+&lt;h2 id='sinonjs'&gt;Sinon.js&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Test spies, stubs and mocks for Javascript testing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Test spy:&lt;/strong&gt; A function that records arguments, return value, the value of &lt;em&gt;this&lt;/em&gt; and exception thrown (if any) for all its calls. Useful to test both callbacks and how certain functions/methods are used throughout the system under test.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Stubs:&lt;/strong&gt; Functions or spies with pre-programmed behavior. Use a stub when you want to:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Control a method&amp;#8217;s behavior from a test to force it down a specific path, e.g., forcing a method to throw an error in order to test error handling.&lt;/li&gt;
+
+&lt;li&gt;When you want to prevent a specific method from being called directly (possibly because it triggers undesired behavior like an XMLHttpRequest).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Mocks:&lt;/strong&gt; and mock expectations, are fake methods (like spies) with pre-programmed behavior (like stubs) as well as &lt;em&gt;pre-programmed expectations&lt;/em&gt;. Use for &lt;em&gt;method under test&lt;/em&gt;. In every unit test, there should be one unit under test. If you want to control how your unit is being used and like stating expectation upfront (as opposed to asserting after the fact), use a mock.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;&lt;a href='http://qunitjs.com/'&gt;http://qunitjs.com/&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;p&gt;&lt;a href='http://sinonjs.org/'&gt;http://sinonjs.org/&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>REST architecture</title>
+   <link href="http://d48.github.com/2012/03/31/restful-architecture-style"/>
+   <updated>2012-03-31T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/03/31/restful-architecture-style</id>
+   <content type="html">&lt;h2 id='restful_architecural_styles'&gt;RESTful architecural styles&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Disadvantage: placing the application state on the client-side reduces the server&amp;#8217;s control over consistent application behavior, since the application becomes dependent on the correct implementation of semantics across multiple client versions.&lt;/p&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;&lt;a href='http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm'&gt;Roy Fielding&amp;#8217;s dissertation on REST (Representational State Transfer)&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Backbone.js notes Part 2</title>
+   <link href="http://d48.github.com/2012/03/28/backbone-notes-3"/>
+   <updated>2012-03-28T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/03/28/backbone-notes-3</id>
+   <content type="html">&lt;h2 id='view'&gt;View&lt;/h2&gt;
+
+&lt;p&gt;Sample code&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;ObjectView&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Backbone&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;View&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;extend&lt;/span&gt;&lt;span class='p'&gt;({&lt;/span&gt;
+  &lt;span class='nx'&gt;el&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;div#content&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;	&lt;span class='c1'&gt;// Works like jQuery selectors&lt;/span&gt;
+
+  &lt;span class='nx'&gt;initialize&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;args&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;el&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;innerHTML&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;View initiliazed&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;},&lt;/span&gt;
+
+  &lt;span class='nx'&gt;render&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;el&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;innerHTML&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;model&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;get&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;somePropertyName&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+    &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;	&lt;span class='c1'&gt;// Good practice to enable chained calls &lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='routers_used_to_be_controllers'&gt;Routers (used to be Controllers)&lt;/h2&gt;
+
+&lt;p&gt;Lets you create bookmarkable, stateful apps by using hashbangs. There&amp;#8217;s discussion how this changes up traditional URI use and the archival nature of the internet, but newer browsers with the History API can use standard URLs like &lt;code&gt;/page&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Backbone.Router&lt;/strong&gt; provides methods for routing client-side pages and connecting them to actions and events.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;AppRouter&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Backbone&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;Router&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;extend&lt;/span&gt;&lt;span class='p'&gt;({&lt;/span&gt;
+  &lt;span class='nx'&gt;routes&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;urlName&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;mapToFunctionName&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;games&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;gameMethod&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+    &lt;span class='s2'&gt;&amp;quot;help/:page&amp;quot;&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;helper&amp;quot;&lt;/span&gt;
+  &lt;span class='p'&gt;},&lt;/span&gt;
+
+  &lt;span class='nx'&gt;mapToFunctionName&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='c1'&gt;// Any set of methods to prep and process a page of elements&lt;/span&gt;
+    &lt;span class='c1'&gt;// Above URL maps from application.com/filename#urlName&lt;/span&gt;
+  &lt;span class='p'&gt;},&lt;/span&gt;
+
+  &lt;span class='nx'&gt;gameMethod&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='c1'&gt;// Re-render view to show collection of game elements&lt;/span&gt;
+    &lt;span class='c1'&gt;// Above URL maps from application.com/filename#games&lt;/span&gt;
+  &lt;span class='p'&gt;},&lt;/span&gt;
+&lt;span class='p'&gt;});&lt;/span&gt;
+
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;appRoute&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;AppRouter&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+
+&lt;span class='c1'&gt;// Enables monitoring for hashchange events and dispatching routes&lt;/span&gt;
+&lt;span class='nx'&gt;Backbone&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;history&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;start&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+
+&lt;span class='c1'&gt;//Evaluates on #help/somePageName&lt;/span&gt;
+&lt;span class='nx'&gt;appRoute&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;route:helper&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;page&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;Do something here with: &amp;quot;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;page&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Backbone.js notes Part 1</title>
+   <link href="http://d48.github.com/2012/03/26/backbone-notes-2"/>
+   <updated>2012-03-26T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/03/26/backbone-notes-2</id>
+   <content type="html">&lt;h2 id='notes_on_backbonejs'&gt;Notes on Backbone.js&lt;/h2&gt;
+
+&lt;p&gt;Dependency is &lt;a href='http://documentcloud.github.com/underscore/'&gt;Underscore.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Underscore = library for Javascript functions that help in binding, templating, testing and more.&lt;/p&gt;
+
+&lt;p&gt;Has 4 major classes:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Model&lt;/li&gt;
+
+&lt;li&gt;Collection&lt;/li&gt;
+
+&lt;li&gt;View&lt;/li&gt;
+
+&lt;li&gt;Router (was Controller)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id='model'&gt;Model&lt;/h3&gt;
+
+&lt;p&gt;Represents a single entity, eg., a record in a database. Gives a way to read and write arbitrary properties or attributes on a data set.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;	&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;ObjectName&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Backbone&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;Model&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;extend&lt;/span&gt;&lt;span class='p'&gt;({&lt;/span&gt;
+		&lt;span class='nx'&gt;initialize&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(){&lt;/span&gt;
+			&lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;init fired upon new&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+		&lt;span class='p'&gt;},&lt;/span&gt;
+		&lt;span class='nx'&gt;defaults&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+			&lt;span class='nx'&gt;name&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;Default title&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
+			&lt;span class='nx'&gt;anotherProperty&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;random value&amp;#39;&lt;/span&gt;
+		&lt;span class='p'&gt;}&lt;/span&gt;
+	&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id='collection'&gt;Collection&lt;/h3&gt;
+
+&lt;p&gt;Essentially just a collection of models. Using database analogy, collections are the result from a query where the results are a number of models.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;	&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;ObjectCollection&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Backbone&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;Collection&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;extend&lt;/span&gt;&lt;span class='p'&gt;({&lt;/span&gt;
+		&lt;span class='nx'&gt;model&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nx'&gt;ObjectName&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;	&lt;span class='c1'&gt;//specify model that has been created&lt;/span&gt;
+		&lt;span class='nx'&gt;someMethod&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+			&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;object&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+				&lt;span class='nx'&gt;object&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;get&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;specificPropertyName&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+			&lt;span class='p'&gt;};&lt;/span&gt;
+		&lt;span class='p'&gt;}&lt;/span&gt;
+	&lt;span class='p'&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id='view'&gt;View&lt;/h3&gt;
+
+&lt;p&gt;Views resemble controllers:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Listen to events thrown by the DOM and models/collections&lt;/li&gt;
+
+&lt;li&gt;Represent the application&amp;#8217;s state and model to the user.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sample templating libraries to use with &lt;code&gt;render&lt;/code&gt; function: &lt;a href='http://github.com/janl/mustache.js'&gt;Mustache.js&lt;/a&gt;, &lt;a href='http://github.com/creationix/haml-js'&gt;Haml-js&lt;/a&gt;, &lt;a href='http://github.com/sstephenson/eco'&gt;Eco&lt;/a&gt;, as well as Underscore.js &lt;code&gt;.template&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Recommendation: whatever is used, nice if &lt;em&gt;never&lt;/em&gt; have to put strings of HTML in your Javascript.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Nodejs, Heroku, Procfiles</title>
+   <link href="http://d48.github.com/2012/03/22/node-heroku"/>
+   <updated>2012-03-22T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/03/22/node-heroku</id>
+   <content type="html">&lt;h2 id='heroku'&gt;Heroku&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;an execution environment, Heroku provides access to through an abstraction called &amp;#8220;the process model&amp;#8221;&lt;/p&gt;
+
+&lt;p&gt;The process model is a generalized approach to managing processes across a distributed environment. Can specify a custom list of process types in a &lt;em&gt;Procfile&lt;/em&gt; and provides granular management of an app&amp;#8217;s components.&lt;/p&gt;
+
+&lt;h2 id='twelvefactor_app_methodology'&gt;Twelve-Factor app methodology&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Building, deploying and managing modern software-as-a-service applications that:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Use declarative formats for setup automation&lt;/li&gt;
+
+&lt;li&gt;Have a clean contract with the underlying operating system&lt;/li&gt;
+
+&lt;li&gt;Are suitable for deployment on modern cloud platforms&lt;/li&gt;
+
+&lt;li&gt;Enabling continous deployment for maximum agility&lt;/li&gt;
+
+&lt;li&gt;And can scale up without significant changes to tooling, architecture, or development practices.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='nodejs_and_observer_pattern'&gt;Nodejs and Observer pattern&lt;sup id='fnref:3'&gt;&lt;a href='#fn:3' rel='footnote'&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;p&gt;Nodejs follows the observer pattern = software design pattern in which an object, called a subject, maintains a list of its dependents, called observers, and notifies them of any state changes, usually by calling one of their methods. It is mainly used to implement distributed event handling systems. This pattern is also key in the MVC architecture.&lt;sup id='fnref:4'&gt;&lt;a href='#fn:4' rel='footnote'&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Event&lt;/em&gt; = an action usually initiated outside the scope of a program and that is handled by a piece of code inside the program. Example: Mouse and click of a button, a &amp;#8220;mouse click&amp;#8221; event. Keyboard and &amp;#8220;key down&amp;#8221; event.&lt;/p&gt;
+
+&lt;p&gt;Sample event handling systems:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;network monitoring&lt;/li&gt;
+
+&lt;li&gt;mobile system&lt;/li&gt;
+
+&lt;li&gt;information dissemination (broadcast: television, chat, radio)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;&lt;a href='http://blog.heroku.com/archives/2011/6/20/the_new_heroku_1_process_model_procfile'&gt;http://blog.heroku.com/archives/2011/6/20/the_new_heroku_1_process_model_procfile/&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;p&gt;&lt;a href='http://devcenter.heroku.com/articles/cedar'&gt;http://devcenter.heroku.com/articles/cedar&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:3'&gt;
+&lt;p&gt;&lt;a href='http://devcenter.heroku.com/articles/cedar'&gt;http://www.jamesward.com/2011/06/21/getting-started-with-node-js-on-the-cloud/&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:3' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:4'&gt;
+&lt;p&gt;&lt;a href='http://devcenter.heroku.com/articles/cedar'&gt;http://en.wikipedia.org/wiki/Observer_pattern&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:4' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Global variables</title>
+   <link href="http://d48.github.com/2012/03/21/global-vars-js"/>
+   <updated>2012-03-21T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/03/21/global-vars-js</id>
+   <content type="html">&lt;h2 id='avoid_polluting_the_global_scope'&gt;Avoid polluting the global scope&lt;/h2&gt;
+
+&lt;p&gt;Using global variables is messy because in large applications in can easily eat up a lot of memory. Also strong chance upon execution that a collision will occur where same variable is being used for different uses.&lt;/p&gt;
+
+&lt;p&gt;To avoid polluting global scope, declare variables into a namespaced object structure. For variables that don&amp;#8217;t fit or belong in these structures, can declare in a &amp;#8220;self-invoking function&amp;#8221; = a function that gets executed when the definition is parsed by the browser or client.&lt;/p&gt;
+
+&lt;h3 id='selfinvoking_function_example'&gt;Self-invoking function example&lt;/h3&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='c1'&gt;// All your JS code here&lt;/span&gt;
+  &lt;span class='c1'&gt;// Declare variables to be in this scope like so:&lt;/span&gt;
+  &lt;span class='c1'&gt;// var someVariable = &amp;quot;some value&amp;quot;;&lt;/span&gt;
+&lt;span class='p'&gt;})();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Traditional accessors methods are used (getters/setters) to manipulate variables that are withing that scope or closure that is defined.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;_ underscore used to indicate that these are private members. Just a visual aid for the programmer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='sources'&gt;Sources&lt;/h2&gt;
+
+&lt;p&gt;Advanced Javascript: Namespaces, Closures, Self-Invoking Functions, and much, much, more&amp;#8230;&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;&lt;a href='http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/'&gt;http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Page reflow and repaint caused by CSS</title>
+   <link href="http://d48.github.com/2012/03/17/css-repaint-reflow"/>
+   <updated>2012-03-17T00:00:00-07:00</updated>
+   <id>http://d48.github.com/2012/03/17/css-repaint-reflow</id>
+   <content type="html">&lt;p&gt;I came across some articles regarding css optimization and found out one of the potential causes for a site bug I came across that causes a &amp;#8220;reflow&amp;#8221; on a mobile website. This is something I need to look into further as this will directly impact how a developer should write code to optimize sites for the desktop and mobile devices.&lt;/p&gt;
+
+&lt;h2 id='repaint'&gt;Repaint&lt;/h2&gt;
+
+&lt;p&gt;Occurs when changes are made to an element&amp;#8217;s skin that changes visibility, but do not effect its layout.&lt;/p&gt;
+
+&lt;p&gt;Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;outline&lt;/li&gt;
+
+&lt;li&gt;visibility&lt;/li&gt;
+
+&lt;li&gt;background color&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Repaint is expensive because the browser must verify the visibility of all other nodes in the DOM tree.&lt;/p&gt;
+
+&lt;h2 id='reflow'&gt;Reflow&lt;/h2&gt;
+
+&lt;p&gt;Even more critical to performance because causes changes that affect layout of a portion or entire page. Reflow of an element causes subsequent reflow to of all child and ancestor elements as well as any elements following it in the DOM.&lt;/p&gt;
+
+&lt;p&gt;This can lead to page refresh.&lt;/p&gt;
+
+&lt;p&gt;Some causes to page reflow via css:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;changing the font&lt;/li&gt;
+
+&lt;li&gt;adding or removing a stylesheet&lt;/li&gt;
+
+&lt;li&gt;activation of css pseudo classes like :hover&lt;/li&gt;
+
+&lt;li&gt;manipulating the class attribute&lt;/li&gt;
+
+&lt;li&gt;a script manipulating the DOM&lt;/li&gt;
+
+&lt;li&gt;setting a property of the style attribute (inline style)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='video_that_show_reflow'&gt;Video that show reflow&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href='http://www.youtube.com/watch?v=ZTnIxIA5KGw'&gt;Gecko Reflow Visualization - mozilla.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id='sources'&gt;Sources&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/'&gt;Reflows &amp;amp; Repaints: CSS Performance making your JavaScript slow?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://blog.mozilla.com/gen/2009/04/09/how-to-make-your-own-gecko-reflow-video/'&gt;How to make your own Gecko Reflow Video&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://perfectionkills.com/profiling-css-for-fun-and-profit-optimization-notes/'&gt;Profiling CSS for fun and profit. Optimization notes.&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Reusable code and object creation in JavaScript</title>
+   <link href="http://d48.github.com/2012/03/11/reusable-object-creation"/>
+   <updated>2012-03-11T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/03/11/reusable-object-creation</id>
+   <content type="html">&lt;h2 id='creating_reusable_code'&gt;Creating reusable code&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Write object-oriented code and implement object inheritance&lt;/li&gt;
+
+&lt;li&gt;In Javascript, this is &lt;em&gt;prototypal inheritance&lt;/em&gt; where an object constructor can inherit methods from one other object, creating a &lt;em&gt;prototype&lt;/em&gt; from which all other new objects are built.&lt;/li&gt;
+
+&lt;li&gt;Facilitated by the &lt;em&gt;prototype property&lt;/em&gt;, exists for every function&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='book_notes__javascript_patterns'&gt;Book notes - Javascript Patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;reading book by Stoyan Stefanov &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+
+&lt;li&gt;object literal notation better to use when creating objects as it&amp;#8217;s easier to read and has better performance not having to look up scope chain to general global &lt;em&gt;Object&lt;/em&gt; constructor&lt;/li&gt;
+
+&lt;li&gt;also using &lt;em&gt;new Object() constructor&lt;/em&gt; has issues with dynamic typing that may lead to unwanted results, eg. boolean, number, string&lt;/li&gt;
+
+&lt;li&gt;when using &lt;em&gt;new&lt;/em&gt; statement when creating objects with methods, if want to re-use method and have another object copy or clone this object, instead of creating a duplicate method in memory, instead add to the &lt;em&gt;prototype&lt;/em&gt; of that object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='nx'&gt;Person&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;sayName&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;I am &amp;quot;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;name&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;an object is just a function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;person&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;Person&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Person&lt;/em&gt; is just a function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;Javascipt Patterns by Stoyan Stefanov. &lt;a href='http://www.amazon.com/gp/product/B0046RERXE/'&gt;Buy on Amazon&lt;/a&gt;&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>General dev notes</title>
+   <link href="http://d48.github.com/2012/03/06/general-dev-notes"/>
+   <updated>2012-03-06T00:00:00-08:00</updated>
+   <id>http://d48.github.com/2012/03/06/general-dev-notes</id>
+   <content type="html">&lt;h2 id='api_development'&gt;API development&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;URL structure&lt;/li&gt;
+
+&lt;li&gt;CRUD methods - Create, Read, Update, Delete&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='pivotaltracker'&gt;PivotalTracker&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;project management tool&lt;/li&gt;
+
+&lt;li&gt;create Stories for estimating time to complete work&lt;/li&gt;
+
+&lt;li&gt;prioritize work in the Backlog&lt;/li&gt;
+
+&lt;li&gt;iterations&lt;/li&gt;
+
+&lt;li&gt;velocity = to keep track or predict how much your team will complete each week&lt;/li&gt;
+
+&lt;li&gt;can also use for bugs, chores, releases&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='memcached'&gt;memcached&lt;/h2&gt;
+
+&lt;p&gt;Used to enhance performance of website by caching data and objects in RAM to reduce number of times an external data source (such as a database or API) must be read.&lt;/p&gt;
+
+&lt;p&gt;Code sample:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='js'&gt;&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;get_foo&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kr'&gt;int&lt;/span&gt; &lt;span class='nx'&gt;userid&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='cm'&gt;/* first try the cache */&lt;/span&gt;
+    &lt;span class='nx'&gt;data&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;memcached_fetch&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;userrow:&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;userid&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+    &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='o'&gt;!&lt;/span&gt;&lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+       &lt;span class='cm'&gt;/* not found : request database */&lt;/span&gt;
+       &lt;span class='nx'&gt;data&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;db_select&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;SELECT * FROM users WHERE userid = ?&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;userid&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+       &lt;span class='cm'&gt;/* then store in cache until next get */&lt;/span&gt;
+       &lt;span class='nx'&gt;memcached_add&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;userrow:&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='nx'&gt;userid&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+    &lt;span class='p'&gt;}&lt;/span&gt;
+    &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='to_look_into'&gt;To look into&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href='http://zeptojs.com/'&gt;Zepto.js&lt;/a&gt; &lt;a href='http://documentcloud.github.com/underscore/'&gt;Underscore.js&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
  
 </feed>

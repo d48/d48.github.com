@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Website Developer / User Interface Designer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="http://feeds.feedburner.com/" rel="alternate" title="your title" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Website Developer / User Interface Designer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/01/11/note-on-guard-livreload-and-rvm-ruby">note on guard, livreload and rvm ruby</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Jan 11, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p>I was configuring <code>livereload</code> on a new computer for local dev work on a web project and I ran into an issue where the Chrome extension wasn&#8217;t reloading and my <code>guard</code> commands weren&#8217;t working. It was saying that it expects Livereload 2.3 or newer or a server to connect to.</p>
+
+<p>Some updates I made to get it to work were:</p>
+
+<ol>
+<li>Install <code>rvm</code>, the ruby version manager</li>
+
+<li>Made sure I was using Ruby version 1.9.2-p320</li>
+
+<li><code>$ sudo gem install guard-livereload</code></li>
+
+<li><code>$ sudo gem install yajl-ruby</code> for making sure socket listening responded faster</li>
+
+<li>error when running and recommended to <code>gem install rb-fsevents</code></li>
+
+<li>Create new guard file that configured to watch .styl file changes</li>
+</ol>
+
+<p>Ahhh, itworks now. Hello livereload.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/guard">guard</a></li>
+                 
+                <li><a href="/tags/livereload">livereload</a></li>
+                 
+                <li><a href="/tags/ruby">ruby</a></li>
+                 
+                <li><a href="/tags/rvm">rvm</a></li>
+                 
+                <li><a href="/tags/gems">gems</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/01/04/i-haz-zoom-images">I haz zoom images via JavaScript closures</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Jan  4, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p>I wanted to put some click functionality on the images for the blog post so I created a little function to do just that. The nifty little bit is using the JavaScript closure to bind the iterator variable so it&#8217;s unique to each element that I&#8217;m creating a callback for.</p>
+<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>setImageLinks</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='kd'>var</span> <span class='nx'>parent</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>getElementById</span><span class='p'>(</span><span class='s1'>&#39;post&#39;</span><span class='p'>)</span>
+    <span class='p'>,</span> <span class='nx'>images</span> <span class='o'>=</span> <span class='nx'>parent</span><span class='p'>.</span><span class='nx'>getElementsByTagName</span><span class='p'>(</span><span class='s1'>&#39;img&#39;</span><span class='p'>)</span>
+    <span class='p'>;</span>
+
+  <span class='k'>for</span><span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>,</span> <span class='nx'>len</span> <span class='o'>=</span> <span class='nx'>images</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span> <span class='o'>&lt;</span> <span class='nx'>len</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>){</span>
+    <span class='c1'>// bind i variable to a function not inside the same scope</span>
+    <span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>index</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='kd'>var</span> <span class='nx'>src</span> <span class='o'>=</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>index</span><span class='p'>].</span><span class='nx'>getAttribute</span><span class='p'>(</span><span class='s1'>&#39;src&#39;</span><span class='p'>);</span>
+
+      <span class='nx'>images</span><span class='p'>[</span><span class='nx'>index</span><span class='p'>].</span><span class='nx'>addEventListener</span><span class='p'>(</span><span class='s1'>&#39;click&#39;</span><span class='p'>,</span> <span class='kd'>function</span> <span class='nx'>setImageClickEvent</span><span class='p'>()</span> <span class='p'>{</span>
+        <span class='nb'>window</span><span class='p'>.</span><span class='nx'>open</span><span class='p'>(</span><span class='nx'>src</span><span class='p'>);</span>
+      <span class='p'>},</span> <span class='kc'>false</span><span class='p'>);</span>
+    <span class='p'>}</span> <span class='p'>(</span><span class='nx'>i</span><span class='p'>));</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h2 id='click_zee_image'>Click zee image</h2>
+
+<p><img alt='codercat' src='http://design48.net/i/codercat.jpg' /></p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/html">html</a></li>
+                 
+                <li><a href="/tags/css">css</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                 
+                <li><a href="/tags/closures">closures</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/01/04/new-blog-layout">New blog layout</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Jan  4, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='out_with_the_old'>Out with the old</h2>
+
+<p>I came across some blog layouts from developers I follow on twitter and I noticed an engine they used that I really like the layout for. So&#8230;I copied it. Here&#8217;s the old and new layout.</p>
+
+<p>The major differences are that the site identity remains while you scroll through the blog posts. And the code highlighting is more prominent. I love syntax highlighting. Check it out:</p>
+
+<h2 id='old'>Old</h2>
+
+<p><img alt='old layout' src='http://design48.net/i/blog-layout-old.png' /></p>
+
+<h2 id='new'>New</h2>
+
+<p><img alt='new layout' src='http://design48.net/i/blog-layout-new.png' /></p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/design">design</a></li>
+                 
+                <li><a href="/tags/blog">blog</a></li>
+                 
+                <li><a href="/tags/layout">layout</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/12/29/mocha-test-lib-notes">sinon test lib with mocha notes</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Dec 29, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p>Just wanted to save some notes from using sinon library for stubs within the mocha test framework in a node.js app i&#8217;m hacking away at. When trying to run this particular code for stubbing the <code>console.log</code> method:</p>
+<div class='highlight'><pre><code class='js'><span class='nx'>sinon</span><span class='p'>.</span><span class='nx'>stub</span><span class='p'>(</span><span class='nx'>console</span><span class='p'>,</span> <span class='s1'>&#39;log&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>text</span><span class='p'>)</span> <span class='p'>{</span>
+  <span class='kd'>var</span> <span class='nx'>string</span><span class='p'>;</span>
+  <span class='nx'>string</span> <span class='o'>+=</span> <span class='s2'>&quot;#1: general\n&quot;</span><span class='p'>;</span>
+  <span class='nx'>string</span> <span class='o'>+=</span> <span class='s2'>&quot;#2: grocery\n&quot;</span><span class='p'>;</span>
+
+  <span class='nx'>text</span><span class='p'>.</span><span class='nx'>should</span><span class='p'>.</span><span class='nx'>eql</span><span class='p'>(</span><span class='nx'>string</span><span class='p'>);</span>
+  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>.</span><span class='nx'>restore</span><span class='p'>();</span>
+<span class='p'>});</span>
+</code></pre>
+</div>
+<p>In my <code>todos</code> app, I redefine <code>console.log</code> into a variable called <code>log</code> for shorthand. This trips up sinon.js in the stubbing mechanisim above. A small inconvenince as this forces me to rewrite my app just so I can cover these test cases. The parameters that the stub method is expecting are:</p>
+
+<ol>
+<li>object</li>
+
+<li>method</li>
+
+<li>callback</li>
+</ol>
+
+<p>Because of this, I just rewrote my output method to export a single string that I can test against since it will ignore multiple console.log calls from a given stubbed method</p>
+<div class='highlight'><pre><code class='js'><span class='c1'>// instead of this output</span>
+<span class='k'>for</span><span class='p'>(...)</span> <span class='p'>{</span> 
+	<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;string...&#39;</span><span class='p'>);</span>	
+<span class='p'>}</span>
+
+<span class='c1'>// i wrote this so i can use the sinon.stub</span>
+<span class='kd'>var</span> <span class='nx'>string</span><span class='p'>;</span>
+<span class='k'>for</span><span class='p'>(...)</span> <span class='p'>{</span> 
+	<span class='nx'>string</span> <span class='o'>+=</span> <span class='s1'>&#39;string...&#39;</span><span class='p'>;</span>		
+<span class='p'>}</span>
+<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;string... string...&#39;</span><span class='p'>);</span>
+</code></pre>
+</div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/sinon">sinon</a></li>
+                 
+                <li><a href="/tags/mocha">mocha</a></li>
+                 
+                <li><a href="/tags/node.js">node.js</a></li>
+                 
+                <li><a href="/tags/test">test</a></li>
+                 
+                <li><a href="/tags/testing">testing</a></li>
+                 
+                <li><a href="/tags/tdd">tdd</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/12/26/tmux-and-conf-file">tmux and conf file</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Dec 26, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='notes'>Notes</h1>
+
+<p>So just taking some notes for myself. I have a new dev machine and when trying to set up my <code>.tmux.conf</code> file, there was issues when tmux launched in parsing the file. I read somewhere on the net it had to do with some invisible bytes.</p>
+
+<p>I ended up fixing the parse by just creating a new .tmux.conf file and copy-pasted from my <code>.tmux.conf</code> file from my <a href='http://github.com/design48/dotfiles'>dotfiles repo</a> on GitHub. Woot.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/tmux">tmux</a></li>
+                 
+                <li><a href="/tags/terminal">terminal</a></li>
+                 
+                <li><a href="/tags/osx">osx</a></li>
+                 
+                <li><a href="/tags/config">config</a></li>
+                 
+                <li><a href="/tags/conf">conf</a></li>
+                 
+                <li><a href="/tags/configuration">configuration</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+			   <a href="/page4">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	    <li class="next">
+		    <a href="/page6">
+			   Older posts >>
+		    </a>
+		</li>
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js">
+      
+  </script>
+
+  
+
+</body>
+</html>
+

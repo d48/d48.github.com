@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Website Developer / User Interface Designer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="http://feeds.feedburner.com/" rel="alternate" title="your title" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Website Developer / User Interface Designer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/21/global-vars-js">Global variables</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 21, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='avoid_polluting_the_global_scope'>Avoid polluting the global scope</h2>
+
+<p>Using global variables is messy because in large applications in can easily eat up a lot of memory. Also strong chance upon execution that a collision will occur where same variable is being used for different uses.</p>
+
+<p>To avoid polluting global scope, declare variables into a namespaced object structure. For variables that don&#8217;t fit or belong in these structures, can declare in a &#8220;self-invoking function&#8221; = a function that gets executed when the definition is parsed by the browser or client.</p>
+
+<h3 id='selfinvoking_function_example'>Self-invoking function example</h3>
+<div class='highlight'><pre><code class='js'><span class='p'>(</span><span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='c1'>// All your JS code here</span>
+  <span class='c1'>// Declare variables to be in this scope like so:</span>
+  <span class='c1'>// var someVariable = &quot;some value&quot;;</span>
+<span class='p'>})();</span>
+</code></pre>
+</div>
+<ul>
+<li>
+<p>Traditional accessors methods are used (getters/setters) to manipulate variables that are withing that scope or closure that is defined.</p>
+</li>
+
+<li>
+<p>_ underscore used to indicate that these are private members. Just a visual aid for the programmer.</p>
+</li>
+</ul>
+
+<h2 id='sources'>Sources</h2>
+
+<p>Advanced Javascript: Namespaces, Closures, Self-Invoking Functions, and much, much, more&#8230;<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p><a href='http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/'>http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/</a></p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/js">js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/17/css-repaint-reflow">Page reflow and repaint caused by CSS</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 17, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p>I came across some articles regarding css optimization and found out one of the potential causes for a site bug I came across that causes a &#8220;reflow&#8221; on a mobile website. This is something I need to look into further as this will directly impact how a developer should write code to optimize sites for the desktop and mobile devices.</p>
+
+<h2 id='repaint'>Repaint</h2>
+
+<p>Occurs when changes are made to an element&#8217;s skin that changes visibility, but do not effect its layout.</p>
+
+<p>Examples:</p>
+
+<ul>
+<li>outline</li>
+
+<li>visibility</li>
+
+<li>background color</li>
+</ul>
+
+<p>Repaint is expensive because the browser must verify the visibility of all other nodes in the DOM tree.</p>
+
+<h2 id='reflow'>Reflow</h2>
+
+<p>Even more critical to performance because causes changes that affect layout of a portion or entire page. Reflow of an element causes subsequent reflow to of all child and ancestor elements as well as any elements following it in the DOM.</p>
+
+<p>This can lead to page refresh.</p>
+
+<p>Some causes to page reflow via css:</p>
+
+<ol>
+<li>changing the font</li>
+
+<li>adding or removing a stylesheet</li>
+
+<li>activation of css pseudo classes like :hover</li>
+
+<li>manipulating the class attribute</li>
+
+<li>a script manipulating the DOM</li>
+
+<li>setting a property of the style attribute (inline style)</li>
+</ol>
+
+<h2 id='video_that_show_reflow'>Video that show reflow</h2>
+
+<p><a href='http://www.youtube.com/watch?v=ZTnIxIA5KGw'>Gecko Reflow Visualization - mozilla.org</a></p>
+
+<h3 id='sources'>Sources</h3>
+
+<ol>
+<li>
+<p><a href='http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/'>Reflows &amp; Repaints: CSS Performance making your JavaScript slow?</a></p>
+</li>
+
+<li>
+<p><a href='http://blog.mozilla.com/gen/2009/04/09/how-to-make-your-own-gecko-reflow-video/'>How to make your own Gecko Reflow Video</a></p>
+</li>
+
+<li>
+<p><a href='http://perfectionkills.com/profiling-css-for-fun-and-profit-optimization-notes/'>Profiling CSS for fun and profit. Optimization notes.</a></p>
+</li>
+</ol>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/css">css</a></li>
+                 
+                <li><a href="/tags/repaint">repaint</a></li>
+                 
+                <li><a href="/tags/reflow">reflow</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/11/reusable-object-creation">Reusable code and object creation in JavaScript</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 11, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='creating_reusable_code'>Creating reusable code</h2>
+
+<ul>
+<li>Write object-oriented code and implement object inheritance</li>
+
+<li>In Javascript, this is <em>prototypal inheritance</em> where an object constructor can inherit methods from one other object, creating a <em>prototype</em> from which all other new objects are built.</li>
+
+<li>Facilitated by the <em>prototype property</em>, exists for every function</li>
+</ul>
+
+<h2 id='book_notes__javascript_patterns'>Book notes - Javascript Patterns</h2>
+
+<ul>
+<li>reading book by Stoyan Stefanov <sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></li>
+
+<li>object literal notation better to use when creating objects as it&#8217;s easier to read and has better performance not having to look up scope chain to general global <em>Object</em> constructor</li>
+
+<li>also using <em>new Object() constructor</em> has issues with dynamic typing that may lead to unwanted results, eg. boolean, number, string</li>
+
+<li>when using <em>new</em> statement when creating objects with methods, if want to re-use method and have another object copy or clone this object, instead of creating a duplicate method in memory, instead add to the <em>prototype</em> of that object.</li>
+</ul>
+<div class='highlight'><pre><code class='js'><span class='nx'>Person</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>sayName</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+	<span class='k'>return</span> <span class='s2'>&quot;I am &quot;</span> <span class='o'>+</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>name</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<ul>
+<li>an object is just a function</li>
+</ul>
+<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>person</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>Person</span><span class='p'>()</span>
+</code></pre>
+</div>
+<ul>
+<li><em>Person</em> is just a function</li>
+</ul>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>Javascipt Patterns by Stoyan Stefanov. <a href='http://www.amazon.com/gp/product/B0046RERXE/'>Buy on Amazon</a></p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/reusable">reusable</a></li>
+                 
+                <li><a href="/tags/js">js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                 
+                <li><a href="/tags/object">object</a></li>
+                 
+                <li><a href="/tags/constructor">constructor</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/06/general-dev-notes">General dev notes</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar  6, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='api_development'>API development</h2>
+
+<ul>
+<li>URL structure</li>
+
+<li>CRUD methods - Create, Read, Update, Delete</li>
+</ul>
+
+<h2 id='pivotaltracker'>PivotalTracker</h2>
+
+<ul>
+<li>project management tool</li>
+
+<li>create Stories for estimating time to complete work</li>
+
+<li>prioritize work in the Backlog</li>
+
+<li>iterations</li>
+
+<li>velocity = to keep track or predict how much your team will complete each week</li>
+
+<li>can also use for bugs, chores, releases</li>
+</ul>
+
+<h2 id='memcached'>memcached</h2>
+
+<p>Used to enhance performance of website by caching data and objects in RAM to reduce number of times an external data source (such as a database or API) must be read.</p>
+
+<p>Code sample:</p>
+<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>get_foo</span><span class='p'>(</span><span class='kr'>int</span> <span class='nx'>userid</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='cm'>/* first try the cache */</span>
+    <span class='nx'>data</span> <span class='o'>=</span> <span class='nx'>memcached_fetch</span><span class='p'>(</span><span class='s2'>&quot;userrow:&quot;</span> <span class='o'>+</span> <span class='nx'>userid</span><span class='p'>);</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nx'>data</span><span class='p'>)</span> <span class='p'>{</span>
+       <span class='cm'>/* not found : request database */</span>
+       <span class='nx'>data</span> <span class='o'>=</span> <span class='nx'>db_select</span><span class='p'>(</span><span class='s2'>&quot;SELECT * FROM users WHERE userid = ?&quot;</span><span class='p'>,</span> <span class='nx'>userid</span><span class='p'>);</span>
+       <span class='cm'>/* then store in cache until next get */</span>
+       <span class='nx'>memcached_add</span><span class='p'>(</span><span class='s2'>&quot;userrow:&quot;</span> <span class='o'>+</span> <span class='nx'>userid</span><span class='p'>,</span> <span class='nx'>data</span><span class='p'>);</span>
+    <span class='p'>}</span>
+    <span class='k'>return</span> <span class='nx'>data</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h2 id='to_look_into'>To look into</h2>
+
+<p><a href='http://zeptojs.com/'>Zepto.js</a> <a href='http://documentcloud.github.com/underscore/'>Underscore.js</a></p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/notes">notes</a></li>
+                 
+                <li><a href="/tags/dev">dev</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+			   <a href="/page15">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js">
+      
+  </script>
+
+  
+
+</body>
+</html>
+
