@@ -24,7 +24,7 @@ Finally figured out the darn formatting needed for Grooveshark. Either I need a 
 {% endhighlight %}
 
 ## Command line
-Then from the command line, where _sig_ is a hash string created from an **hmac** function using:
+Then from the command line, where _sig_ is a hash string created from an **[hmac]** function using:
 * unique _secret_ provided by Grooveshark upon [api credentials request](http://developer.grooveshark.com/api)
 * _JSON payload_ above
 * set to _md5_ format 

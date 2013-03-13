@@ -17,6 +17,8 @@ Blog space for Ryan Regalado using [jekyll bootstrap](http://jekyllbootstrap.com
 
 Visit <http://d48.github.com>
 
+:thumbsup: Ruby is the bomb
+
 Note:
 I customized the template theme to mimic what they're doing here <https://svbtle.com/> I rike it.
 
