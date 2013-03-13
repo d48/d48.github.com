@@ -36,7 +36,7 @@ Represents a single entity, eg., a record in a database. Gives a way to read and
 
 ### Collection
 
-Essentially just a collection of models. Using database analogy, collections are the result from a query where the results are a number of records [models].
+Essentially just a collection of models. Using database analogy, collections are the result from a query where the results are a number of models.
 
 {% highlight js %}
 	var ObjectCollection = Backbone.Collection.extend({
