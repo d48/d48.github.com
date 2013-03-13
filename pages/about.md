@@ -11,7 +11,7 @@ tags: []
 
 I love all things web and tech. Currently I'm getting heavily into **JavaScript**. This website is a place to put down and record progress, questions, and notes on various things I'm interested in or working on.
 
-Some things you will find are notes on `code`, `articles`, and `books`.
+Some things you will find are notes on `code`, `articles`, `books` and [portfolio](http://portfolio.design48.net) to some user interface work I've done.
 
 Other things I'm interested in and have a passion for are [art](http://design48.net/clients/hoodlum), [racing motorcycles](http://www.ryanregalado.com), and most importantly [God](http://ryanregalado.com/news_aug2008.php).
 
