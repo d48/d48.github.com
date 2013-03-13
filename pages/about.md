@@ -16,7 +16,7 @@ Some things you will find are notes on `code`, `articles`, and `books`.
 Other things I'm interested in and have a passion for are [art](http://design48.net/clients/hoodlum), [racing motorcycles](http://www.ryanregalado.com), and most importantly [God](http://ryanregalado.com/news_aug2008.php).
 
 ![My son Jeshua and I](http://design48.net/i/Ryan-and-Jeshua-Pancake-House.png)
-My son Jeshua and I - eating at Pancake House in the Philippines
+My son Jeshua and I - eating at Pancake House in the Philippines, 2011
      
 _This website is built using [Jekyll Bootstrap] (http://jekyllbootstrap.com/) [^1]_
 
