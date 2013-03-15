@@ -3,7 +3,7 @@ layout: post
 title: "Jeshua and milestones"
 description: ""
 category: 
-tags: [jeshua, milestone]
+tags: [jeshua, milestone, youtube, vid]
 ---
 {% include JB/setup %}
 
@@ -13,3 +13,4 @@ Jeshua, finally at 2 and half years old is able to pedal his tricycle. So simple
 
 Alright kid, when are you going to be ready to race some motorcycles?  :)
 
+http://www.youtube.com/embed/NLw0OwIBFqU
