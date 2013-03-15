@@ -34,3 +34,30 @@ function removeDuplicatesWithHashTable(arr) {
     return results;
 }
 {% endhighlight %}
+
+
+## Hash Tables
+
+A practical application of hash tables are in-memory tables, such as an associative array where the indices are strings or other complicated objects. In JavaScript, there are associative arrays we can use from the language in place of a separate hash table construct for this algorithm. Updated implementation below:
+
+
+{% highlight js %}
+function removeDuplicates(arr) {
+    var results = [], dups = []; 
+
+    for (var i = 0; i < arr.length; i++) {
+  
+        // check if not a duplicate
+        if (dups[arr[i]] === undefined) {
+  
+            // save for next check to indicate duplicate
+            dups[arr[i]] = 1; 
+  
+            // is unique. append to output array
+            results.push(arr[i]);
+        }
+    }
+
+    return results;
+}
+{% endhighlight %}
