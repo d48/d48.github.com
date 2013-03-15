@@ -7,7 +7,7 @@ tags: [algorithm, array, hash, hashtable, prime]
 ---
 {% include JB/setup %}
 
-Was thinking about this problem to remove duplicates from an array and thought of an algorithm whose runtime is linear given the hash function is good (non-uniform distribution with low collisions) and the load factor is low.
+Was thinking about this problem to remove duplicates from an array and thought of an algorithm whose runtime is linear given the hash function is good (uniform distribution of hash values that helps with low or no collisions) and the load factor is low.
 
 {% highlight js %}
 /*
