@@ -4,6 +4,9 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 production: false
+markdown: rdiscount
+rdiscount:
+     extensions: []
 paginate: 5 
 auto: true 
 pygments: true

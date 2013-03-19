@@ -696,3 +696,8 @@ pre code {
 }
 .highlight { background-color: transparent; }
 .highlight .c1 { color: #777; }
+
+code.has-jax, code.has-ajax span, code.has-ajax .mo, code.has-ajax .mi, .mo, .mi {
+  color: #000 !important;
+  font: inherit; font-size: 100%; background: inherit; border: inherit;
+}
