@@ -23,9 +23,6 @@ Using the `facade` pattern allows you to decouple your implementation from the s
 
 From a talk given by Nicholas Zakas on [__Scalable JavaScript Architecture__](http://www.slideshare.net/nzakas/scalable-javascript-application-architecture), he provides examples of how components can be connected together while being loosely coupled with use of Modules -> Sandbox -> Core -> Base. Modules communicate to other modules via the Sandbox. Only the Sandbox interacts with the Core. And the Core is the only component that talks to Base. 
 
-The `Sandbox` in this setup is what uses the `Facade` pattern, an object with a simplified interface to the Core. I'm using the pattern in the same way so that any modifications being done in the core are separated from the API or method signatures that the modules are using, thus keeping my components loosely coupled. 
+The `Sandbox` in this setup is what uses the `Facade` pattern, an object with a simplified interface to the Core. I'm using the pattern in the same way so that any modifications being done in the core are separated from the API or method signatures that the modules are using, thus keeping my components loosely coupled. If any updates are needed to the system, the modules are not implemented so tightly where many modification points are needed, allowing for easier testability and streamlined enhancements.
 
 Happy coding.
-
-
-
