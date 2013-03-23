@@ -15,7 +15,7 @@ Something analagous to this in modern web development is the use of APIs, or an 
 
 ## Example diagram
 
-![sample facade setup](http://cl.ly/image/3e1I1U2k1B17)
+![sample facade setup](http://f.cl.ly/items/2n2V2y23120Y2x3b1t0J/Screen%20Shot%202013-03-23%20at%2012.13.14%20AM.png)
 
 ## Benefits of using
 
