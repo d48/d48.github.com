@@ -13,6 +13,10 @@ In doing more planning for the modules/components of a project I'm working on, I
 
 Something analagous to this in modern web development is the use of APIs, or an application programming interface that consists of software component that can communicate with each other. What's usually given is a set of methods or function signatures that indicate their input and will provide some service or output. Through one, unified interface, access to the system and its components are provided, simplifying its use.
 
+## Example diagram
+
+![sample facade setup](http://cl.ly/image/3e1I1U2k1B17)
+
 ## Benefits of using
 
 Another example of using the **facade pattern** and APIs is creating an interface to a poorly designed API. This would satisfy simplifying an interface to a larger body of code. 
