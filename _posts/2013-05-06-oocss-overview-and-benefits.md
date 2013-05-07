@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "OOpython overview and benefits"
+title: "OOcss overview and benefits"
 description: ""
 category: 
-tags: [oopython, python]
+tags: [oocss, css]
 ---
 {% include JB/setup %}
 
-OOpython methodology helps to break up your python code so that you can logically separate objects into modules and classes for reuse and to avoid duplicating code.
+OOCSS methodology helps to break up your css code so that you can logically separate objects into modules and classes for reuse and to avoid duplicating code.
 
 Instead of:
 
-{% highlight python %}
+{% highlight css %}
 #button {
   width: 200px;
   height: 30px;
@@ -32,7 +32,7 @@ Instead of:
 
 You would write this to reuse code and also to separate how these tie in logically (applying one skin to multiple objects that appear the same):
 
-{% highlight python %}
+{% highlight css %}
 .button {
   width: 200px;
   height: 30px;
