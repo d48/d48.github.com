@@ -21,7 +21,7 @@ var person = function() {
 
   return person();
 };
-{% end highlight %}
+{% endhighlight %}
 
 ## Breakdown of code
 
