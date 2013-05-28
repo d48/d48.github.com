@@ -3,7 +3,7 @@ layout: post
 title: "Lazy Function Definition"
 description: ""
 category: 
-tags: [pattern, js, javascript, promise]
+tags: [pattern, js, javascript, promise, cross-browser]
 ---
 {% include JB/setup %}
 
