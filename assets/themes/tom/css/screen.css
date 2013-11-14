@@ -532,7 +532,7 @@ hr {
         font-size: 14px;  
         padding-left: 0;
       }
-      .footnotes ol { padding: 0 80px; }
+      /* .footnotes ol { padding: 0 80px; } */
 
       .meta {
         width: 110px;
