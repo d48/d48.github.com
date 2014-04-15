@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Identifying behaviors for your object</title>
+   <meta name="description" content="Ryan Regalado Front-End Software Engineer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="/atom.xml" rel="alternate" title="blog.design48.net - Ryan Regalado" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Front-End Software Engineer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/03/29/identifying-behaviors-for-your-object">Identifying behaviors for your object</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 29, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p><img alt='rossi' src='http://f.cl.ly/items/3i3J0h2C2m1001301P3H/Screen%20Shot%202013-03-29%20at%209.24.58%20PM.png' /></p>
+
+<p>In coming up with the member functions or methods for your object in a class or module, there can be several behaviors that an object can have in real life. You don&#8217;t have to identify all of them. Just identify those behaviors that are relative to the goal of your system.</p>
+
+<h2 id='example'>Example</h2>
+
+<p>If you had a <code>Motorcycle Racer</code> object and you were trying to identify the behaviors or methods he would have, some behaviors to consider are:</p>
+
+<ul>
+<li>startMotorcycle</li>
+
+<li>gridUp</li>
+
+<li>changeGears</li>
+
+<li>wheelie</li>
+
+<li>accelerate</li>
+
+<li>brake</li>
+
+<li>train</li>
+
+<li>eat</li>
+
+<li>rest</li>
+</ul>
+
+<p>These are all certainly valid behaviors of a <code>Motorcycle Racer</code> but if the goal of our system was specific to racing and what happens on the track, then the last 3 on the list would not be relevant.</p>
+
+<p>So ask yourself:</p>
+
+<blockquote>
+<p>What does the object do in relation to the nature of the system that is being developed?</p>
+</blockquote>
+
+<p>And then go code. Wootie.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/oop">oop</a></li>
+                 
+                <li><a href="/tags/objects">objects</a></li>
+                 
+                <li><a href="/tags/behaviors">behaviors</a></li>
+                 
+                <li><a href="/tags/methods">methods</a></li>
+                 
+                <li><a href="/tags/functions">functions</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'ryanregalado'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js"></script>
+  <!-- <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/MathJax.js?config=default"></script> -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+  </script>
+
+  
+
+</body>
+</html>
+

@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Front-End Software Engineer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="/atom.xml" rel="alternate" title="blog.design48.net - Ryan Regalado" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Front-End Software Engineer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/26/backbone-notes-2">Backbone.js notes Part 1</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 26, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='notes_on_backbonejs'>Notes on Backbone.js</h2>
+
+<p>Dependency is <a href='http://documentcloud.github.com/underscore/'>Underscore.js</a></p>
+
+<p>Underscore = library for Javascript functions that help in binding, templating, testing and more.</p>
+
+<p>Has 4 major classes:</p>
+
+<ol>
+<li>Model</li>
+
+<li>Collection</li>
+
+<li>View</li>
+
+<li>Router (was Controller)</li>
+</ol>
+
+<h3 id='model'>Model</h3>
+
+<p>Represents a single entity, eg., a record in a database. Gives a way to read and write arbitrary properties or attributes on a data set.</p>
+<div class='highlight'><pre><code class='js'>	<span class='kd'>var</span> <span class='nx'>ObjectName</span> <span class='o'>=</span> <span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>Model</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>({</span>
+		<span class='nx'>initialize</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>(){</span>
+			<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s2'>&quot;init fired upon new&quot;</span><span class='p'>);</span>
+		<span class='p'>},</span>
+		<span class='nx'>defaults</span><span class='o'>:</span> <span class='p'>{</span>
+			<span class='nx'>name</span><span class='o'>:</span> <span class='s1'>&#39;Default title&#39;</span><span class='p'>,</span>
+			<span class='nx'>anotherProperty</span><span class='o'>:</span> <span class='s1'>&#39;random value&#39;</span>
+		<span class='p'>}</span>
+	<span class='p'>});</span>
+</code></pre></div>
+<h3 id='collection'>Collection</h3>
+
+<p>Essentially just a collection of models. Using database analogy, collections are the result from a query where the results are a number of records models.</p>
+<div class='highlight'><pre><code class='js'>	<span class='kd'>var</span> <span class='nx'>ObjectCollection</span> <span class='o'>=</span> <span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>Collection</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>({</span>
+		<span class='nx'>model</span><span class='o'>:</span> <span class='nx'>ObjectName</span><span class='p'>,</span>	<span class='c1'>//specify model that has been created</span>
+		<span class='nx'>someMethod</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+			<span class='k'>return</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>object</span><span class='p'>)</span> <span class='p'>{</span>
+				<span class='nx'>object</span><span class='p'>.</span><span class='nx'>get</span><span class='p'>(</span><span class='s1'>&#39;specificPropertyName&#39;</span><span class='p'>);</span>
+			<span class='p'>};</span>
+		<span class='p'>}</span>
+	<span class='p'>});</span>
+</code></pre></div>
+<h3 id='view'>View</h3>
+
+<p>Views resemble controllers:</p>
+
+<ol>
+<li>Listen to events thrown by the DOM and models/collections</li>
+
+<li>Represent the application&#8217;s state and model to the user.</li>
+</ol>
+
+<p>Sample templating libraries to use with <code>render</code> function: <a href='http://github.com/janl/mustache.js'>Mustache.js</a>, <a href='http://github.com/creationix/haml-js'>Haml-js</a>, <a href='http://github.com/sstephenson/eco'>Eco</a>, as well as Underscore.js <code>.template</code>.</p>
+
+<p>Recommendation: whatever is used, nice if <em>never</em> have to put strings of HTML in your Javascript.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/backbone.js">backbone.js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/22/node-heroku">Nodejs, Heroku, Procfiles</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 22, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='heroku'>Heroku<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></h2>
+
+<p>an execution environment, Heroku provides access to through an abstraction called &#8220;the process model&#8221;</p>
+
+<p>The process model is a generalized approach to managing processes across a distributed environment. Can specify a custom list of process types in a <em>Procfile</em> and provides granular management of an app&#8217;s components.</p>
+
+<h2 id='twelvefactor_app_methodology'>Twelve-Factor app methodology<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup></h2>
+
+<p>Building, deploying and managing modern software-as-a-service applications that:</p>
+
+<ol>
+<li>Use declarative formats for setup automation</li>
+
+<li>Have a clean contract with the underlying operating system</li>
+
+<li>Are suitable for deployment on modern cloud platforms</li>
+
+<li>Enabling continous deployment for maximum agility</li>
+
+<li>And can scale up without significant changes to tooling, architecture, or development practices.</li>
+</ol>
+
+<h2 id='nodejs_and_observer_pattern'>Nodejs and Observer pattern<sup id='fnref:3'><a href='#fn:3' rel='footnote'>3</a></sup></h2>
+
+<p>Nodejs follows the observer pattern = software design pattern in which an object, called a subject, maintains a list of its dependents, called observers, and notifies them of any state changes, usually by calling one of their methods. It is mainly used to implement distributed event handling systems. This pattern is also key in the MVC architecture.<sup id='fnref:4'><a href='#fn:4' rel='footnote'>4</a></sup></p>
+
+<p><em>Event</em> = an action usually initiated outside the scope of a program and that is handled by a piece of code inside the program. Example: Mouse and click of a button, a &#8220;mouse click&#8221; event. Keyboard and &#8220;key down&#8221; event.</p>
+
+<p>Sample event handling systems:</p>
+
+<ol>
+<li>network monitoring</li>
+
+<li>mobile system</li>
+
+<li>information dissemination (broadcast: television, chat, radio)</li>
+</ol>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p><a href='http://blog.heroku.com/archives/2011/6/20/the_new_heroku_1_process_model_procfile'>http://blog.heroku.com/archives/2011/6/20/the_new_heroku_1_process_model_procfile/</a></p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
+<p><a href='http://devcenter.heroku.com/articles/cedar'>http://devcenter.heroku.com/articles/cedar</a></p>
+<a href='#fnref:2' rev='footnote'>&#8617;</a></li><li id='fn:3'>
+<p><a href='http://devcenter.heroku.com/articles/cedar'>http://www.jamesward.com/2011/06/21/getting-started-with-node-js-on-the-cloud/</a></p>
+<a href='#fnref:3' rev='footnote'>&#8617;</a></li><li id='fn:4'>
+<p><a href='http://devcenter.heroku.com/articles/cedar'>http://en.wikipedia.org/wiki/Observer_pattern</a></p>
+<a href='#fnref:4' rev='footnote'>&#8617;</a></li></ol></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/nodejs">nodejs</a></li>
+                 
+                <li><a href="/tags/heroku">heroku</a></li>
+                 
+                <li><a href="/tags/procfile">procfile</a></li>
+                 
+                <li><a href="/tags/process model">process model</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/21/global-vars-js">Global variables</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 21, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='avoid_polluting_the_global_scope'>Avoid polluting the global scope</h2>
+
+<p>Using global variables is messy because in large applications in can easily eat up a lot of memory. Also strong chance upon execution that a collision will occur where same variable is being used for different uses.</p>
+
+<p>To avoid polluting global scope, declare variables into a namespaced object structure. For variables that don&#8217;t fit or belong in these structures, can declare in a &#8220;self-invoking function&#8221; = a function that gets executed when the definition is parsed by the browser or client.</p>
+
+<h3 id='selfinvoking_function_example'>Self-invoking function example</h3>
+<div class='highlight'><pre><code class='js'><span class='p'>(</span><span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+  <span class='c1'>// All your JS code here</span>
+  <span class='c1'>// Declare variables to be in this scope like so:</span>
+  <span class='c1'>// var someVariable = &quot;some value&quot;;</span>
+<span class='p'>})();</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Traditional accessors methods are used (getters/setters) to manipulate variables that are withing that scope or closure that is defined.</p>
+</li>
+
+<li>
+<p>_ underscore used to indicate that these are private members. Just a visual aid for the programmer.</p>
+</li>
+</ul>
+
+<h2 id='sources'>Sources</h2>
+
+<p>Advanced Javascript: Namespaces, Closures, Self-Invoking Functions, and much, much, more&#8230;<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p><a href='http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/'>http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/</a></p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/js">js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/17/css-repaint-reflow">Page reflow and repaint caused by CSS</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 17, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p>I came across some articles regarding css optimization and found out one of the potential causes for a site bug I came across that causes a &#8220;reflow&#8221; on a mobile website. This is something I need to look into further as this will directly impact how a developer should write code to optimize sites for the desktop and mobile devices.</p>
+
+<h2 id='repaint'>Repaint</h2>
+
+<p>Occurs when changes are made to an element&#8217;s skin that changes visibility, but do not effect its layout.</p>
+
+<p>Examples:</p>
+
+<ul>
+<li>outline</li>
+
+<li>visibility</li>
+
+<li>background color</li>
+</ul>
+
+<p>Repaint is expensive because the browser must verify the visibility of all other nodes in the DOM tree.</p>
+
+<h2 id='reflow'>Reflow</h2>
+
+<p>Even more critical to performance because causes changes that affect layout of a portion or entire page. Reflow of an element causes subsequent reflow to of all child and ancestor elements as well as any elements following it in the DOM.</p>
+
+<p>This can lead to page refresh.</p>
+
+<p>Some causes to page reflow via css:</p>
+
+<ol>
+<li>changing the font</li>
+
+<li>adding or removing a stylesheet</li>
+
+<li>activation of css pseudo classes like :hover</li>
+
+<li>manipulating the class attribute</li>
+
+<li>a script manipulating the DOM</li>
+
+<li>setting a property of the style attribute (inline style)</li>
+</ol>
+
+<h2 id='video_that_show_reflow'>Video that show reflow</h2>
+
+<p><a href='http://www.youtube.com/watch?v=ZTnIxIA5KGw'>Gecko Reflow Visualization - mozilla.org</a></p>
+
+<h3 id='sources'>Sources</h3>
+
+<ol>
+<li>
+<p><a href='http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/'>Reflows &amp; Repaints: CSS Performance making your JavaScript slow?</a></p>
+</li>
+
+<li>
+<p><a href='http://blog.mozilla.com/gen/2009/04/09/how-to-make-your-own-gecko-reflow-video/'>How to make your own Gecko Reflow Video</a></p>
+</li>
+
+<li>
+<p><a href='http://perfectionkills.com/profiling-css-for-fun-and-profit-optimization-notes/'>Profiling CSS for fun and profit. Optimization notes.</a></p>
+</li>
+</ol>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/css">css</a></li>
+                 
+                <li><a href="/tags/repaint">repaint</a></li>
+                 
+                <li><a href="/tags/reflow">reflow</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/03/11/reusable-object-creation">Reusable code and object creation in JavaScript</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 11, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='creating_reusable_code'>Creating reusable code</h2>
+
+<ul>
+<li>Write object-oriented code and implement object inheritance</li>
+
+<li>In Javascript, this is <em>prototypal inheritance</em> where an object constructor can inherit methods from one other object, creating a <em>prototype</em> from which all other new objects are built.</li>
+
+<li>Facilitated by the <em>prototype property</em>, exists for every function</li>
+</ul>
+
+<h2 id='book_notes__javascript_patterns'>Book notes - Javascript Patterns</h2>
+
+<ul>
+<li>reading book by Stoyan Stefanov <sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></li>
+
+<li>object literal notation better to use when creating objects as it&#8217;s easier to read and has better performance not having to look up scope chain to general global <em>Object</em> constructor</li>
+
+<li>also using <em>new Object() constructor</em> has issues with dynamic typing that may lead to unwanted results, eg. boolean, number, string</li>
+
+<li>when using <em>new</em> statement when creating objects with methods, if want to re-use method and have another object copy or clone this object, instead of creating a duplicate method in memory, instead add to the <em>prototype</em> of that object.</li>
+</ul>
+<div class='highlight'><pre><code class='js'><span class='nx'>Person</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>sayName</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+	<span class='k'>return</span> <span class='s2'>&quot;I am &quot;</span> <span class='o'>+</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>name</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
+<ul>
+<li>an object is just a function</li>
+</ul>
+<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>person</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>Person</span><span class='p'>()</span>
+</code></pre></div>
+<ul>
+<li><em>Person</em> is just a function</li>
+</ul>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>Javascipt Patterns by Stoyan Stefanov. <a href='http://www.amazon.com/gp/product/B0046RERXE/'>Buy on Amazon</a></p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/reusable">reusable</a></li>
+                 
+                <li><a href="/tags/js">js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                 
+                <li><a href="/tags/object">object</a></li>
+                 
+                <li><a href="/tags/constructor">constructor</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+			   <a href="/page17">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	    <li class="next">
+		    <a href="/page19">
+			   Older posts >>
+		    </a>
+		</li>
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js"></script>
+  <!-- <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/MathJax.js?config=default"></script> -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+  </script>
+
+  
+
+</body>
+</html>
+

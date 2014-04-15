@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Front-End Software Engineer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="/atom.xml" rel="alternate" title="blog.design48.net - Ryan Regalado" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Front-End Software Engineer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/03/29/identifying-behaviors-for-your-object">Identifying behaviors for your object</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 29, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p><img alt='rossi' src='http://f.cl.ly/items/3i3J0h2C2m1001301P3H/Screen%20Shot%202013-03-29%20at%209.24.58%20PM.png' /></p>
+
+<p>In coming up with the member functions or methods for your object in a class or module, there can be several behaviors that an object can have in real life. You don&#8217;t have to identify all of them. Just identify those behaviors that are relative to the goal of your system.</p>
+
+<h2 id='example'>Example</h2>
+
+<p>If you had a <code>Motorcycle Racer</code> object and you were trying to identify the behaviors or methods he would have, some behaviors to consider are:</p>
+
+<ul>
+<li>startMotorcycle</li>
+
+<li>gridUp</li>
+
+<li>changeGears</li>
+
+<li>wheelie</li>
+
+<li>accelerate</li>
+
+<li>brake</li>
+
+<li>train</li>
+
+<li>eat</li>
+
+<li>rest</li>
+</ul>
+
+<p>These are all certainly valid behaviors of a <code>Motorcycle Racer</code> but if the goal of our system was specific to racing and what happens on the track, then the last 3 on the list would not be relevant.</p>
+
+<p>So ask yourself:</p>
+
+<blockquote>
+<p>What does the object do in relation to the nature of the system that is being developed?</p>
+</blockquote>
+
+<p>And then go code. Wootie.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/oop">oop</a></li>
+                 
+                <li><a href="/tags/objects">objects</a></li>
+                 
+                <li><a href="/tags/behaviors">behaviors</a></li>
+                 
+                <li><a href="/tags/methods">methods</a></li>
+                 
+                <li><a href="/tags/functions">functions</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/03/25/abstraction-in-object-oriented-design">Abstraction in Object Oriented Design</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 25, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='function_vs_functionality'>Function vs. Functionality</h2>
+
+<p><strong>Function</strong> is the object&#8217;s behavior.</p>
+
+<p><strong>Functionality</strong> is the set of instructions or steps to perform that behavior.</p>
+
+<p><strong>Abstraction</strong> is what the base or superclass requires of it&#8217;s derived or subclass to define the functionality of a behavior. The base class can force the derived class to define an implementation for a function if the base class declares that function as <strong>abstract</strong>.</p>
+
+<h2 id='abstract_class'>Abstract class</h2>
+
+<blockquote>
+<p>a class that cannot be instantiated. Purpose is to have a subclass inherit from it in order for its data and behavior to be used in an application.</p>
+</blockquote>
+
+<p>An abstract class can have member or method functions designated as abstract. This will require derived class to redefine the abstract method, otherwise a compiler error will show.</p>
+
+<p><img alt='abstract methods' src='http://f.cl.ly/items/2G3B3t2I2G1X3s0c0f1E/Screen%20Shot%202013-03-25%20at%2011.07.01%20PM.png' /></p>
+
+<h2 id='how_does_this_differ_with_encapsulation'>How does this differ with Encapsulation?</h2>
+
+<p><strong>Encapsulation</strong> is a way to define objects in a system so there are associated data and behavior (procedures) tied to it. The only way to access attributes and procedures of an object is to create an <strong>instance</strong> of it.</p>
+
+<p>Given picture below, the <strong>attributes</strong> are <code>ID, name, and Graduation</code>. The member functions or behavior (procedures) are <code>Write()</code> and <code>Display</code>. These attributes and behaviors are said to be <strong>encapsulated</strong> in the <code>Student</code> class.</p>
+
+<p><img alt='student class - encapsulation' src='http://f.cl.ly/items/1g3E1A2Z2V112o2K3W1O/Screen%20Shot%202013-03-25%20at%2011.54.45%20PM.png' /></p>
+
+<h2 id='purpose_for_encapsulation'>Purpose for encapsulation</h2>
+
+<p>The main purpose for encapsulation is protection, defining explicitly how an object&#8217;s data is accessed or what member functions can be called on it.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/ood">ood</a></li>
+                 
+                <li><a href="/tags/object">object</a></li>
+                 
+                <li><a href="/tags/oriented">oriented</a></li>
+                 
+                <li><a href="/tags/design">design</a></li>
+                 
+                <li><a href="/tags/abstraction">abstraction</a></li>
+                 
+                <li><a href="/tags/abstract">abstract</a></li>
+                 
+                <li><a href="/tags/encapsulation">encapsulation</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/03/23/tracer-bullets-and-prototypes--pragmatic-programmer">Tracer Bullets and Prototypes : Pragmatic Programmer</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 23, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='tracer_bullets'>Tracer Bullets</h2>
+
+<p><img alt='tracer bullet' src='http://www.arl.army.mil/www/pages/578/image.1.large.jpg' /></p>
+
+<p>How do you shoot a machine gun in the dark to determine if it hits your target? You can do some calculations based on gun type, environment, trajectory, etc., or you can insert some special bullets that have phosphorus that ignites when it leaves the gun leaving a pyrotechnic trail from the gun to the target. This is preferred over the labor of calculation since feedback is immediate.</p>
+
+<p>How does this tie in with programming and software design? Sometimes developers want code that glows in the dark too, if there&#8217;s some vague requirement and a goal is to try to hit some specific target. When the <code>tracer bullet</code> technique is applied, we get some type of immediate feedback as well since some portion of the system is created, visible and repeatable.</p>
+
+<h2 id='caveats_of_tracer_bullet_methodology'>Caveats of Tracer Bullet methodology</h2>
+
+<ul>
+<li>Consistent with idea that project is never finished</li>
+
+<li>There will always be changes and things to add to the system</li>
+
+<li>It is an incremental approach since the requirements were completely defined</li>
+
+<li>Use in situations where you&#8217;re not 100% sure of where you are going but you can adjust until you hit what you&#8217;re trying to aim for</li>
+</ul>
+
+<h2 id='difference_with_prototypes'>Difference with Prototypes</h2>
+
+<p>A <code>prototype</code> generates disposable code. It&#8217;s not meant to have everything fleshed out like error checking, complete working submodules, real data, etc. It&#8217;s main aim is to explore risky or uncertain elements to evaulate without committing to building the real item. This offers changes for correction at a greatly reduced cost than from finding out after the system is fully developed.</p>
+
+<p><code>Tracer bullets</code> define a system to see how everything connects. As requirements get more finalized, more pieces can be defined better and hit closer to the final target.</p>
+
+<blockquote>
+<p>Prototyping is a <strong>learning experience</strong>. It&#8217;s value lies not in the code produced, but in the lessons learned.<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+</blockquote>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>The Pragmatic Programmer, by Andrew Hunt and David Thomas</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/tracer">tracer</a></li>
+                 
+                <li><a href="/tags/bullets">bullets</a></li>
+                 
+                <li><a href="/tags/prototype">prototype</a></li>
+                 
+                <li><a href="/tags/pragmatic">pragmatic</a></li>
+                 
+                <li><a href="/tags/programmer">programmer</a></li>
+                 
+                <li><a href="/tags/book">book</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/03/23/facade-pattern">Facade Pattern</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 23, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='definition'>Definition</h2>
+
+<p>In doing more planning for the modules/components of a project I&#8217;m working on, I&#8217;m designing what the system will be composed of and how best to implement them for scalability and object reuse. A pattern that came up was the use of a <code>Facade</code>, or an object that provides a simplified interface to a larger body of code.</p>
+
+<p>Something analagous to this in modern web development is the use of APIs, or an application programming interface that consists of software component that can communicate with each other. What&#8217;s usually given is a set of methods or function signatures that indicate their input and will provide some service or output. Through one, unified interface, access to the system and its components are provided, simplifying its use.</p>
+
+<h2 id='example_diagram'>Example diagram</h2>
+
+<p><img alt='sample facade setup' src='http://f.cl.ly/items/2n2V2y23120Y2x3b1t0J/Screen%20Shot%202013-03-23%20at%2012.13.14%20AM.png' /></p>
+
+<h2 id='benefits_of_using'>Benefits of using</h2>
+
+<p>Another example of using the <strong>facade pattern</strong> and APIs is creating an interface to a poorly designed API. This would satisfy simplifying an interface to a larger body of code.</p>
+
+<p>Using the <code>facade</code> pattern allows you to decouple your implementation from the subsystem. If your subsystem had to change for any reason and if the interface changed, you would only need to update the facade that interacts with the interface to the subsystem.</p>
+
+<h2 id='how_im_using_it'>How I&#8217;m using it</h2>
+
+<p>From a talk given by Nicholas Zakas on <a href='http://www.slideshare.net/nzakas/scalable-javascript-application-architecture'><strong>Scalable JavaScript Architecture</strong></a>, he provides examples of how components can be connected together while being loosely coupled with use of Modules -&gt; Sandbox -&gt; Core -&gt; Base. Modules communicate to other modules via the Sandbox. Only the Sandbox interacts with the Core. And the Core is the only component that talks to Base.</p>
+
+<p>The <code>Sandbox</code> in this setup is what uses the <code>Facade</code> pattern, an object with a simplified interface to the Core. I&#8217;m using the pattern in the same way so that any modifications being done in the core are separated from the API or method signatures that the modules are using, thus keeping my components loosely coupled. If any updates are needed to the system, the modules are not implemented so tightly where many modification points are needed, allowing for easier testability and streamlined enhancements.</p>
+
+<p>Happy coding.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/facade">facade</a></li>
+                 
+                <li><a href="/tags/pattern">pattern</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/03/22/some-more-apache-and-osx-configs">Some more apache and osx configs</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Mar 22, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p>Hacking away on my local dev for another apache based site that uses a .htaccess file for url routing. Just recording a note I can refer to if I end up copying a repo to work on using a different computer.</p>
+
+<p>This particular site has a .htaccess file that has <code>Rewrite</code> rules that need to override default settings. Add this to my <code>.conf</code> file</p>
+<div class='highlight'><pre><code class='js'><span class='err'>#</span> <span class='nx'>In</span> <span class='o'>/</span><span class='kr'>private</span><span class='o'>/</span><span class='nx'>etc</span><span class='o'>/</span><span class='nx'>apache2</span><span class='o'>/</span><span class='nx'>users</span><span class='o'>/</span><span class='nx'>ryanregalado</span><span class='p'>.</span><span class='nx'>conf</span>
+<span class='o'>&lt;</span><span class='nx'>Directory</span> <span class='s2'>&quot;/Users/ryanregalado/Dropbox/Dev&quot;</span><span class='o'>&gt;</span>
+    <span class='nx'>Options</span> <span class='nx'>Indexes</span> <span class='nx'>MultiViews</span> <span class='nx'>FollowSymLinks</span>
+    <span class='nx'>AllowOverride</span> <span class='nx'>All</span>
+    <span class='nx'>Order</span> <span class='nx'>allow</span><span class='p'>,</span><span class='nx'>deny</span>
+    <span class='nx'>Allow</span> <span class='nx'>from</span> <span class='nx'>all</span>
+<span class='o'>&lt;</span><span class='err'>/Directory&gt;</span>
+</code></pre></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/apache">apache</a></li>
+                 
+                <li><a href="/tags/osx">osx</a></li>
+                 
+                <li><a href="/tags/config">config</a></li>
+                 
+                <li><a href="/tags/htaccess">htaccess</a></li>
+                 
+                <li><a href="/tags/conf">conf</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+		   <li class="prev">
+			   <a href="/">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	    <li class="next">
+		    <a href="/page3">
+			   Older posts >>
+		    </a>
+		</li>
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js"></script>
+  <!-- <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/MathJax.js?config=default"></script> -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+  </script>
+
+  
+
+</body>
+</html>
+

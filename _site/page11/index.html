@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Front-End Software Engineer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="/atom.xml" rel="alternate" title="blog.design48.net - Ryan Regalado" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Front-End Software Engineer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/11/04/cross-browser-js-log-fn">Cross browser JavaScript log function</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Nov  4, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='to_try_for_ie'>To try for IE</h1>
+
+<p>More from Secrets from a JavaScript Ninja book. A cross-browser function to implement logging in debugging</p>
+<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>log</span><span class='p'>()</span> <span class='p'>{</span>
+	<span class='k'>try</span> <span class='p'>{</span>
+		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>.</span><span class='nx'>apply</span><span class='p'>(</span><span class='nx'>console</span><span class='p'>,</span> <span class='nx'>arguments</span><span class='p'>);</span>
+	<span class='p'>}</span>
+	<span class='k'>catch</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
+		<span class='k'>try</span> <span class='p'>{</span>
+			<span class='nx'>opera</span><span class='p'>.</span><span class='nx'>postError</span><span class='p'>.</span><span class='nx'>apply</span><span class='p'>(</span><span class='nx'>opera</span><span class='p'>,</span> <span class='nx'>arguments</span><span class='p'>);</span>
+		<span class='p'>}</span>
+		<span class='k'>catch</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
+			<span class='nx'>alert</span><span class='p'>(</span><span class='nb'>Array</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>join</span><span class='p'>.</span><span class='nx'>call</span><span class='p'>(</span><span class='nx'>arguments</span><span class='p'>,</span> <span class='s2'>&quot; &quot;</span><span class='p'>));</span>
+		<span class='p'>}</span>
+	<span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/console">console</a></li>
+                 
+                <li><a href="/tags/log">log</a></li>
+                 
+                <li><a href="/tags/debug">debug</a></li>
+                 
+                <li><a href="/tags/js">js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/woot/2012/11/02/js-timers">JavaScript Timers from Secrets from a JavaScript Ninja book</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Nov  2, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='javascript_timers'>Javascript Timers</h1>
+
+<ul>
+<li>JavaScript engines only have a <strong>single thread</strong>, forcing asynchronous events to<br />queue waiting for execution.</li>
+
+<li><code>setTimeout</code> and <code>setInterval</code> are fundamentally different in how they execute asynchronous code.</li>
+
+<li>If a timer is blocked from immediately being executed it will be delayed until the next possible time of execution (which will be longer than the desired delay).</li>
+
+<li>Intervals may execute back-to-back with no delay if they take long enough to execute (longer than the specified delay).</li>
+</ul>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/js">js</a></li>
+                 
+                <li><a href="/tags/timers">timers</a></li>
+                 
+                <li><a href="/tags/setTimeout">setTimeout</a></li>
+                 
+                <li><a href="/tags/setInterval">setInterval</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/11/01/javascript-ninja-book">Secrets of a Javascript Ninja</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Nov  1, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='book_notes'>Book notes</h1>
+
+<p>Starting to read this book from John Resig. It&#8217;s promising as it cites core of Javascript regarding <strong>objects, function, and closures</strong>, and how the use of timers and regular expressions in popular javascript libraries can help you write better web applications.</p>
+
+<p>I&#8217;ve been digging into coding cross-browser javascript for my current place of work at <a href='http://www.blackline.com'>BlackLine</a> so I&#8217;m looking forward to learning more of how John contributed to the <em>jQuery</em> library and insights from those efforts.</p>
+
+<h1 id='things_to_consider'>Things to consider</h1>
+
+<ul>
+<li>Best practices: testing and perforamnce analysis</li>
+
+<li>simple assert function will do</li>
+</ul>
+
+<h1 id='quote'>Quote</h1>
+
+<blockquote>
+<p>Robert Frost wrote that good fences make good neighbors, but in the world of web applications, indeed any programming discipline, good tests make good code.</p>
+</blockquote>
+
+<h1 id='on_testing'>On Testing</h1>
+
+<p>Good test exhibit 3 characteristics:</p>
+
+<ol>
+<li><strong>Repeatability</strong> - tests should be highly reproducible and have the same results.</li>
+
+<li><strong>Simplicity</strong> - tests should focus on one thing.</li>
+
+<li><strong>Independence</strong> - tests should execute in isolation, break them down in smallest possible unit, which helps determine the source of bugs</li>
+</ol>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/book">book</a></li>
+                 
+                <li><a href="/tags/notes">notes</a></li>
+                 
+                <li><a href="/tags/dev">dev</a></li>
+                 
+                <li><a href="/tags/web">web</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                 
+                <li><a href="/tags/js">js</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/25/mongodb-embedded-collections">MongoDB embedded collections</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct 25, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='designing_mongodb_schemas_with_embedded_and_bucket_structures'>Designing MongoDB Schemas with embedded and bucket structures</h1>
+
+<p>I found this link to a <a href='https://openshift.redhat.com/community/blogs/designing-mongodb-schemas-with-embedded-non-embedded-and-bucket-structures'>blog article</a> on how to define your MongoDB schema and make choices for <strong>embedded</strong> and <strong>non-embedded</strong> structures, as well as the use of buckets.</p>
+
+<p>The main takeways are at the conclusion:</p>
+
+<ol>
+<li>The nature of MongoDB and storage strategy is that you have the ability to change the structure. This allows you to move from simple to more complex strategies at will</li>
+
+<li>Starting simple, can maintain development velocity early and migrate to a more scalable strategy as the need arises. I like this as I will be testing a small feature for the <a href='https://github.com/design48/mytestimony'>mytestimony web app</a> project I want to implement.</li>
+</ol>
+
+<p>More and more I&#8217;m liking MongoDB because of the easy nature of working with JSON data, and MongoDB&#8217;s api for database queries are straight forward.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/mongodb">mongodb</a></li>
+                 
+                <li><a href="/tags/mongo">mongo</a></li>
+                 
+                <li><a href="/tags/nosql">nosql</a></li>
+                 
+                <li><a href="/tags/embedded">embedded</a></li>
+                 
+                <li><a href="/tags/collections">collections</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/24/commandt-window">Getting command-T to work in Windows vim</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct 24, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='some_notes'>some notes</h1>
+
+<p>Just wanted to record what I did to get command-T working on a windows machine. There were problems with the ruby and gcc compilation of the plugin so I needed to make sure I had the correct versions of each to what the command-T plugin was built.</p>
+
+<p>So some steps:</p>
+
+<ol>
+<li>Made sure I installed vim 7.3 with +ruby support</li>
+
+<li>Made sure I had a Ruby version of 1.9.1 that was used to compile command-T</li>
+
+<li>Had the gcc compiler so I can remake/compile the command-T plugin with ruby</li>
+
+<li>Run these commands in the ~.vim/bundle/command-t/ruby/command-t folder</li>
+</ol>
+
+<p><code>$ ruby extconf.rb</code></p>
+
+<p><code>$ make</code></p>
+
+<p>And then I was able to <code>ctrl+t</code> while in vim and voila. yay :thumbsup:</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/vim">vim</a></li>
+                 
+                <li><a href="/tags/ruby">ruby</a></li>
+                 
+                <li><a href="/tags/command-t">command-t</a></li>
+                 
+                <li><a href="/tags/gvim">gvim</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+			   <a href="/page10">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	    <li class="next">
+		    <a href="/page12">
+			   Older posts >>
+		    </a>
+		</li>
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js"></script>
+  <!-- <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/MathJax.js?config=default"></script> -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+  </script>
+
+  
+
+</body>
+</html>
+

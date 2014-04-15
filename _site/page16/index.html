@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Front-End Software Engineer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="/atom.xml" rel="alternate" title="blog.design48.net - Ryan Regalado" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Front-End Software Engineer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/05/13/code-easy-to-test">Book Notes - Code Easy to Test</a></h3></div>
+
+        <div class="meta">
+            <span class="date">May 13, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='unit_testing'>Unit Testing</h2>
+
+<p>Testing done on each module, in isolation, to verify its behavior. Typically will establish an artificial environment, then invoke routines on the module being tested.</p>
+
+<h2 id='test_against_contract'>Test Against Contract</h2>
+
+<p>Test that the module delivers the functionality it promises, over a wide range of test cases and boundary conditions.</p>
+
+<p>Module may be dependent on other modules, so how do we test? One approach is to test subcomponents contarct in full of a module first thoroughly. Once that has been verified, then the module itself can be tested.</p>
+
+<p>Hepful in debugging: If Module A tests failed but its dependent modules 1a and 2a tests have passed, can be pretty sure issue is in Module A, and not waste time reexamining its dependent modules. Purpose is to avoid disasters that may come up down the line.</p>
+
+<p><strong>Tip:</strong></p>
+
+<blockquote>
+<p>When you design a module or single routine, design both its contract and the the code to test that contract. This may take care of boundary conditions and other issues.</p>
+</blockquote>
+
+<h2 id='test_harness'>Test Harness</h2>
+
+<p>Handle common operations such as:</p>
+
+<ol>
+<li>logging status</li>
+
+<li>analyzing output for expected results</li>
+
+<li>selecting and running the tests</li>
+
+<li>standardized form of failture reporting</li>
+
+<li>specify setup and cleanup</li>
+</ol>
+
+<p>In OO languages and envrionments, might create a base class that provides these common operations.</p>
+
+<p><strong>Tip:</strong></p>
+
+<blockquote>
+<p>Logs are helpful once application is in production environment to see what&#8217;s going on internally.</p>
+</blockquote>
+
+<blockquote>
+<p>Use of &#8216;hot-key&#8217; sequence to launch a diagnostic control window with status message and information. &#8216;Easter Egg&#8217; for debugging.</p>
+</blockquote>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/book">book</a></li>
+                 
+                <li><a href="/tags/notes">notes</a></li>
+                 
+                <li><a href="/tags/testing">testing</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/05/05/markdown-editor">Markdown Editor</a></h3></div>
+
+        <div class="meta">
+            <span class="date">May  5, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='yeah_i_dig_markdown'>Yeah, I dig Markdown</h2>
+
+<p>Just came across this editor. Pretty slick. Shortcuts for editing and also has export to HTML. Looking into this for automating a hosted blog.</p>
+
+<p><img alt='mouapp' src='http://content.screencast.com/users/User48/folders/Jing/media/24d8fe1e-0f60-43f4-a564-21499c2bf516/00000026.png' /></p>
+
+<p>Check it out, it&#8217;s called <a href='http://mouapp.com/'>Mou</a>.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/markdown">markdown</a></li>
+                 
+                <li><a href="/tags/md">md</a></li>
+                 
+                <li><a href="/tags/editor">editor</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/04/29/caching-and-akavache">Caching and Akavache</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Apr 29, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='caching_with_akavache'>Caching with Akavache</h2>
+
+<p>Github just posted this about Akavache, a library to allow for creating cache store for writing native desktop and mobile application in C#. I&#8217;m creating a web/mobile application that I want to design taking caching and fetching remote data into consideration while still keeping the UI responsive, even in offline mode.</p>
+
+<p>Learn more about <a href='https://github.com/blog/1113-akavache-is-now-open-source'>Akavache</a>.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/cache">cache</a></li>
+                 
+                <li><a href="/tags/Akavache">Akavache</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/04/18/css-box-sizing">CSS box-sizing to handle cross-browser layout</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Apr 18, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='css_and_boxsizing_property'>CSS and box-sizing property</h2>
+
+<p>I just came across <a href='http://paulirish.com/2012/box-sizing-border-box-ftw/'>this blog post from Paul Irish</a> and I&#8217;m eager to use this once I&#8217;m on a project that doesn&#8217;t need to support IE7 natively, although there is a polyfill, or <a href='https://github.com/Schepp/box-sizing-polyfill'>plugin/method, available to handle it on github</a>.</p>
+
+<p>This basially allows you to define how boxes in your layout will handle padding when content is inside. Before this box-sizing property was used, users would often have to modify their predfined width/height setting to accomodate if content filled up the box or not in order to achieve the final net size that was intended.</p>
+
+<p><strong>For example</strong></p>
+
+<p>If I wanted a 200 pixel wide box and added content in it that had padding of 20 pixels on each side, I would have to update the the css definition for that box to be -40 pixels to final width of 160 pixels.</p>
+
+<p>Yes, very irritating. I just want to define it once and be done with that. box-sizing to the rescue:</p>
+<div class='highlight'><pre><code class='js'>	<span class='cm'>/* In css file, vendor prefix to handle cross-browser */</span>
+	<span class='o'>*</span> <span class='p'>{</span> <span class='o'>-</span><span class='nx'>moz</span><span class='o'>-</span><span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='o'>-</span><span class='nx'>webkit</span><span class='o'>-</span><span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='p'>}</span> <span class='p'>}</span>
+</code></pre></div>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/css">css</a></li>
+                 
+                <li><a href="/tags/cross-browser">cross-browser</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/04/15/love-design">I Still Love Design</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Apr 15, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='loving_design'>Loving Design</h2>
+
+<p>Even though I&#8217;ve been programming a lot lately, I still dig a lot of design. Just came across this goodie:</p>
+
+<p><img alt='Video of someone sketching and coloring a treadmill' src='http://www.sketch-a-day.com/wp-content/uploads/2012/03/sketch-a-day-356.jpg' /></p>
+
+<p>Vid on the process here with a Wacom tablet. Gyea&#8230;</p>
+
+<p><a href='http://www.sketch-a-day.com/posts/sketch-a-day-356/'>http://www.sketch-a-day.com/posts/sketch-a-day-356/</a></p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/design">design</a></li>
+                 
+                <li><a href="/tags/industrial">industrial</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+			   <a href="/page15">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	    <li class="next">
+		    <a href="/page17">
+			   Older posts >>
+		    </a>
+		</li>
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js"></script>
+  <!-- <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/MathJax.js?config=default"></script> -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+  </script>
+
+  
+
+</body>
+</html>
+

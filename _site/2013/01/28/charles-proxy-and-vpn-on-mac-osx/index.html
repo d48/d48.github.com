@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Charles Proxy and VPN on Mac OSX</title>
+   <meta name="description" content="Ryan Regalado Front-End Software Engineer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="/atom.xml" rel="alternate" title="blog.design48.net - Ryan Regalado" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Front-End Software Engineer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2013/01/28/charles-proxy-and-vpn-on-mac-osx">Charles Proxy and VPN on Mac OSX</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Jan 28, 2013</span>
+        </div>
+
+        <div class="body-post">
+            
+                <p><strong>Charles Proxy</strong> is a program that allows you to monitor network requests through an HTTP proxy. This is also a great tool to use for debugging and changing up files that get routed from a request. A use case for debugging or general web developement would be that on a production server, if there was a bug happening but not on my local dev machine, I can route the production asset to hit a file on my local dev machine that I suspect is the issue, and it will run the website as if it was obtaining it from the server.</p>
+
+<p>I have configured Charles Proxy to run on my Mac OSX through my company&#8217;s VPN and there were a few caveats to be aware of:</p>
+
+<ol>
+<li>Make sure Charles Proxy is running before connecting to VPN else the program won&#8217;t read the traffic.</li>
+
+<li>For Remote Mapping files to local, https to http, you need to enable the host on Charles Proxy -&gt; Proxy Settings, e.g., with wildcard <code>*.myremote-host.com</code></li>
+
+<li>Charles Proxy will change up your Mac OSX proxy network settings so you may not be able to connect to the internet even after shutting down the program. Just uncheck the boxes for Web Proxy (HTTP) and Secure Web Proxy (HTTPS) and be sure to close and restart your browser. VPN being on may also be hanging your requests. Either shut that down or restart it as well.</li>
+</ol>
+
+<p><img alt='uncheck boxes for proxy' src='http://f.cl.ly/items/19153u363V1p2C40373F/Screen%20Shot%202013-01-28%20at%207.35.42%20PM.png' /></p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/charles">charles</a></li>
+                 
+                <li><a href="/tags/proxy">proxy</a></li>
+                 
+                <li><a href="/tags/vpn">vpn</a></li>
+                 
+                <li><a href="/tags/mac">mac</a></li>
+                 
+                <li><a href="/tags/osx">osx</a></li>
+                 
+                <li><a href="/tags/debug">debug</a></li>
+                 
+                <li><a href="/tags/dev">dev</a></li>
+                 
+                <li><a href="/tags/local">local</a></li>
+                 
+                <li><a href="/tags/prod">prod</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'ryanregalado'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js"></script>
+  <!-- <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/MathJax.js?config=default"></script> -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+  </script>
+
+  
+
+</body>
+</html>
+

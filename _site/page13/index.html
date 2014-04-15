@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Ryan Regalado</title>
+   <meta name="description" content="Ryan Regalado Front-End Software Engineer" />
+   <meta name="author" content="Ryan Regalado" />
+   <link rel="shortcut icon" href="http://www.design48.net/images/favicon.ico" />
+   <link href="/atom.xml" rel="alternate" title="blog.design48.net - Ryan Regalado" type="application/atom+xml" />
+
+   <!-- syntax highlighting CSS -->
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-monokai.css" type="text/css" /> -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/pygments-blackboard.css" type="text/css" />
+   <!-- <link rel="stylesheet" href="/assets/themes/tom/css/pygments-github.css" type="text/css" /> -->
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/md5.js"></script>
+  <script type="text/javascript" src="/assets/themes/tom/js/jquery.gravatar.js"></script>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/" id="gravatar"></a>
+        <script>
+            $("#gravatar").fadeIn(900).html($.gravatar('ryan@design48.net'));
+        </script>
+
+        <h1 id="site-title"><a href="/">Ryan Regalado</a></h1>
+
+        <span class="blog-description">Front-End Software Engineer</span>
+
+        <div class="title" id="menu">
+            <a class="extra" href="/pages/about.html">About</a>
+            <a class="extra" href="/archive.html">Archive</a>
+        </div>
+
+      <ul class="contact">
+          <li><a href="http://github.com/d48/" target="_blank">d48@github</a></li>
+          <li><a href="http://twitter.com/design48/" target="_blank">@design48</a></li>
+      </ul>
+
+    </div>
+
+  <div class="site">
+    
+<div id="post">
+    <div class="post">
+        
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/04/pragmatic-book">Pragmatic Programmer book</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct  4, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='book_notes_on_metadata_driven_applications'>Book notes on Meta-Data driven applications</h1>
+
+<p><strong>Metadata</strong> is used to define preferences or configuration details for an application at runtime, not compile time, so as to provide implementation details to achieve greater flexibility in the code, as well as adapt to ever-changing requirements and needs of business use.</p>
+
+<h2 id='goals'>Goals</h2>
+
+<ol>
+<li>to think declaratively (specifying <em>what</em> is to be done, not <em>how</em>)</li>
+
+<li>create highly adaptable and dynamic programs (not get stuck in one way/solution)</li>
+</ol>
+
+<h2 id='why_we_would_use'>Why we would use</h2>
+
+<ul>
+<li>Business policy and rules change</li>
+
+<li>Dodo bird analogy: species that don&#8217;t adapt to the ever-changing environment, die.</li>
+</ul>
+
+<h2 id='how_to_achieve'>How to achieve</h2>
+
+<p>Adopt this general rule:</p>
+
+<blockquote>
+<p>Program for the general case, then provide the specifics somewhere else, outside the compiled code</p>
+</blockquote>
+
+<h2 id='benefits'>Benefits:</h2>
+
+<ul>
+<li>It forces you to decouple your design</li>
+
+<li>Forces you to create a more abstract, robust design by deferring details - providing later outside of the program</li>
+
+<li>Customize the application without recompiling it (ex. CSS can be a type of implementation detail, but more specifically and traditionally a config file in xml or json)</li>
+
+<li>May be able to implement different projects using same application engine but with different metadata (ex., widgets enabled/disabled, language files, dev vs production)</li>
+</ul>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/book">book</a></li>
+                 
+                <li><a href="/tags/pragmatic programmer">pragmatic programmer</a></li>
+                 
+                <li><a href="/tags/metadata">metadata</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/10/02/agile-development">Agile Development</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Oct  2, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h2 id='overview_of_some_terms'>Overview of some terms</h2>
+
+<ul>
+<li>The <strong>product backlog</strong> is the list of all user stories the team will deliver for the product.</li>
+
+<li>A <strong>user story</strong> describes what the system should do, in a way that emphasizes value to a user or customer. It is usually written in one or two sentences of everyday language.</li>
+
+<li>A best practice for user stories is to write them from the point of view of the user. This template is often used: As <em>who</em>, I want <em>what</em>, so that <em>why</em>.</li>
+
+<li><strong>Story points</strong> are a unit of measure for expressing the overall size of a user story. Story points are relative. A story that is assigned four points should require twice as much effort as a story that is assigned two points.</li>
+</ul>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/agile">agile</a></li>
+                 
+                <li><a href="/tags/scrum">scrum</a></li>
+                 
+                <li><a href="/tags/sprint">sprint</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/09/19/use-case-for-http-method-head">Use case for HTTP method - HEAD</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Sep 19, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='use_case_for_http_method__head'>Use case for HTTP method - HEAD</h1>
+
+<p>This method can be used for obtaining metainformation about the entity implied by the request without transferring the entity-body itself. This method is often used for testing hypertext links for validity, accessibility, and recent modification.</p>
+
+<p>Very cool.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/HTTP">HTTP</a></li>
+                 
+                <li><a href="/tags/method">method</a></li>
+                 
+                <li><a href="/tags/HEAD">HEAD</a></li>
+                 
+                <li><a href="/tags/use case">use case</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/09/18/coffeescript">Learning Coffeescript</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Sep 18, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='learning_coffeescript'>Learning Coffeescript</h1>
+
+<p>I will be implementing the mytestimony project using Coffeescript to accomplish a few things.</p>
+
+<pre><code>1. Learn new technology
+2. Decrease code in repository
+3. Attempt to have code more readable and maintainable</code></pre>
+
+<p>I just came across this <a href='http://coffeescript.codeschool.com/'>Codeschool</a> screencast and also this <a href='http://railscasts.com/episodes/267-coffeescript-basics?view=asciicast'>Railscast video</a>. They both got me jazzed to learn it and can&#8217;t wait to build the app. Now i&#8217;m looking through a few and learning some basics. I really like how clean the language is.</p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/Coffeescript">Coffeescript</a></li>
+                 
+                <li><a href="/tags/coffee">coffee</a></li>
+                 
+                <li><a href="/tags/script">script</a></li>
+                 
+                <li><a href="/tags/js">js</a></li>
+                 
+                <li><a href="/tags/javascript">javascript</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+<div class="post">
+    <div class="content">
+        <div class="title"><h3><a href="/2012/09/01/working-with-mongodb">Working with MongoDB</a></h3></div>
+
+        <div class="meta">
+            <span class="date">Sep  1, 2012</span>
+        </div>
+
+        <div class="body-post">
+            
+                <h1 id='working_with_mongodb'>Working with MongoDB</h1>
+
+<p>Today I was looking through the MongoDB docs learning how to create and query a collection, here&#8217;s a few helpful commands to insert, query, and filter through some document sets. I&#8217;m really liking it and forward to building an app for the MyTestimony.com idea I&#8217;ve been wanting to do.</p>
+
+<p>Given a MongoDB collection below:</p>
+<div class='highlight'><pre><code class='js'><span class='p'>{</span>
+	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;5042743d26af8681f05582f9&quot;</span><span class='p'>),</span>
+		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;This is my sample testimonty&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Ryan&quot;</span>
+<span class='p'>}</span>
+<span class='p'>{</span>
+	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;504277f826af8681f0558314&quot;</span><span class='p'>),</span>
+		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Once upon a time it was like this&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Reginald&quot;</span>
+<span class='p'>}</span>
+<span class='p'>{</span>
+	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50427d01e4ba90f9269360bf&quot;</span><span class='p'>),</span>
+		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Rya&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is awesome&quot;</span>
+<span class='p'>}</span>
+<span class='p'>{</span>
+	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50427d3ce4ba90f9269360c0&quot;</span><span class='p'>),</span>
+		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Rya&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is awesome&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;tags&quot;</span> <span class='o'>:</span> <span class='p'>[</span>
+			<span class='s2'>&quot;cool&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;awesome&quot;</span>
+			<span class='p'>]</span>
+<span class='p'>}</span>
+<span class='p'>{</span>
+	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50427d77e4ba90f9269360c1&quot;</span><span class='p'>),</span>
+		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Rya&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is awesome&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;tags&quot;</span> <span class='o'>:</span> <span class='p'>[</span>
+			<span class='s2'>&quot;cool&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;awesome&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;fantastic&quot;</span>
+			<span class='p'>]</span>
+<span class='p'>}</span>
+<span class='p'>{</span>
+	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50428194e4ba90f9269360c2&quot;</span><span class='p'>),</span>
+		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Ray&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is so faithful&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;tags&quot;</span> <span class='o'>:</span> <span class='p'>[</span>
+			<span class='s2'>&quot;cool&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;awesome&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;fantastic&quot;</span><span class='p'>,</span>
+		<span class='s2'>&quot;glorious&quot;</span>
+			<span class='p'>]</span>
+<span class='p'>}</span>
+</code></pre></div>
+<h3 id='to_obtain_all_documents'>To obtain all documents</h3>
+
+<p><code>$ db.collectioname.find();</code></p>
+
+<h3 id='to_obtain_all_documents_that_have_tags'>To obtain all documents that have &#8220;tags&#8221;</h3>
+
+<p><code>$ db.collectioname.find( { tags: {$exists: true} } );</code></p>
+
+<h3 id='to_obtain_all_documents_that_have_tags_with_cool_key_in_the_array'>To obtain all documents that have &#8220;tags&#8221; with &#8216;cool&#8217; key in the array</h3>
+
+<p><code>$ db.collectioname.find( { tags: { $all : [&#39;cool&#39;] }} );</code></p>
+
+<h3 id='to_obtain_first_10_documents_in_a_collection'>To obtain first 10 documents in a collection</h3>
+
+<p><code>$ db.collectioname.find().limit(10);</code></p>
+
+<h3 id='to_obtain_next_10_documents_in_a_collection_with_offset_of_5'>To obtain next 10 documents in a collection with offset of 5</h3>
+
+<p><code>$ db.collectioname.find().skip(5).limit(10);</code></p>
+
+<h3 id='to_return_all_documents_only_showing_tags_field'>To return all documents only showing &#8220;tags&#8221; field</h3>
+
+<p><code>$ db.collectioname.find( {}, { tags: 1 } );</code></p>
+
+<h3 id='to_return_all_documents_only_with_specified_value_only_returning_tags_key'>To return all documents only with specified value only returning &#8220;tags&#8221; key</h3>
+
+<p><code>$ db.collectioname.find( {tags: {$all: [&#39;cool&#39;]} }, {tags: 1} );</code></p>
+            
+
+            <!-- if tags -->
+            
+            <ul class="tags">
+                 
+                <li><a href="/tags/mongodb">mongodb</a></li>
+                 
+                <li><a href="/tags/mongo">mongo</a></li>
+                 
+                <li><a href="/tags/bson">bson</a></li>
+                
+            </ul>  
+            
+            <!-- endif -->
+        </div><!--end body-->
+    </div><!--end content-->
+    <div class="clear"></div>
+</div><!--end post-->
+
+
+
+
+
+<!-- Pagination links -->
+<div class="pagination">
+	<ul>
+	    
+		   
+			   <a href="/page12">
+			   
+				  << Newer posts
+			   </a>
+		   </li>
+	    
+
+
+	    
+	    <li class="next">
+		    <a href="/page14">
+			   Older posts >>
+		    </a>
+		</li>
+	    
+	</ul>
+</div>
+
+
+    </div>    
+</div>
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/app.js"></script>
+  <!-- <script type="text/javascript" charset="utf-8" src="/assets/themes/tom/js/MathJax.js?config=default"></script> -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+  </script>
+
+  
+
+</body>
+</html>
+
