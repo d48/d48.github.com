@@ -59,42 +59,48 @@
 
         <div class="body-post">
             
-                <p>OOCSS methodology helps to break up your css code so that you can logically separate objects into modules and classes for reuse and to avoid duplicating code.</p>
+                
+<p>OOCSS methodology helps to break up your css code so that you can logically separate objects into modules and classes for reuse and to avoid duplicating code.</p>
 
 <p>Instead of:</p>
-<div class='highlight'><pre><code class='css'><span class='nf'>#button</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='m'>30px</span><span class='p'>;</span>
-  <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
-  <span class='k'>border</span><span class='o'>:</span> <span class='m'>1px</span> <span class='k'>solid</span> <span class='nb'>green</span><span class='p'>;</span>
-  <span class='n'>box</span><span class='o'>-</span><span class='n'>shadow</span><span class='o'>:</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>122</span><span class='o'>,</span> <span class='m'>244</span><span class='o'>,</span> <span class='o'>.</span><span class='m'>5</span><span class='p'>)</span> <span class='m'>2px</span> <span class='m'>2px</span> <span class='m'>5px</span><span class='p'>;</span>
-<span class='p'>}</span>
 
-<span class='nf'>#box</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>100px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='k'>auto</span><span class='p'>;</span>
-  <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
-  <span class='k'>border</span><span class='o'>:</span> <span class='m'>1px</span> <span class='k'>solid</span> <span class='nb'>green</span><span class='p'>;</span>
-  <span class='n'>box</span><span class='o'>-</span><span class='n'>shadow</span><span class='o'>:</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>122</span><span class='o'>,</span> <span class='m'>244</span><span class='o'>,</span> <span class='o'>.</span><span class='m'>5</span><span class='p'>)</span> <span class='m'>2px</span> <span class='m'>2px</span> <span class='m'>5px</span><span class='p'>;</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="css"><span class="nf">#button</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">122</span><span class="o">,</span> <span class="m">244</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#box</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">122</span><span class="o">,</span> <span class="m">244</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <p>You would write this to reuse code and also to separate how these tie in logically (applying one skin to multiple objects that appear the same):</p>
-<div class='highlight'><pre><code class='css'><span class='nc'>.button</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='m'>30px</span><span class='p'>;</span>
-<span class='p'>}</span>
 
-<span class='nc'>.box</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>100px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='k'>auto</span><span class='p'>;</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="css"><span class="nc">.button</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class='nc'>.skin</span> <span class='p'>{</span>
-  <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
-  <span class='k'>border</span><span class='o'>:</span> <span class='m'>1px</span> <span class='k'>solid</span> <span class='nb'>green</span><span class='p'>;</span>
-  <span class='n'>box</span><span class='o'>-</span><span class='n'>shadow</span><span class='o'>:</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>122</span><span class='o'>,</span> <span class='m'>244</span><span class='o'>,</span> <span class='o'>.</span><span class='m'>5</span><span class='p'>)</span> <span class='m'>2px</span> <span class='m'>2px</span> <span class='m'>5px</span><span class='p'>;</span>
-<span class='p'>}</span>
+<span class="nc">.box</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.skin</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">122</span><span class="o">,</span> <span class="m">244</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

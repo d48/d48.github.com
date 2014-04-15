@@ -66,19 +66,23 @@
 
         <div class="body-post">
             
-                <h1 id='pass_by_reference'>Pass by reference</h1>
+                
+<h1 id="pass-by-reference">Pass by reference</h1>
 
-<p>You can pass a variable by reference to a function so the function can modify the variable. It&#8217;s basically a pointer to the variable so if it&#8217;s modified within a function, it&#8217;s &#8216;globally&#8217; modified or within the scope of execution outside where it&#8217;s referenced. Syntax below:</p>
-<div class='highlight'><pre><code class='js'><span class='o'>&lt;?</span><span class='nx'>php</span> 
-	<span class='kd'>function</span> <span class='nx'>foo</span><span class='p'>(</span><span class='o'>&amp;</span><span class='nx'>$arg</span><span class='p'>)</span>
-	<span class='p'>{</span>	
-		<span class='nx'>$arg</span><span class='o'>++</span><span class='p'>;</span>		
-	<span class='p'>}</span>
+<p>You can pass a variable by reference to a function so the function can modify the variable. It&rsquo;s basically a pointer to the variable so if it&rsquo;s modified within a function, it&rsquo;s &lsquo;globally&rsquo; modified or within the scope of execution outside where it&rsquo;s referenced. Syntax below:</p>
 
-	<span class='nx'>$var</span> <span class='o'>=</span> <span class='mi'>5</span><span class='p'>;</span>
-	<span class='nx'>foo</span><span class='p'>(</span><span class='nx'>$var</span><span class='p'>);</span>	<span class='c1'>// $var is 6</span>
-<span class='o'>?&gt;</span>
+<div class="highlight"><pre><code class="js"><span class="o">&lt;?</span><span class="nx">php</span> 
+	<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">$arg</span><span class="p">)</span>
+	<span class="p">{</span>	
+		<span class="nx">$arg</span><span class="o">++</span><span class="p">;</span>		
+	<span class="p">}</span>
+
+	<span class="nx">$var</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+	<span class="nx">foo</span><span class="p">(</span><span class="nx">$var</span><span class="p">);</span>	<span class="c1">// $var is 6</span>
+<span class="o">?&gt;</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -114,33 +118,27 @@
 
         <div class="body-post">
             
-                <h1 id='tightly_coupled_code'>Tightly Coupled Code</h1>
+                
+<h1 id="tightly-coupled-code">Tightly Coupled Code</h1>
 
 <p>Why is this bad? It increases the risk that a change to unrelated code somewhere in the system can effect your code.</p>
 
 <p>If <em>n objects</em> know about each other, a change to one object may need the other <em>n-1</em> objects to be updated.</p>
 
-<h1 id='law_of_demeter_for_functions'>Law of Demeter for functions</h1>
+<h1 id="law-of-demeter-for-functions">Law of Demeter for functions</h1>
 
 <ul>
-<li>
-<p>attempts to minimize coupling between modules in any given program by limiting an objects reach to another objects&#8217;s methods</p>
-</li>
-
-<li>
-<p>this law states that any method of an object should only call methods belonging to:</p>
-
-<ul>
-<li>itself</li>
-
-<li>any parameters passed into the method</li>
-
-<li>any objects it created</li>
-
-<li>any directly held component objects</li>
+  <li>attempts to minimize coupling between modules in any given program by limiting an objects reach to another objects&rsquo;s methods</li>
+  <li>this law states that any method of an object should only call methods belonging to:
+    <ul>
+      <li>itself</li>
+      <li>any parameters passed into the method</li>
+      <li>any objects it created</li>
+      <li>any directly held component objects</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
             
 
             <!-- if tags -->
@@ -174,47 +172,47 @@
 
         <div class="body-post">
             
-                <h2 id='_keyword'><code>this</code> keyword</h2>
+                
+<h2 id="this-keyword"><code>this</code> keyword</h2>
 
 <p>When talking about <strong>execution contexts</strong> for a script, the context contains references to various elements that represent state within a program to be managed according to the current logical scope. So how is the current value of <code>this</code> determinted in Javascript?</p>
 
 <ul>
-<li><code>this</code> declarted in functions refer to the global context and it would be defined as <code>window</code> in a browser or <code>global</code> in Node.</li>
-
-<li>If you specify <code>use strict</code> within that function, <code>this</code> would then be <code>undefined</code> instead.</li>
-
-<li>If control enters a constructor like <code>new someObject()</code>, the <code>this</code> value will refer to the current object.</li>
-
-<li>So if a function is called on an object, or by using the <code>new</code> operator, then the value of <code>this</code> will be the current instance of the object, otherwise it will be the global context (or <code>undefined</code> in strict mode).</li>
-
-<li>The value of <code>this</code> is dependent on how a function is called.</li>
+  <li><code>this</code> declarted in functions refer to the global context and it would be defined as <code>window</code> in a browser or <code>global</code> in Node.</li>
+  <li>If you specify <code>use strict</code> within that function, <code>this</code> would then be <code>undefined</code> instead.</li>
+  <li>If control enters a constructor like <code>new someObject()</code>, the <code>this</code> value will refer to the current object.</li>
+  <li>So if a function is called on an object, or by using the <code>new</code> operator, then the value of <code>this</code> will be the current instance of the object, otherwise it will be the global context (or <code>undefined</code> in strict mode).</li>
+  <li>The value of <code>this</code> is dependent on how a function is called.</li>
 </ul>
 
-<h2 id='examples'>Examples</h2>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>someName</span><span class='p'>(</span><span class='nx'>x</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='k'>this</span><span class='p'>);</span>
-  <span class='k'>return</span> <span class='nx'>x</span><span class='p'>;</span>
-<span class='p'>}</span>
+<h2 id="examples">Examples</h2>
 
-<span class='nx'>someName</span><span class='p'>(</span><span class='mi'>1</span><span class='p'>);</span> <span class='c1'>// `this` refers to the global object, window</span>
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">someName</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
 
-
-<span class='kd'>function</span> <span class='nx'>someName</span><span class='p'>(</span><span class='nx'>x</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='s1'>&#39;use strict&#39;</span><span class='p'>;</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='k'>this</span><span class='p'>);</span>
-  <span class='k'>return</span> <span class='nx'>x</span><span class='p'>;</span>
-<span class='p'>}</span>
-
-<span class='nx'>someName</span><span class='p'>(</span><span class='mi'>1</span><span class='p'>);</span> <span class='c1'>// `this` is undefined</span>
+<span class="nx">someName</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// `this` refers to the global object, window</span>
 
 
-<span class='kd'>function</span> <span class='nx'>Box</span><span class='p'>()</span> <span class='p'>{</span>
-  <span class='k'>this</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>=</span> <span class='mi'>4</span><span class='p'>;</span>
-  <span class='k'>this</span><span class='p'>.</span><span class='nx'>y</span> <span class='o'>=</span> <span class='mi'>10</span><span class='p'>;</span>
-<span class='p'>}</span>
+<span class="kd">function</span> <span class="nx">someName</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class='kd'>var</span> <span class='nx'>rectangle</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>Box</span><span class='p'>();</span> <span class='c1'>// `this` refers to the instance, in this case `rectangle`</span>
+<span class="nx">someName</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// `this` is undefined</span>
+
+
+<span class="kd">function</span> <span class="nx">Box</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">rectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Box</span><span class="p">();</span> <span class="c1">// `this` refers to the instance, in this case `rectangle`</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -248,27 +246,39 @@
 
         <div class="body-post">
             
-                <h2 id='primitive_and_reference_values'>Primitive and Reference Values</h2>
+                
+<h2 id="primitive-and-reference-values">Primitive and Reference Values</h2>
 
-<p>ECMAScript variables may contain two different types of data: primitive values and reference values. <strong>Primitive values</strong> are simple atomic pieces of data, while <strong>reference values</strong> are objects that may be made up of multiple values.</p>
+<p>ECMAScript variables may contain two different types of data: primitive values and reference
+values. <strong>Primitive values</strong> are simple atomic pieces of data, while <strong>reference values</strong> are objects
+that may be made up of multiple values.</p>
 
-<p>When a value is assigned to a variable, the JavaScript engine must determine if it&#8217;s a primitive or a reference. The five primitive types were discussed in the previous chapter: Undefi ned, Null, Boolean, Number, and String. These variables are said to be accessed by <strong>value</strong>, because you are manipulating the actual value stored in the variable.</p>
+<p>When a value is assigned to a variable, the JavaScript engine must determine if it&rsquo;s a primitive
+or a reference. The five primitive types were discussed in the previous chapter: Undefi ned,
+Null, Boolean, Number, and String. These variables are said to be accessed by <strong>value</strong>, because
+you are manipulating the actual value stored in the variable.</p>
 
-<p>Reference values are objects stored in memory. Unlike other languages, JavaScript does not permit direct access of memory locations, so direct manipulation of the object&#8217;s memory space is not allowed. When you manipulate an object, you&#8217;re really working on a reference to that object rather than the actual object itself. For this reason, such values are said to be accessed by <strong>reference</strong>.</p>
+<p>Reference values are objects stored in memory. Unlike other languages, JavaScript does not permit
+direct access of memory locations, so direct manipulation of the object&rsquo;s memory space is not
+allowed. When you manipulate an object, you&rsquo;re really working on a reference to that object rather
+than the actual object itself. For this reason, such values are said to be accessed by <strong>reference</strong>.</p>
 
 <p>How two primitives data types (variables) are assigned reference values (Objects) and are created that point to 2 different areas in the heap:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>a</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nb'>Object</span><span class='p'>();</span>
-<span class='kd'>var</span> <span class='nx'>b</span> <span class='o'>=</span> <span class='nx'>a</span><span class='p'>;</span>
-<span class='c1'>// these point to the same object in the heap</span>
 
-<span class='c1'>// assigning another variable c = new Object(); would point to a different object on the heap</span>
-<span class='c1'>// which would mean a != c even though the properties within those 2 objects are null or undefined</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+<span class="c1">// these point to the same object in the heap</span>
+
+<span class="c1">// assigning another variable c = new Object(); would point to a different object on the heap</span>
+<span class="c1">// which would mean a != c even though the properties within those 2 objects are null or undefined</span>
 </code></pre></div>
-<p><img alt='reference values' src='http://content.screencast.com/users/User48/folders/Jing/media/5c64e640-77fb-4660-9689-999cf2e9b7de/2012-06-14_0059.png' /></p>
+
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/5c64e640-77fb-4660-9689-999cf2e9b7de/2012-06-14_0059.png" alt="reference values" /></p>
 
 <blockquote>
-<p><strong>heap</strong>: dynamically allocated memory</p>
+  <p><strong>heap</strong>: dynamically allocated memory</p>
 </blockquote>
+
             
 
             <!-- if tags -->
@@ -308,21 +318,22 @@
 
         <div class="body-post">
             
-                <h2 id='cohesion'>Cohesion</h2>
+                
+<h2 id="cohesion">Cohesion</h2>
 
 <p><strong>Cohesion</strong> is a measure of how strongly-related or focused the responsibilities of a single module are. As applied to object-oriented programming, if the methods that serve the given class tend to be similar in many aspects, then the class is said to have high cohesion. In a highly-cohesive system, code readability and the likelihood of reuse is increased, while complexity is kept manageable.</p>
 
 <p>To achieve high-cohesion</p>
 
 <ul>
-<li>Functionality in a class accessed through its methods are similar</li>
-
-<li>The methods carry out similar activities, using fine-grained or closely related data</li>
+  <li>Functionality in a class accessed through its methods are similar</li>
+  <li>The methods carry out similar activities, using fine-grained or closely related data</li>
 </ul>
 
 <blockquote>
-<p><strong>encapsulation</strong> extent to how much a class or object reveals its implementation details. These are essentially self-contained building blocks that can easily be modified and pieced together to create larger applications.</p>
+  <p><strong>encapsulation</strong> extent to how much a class or object reveals its implementation details. These are essentially self-contained building blocks that can easily be modified and pieced together to create larger applications.</p>
 </blockquote>
+
             
 
             <!-- if tags -->

@@ -59,25 +59,31 @@
 
         <div class="body-post">
             
-                <h2 id='argumentscallee'>arguments.callee</h2>
+                
+<h2 id="argumentscallee">arguments.callee</h2>
 
 <blockquote>
-<p><strong>arguments.callee</strong> - this property of a function can serve as a reliable way to always access the function itself.</p>
+  <p><strong>arguments.callee</strong> - this property of a function can serve as a reliable way to always access the function itself.</p>
 </blockquote>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>robot</span> <span class='o'>=</span> <span class='p'>{</span> 
-  <span class='nx'>dance</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>n</span><span class='p'>)</span> <span class='p'>{</span> 
-    <span class='k'>return</span> <span class='nx'>n</span> <span class='o'>&gt;</span> <span class='mi'>0</span> <span class='o'>?</span> <span class='nx'>arguments</span><span class='p'>.</span><span class='nx'>callee</span><span class='p'>(</span><span class='nx'>n</span><span class='o'>-</span><span class='mi'>1</span><span class='p'>)</span> <span class='o'>+</span> <span class='s2'>&quot;eep&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;boop&quot;</span><span class='p'>;</span>
-  <span class='p'>}</span>
-<span class='p'>}</span>
-<span class='c1'>// `arguments` points to the argument list passed into the function, in this case, `n`</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">robot</span> <span class="o">=</span> <span class="p">{</span> 
+  <span class="nx">dance</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;eep&quot;</span> <span class="o">:</span> <span class="s2">&quot;boop&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// `arguments` points to the argument list passed into the function, in this case, `n`</span>
 </code></pre></div>
-<h2 id='_operator'>!! operator</h2>
+
+<h2 id="operator">!! operator</h2>
 
 <p>The <code>!!</code> construct is a way of turning any JavaScript expression into its Boolean equivalent</p>
-<div class='highlight'><pre><code class='js'><span class='o'>!!</span><span class='s2'>&quot;hello&quot;</span> <span class='c1'>//outputs true</span>
 
-<span class='o'>!!</span><span class='mi'>0</span> <span class='c1'>//outputs false</span>
+<div class="highlight"><pre><code class="js"><span class="o">!!</span><span class="s2">&quot;hello&quot;</span> <span class="c1">//outputs true</span>
+
+<span class="o">!!</span><span class="mi">0</span> <span class="c1">//outputs false</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

@@ -66,34 +66,40 @@
 
         <div class="body-post">
             
-                <h2 id='why_use_nosql'>Why use NoSQL?<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></h2>
+                
+<h2 id="why-use-nosql1">Why use NoSQL?<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h2>
 
-<p>Modern web applications are built to scale out &#8211; add more comodity web servers behind a load balancer to support more users. Scaling out is the core principle behind the cloud computing model: virtual machine instances can easily be added or removed to match demand. Scaling out is less expensive than what traditional relational database management systems or RDBMS offer today; if you need to grow, you would need to buy larger servers.</p>
+<p>Modern web applications are built to scale out &ndash; add more comodity web servers behind a load balancer to support more users. Scaling out is the core principle behind the cloud computing model: virtual machine instances can easily be added or removed to match demand. Scaling out is less expensive than what traditional relational database management systems or RDBMS offer today; if you need to grow, you would need to buy larger servers.</p>
 
-<h2 id='software_has_changed'>Software has changed</h2>
+<h2 id="software-has-changed">Software has changed</h2>
 
 <p>Looking at the last 35 years, software needs have changed. Web and mobile applications have a lot more users transacting. NoSQL technologies enable cost-effective management of data because of its ability to scale and replicate.</p>
 
-<h2 id='strict_schema'>Strict Schema</h2>
+<h2 id="strict-schema">Strict Schema</h2>
 
 <p>When dealing with RDBMS technology, you would need to know the data beforehand before storing. Rapidly evolving business and market environment have different needs to address:</p>
 
 <ol>
-<li>A way to capture new information that wasn&#8217;t previously considered</li>
-
-<li>A way to make rapid changes to an application for its behavior impacting data formats and content</li>
+  <li>A way to capture new information that wasn&rsquo;t previously considered</li>
+  <li>A way to make rapid changes to an application for its behavior impacting data formats and content</li>
 </ol>
 
-<h2 id='terminology'>Terminology</h2>
+<h2 id="terminology">Terminology</h2>
 
 <p><strong>Auto-sharding</strong> - sometimes called elasticity, to automatically spread data across servers, without requiring applications to participate. Servers can be added or removed from the data layer without application downtime.</p>
 
 <p><strong>Data replication</strong> - store multiple copies of data across the cluster to ensure high-availability and support disaster recovery.</p>
 
 <p><strong>NoSQL database</strong> - also known as scale out database</p>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://www.couchbase.com/why-nosql/nosql-database'>Couchbase - Post-relational data management for interactive software systems</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://www.couchbase.com/why-nosql/nosql-database">Couchbase - Post-relational data management for interactive software systems</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->
@@ -127,7 +133,8 @@
 
         <div class="body-post">
             
-                <h2 id='nosql_databases'>NoSQL databases</h2>
+                
+<h2 id="nosql-databases">NoSQL databases</h2>
 
 <p>These are considered often by the way they store data: <em>document store, key-value stores, BigTable implementation, and graph databases</em>, different from their relational database counterparts due to that:</p>
 
@@ -135,47 +142,55 @@
 2. The data stores may not required fixed table schemas
 3. Do not support join operations
 4. May not give full ACID (atomocity, consistency, isolation, durability) guarantees
-5. Typically scale horizontally = to add more nodes to a system, e.g., adding a new computer to a distributed software application, or scaling from one web server to three.</code></pre>
+5. Typically scale horizontally = to add more nodes to a system, e.g., adding a new computer to a distributed software application, or scaling from one web server to three.
+</code></pre>
 
-<h2 id='mapreduce_function'>Map/Reduce function</h2>
+<h2 id="mapreduce-function">Map/Reduce function</h2>
 
 <p>Used by Google to index the entire World Wide Web. Take a given set to compute or input, Map function used to break and distribute into smaller parts to form computation by worker nodes. Reduce function used to collect or bring these computations together to come to a refined or <em>reduced</em> result, or output. This software framework usually stores inputs and outputs into a distributed file system.</p>
 
-<p><img alt='Sample computation' src='http://content.screencast.com/users/User48/folders/Jing/media/5736b7e3-da11-4800-bd8a-6c830bb56189/2012-04-06_0042.png' />(Sample computation)<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// Map function</span>
-<span class='kd'>function</span><span class='p'>(</span><span class='nx'>ticket</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='nx'>emit</span><span class='p'>(</span><span class='kc'>null</span><span class='p'>,</span> <span class='nx'>ticket</span><span class='p'>.</span><span class='nx'>checkout</span><span class='p'>);</span>
-<span class='p'>}</span>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/5736b7e3-da11-4800-bd8a-6c830bb56189/2012-04-06_0042.png" alt="Sample computation" />(Sample computation)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
-<span class='c1'>// Reduce function</span>
-<span class='kd'>function</span><span class='p'>(</span><span class='nx'>key</span><span class='p'>,</span> <span class='nx'>checkouts</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='k'>return</span> <span class='nx'>sum</span><span class='p'>(</span><span class='nx'>checkouts</span><span class='p'>);</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// Map function</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">ticket</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">emit</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">ticket</span><span class="p">.</span><span class="nx">checkout</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Reduce function</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">checkouts</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">checkouts</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='why_the_change_from_traditional_rdbms_solutions'>Why The Change from Traditional RDBMS Solutions</h2>
 
-<p>Google, Amazon, Twitter and Facebook had significantly different challenges in dealing with data that needed to scale horizontally due to the large volume. Performance and real-time nature more important than consistency, which traditional relational databases spent a high amount of processing time to achieve. <strong>NoSQL-Databases</strong> are often highly optimized for retrive and append operations and offer little functionality beyond record storage, or <em>key-value stores</em>.<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup></p>
+<h2 id="why-the-change-from-traditional-rdbms-solutions">Why The Change from Traditional RDBMS Solutions</h2>
 
-<h2 id='couchdb_vs_mongodb'>CouchDB vs. MongoDB<sup id='fnref:3'><a href='#fn:3' rel='footnote'>3</a></sup></h2>
+<p>Google, Amazon, Twitter and Facebook had significantly different challenges in dealing with data that needed to scale horizontally due to the large volume. Performance and real-time nature more important than consistency, which traditional relational databases spent a high amount of processing time to achieve. <strong>NoSQL-Databases</strong> are often highly optimized for retrive and append operations and offer little functionality beyond record storage, or <em>key-value stores</em>.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<h2 id="couchdb-vs-mongodb3">CouchDB vs. MongoDB<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></h2>
 
 <p>I would try CouchDB over MongoDB for these reasons.</p>
 
 <ol>
-<li>Better for offline storage and then syncing and replicating database once online</li>
-
-<li><em>Crash-only</em> design, where the database can terminate any time and remain consistent.</li>
-
-<li>Map/Reduce inherent in CouchDB in building all views (performance)</li>
-
-<li>Mobile embedded databases on phones because of its online/offline replication/sync capabilities.</li>
+  <li>Better for offline storage and then syncing and replicating database once online</li>
+  <li><em>Crash-only</em> design, where the database can terminate any time and remain consistent.</li>
+  <li>Map/Reduce inherent in CouchDB in building all views (performance)</li>
+  <li>Mobile embedded databases on phones because of its online/offline replication/sync capabilities.</li>
 </ol>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://en.wikipedia.org/wiki/NoSQL'>Wikipedia: NoSQL Databases</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
-<p><a href='http://www.slideshare.net/gabriele.lana/couchdb-vs-mongodb-2982288'>CouchDB vs. MongoDB slides</a></p>
-<a href='#fnref:2' rev='footnote'>&#8617;</a></li><li id='fn:3'>
-<p><a href='http://www.mongodb.org/display/DOCS/Comparing+Mongo+DB+and+Couch+DB'>Comparing CouchDB vs. MongoDB - from mongodb.org</a></p>
-<a href='#fnref:3' rev='footnote'>&#8617;</a></li></ol></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://en.wikipedia.org/wiki/NoSQL">Wikipedia: NoSQL Databases</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://www.slideshare.net/gabriele.lana/couchdb-vs-mongodb-2982288">CouchDB vs. MongoDB slides</a><a href="#fnref:2" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="http://www.mongodb.org/display/DOCS/Comparing+Mongo+DB+and+Couch+DB">Comparing CouchDB vs. MongoDB - from mongodb.org</a><a href="#fnref:3" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->
@@ -209,36 +224,43 @@
 
         <div class="body-post">
             
-                <h2 id='qunit'>QUnit<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></h2>
+                
+<h2 id="qunit1">QUnit<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h2>
 
-<p>Unit testing framework for Javascript. Using it to test Backbone.js app that I&#8217;m going through.</p>
+<p>Unit testing framework for Javascript. Using it to test Backbone.js app that I&rsquo;m going through.</p>
 
-<h2 id='sinonjs'>Sinon.js<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup></h2>
+<h2 id="sinonjs2">Sinon.js<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></h2>
 
 <p>Test spies, stubs and mocks for Javascript testing.</p>
 
 <blockquote>
-<p><strong>Test spy:</strong> A function that records arguments, return value, the value of <em>this</em> and exception thrown (if any) for all its calls. Useful to test both callbacks and how certain functions/methods are used throughout the system under test.</p>
+  <p><strong>Test spy:</strong> A function that records arguments, return value, the value of <em>this</em> and exception thrown (if any) for all its calls. Useful to test both callbacks and how certain functions/methods are used throughout the system under test.</p>
 </blockquote>
 
 <blockquote>
-<p><strong>Stubs:</strong> Functions or spies with pre-programmed behavior. Use a stub when you want to:</p>
+  <p><strong>Stubs:</strong> Functions or spies with pre-programmed behavior. Use a stub when you want to: </p>
 </blockquote>
 
 <ol>
-<li>Control a method&#8217;s behavior from a test to force it down a specific path, e.g., forcing a method to throw an error in order to test error handling.</li>
-
-<li>When you want to prevent a specific method from being called directly (possibly because it triggers undesired behavior like an XMLHttpRequest).</li>
+  <li>Control a method&rsquo;s behavior from a test to force it down a specific path, e.g., forcing a method to throw an error in order to test error handling.</li>
+  <li>When you want to prevent a specific method from being called directly (possibly because it triggers undesired behavior like an XMLHttpRequest).</li>
 </ol>
 
 <blockquote>
-<p><strong>Mocks:</strong> and mock expectations, are fake methods (like spies) with pre-programmed behavior (like stubs) as well as <em>pre-programmed expectations</em>. Use for <em>method under test</em>. In every unit test, there should be one unit under test. If you want to control how your unit is being used and like stating expectation upfront (as opposed to asserting after the fact), use a mock.</p>
+  <p><strong>Mocks:</strong> and mock expectations, are fake methods (like spies) with pre-programmed behavior (like stubs) as well as <em>pre-programmed expectations</em>. Use for <em>method under test</em>. In every unit test, there should be one unit under test. If you want to control how your unit is being used and like stating expectation upfront (as opposed to asserting after the fact), use a mock. </p>
 </blockquote>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://qunitjs.com/'>http://qunitjs.com/</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
-<p><a href='http://sinonjs.org/'>http://sinonjs.org/</a></p>
-<a href='#fnref:2' rev='footnote'>&#8617;</a></li></ol></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://qunitjs.com/">http://qunitjs.com/</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://sinonjs.org/">http://sinonjs.org/</a><a href="#fnref:2" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->
@@ -278,12 +300,19 @@
 
         <div class="body-post">
             
-                <h2 id='restful_architecural_styles'>RESTful architecural styles<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></h2>
+                
+<h2 id="restful-architecural-styles1">RESTful architecural styles<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h2>
 
-<p>Disadvantage: placing the application state on the client-side reduces the server&#8217;s control over consistent application behavior, since the application becomes dependent on the correct implementation of semantics across multiple client versions.</p>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm'>Roy Fielding&#8217;s dissertation on REST (Representational State Transfer)</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+<p>Disadvantage: placing the application state on the client-side reduces the server&rsquo;s control over consistent application behavior, since the application becomes dependent on the correct implementation of semantics across multiple client versions.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Roy Fielding&rsquo;s dissertation on REST (Representational State Transfer)</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->
@@ -329,55 +358,61 @@
 
         <div class="body-post">
             
-                <h2 id='view'>View</h2>
+                
+<h2 id="view">View</h2>
 
 <p>Sample code</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>ObjectView</span> <span class='o'>=</span> <span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>View</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>({</span>
-  <span class='nx'>el</span><span class='o'>:</span> <span class='s1'>&#39;div#content&#39;</span><span class='p'>,</span>	<span class='c1'>// Works like jQuery selectors</span>
 
-  <span class='nx'>initialize</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>args</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='k'>this</span><span class='p'>.</span><span class='nx'>el</span><span class='p'>.</span><span class='nx'>innerHTML</span> <span class='o'>=</span> <span class='s1'>&#39;View initiliazed&#39;</span><span class='p'>;</span>
-  <span class='p'>},</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">ObjectView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;div#content&#39;</span><span class="p">,</span>	<span class="c1">// Works like jQuery selectors</span>
 
-  <span class='nx'>render</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-    <span class='k'>this</span><span class='p'>.</span><span class='nx'>el</span><span class='p'>.</span><span class='nx'>innerHTML</span> <span class='o'>=</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>model</span><span class='p'>.</span><span class='nx'>get</span><span class='p'>(</span><span class='s1'>&#39;somePropertyName&#39;</span><span class='p'>);</span>
-    <span class='k'>return</span> <span class='k'>this</span><span class='p'>;</span>	<span class='c1'>// Good practice to enable chained calls </span>
-  <span class='p'>}</span>
-<span class='p'>});</span>
+  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;View initiliazed&#39;</span><span class="p">;</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;somePropertyName&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>	<span class="c1">// Good practice to enable chained calls </span>
+  <span class="p">}</span>
+<span class="p">});</span>
 </code></pre></div>
-<h2 id='routers_used_to_be_controllers'>Routers (used to be Controllers)</h2>
 
-<p>Lets you create bookmarkable, stateful apps by using hashbangs. There&#8217;s discussion how this changes up traditional URI use and the archival nature of the internet, but newer browsers with the History API can use standard URLs like <code>/page</code>.</p>
+<h2 id="routers-used-to-be-controllers">Routers (used to be Controllers)</h2>
+
+<p>Lets you create bookmarkable, stateful apps by using hashbangs. There&rsquo;s discussion how this changes up traditional URI use and the archival nature of the internet, but newer browsers with the History API can use standard URLs like <code>/page</code>.</p>
 
 <p><strong>Backbone.Router</strong> provides methods for routing client-side pages and connecting them to actions and events.</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>AppRouter</span> <span class='o'>=</span> <span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>Router</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>({</span>
-  <span class='nx'>routes</span><span class='o'>:</span> <span class='p'>{</span>
-    <span class='s2'>&quot;urlName&quot;</span><span class='o'>:</span> <span class='s2'>&quot;mapToFunctionName&quot;</span><span class='p'>,</span>
-    <span class='s2'>&quot;games&quot;</span><span class='o'>:</span> <span class='s2'>&quot;gameMethod&quot;</span><span class='p'>,</span>
-    <span class='s2'>&quot;help/:page&quot;</span> <span class='s2'>&quot;helper&quot;</span>
-  <span class='p'>},</span>
 
-  <span class='nx'>mapToFunctionName</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-    <span class='c1'>// Any set of methods to prep and process a page of elements</span>
-    <span class='c1'>// Above URL maps from application.com/filename#urlName</span>
-  <span class='p'>},</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">AppRouter</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;urlName&quot;</span><span class="o">:</span> <span class="s2">&quot;mapToFunctionName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;games&quot;</span><span class="o">:</span> <span class="s2">&quot;gameMethod&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;help/:page&quot;</span> <span class="s2">&quot;helper&quot;</span>
+  <span class="p">},</span>
 
-  <span class='nx'>gameMethod</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-    <span class='c1'>// Re-render view to show collection of game elements</span>
-    <span class='c1'>// Above URL maps from application.com/filename#games</span>
-  <span class='p'>},</span>
-<span class='p'>});</span>
+  <span class="nx">mapToFunctionName</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Any set of methods to prep and process a page of elements</span>
+    <span class="c1">// Above URL maps from application.com/filename#urlName</span>
+  <span class="p">},</span>
 
-<span class='kd'>var</span> <span class='nx'>appRoute</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>AppRouter</span><span class='p'>;</span>
+  <span class="nx">gameMethod</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Re-render view to show collection of game elements</span>
+    <span class="c1">// Above URL maps from application.com/filename#games</span>
+  <span class="p">},</span>
+<span class="p">});</span>
 
-<span class='c1'>// Enables monitoring for hashchange events and dispatching routes</span>
-<span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>history</span><span class='p'>.</span><span class='nx'>start</span><span class='p'>();</span>
+<span class="kd">var</span> <span class="nx">appRoute</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AppRouter</span><span class="p">;</span>
 
-<span class='c1'>//Evaluates on #help/somePageName</span>
-<span class='nx'>appRoute</span><span class='p'>.</span><span class='nx'>on</span><span class='p'>(</span><span class='s1'>&#39;route:helper&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>page</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s2'>&quot;Do something here with: &quot;</span> <span class='o'>+</span> <span class='nx'>page</span><span class='p'>);</span>
-<span class='p'>});</span>
+<span class="c1">// Enables monitoring for hashchange events and dispatching routes</span>
+<span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+
+<span class="c1">//Evaluates on #help/somePageName</span>
+<span class="nx">appRoute</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;route:helper&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Do something here with: &quot;</span> <span class="o">+</span> <span class="nx">page</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

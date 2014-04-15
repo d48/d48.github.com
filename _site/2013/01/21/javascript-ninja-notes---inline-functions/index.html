@@ -59,67 +59,75 @@
 
         <div class="body-post">
             
-                <h2 id='_in_a_method'><code>This</code> in a method</h2>
+                
+<h2 id="this-in-a-method"><code>This</code> in a method</h2>
 
 <p>A term frequently applied to functions that are referenced through object properties, the function context refers to teh boject through which the method was invoked. So given the following function, the assertions will evaluate to <code>true</code>:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>ninja</span> <span class='o'>=</span> <span class='p'>{</span>
-  <span class='c1'>// define object property with anonmyous function</span>
-  <span class='nx'>yell</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>n</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='k'>return</span> <span class='nx'>n</span> <span class='o'>&gt;</span> <span class='mi'>0</span> <span class='o'>?</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>yell</span><span class='p'>(</span><span class='nx'>n</span> <span class='o'>-</span> <span class='mi'>1</span><span class='p'>)</span> <span class='o'>+</span> <span class='s1'>&#39;a&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;hiy&#39;</span><span class='p'>;</span>
-  <span class='p'>}</span>
-<span class='p'>}</span>
 
-<span class='c1'>// make a reference to ninja method</span>
-<span class='kd'>var</span> <span class='nx'>samurai</span> <span class='o'>=</span> <span class='p'>{</span> <span class='nx'>yell</span><span class='o'>:</span> <span class='nx'>ninja</span><span class='p'>.</span><span class='nx'>yell</span> <span class='p'>};</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">ninja</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// define object property with anonmyous function</span>
+  <span class="nx">yell</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">yell</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="o">:</span> <span class="s1">&#39;hiy&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<span class='nx'>ninja</span> <span class='o'>=</span> <span class='p'>{};</span>
+<span class="c1">// make a reference to ninja method</span>
+<span class="kd">var</span> <span class="nx">samurai</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">yell</span><span class="o">:</span> <span class="nx">ninja</span><span class="p">.</span><span class="nx">yell</span> <span class="p">};</span>
 
-<span class='k'>try</span> <span class='p'>{</span>
-  <span class='nx'>assert</span><span class='p'>(</span><span class='nx'>samurai</span><span class='p'>.</span><span class='nx'>yell</span><span class='p'>(</span><span class='mi'>4</span><span class='p'>)</span> <span class='o'>==</span> <span class='s1'>&#39;hiyaaaa&#39;</span><span class='p'>,</span> <span class='s1'>&#39;this works because of `this` var&#39;</span><span class='p'>);</span>
-  <span class='p'>}</span>
-<span class='k'>catch</span><span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;if ninja.yell did not have this.yell in return, error would be thrown because reference would be gone&#39;</span><span class='p'>);</span>
-<span class='p'>}</span>
+<span class="nx">ninja</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">assert</span><span class="p">(</span><span class="nx">samurai</span><span class="p">.</span><span class="nx">yell</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;hiyaaaa&#39;</span><span class="p">,</span> <span class="s1">&#39;this works because of `this` var&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;if ninja.yell did not have this.yell in return, error would be thrown because reference would be gone&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <p>Given the same object without reference to <code>this</code>, the assertion will fail</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>ninja</span> <span class='o'>=</span> <span class='p'>{</span>
-  <span class='c1'>// define object property with anonmyous function, but no `this` reference</span>
-  <span class='nx'>yell</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>n</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='k'>return</span> <span class='nx'>n</span> <span class='o'>&gt;</span> <span class='mi'>0</span> <span class='o'>?</span> <span class='nx'>yell</span><span class='p'>(</span><span class='nx'>n</span> <span class='o'>-</span> <span class='mi'>1</span><span class='p'>)</span> <span class='o'>+</span> <span class='s1'>&#39;a&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;hiy&#39;</span><span class='p'>;</span>
-  <span class='p'>}</span>
-<span class='p'>}</span>
 
-<span class='c1'>// make a reference to ninja method</span>
-<span class='kd'>var</span> <span class='nx'>samurai</span> <span class='o'>=</span> <span class='p'>{</span> <span class='nx'>yell</span><span class='o'>:</span> <span class='nx'>ninja</span><span class='p'>.</span><span class='nx'>yell</span> <span class='p'>};</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">ninja</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// define object property with anonmyous function, but no `this` reference</span>
+  <span class="nx">yell</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nx">yell</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="o">:</span> <span class="s1">&#39;hiy&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<span class='nx'>ninja</span> <span class='o'>=</span> <span class='p'>{};</span>
+<span class="c1">// make a reference to ninja method</span>
+<span class="kd">var</span> <span class="nx">samurai</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">yell</span><span class="o">:</span> <span class="nx">ninja</span><span class="p">.</span><span class="nx">yell</span> <span class="p">};</span>
 
-<span class='k'>try</span> <span class='p'>{</span>
-  <span class='nx'>assert</span><span class='p'>(</span><span class='nx'>samurai</span><span class='p'>.</span><span class='nx'>yell</span><span class='p'>(</span><span class='mi'>4</span><span class='p'>)</span> <span class='o'>==</span> <span class='s1'>&#39;hiyaaaa&#39;</span><span class='p'>,</span> <span class='s1'>&#39;this doesnt work because we kill reference to ninja.yell&#39;</span><span class='p'>);</span>
-  <span class='p'>}</span>
-<span class='k'>catch</span><span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;if ninja.yell did not have this.yell in return, error would be thrown because reference would be gone&#39;</span><span class='p'>);</span>
-<span class='p'>}</span>
+<span class="nx">ninja</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="k">try</span> <span class="p">{</span>
+  <span class="nx">assert</span><span class="p">(</span><span class="nx">samurai</span><span class="p">.</span><span class="nx">yell</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;hiyaaaa&#39;</span><span class="p">,</span> <span class="s1">&#39;this doesnt work because we kill reference to ninja.yell&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;if ninja.yell did not have this.yell in return, error would be thrown because reference would be gone&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='named_anonymous_inline_functions'>Named anonymous (inline) functions</h2>
+
+<h2 id="named-anonymous-inline-functions">Named anonymous (inline) functions</h2>
 
 <p>Function literal syntax allows us to supply a name to the declared function by adding a name before the parameter list. Another name for this is an inline function.</p>
 
 <p>Note: inline functions can be named, but those names are only visible within the functions themselves</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>ninja</span> <span class='o'>=</span> <span class='p'>{</span>
-  <span class='c1'>// `shout` is an inline function</span>
-  <span class='nx'>yell</span><span class='o'>:</span> <span class='kd'>function</span> <span class='nx'>shout</span><span class='p'>(</span><span class='nx'>n</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='k'>return</span> <span class='nx'>n</span> <span class='o'>&gt;</span> <span class='mi'>0</span> <span class='o'>?</span> <span class='nx'>shout</span><span class='p'>(</span><span class='nx'>n</span><span class='o'>-</span><span class='mi'>1</span><span class='p'>)</span> <span class='o'>+</span> <span class='s1'>&#39;a&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;hiy&#39;</span><span class='p'>;</span>
-  <span class='p'>}</span>
-<span class='p'>}</span>
 
-<span class='kd'>var</span> <span class='nx'>samurai</span> <span class='o'>=</span> <span class='p'>{</span> <span class='nx'>yell</span><span class='o'>:</span> <span class='nx'>ninja</span><span class='p'>.</span><span class='nx'>yell</span> <span class='p'>};</span>
-<span class='nx'>ninja</span> <span class='o'>=</span> <span class='p'>{};</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">ninja</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// `shout` is an inline function</span>
+  <span class="nx">yell</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">shout</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nx">shout</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="o">:</span> <span class="s1">&#39;hiy&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<span class='nx'>assert</span><span class='p'>(</span><span class='nx'>samurai</span><span class='p'>.</span><span class='nx'>yell</span><span class='p'>(</span><span class='mi'>4</span><span class='p'>)</span> <span class='o'>==</span> <span class='s1'>&#39;hiyaaaa&#39;</span><span class='p'>,</span> <span class='s1'>&#39;Yes, this method still works because we save reference directly to the inline function that is named `shout`&#39;</span><span class='p'>);</span>
+<span class="kd">var</span> <span class="nx">samurai</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">yell</span><span class="o">:</span> <span class="nx">ninja</span><span class="p">.</span><span class="nx">yell</span> <span class="p">};</span>
+<span class="nx">ninja</span> <span class="o">=</span> <span class="p">{};</span>
 
-<span class='nx'>assert</span><span class='p'>(</span><span class='k'>typeof</span> <span class='nx'>shout</span> <span class='o'>==</span> <span class='s2'>&quot;undefined&quot;</span><span class='p'>,</span> <span class='s1'>&#39;true since can not evaluate inline function outside of its scope directly&#39;</span><span class='p'>);</span>
+<span class="nx">assert</span><span class="p">(</span><span class="nx">samurai</span><span class="p">.</span><span class="nx">yell</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;hiyaaaa&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes, this method still works because we save reference directly to the inline function that is named `shout`&#39;</span><span class="p">);</span>
+
+<span class="nx">assert</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">shout</span> <span class="o">==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">,</span> <span class="s1">&#39;true since can not evaluate inline function outside of its scope directly&#39;</span><span class="p">);</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

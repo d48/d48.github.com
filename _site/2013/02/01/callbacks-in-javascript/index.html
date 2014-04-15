@@ -59,16 +59,21 @@
 
         <div class="body-post">
             
-                <h2 id='notes_from_secrets_of_a_javascript_ninja_book'>Notes from Secrets of a JavaScript Ninja book</h2>
+                
+<h2 id="notes-from-secrets-of-a-javascript-ninja-book">Notes from Secrets of a JavaScript Ninja book</h2>
 
 <p>Given this code:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>loop</span><span class='p'>(</span><span class='nx'>array</span><span class='p'>,</span> <span class='nx'>fn</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span><span class='o'>=</span><span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>&lt;</span><span class='nx'>array</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> 
-    <span class='c1'>// pass function back in with arguments </span>
-    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>fn</span><span class='p'>.</span><span class='nx'>call</span><span class='p'>(</span><span class='nx'>array</span><span class='p'>,</span> <span class='nx'>array</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>],</span> <span class='nx'>i</span><span class='p'>)</span> <span class='o'>===</span> <span class='kc'>false</span><span class='p'>)</span> <span class='k'>break</span><span class='p'>;</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="c1">// pass function back in with arguments </span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">i</span><span class="p">)</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <p><strong>Callbacks</strong> are employed in relation to asynchronous, or nondeterminisitc, behavior such as a user clicking a button, an Ajax request completing, or some number of values being found in array.</p>
+
+
             
 
             <!-- if tags -->

@@ -66,26 +66,25 @@
 
         <div class="body-post">
             
-                <p><strong>CSS Specificity</strong> is what&#8217;s used by web browsers to determine how the page components and elements should be styled, eg., font size, color, widths, etc. In order for me to remember specificity, here&#8217;s a couple good ways to remember:</p>
+                
+<p><strong>CSS Specificity</strong> is what’s used by web browsers to determine how the page components and elements should be styled, eg., font size, color, widths, etc. In order for me to remember specificity, here’s a couple good ways to remember:</p>
 
 <ul>
-<li>Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element. So in:</li>
+  <li>Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element. So in:</li>
 </ul>
 
 <p><code>body #content .data img:hover</code></p>
 
-<p>the specificity value would be 122 (0,1,2,2 or 0122): 100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img.</p>
-
-<blockquote>
-<p>style attribute is inline-style on an html element like <code>&lt;p style=&quot;color: 
-red&quot;&gt;</code> or <code>&lt;styles type=&quot;text/css&quot;&gt;</code> block.</p>
-</blockquote>
+<p>the specificity value would be 122 (0,1,2,2 or 0122): 100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img.
+&gt; style attribute is inline-style on an html element like <code>&lt;p style="color: 
+&gt; red"&gt;</code> or <code>&lt;styles type="text/css"&gt;</code> block.</p>
 
 <ul>
-<li>Alternative way: “Count the number of ID attributes in the selector (= a). Count the number of other attributes and pseudo-classes in the selector (= b). Count the number of element names and pseudo-elements in the selector (= c). Concatenating the three numbers <strong>a-b-c gives the specificity</strong>.</li>
+  <li>Alternative way: “Count the number of ID attributes in the selector (= a). Count the number of other attributes and pseudo-classes in the selector (= b). Count the number of element names and pseudo-elements in the selector (= c). Concatenating the three numbers <strong>a-b-c gives the specificity</strong>.</li>
 </ul>
 
-<p>More info from here: <a href='http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know'>http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know</a></p>
+<p>More info from here: <a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know">http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know</a></p>
+
             
 
             <!-- if tags -->
@@ -121,16 +120,20 @@ red&quot;&gt;</code> or <code>&lt;styles type=&quot;text/css&quot;&gt;</code> bl
 
         <div class="body-post">
             
-                <p>Pattern where different objects of a class are created depending on parameters passed through to it. The <em>factory</em> configures the object based on what is declared.</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// example of Factory</span>
-<span class='kd'>var</span> <span class='nx'>car</span>        <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>VehicleMaker</span><span class='p'>(</span><span class='s1'>&#39;car&#39;</span><span class='p'>);</span>
-<span class='kd'>var</span> <span class='nx'>motorcycle</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>VehicleMaker</span><span class='p'>(</span><span class='s1'>&#39;motorcycle&#39;</span><span class='p'>);</span>
-<span class='kd'>var</span> <span class='nx'>bike</span>       <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>VehicleMaker</span><span class='p'>(</span><span class='s1'>&#39;bike&#39;</span><span class='p'>);</span>
+                
+<p>Pattern where different objects of a class are created depending on parameters passed through to it. The <em>factory</em> configures the object based on what is declared.</p>
 
-<span class='nx'>car</span><span class='p'>.</span><span class='nx'>info</span><span class='p'>();</span> <span class='c1'>// &#39;car&#39; has 4 wheels and a v6 engine</span>
-<span class='nx'>motorcycle</span><span class='p'>.</span><span class='nx'>info</span><span class='p'>();</span> <span class='c1'>// &#39;motorcycle&#39; has 2 wheels and a v-twin engine</span>
-<span class='nx'>bike</span><span class='p'>.</span><span class='nx'>info</span><span class='p'>();</span> <span class='c1'>// &#39;bike&#39; has 2 wheels and no engine</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// example of Factory</span>
+<span class="kd">var</span> <span class="nx">car</span>        <span class="o">=</span> <span class="k">new</span> <span class="nx">VehicleMaker</span><span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">motorcycle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VehicleMaker</span><span class="p">(</span><span class="s1">&#39;motorcycle&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bike</span>       <span class="o">=</span> <span class="k">new</span> <span class="nx">VehicleMaker</span><span class="p">(</span><span class="s1">&#39;bike&#39;</span><span class="p">);</span>
+
+<span class="nx">car</span><span class="p">.</span><span class="nx">info</span><span class="p">();</span> <span class="c1">// &#39;car&#39; has 4 wheels and a v6 engine</span>
+<span class="nx">motorcycle</span><span class="p">.</span><span class="nx">info</span><span class="p">();</span> <span class="c1">// &#39;motorcycle&#39; has 2 wheels and a v-twin engine</span>
+<span class="nx">bike</span><span class="p">.</span><span class="nx">info</span><span class="p">();</span> <span class="c1">// &#39;bike&#39; has 2 wheels and no engine</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -162,39 +165,35 @@ red&quot;&gt;</code> or <code>&lt;styles type=&quot;text/css&quot;&gt;</code> bl
 
         <div class="body-post">
             
-                <h1 id='overview'>Overview</h1>
+                
+<h1 id="overview">Overview</h1>
 
 <p>Dependency Injection, or DI, is a software design pattern that allows a choice of component to be made at run-time rather than at compile time. Often used via a config file, eg. Web.config, package.json, etc.</p>
 
 <p>Has 3 elements:</p>
 
 <ol>
-<li>a <strong>dependent</strong> consumer</li>
-
-<li>a declaration of a component&#8217;s <strong>dependencies</strong> defined as interface contracts</li>
-
-<li>an <strong>injector</strong> sometimes referred to as <strong>provider</strong> or <strong>container</strong> that creates instance of classes that implement a dependency interface on request</li>
+  <li>a <strong>dependent</strong> consumer</li>
+  <li>a declaration of a component&rsquo;s <strong>dependencies</strong> defined as interface contracts</li>
+  <li>an <strong>injector</strong> sometimes referred to as <strong>provider</strong> or <strong>container</strong> that creates instance of classes that implement a dependency interface on request</li>
 </ol>
 
-<h1 id='benefits'>Benefits</h1>
+<h1 id="benefits">Benefits</h1>
 
 <ul>
-<li>Can have multiple implementations of a single software component</li>
-
-<li>provide &#8220;mocks&#8221; for unit testing</li>
-
-<li>locating plugin components</li>
-
-<li>initializing software services (eg., config file on heroku to spin up instance)</li>
+  <li>Can have multiple implementations of a single software component</li>
+  <li>provide &ldquo;mocks&rdquo; for unit testing</li>
+  <li>locating plugin components</li>
+  <li>initializing	software services (eg., config file on heroku to spin up instance)</li>
 </ul>
 
-<h1 id='examples'>Examples</h1>
+<h1 id="examples">Examples</h1>
 
 <ul>
-<li>load plugins dynamically</li>
-
-<li>provide mock objects for testing</li>
+  <li>load plugins dynamically</li>
+  <li>provide mock objects for testing</li>
 </ul>
+
             
 
             <!-- if tags -->
@@ -232,13 +231,15 @@ red&quot;&gt;</code> or <code>&lt;styles type=&quot;text/css&quot;&gt;</code> bl
 
         <div class="body-post">
             
-                <h1 id='livereload'>livereload</h1>
+                
+<h1 id="livereload">livereload</h1>
 
-<p>Was having issues running guard-livereload on updated macbook air machine.</p>
+<p>Was having issues running guard-livereload on updated macbook air machine. </p>
 
 <p><strong>Solution:</strong> reinstall <code>rvm</code> and <code>brew update</code>, stashing <code>/usr/local</code> updates and <code>brew install</code> any missing dependencies/packages that <code>brew doctor</code> mentioned</p>
 
 <p>Running <code>sudo gem install guard-livereload</code> as well as <code>sudo gem install rb-fsevents</code> after from recommendation in running <code>guard</code> fixed everything. Woot</p>
+
             
 
             <!-- if tags -->
@@ -276,45 +277,49 @@ red&quot;&gt;</code> or <code>&lt;styles type=&quot;text/css&quot;&gt;</code> bl
 
         <div class="body-post">
             
-                <h1 id='book_notes__learn_nodejs_in_24_hours'>Book notes : Learn Node.js in 24 hours</h1>
+                
+<h1 id="book-notes--learn-nodejs-in-24-hours">Book notes : Learn Node.js in 24 hours</h1>
 
-<p>The terms <em>synchronous</em> and blocking can be used interchangeably and refer to an example where execution of code stops until a function returns. A script is not able to continue if an operation blocks, and for the end user, this means that they simply have to wait.</p>
+<p>The terms <em>synchronous</em> and blocking can be used interchangeably and refer to an example where execution of code stops until a function returns. A script is not able to continue if an operation blocks, and for the end user, this means that they simply have to wait. </p>
 
 <p>The terms <em>asynchronous</em> and non-blocking can also be used interchangeably and refer to the callback-based approach of allowing a script to perform operations in parallel. A script does not need to wait for the outcome of an operation before proceeding as this will be handled by callback when the event happens. Using the asynchronous approach, operations no longer have to happen one after another.</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// example of synchronous/blocking functions</span>
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>(</span><span class='nx'>arg1</span><span class='p'>,</span> <span class='nx'>arg2</span><span class='p'>)</span> <span class='p'>{</span>
-	<span class='c1'>//do something</span>
-	<span class='k'>return</span> <span class='nx'>something</span><span class='p'>;</span>
-<span class='p'>}</span>
 
-<span class='kd'>function</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='c1'>//do something</span>
-	<span class='k'>return</span> <span class='nx'>somethingElse</span><span class='p'>;</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// example of synchronous/blocking functions</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">//do something</span>
+	<span class="k">return</span> <span class="nx">something</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class='nx'>myName</span><span class='p'>(</span><span class='nx'>woot</span><span class='p'>,</span><span class='nx'>woot</span><span class='p'>);</span>
-<span class='nx'>myName2</span><span class='p'>();</span>
+<span class="kd">function</span> <span class="nx">myName2</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//do something</span>
+	<span class="k">return</span> <span class="nx">somethingElse</span><span class="p">;</span>
+<span class="p">}</span>
 
-
-
+<span class="nx">myName</span><span class="p">(</span><span class="nx">woot</span><span class="p">,</span><span class="nx">woot</span><span class="p">);</span>
+<span class="nx">myName2</span><span class="p">();</span>
 
 
-<span class='c1'>// example of asynchronous functions</span>
 
-<span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span>
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>(</span><span class='nx'>arg1</span><span class='p'>,</span> <span class='nx'>arg2</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='c1'>//do something with args</span>
-	<span class='c1'>//callback stuff to do</span>
-<span class='p'>}</span>
 
-<span class='kd'>function</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='nx'>http</span><span class='p'>.</span><span class='nx'>get</span><span class='p'>({</span> <span class='nx'>host</span><span class='o'>:</span> <span class='s1'>&#39;google.com&#39;</span> <span class='p'>},</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>response</span><span class='p'>)</span> <span class='p'>{</span>
-		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;response returned&#39;</span> <span class='o'>+</span> <span class='nx'>response</span><span class='p'>);</span>
-	<span class='p'>}).</span><span class='nx'>on</span><span class='p'>(</span><span class='s1'>&#39;error&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;there was an error: &#39;</span> <span class='o'>+</span> <span class='nx'>e</span><span class='p'>);</span>
-	<span class='p'>}</span>
-<span class='p'>}</span>
+
+<span class="c1">// example of asynchronous functions</span>
+
+<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//do something with args</span>
+	<span class="c1">//callback stuff to do</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">myName2</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;google.com&#39;</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;response returned&#39;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">);</span>
+	<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;there was an error: &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

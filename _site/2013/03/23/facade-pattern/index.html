@@ -59,29 +59,31 @@
 
         <div class="body-post">
             
-                <h2 id='definition'>Definition</h2>
+                
+<h2 id="definition">Definition</h2>
 
-<p>In doing more planning for the modules/components of a project I&#8217;m working on, I&#8217;m designing what the system will be composed of and how best to implement them for scalability and object reuse. A pattern that came up was the use of a <code>Facade</code>, or an object that provides a simplified interface to a larger body of code.</p>
+<p>In doing more planning for the modules/components of a project I&rsquo;m working on, I&rsquo;m designing what the system will be composed of and how best to implement them for scalability and object reuse. A pattern that came up was the use of a <code>Facade</code>, or an object that provides a simplified interface to a larger body of code. </p>
 
-<p>Something analagous to this in modern web development is the use of APIs, or an application programming interface that consists of software component that can communicate with each other. What&#8217;s usually given is a set of methods or function signatures that indicate their input and will provide some service or output. Through one, unified interface, access to the system and its components are provided, simplifying its use.</p>
+<p>Something analagous to this in modern web development is the use of APIs, or an application programming interface that consists of software component that can communicate with each other. What&rsquo;s usually given is a set of methods or function signatures that indicate their input and will provide some service or output. Through one, unified interface, access to the system and its components are provided, simplifying its use.</p>
 
-<h2 id='example_diagram'>Example diagram</h2>
+<h2 id="example-diagram">Example diagram</h2>
 
-<p><img alt='sample facade setup' src='http://f.cl.ly/items/2n2V2y23120Y2x3b1t0J/Screen%20Shot%202013-03-23%20at%2012.13.14%20AM.png' /></p>
+<p><img src="http://f.cl.ly/items/2n2V2y23120Y2x3b1t0J/Screen%20Shot%202013-03-23%20at%2012.13.14%20AM.png" alt="sample facade setup" /></p>
 
-<h2 id='benefits_of_using'>Benefits of using</h2>
+<h2 id="benefits-of-using">Benefits of using</h2>
 
-<p>Another example of using the <strong>facade pattern</strong> and APIs is creating an interface to a poorly designed API. This would satisfy simplifying an interface to a larger body of code.</p>
+<p>Another example of using the <strong>facade pattern</strong> and APIs is creating an interface to a poorly designed API. This would satisfy simplifying an interface to a larger body of code. </p>
 
 <p>Using the <code>facade</code> pattern allows you to decouple your implementation from the subsystem. If your subsystem had to change for any reason and if the interface changed, you would only need to update the facade that interacts with the interface to the subsystem.</p>
 
-<h2 id='how_im_using_it'>How I&#8217;m using it</h2>
+<h2 id="how-im-using-it">How I&rsquo;m using it</h2>
 
-<p>From a talk given by Nicholas Zakas on <a href='http://www.slideshare.net/nzakas/scalable-javascript-application-architecture'><strong>Scalable JavaScript Architecture</strong></a>, he provides examples of how components can be connected together while being loosely coupled with use of Modules -&gt; Sandbox -&gt; Core -&gt; Base. Modules communicate to other modules via the Sandbox. Only the Sandbox interacts with the Core. And the Core is the only component that talks to Base.</p>
+<p>From a talk given by Nicholas Zakas on <a href="http://www.slideshare.net/nzakas/scalable-javascript-application-architecture"><strong>Scalable JavaScript Architecture</strong></a>, he provides examples of how components can be connected together while being loosely coupled with use of Modules -&gt; Sandbox -&gt; Core -&gt; Base. Modules communicate to other modules via the Sandbox. Only the Sandbox interacts with the Core. And the Core is the only component that talks to Base. </p>
 
-<p>The <code>Sandbox</code> in this setup is what uses the <code>Facade</code> pattern, an object with a simplified interface to the Core. I&#8217;m using the pattern in the same way so that any modifications being done in the core are separated from the API or method signatures that the modules are using, thus keeping my components loosely coupled. If any updates are needed to the system, the modules are not implemented so tightly where many modification points are needed, allowing for easier testability and streamlined enhancements.</p>
+<p>The <code>Sandbox</code> in this setup is what uses the <code>Facade</code> pattern, an object with a simplified interface to the Core. I&rsquo;m using the pattern in the same way so that any modifications being done in the core are separated from the API or method signatures that the modules are using, thus keeping my components loosely coupled. If any updates are needed to the system, the modules are not implemented so tightly where many modification points are needed, allowing for easier testability and streamlined enhancements.</p>
 
 <p>Happy coding.</p>
+
             
 
             <!-- if tags -->

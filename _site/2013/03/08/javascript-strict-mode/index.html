@@ -59,55 +59,60 @@
 
         <div class="body-post">
             
-                <h2 id='what_is_it'>What is it?</h2>
+                
+<h2 id="what-is-it">What is it?</h2>
 
-<p><code>strict mode</code> or <strong>strict variant</strong> was introduced in ECMAScript 5 to allow developers to opt in using JavaScript features that provided better error condition checking as some situations in property accessing and value assignments created ambiguity and didn&#8217;t throw errors.</p>
+<p><code>strict mode</code> or <strong>strict variant</strong> was introduced in ECMAScript 5 to allow developers to opt in using JavaScript features that provided better error condition checking as some situations in property accessing and value assignments created ambiguity and didn&rsquo;t throw errors. </p>
 
-<h2 id='benefits'>Benefits</h2>
+<h2 id="benefits">Benefits</h2>
 
 <p>Seeing where your code is prone to errors allows you to debug quicker and also removes any ambiguity. Some cases may protect a developer from creating global variables if not assigned in an object/function scope. Strict mode calls attention to areas that should be fixed immediately.</p>
 
-<h2 id='where_are_some_improvements_made'>Where are some improvements made?</h2>
+<h2 id="where-are-some-improvements-made">Where are some improvements made?</h2>
 
 <ul>
-<li>prevents accidental globals <code>someUndeclaredVar = &#39;woot&#39;;</code></li>
-
-<li>throws error with duplicate object properties <code>{woot: &#39;hey&#39;, woot: &#39;yo&#39;}</code></li>
-
-<li>errors on attempt to change an immutable property</li>
+  <li>prevents accidental globals <code>someUndeclaredVar = 'woot';</code></li>
+  <li>throws error with duplicate object properties <code>{woot: 'hey', woot: 'yo'}</code></li>
+  <li>errors on attempt to change an immutable property </li>
 </ul>
 
-<h2 id='how_to_use'>How to use</h2>
-<div class='highlight'><pre><code class='js'><span class='c1'>// declared at top of js file, instructs JavaScript engine to swtich into this mode</span>
-<span class='s2'>&quot;use strict&quot;</span><span class='p'>;</span>
-</code></pre></div>
-<p><em>Note:</em> Don&#8217;t use globally as this may introduce other unexpected errors for files that are dynamically included. Instead, use like the following:</p>
-<div class='highlight'><pre><code class='js'><span class='p'>(</span><span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> 
-  <span class='s2'>&quot;use strict&quot;</span><span class='p'>;</span>
+<h2 id="how-to-use">How to use</h2>
 
-  <span class='kd'>function</span> <span class='nx'>someMethod</span><span class='p'>()</span> <span class='p'>{</span>  
-      <span class='c1'>// runs in srict mode</span>
-  <span class='p'>};</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// declared at top of js file, instructs JavaScript engine to swtich into this mode</span>
+<span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>*Note: * Don&rsquo;t use globally as this may introduce other unexpected errors for files that are dynamically included. Instead, use like the following:</p>
+
+<div class="highlight"><pre><code class="js"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+
+  <span class="kd">function</span> <span class="nx">someMethod</span><span class="p">()</span> <span class="p">{</span>  
+      <span class="c1">// runs in srict mode</span>
+  <span class="p">};</span>
 
   
-  <span class='kd'>function</span> <span class='nx'>someMethod2</span><span class='p'>()</span> <span class='p'>{</span>  
-      <span class='c1'>// runs in srict mode</span>
-  <span class='p'>};</span>
-<span class='p'>})();</span>
+  <span class="kd">function</span> <span class="nx">someMethod2</span><span class="p">()</span> <span class="p">{</span>  
+      <span class="c1">// runs in srict mode</span>
+  <span class="p">};</span>
+<span class="p">})();</span>
 
 
-<span class='kd'>function</span> <span class='nx'>someMethod4</span> <span class='p'>{</span>  
-  <span class='s2'>&quot;use strict&quot;</span><span class='p'>;</span>
-  <span class='c1'>// runs in strict mode</span>
-<span class='p'>}</span>
+<span class="kd">function</span> <span class="nx">someMethod4</span> <span class="p">{</span>  
+  <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+  <span class="c1">// runs in strict mode</span>
+<span class="p">}</span>
 
-<span class='kd'>function</span> <span class='nx'>someMethod3</span> <span class='p'>{</span>  
-<span class='c1'>// does not run in strict mode </span>
-<span class='p'>}</span>
+<span class="kd">function</span> <span class="nx">someMethod3</span> <span class="p">{</span>  
+<span class="c1">// does not run in strict mode </span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='reference'>Reference</h2>
 
-<p>More information on <a href='http://dmitrysoshnikov.com/ecmascript/es5-chapter-2-strict-mode/'>ECMA-262-5, Chapter 2. Strict Mode</a></p>
+<h2 id="reference">Reference</h2>
+
+<p>More information on <a href="http://dmitrysoshnikov.com/ecmascript/es5-chapter-2-strict-mode/">ECMA-262-5, Chapter 2. Strict Mode</a></p>
+
+
             
 
             <!-- if tags -->

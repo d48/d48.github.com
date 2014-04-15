@@ -59,25 +59,29 @@
 
         <div class="body-post">
             
-                <p>Just need to remind myself of what <code>this</code> refers to based on function scope and context. Was working through a bug that uses a variable within a namespace called by different functions. Since the function within the callback refers to <code>this.varName</code>, it&#8217;s context is important and has to be taken care of.</p>
+                
+<p>Just need to remind myself of what <code>this</code> refers to based on function scope and context. Was working through a bug that uses a variable within a namespace called by different functions. Since the function within the callback refers to <code>this.varName</code>, it&rsquo;s context is important and has to be taken care of.</p>
 
 <p>Given:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>doSomething</span><span class='p'>()</span> <span class='p'>{</span> 
-  <span class='k'>this</span><span class='p'>.</span><span class='nx'>attribute</span> <span class='o'>=</span> <span class='s1'>&#39;what up yo&#39;</span><span class='p'>;</span>
-<span class='p'>}</span>
 
-<span class='kd'>function</span> <span class='nx'>init</span><span class='p'>()</span> <span class='p'>{</span> 
-  <span class='c1'>// this var inside doSomething is as expected to refer to object</span>
-  <span class='c1'>// instantiated</span>
-  <span class='nx'>doSomething</span><span class='p'>();</span>
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">doSomething</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="k">this</span><span class="p">.</span><span class="nx">attribute</span> <span class="o">=</span> <span class="s1">&#39;what up yo&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 
-    <span class='nx'>someOtherFunction</span><span class='p'>(</span><span class='s1'>&#39;woot&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-      <span class='c1'>// since this is a callback, the value of `this` var inside</span>
-      <span class='c1'>// doSomething refers to window, this is not desired</span>
-      <span class='nx'>doSomething</span><span class='p'>();</span>
-    <span class='p'>});</span>
-<span class='p'>}</span>
+<span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="c1">// this var inside doSomething is as expected to refer to object</span>
+  <span class="c1">// instantiated</span>
+  <span class="nx">doSomething</span><span class="p">();</span>
+
+    <span class="nx">someOtherFunction</span><span class="p">(</span><span class="s1">&#39;woot&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// since this is a callback, the value of `this` var inside</span>
+      <span class="c1">// doSomething refers to window, this is not desired</span>
+      <span class="nx">doSomething</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

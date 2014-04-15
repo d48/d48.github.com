@@ -59,19 +59,23 @@
 
         <div class="body-post">
             
-                <h1 id='pass_by_reference'>Pass by reference</h1>
+                
+<h1 id="pass-by-reference">Pass by reference</h1>
 
-<p>You can pass a variable by reference to a function so the function can modify the variable. It&#8217;s basically a pointer to the variable so if it&#8217;s modified within a function, it&#8217;s &#8216;globally&#8217; modified or within the scope of execution outside where it&#8217;s referenced. Syntax below:</p>
-<div class='highlight'><pre><code class='js'><span class='o'>&lt;?</span><span class='nx'>php</span> 
-	<span class='kd'>function</span> <span class='nx'>foo</span><span class='p'>(</span><span class='o'>&amp;</span><span class='nx'>$arg</span><span class='p'>)</span>
-	<span class='p'>{</span>	
-		<span class='nx'>$arg</span><span class='o'>++</span><span class='p'>;</span>		
-	<span class='p'>}</span>
+<p>You can pass a variable by reference to a function so the function can modify the variable. It&rsquo;s basically a pointer to the variable so if it&rsquo;s modified within a function, it&rsquo;s &lsquo;globally&rsquo; modified or within the scope of execution outside where it&rsquo;s referenced. Syntax below:</p>
 
-	<span class='nx'>$var</span> <span class='o'>=</span> <span class='mi'>5</span><span class='p'>;</span>
-	<span class='nx'>foo</span><span class='p'>(</span><span class='nx'>$var</span><span class='p'>);</span>	<span class='c1'>// $var is 6</span>
-<span class='o'>?&gt;</span>
+<div class="highlight"><pre><code class="js"><span class="o">&lt;?</span><span class="nx">php</span> 
+	<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">$arg</span><span class="p">)</span>
+	<span class="p">{</span>	
+		<span class="nx">$arg</span><span class="o">++</span><span class="p">;</span>		
+	<span class="p">}</span>
+
+	<span class="nx">$var</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+	<span class="nx">foo</span><span class="p">(</span><span class="nx">$var</span><span class="p">);</span>	<span class="c1">// $var is 6</span>
+<span class="o">?&gt;</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

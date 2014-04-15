@@ -66,13 +66,15 @@
 
         <div class="body-post">
             
-                <blockquote>
-<p><strong>Invariant condition</strong> - In computer science, a condition that can be relied to be true during execution of a program. Invariants are especially useful when reasoning about whether a computer program is correct.</p>
+                
+<blockquote>
+  <p><strong>Invariant condition</strong> - In computer science, a condition that can be relied to be true during execution of a program. Invariants are especially useful when reasoning about whether a computer program is correct. </p>
 </blockquote>
 
-<h2 id='examples'>Examples</h2>
+<h2 id="examples">Examples</h2>
 
-<p>Explicit invariants is use of assertions in code. Some OOP languages have special syntax for specifying class invariants. Another example is a loop invariant - a statement of the conditions that should be true on entry into a loop and that are guaranteed to remain true on every iteration of the loop. On exit of the loop both the loop invariant and the loop termination condition can be guaranteed.</p>
+<p>Explicit invariants is use of assertions in code. Some OOP languages have special syntax for specifying class invariants. Another example is a loop invariant - a statement of the conditions that should be true on entry into a loop and that are guaranteed to remain true on every iteration of the loop. On exit of the loop both the loop invariant and the loop termination condition can be guaranteed. </p>
+
             
 
             <!-- if tags -->
@@ -104,9 +106,11 @@
 
         <div class="body-post">
             
-                <p>I&#8217;m working on an image of my son for an illustration piece I&#8217;m doing inspired by some magazine design I saw of an illusration as well as my favorite illustrator <a href='http://www.daviddownton.com'>David Downton</a>. Here&#8217;s the progress so far</p>
+                
+<p>I&rsquo;m working on an image of my son for an illustration piece I&rsquo;m doing inspired by some magazine design I saw of an illusration as well as my favorite illustrator <a href="http://www.daviddownton.com">David Downton</a>. Here&rsquo;s the progress so far</p>
 
-<p><img alt='Jeshua sketch' src='http://f.cl.ly/items/2q2X1L2U223m1M3m2012/jeshua-sketch.jpg' /></p>
+<p><img src="http://f.cl.ly/items/2q2X1L2U223m1M3m2012/jeshua-sketch.jpg" alt="Jeshua sketch" /></p>
+
             
 
             <!-- if tags -->
@@ -142,17 +146,21 @@
 
         <div class="body-post">
             
-                <h1 id='function_type_checking'>Function type checking</h1>
+                
+<h1 id="function-type-checking">Function type checking</h1>
 
 <p>Instead of writing 2 seperate functions that work on 2 different data types but do the same functionality, like searching for instance, just create a function (or API) that is generic that can do type checking.</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>apisearch</span> <span class='p'>(</span><span class='nx'>stack</span><span class='p'>,</span> <span class='nx'>needle</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>isArray</span><span class='p'>(</span><span class='nx'>stack</span><span class='p'>))(</span> <span class='p'>{</span>
-      <span class='c1'>//searchArray(stack, needle);</span>
-    <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
-      <span class='c1'>//searchMap(stack, needle);</span>
-    <span class='p'>}</span>
-  <span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">apisearch</span> <span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">needle</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">stack</span><span class="p">))(</span> <span class="p">{</span>
+      <span class="c1">//searchArray(stack, needle);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//searchMap(stack, needle);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -188,19 +196,19 @@
 
         <div class="body-post">
             
-                <p>I just came across this JavaScript animation framework and I have to say it&#8217;s really easy to use because of the API they created. Here&#8217;s a couple notes from the &#8220;Getting Started&#8221; docs.</p>
+                
+<p>I just came across this JavaScript animation framework and I have to say it&rsquo;s really easy to use because of the API they created. Here&rsquo;s a couple notes from the &ldquo;Getting Started&rdquo; docs.</p>
 
-<h2 id='highlights'>Highlights</h2>
+<h2 id="highlights">Highlights</h2>
 
 <ul>
-<li>Can pause and resume animation with event handlers</li>
-
-<li>Can animate css properties</li>
-
-<li>Set delay before animate starts</li>
-
-<li>Can animate multiple properties and give different timelines for each</li>
+  <li>Can pause and resume animation with event handlers</li>
+  <li>Can animate css properties </li>
+  <li>Set delay before animate starts</li>
+  <li>Can animate multiple properties and give different timelines for each</li>
 </ul>
+
+
             
 
             <!-- if tags -->
@@ -238,17 +246,17 @@
 
         <div class="body-post">
             
-                <p>Was configuring a local dev environment to test some php files that I&#8217;m symlinking from my <code>~/username/Sites</code> folder. Need to make sure:</p>
+                
+<p>Was configuring a local dev environment to test some php files that I&rsquo;m symlinking from my <code>~/username/Sites</code> folder. Need to make sure:</p>
 
 <ol>
-<li>Be sure to add this option in <code>/etc/apache2/users/username.conf</code> file: <code>Options Indexes Multiviews FollowSymLinks</code></li>
-
-<li><code>chmod a+rx</code> on Dropbox directory and project directory</li>
-
-<li><code>sudo /usr/sbin/apachectl restart</code></li>
+  <li>Be sure to add this option in <code>/etc/apache2/users/username.conf</code> file: <code>Options Indexes Multiviews FollowSymLinks</code></li>
+  <li><code>chmod a+rx</code> on Dropbox directory and project directory</li>
+  <li><code>sudo /usr/sbin/apachectl restart</code></li>
 </ol>
 
 <p>Wootiness.</p>
+
             
 
             <!-- if tags -->

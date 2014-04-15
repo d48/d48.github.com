@@ -59,20 +59,24 @@
 
         <div class="body-post">
             
-                <h2 id='css_and_boxsizing_property'>CSS and box-sizing property</h2>
+                
+<h2 id="css-and-box-sizing-property">CSS and box-sizing property</h2>
 
-<p>I just came across <a href='http://paulirish.com/2012/box-sizing-border-box-ftw/'>this blog post from Paul Irish</a> and I&#8217;m eager to use this once I&#8217;m on a project that doesn&#8217;t need to support IE7 natively, although there is a polyfill, or <a href='https://github.com/Schepp/box-sizing-polyfill'>plugin/method, available to handle it on github</a>.</p>
+<p>I just came across <a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">this blog post from Paul Irish</a> and I&rsquo;m eager to use this once I&rsquo;m on a project that doesn&rsquo;t need to support IE7 natively, although there is a polyfill, or <a href="https://github.com/Schepp/box-sizing-polyfill">plugin/method, available to handle it on github</a>. </p>
 
-<p>This basially allows you to define how boxes in your layout will handle padding when content is inside. Before this box-sizing property was used, users would often have to modify their predfined width/height setting to accomodate if content filled up the box or not in order to achieve the final net size that was intended.</p>
+<p>This basially allows you to define how boxes in your layout will handle padding when content is inside. Before this box-sizing property was used, users would often have to modify their predfined width/height setting to accomodate if content filled up the box or not in order to achieve the final net size that was intended. </p>
 
 <p><strong>For example</strong></p>
 
 <p>If I wanted a 200 pixel wide box and added content in it that had padding of 20 pixels on each side, I would have to update the the css definition for that box to be -40 pixels to final width of 160 pixels.</p>
 
 <p>Yes, very irritating. I just want to define it once and be done with that. box-sizing to the rescue:</p>
-<div class='highlight'><pre><code class='js'>	<span class='cm'>/* In css file, vendor prefix to handle cross-browser */</span>
-	<span class='o'>*</span> <span class='p'>{</span> <span class='o'>-</span><span class='nx'>moz</span><span class='o'>-</span><span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='o'>-</span><span class='nx'>webkit</span><span class='o'>-</span><span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='p'>}</span> <span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js">	<span class="cm">/* In css file, vendor prefix to handle cross-browser */</span>
+	<span class="o">*</span> <span class="p">{</span> <span class="o">-</span><span class="nx">moz</span><span class="o">-</span><span class="nx">box</span><span class="o">-</span><span class="nx">sizing</span><span class="o">:</span> <span class="nx">border</span><span class="o">-</span><span class="nx">box</span><span class="p">;</span> <span class="o">-</span><span class="nx">webkit</span><span class="o">-</span><span class="nx">box</span><span class="o">-</span><span class="nx">sizing</span><span class="o">:</span> <span class="nx">border</span><span class="o">-</span><span class="nx">box</span><span class="p">;</span> <span class="nx">box</span><span class="o">-</span><span class="nx">sizing</span><span class="o">:</span> <span class="nx">border</span><span class="o">-</span><span class="nx">box</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

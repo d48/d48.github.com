@@ -59,36 +59,38 @@
 
         <div class="body-post">
             
-                <h2 id='book_notes'>Book notes</h2>
+                
+<h2 id="book-notes">Book notes</h2>
 
 <p>Exercises in refactoring code using:</p>
-<div class='highlight'><pre><code class='js'><span class='kr'>public</span> <span class='kr'>class</span> <span class='nx'>Square</span> <span class='kr'>extends</span> <span class='nx'>Shape</span> <span class='p'>{</span>
-    <span class='kr'>public</span> <span class='nx'>Square</span><span class='p'>(</span><span class='kr'>double</span> <span class='nx'>size</span><span class='p'>)</span> <span class='p'>{</span>
-        <span class='kr'>super</span><span class='p'>(</span><span class='nx'>size</span><span class='p'>);</span>
-    <span class='p'>}</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kr">public</span> <span class="kr">class</span> <span class="nx">Square</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="kr">public</span> <span class="nx">Square</span><span class="p">(</span><span class="kr">double</span> <span class="nx">size</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">size</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
  
  
-<span class='kr'>public</span> <span class='kr'>class</span> <span class='nx'>Window</span> <span class='p'>{</span>
-    <span class='kr'>private</span> <span class='nx'>Shape</span> <span class='nx'>shape</span><span class='p'>;</span>
-    <span class='kr'>public</span> <span class='nx'>Window</span><span class='p'>(</span><span class='nx'>Shape</span> <span class='nx'>shape</span><span class='p'>)</span> <span class='p'>{</span>
-        <span class='k'>this</span><span class='p'>.</span><span class='nx'>shape</span> <span class='o'>=</span> <span class='nx'>shape</span><span class='p'>;</span>
-    <span class='p'>}</span>
-<span class='p'>}</span>
+<span class="kr">public</span> <span class="kr">class</span> <span class="nx">Window</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">Shape</span> <span class="nx">shape</span><span class="p">;</span>
+    <span class="kr">public</span> <span class="nx">Window</span><span class="p">(</span><span class="nx">Shape</span> <span class="nx">shape</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shape</span> <span class="o">=</span> <span class="nx">shape</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <ol>
-<li>
-<p>Subclassing vs. Delegation. Difference that an object is a &#8216;kind-of&#8217; of something vs. the object &#8216;has-a&#8217; characteristic, respectively.</p>
-</li>
-
-<li>
-<p>Circle is a kind-of shape = Use subclasses</p>
-</li>
-
-<li>
-<p>A Window has-a shape = Delegation</p>
-</li>
+  <li>
+    <p>Subclassing vs. Delegation. Difference that an object is a &lsquo;kind-of&rsquo; of something vs. the object &lsquo;has-a&rsquo; characteristic, respectively.</p>
+  </li>
+  <li>
+    <p>Circle is a kind-of shape = Use subclasses</p>
+  </li>
+  <li>
+    <p>A Window has-a shape = Delegation</p>
+  </li>
 </ol>
+
             
 
             <!-- if tags -->

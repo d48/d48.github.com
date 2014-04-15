@@ -59,42 +59,48 @@
 
         <div class="body-post">
             
-                <h2 id='creating_reusable_code'>Creating reusable code</h2>
+                
+<h2 id="creating-reusable-code">Creating reusable code</h2>
 
 <ul>
-<li>Write object-oriented code and implement object inheritance</li>
-
-<li>In Javascript, this is <em>prototypal inheritance</em> where an object constructor can inherit methods from one other object, creating a <em>prototype</em> from which all other new objects are built.</li>
-
-<li>Facilitated by the <em>prototype property</em>, exists for every function</li>
+  <li>Write object-oriented code and implement object inheritance </li>
+  <li>In Javascript, this is <em>prototypal inheritance</em> where an object constructor can inherit methods from one other object, creating a <em>prototype</em> from which all other new objects are built.</li>
+  <li>Facilitated by the <em>prototype property</em>, exists for every function</li>
 </ul>
 
-<h2 id='book_notes__javascript_patterns'>Book notes - Javascript Patterns</h2>
+<h2 id="book-notes---javascript-patterns">Book notes - Javascript Patterns</h2>
 
 <ul>
-<li>reading book by Stoyan Stefanov <sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></li>
-
-<li>object literal notation better to use when creating objects as it&#8217;s easier to read and has better performance not having to look up scope chain to general global <em>Object</em> constructor</li>
-
-<li>also using <em>new Object() constructor</em> has issues with dynamic typing that may lead to unwanted results, eg. boolean, number, string</li>
-
-<li>when using <em>new</em> statement when creating objects with methods, if want to re-use method and have another object copy or clone this object, instead of creating a duplicate method in memory, instead add to the <em>prototype</em> of that object.</li>
+  <li>reading book by Stoyan Stefanov <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+  <li>object literal notation better to use when creating objects as it&rsquo;s easier to read and has better performance not having to look up scope chain to general global <em>Object</em> constructor</li>
+  <li>also using <em>new Object() constructor</em> has issues with dynamic typing that may lead to unwanted results, eg. boolean, number, string</li>
+  <li>when using <em>new</em> statement when creating objects with methods, if want to re-use method and have another object copy or clone this object, instead of creating a duplicate method in memory, instead add to the <em>prototype</em> of that object.</li>
 </ul>
-<div class='highlight'><pre><code class='js'><span class='nx'>Person</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>sayName</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='k'>return</span> <span class='s2'>&quot;I am &quot;</span> <span class='o'>+</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>name</span><span class='p'>;</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="s2">&quot;I am &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <ul>
-<li>an object is just a function</li>
+  <li>an object is just a function</li>
 </ul>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>person</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>Person</span><span class='p'>()</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">()</span>
 </code></pre></div>
+
 <ul>
-<li><em>Person</em> is just a function</li>
+  <li><em>Person</em> is just a function</li>
 </ul>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p>Javascipt Patterns by Stoyan Stefanov. <a href='http://www.amazon.com/gp/product/B0046RERXE/'>Buy on Amazon</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Javascipt Patterns by Stoyan Stefanov. <a href="http://www.amazon.com/gp/product/B0046RERXE/">Buy on Amazon</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->

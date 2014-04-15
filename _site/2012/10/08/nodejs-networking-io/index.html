@@ -59,45 +59,49 @@
 
         <div class="body-post">
             
-                <h1 id='book_notes__learn_nodejs_in_24_hours'>Book notes : Learn Node.js in 24 hours</h1>
+                
+<h1 id="book-notes--learn-nodejs-in-24-hours">Book notes : Learn Node.js in 24 hours</h1>
 
-<p>The terms <em>synchronous</em> and blocking can be used interchangeably and refer to an example where execution of code stops until a function returns. A script is not able to continue if an operation blocks, and for the end user, this means that they simply have to wait.</p>
+<p>The terms <em>synchronous</em> and blocking can be used interchangeably and refer to an example where execution of code stops until a function returns. A script is not able to continue if an operation blocks, and for the end user, this means that they simply have to wait. </p>
 
 <p>The terms <em>asynchronous</em> and non-blocking can also be used interchangeably and refer to the callback-based approach of allowing a script to perform operations in parallel. A script does not need to wait for the outcome of an operation before proceeding as this will be handled by callback when the event happens. Using the asynchronous approach, operations no longer have to happen one after another.</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// example of synchronous/blocking functions</span>
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>(</span><span class='nx'>arg1</span><span class='p'>,</span> <span class='nx'>arg2</span><span class='p'>)</span> <span class='p'>{</span>
-	<span class='c1'>//do something</span>
-	<span class='k'>return</span> <span class='nx'>something</span><span class='p'>;</span>
-<span class='p'>}</span>
 
-<span class='kd'>function</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='c1'>//do something</span>
-	<span class='k'>return</span> <span class='nx'>somethingElse</span><span class='p'>;</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// example of synchronous/blocking functions</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">//do something</span>
+	<span class="k">return</span> <span class="nx">something</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class='nx'>myName</span><span class='p'>(</span><span class='nx'>woot</span><span class='p'>,</span><span class='nx'>woot</span><span class='p'>);</span>
-<span class='nx'>myName2</span><span class='p'>();</span>
+<span class="kd">function</span> <span class="nx">myName2</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//do something</span>
+	<span class="k">return</span> <span class="nx">somethingElse</span><span class="p">;</span>
+<span class="p">}</span>
 
-
-
+<span class="nx">myName</span><span class="p">(</span><span class="nx">woot</span><span class="p">,</span><span class="nx">woot</span><span class="p">);</span>
+<span class="nx">myName2</span><span class="p">();</span>
 
 
-<span class='c1'>// example of asynchronous functions</span>
 
-<span class='kd'>var</span> <span class='nx'>http</span> <span class='o'>=</span> <span class='nx'>require</span>
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>(</span><span class='nx'>arg1</span><span class='p'>,</span> <span class='nx'>arg2</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='c1'>//do something with args</span>
-	<span class='c1'>//callback stuff to do</span>
-<span class='p'>}</span>
 
-<span class='kd'>function</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='nx'>http</span><span class='p'>.</span><span class='nx'>get</span><span class='p'>({</span> <span class='nx'>host</span><span class='o'>:</span> <span class='s1'>&#39;google.com&#39;</span> <span class='p'>},</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>response</span><span class='p'>)</span> <span class='p'>{</span>
-		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;response returned&#39;</span> <span class='o'>+</span> <span class='nx'>response</span><span class='p'>);</span>
-	<span class='p'>}).</span><span class='nx'>on</span><span class='p'>(</span><span class='s1'>&#39;error&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;there was an error: &#39;</span> <span class='o'>+</span> <span class='nx'>e</span><span class='p'>);</span>
-	<span class='p'>}</span>
-<span class='p'>}</span>
+
+<span class="c1">// example of asynchronous functions</span>
+
+<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//do something with args</span>
+	<span class="c1">//callback stuff to do</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">myName2</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;google.com&#39;</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;response returned&#39;</span> <span class="o">+</span> <span class="nx">response</span><span class="p">);</span>
+	<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;there was an error: &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

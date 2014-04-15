@@ -59,47 +59,47 @@
 
         <div class="body-post">
             
-                <h2 id='_keyword'><code>this</code> keyword</h2>
+                
+<h2 id="this-keyword"><code>this</code> keyword</h2>
 
 <p>When talking about <strong>execution contexts</strong> for a script, the context contains references to various elements that represent state within a program to be managed according to the current logical scope. So how is the current value of <code>this</code> determinted in Javascript?</p>
 
 <ul>
-<li><code>this</code> declarted in functions refer to the global context and it would be defined as <code>window</code> in a browser or <code>global</code> in Node.</li>
-
-<li>If you specify <code>use strict</code> within that function, <code>this</code> would then be <code>undefined</code> instead.</li>
-
-<li>If control enters a constructor like <code>new someObject()</code>, the <code>this</code> value will refer to the current object.</li>
-
-<li>So if a function is called on an object, or by using the <code>new</code> operator, then the value of <code>this</code> will be the current instance of the object, otherwise it will be the global context (or <code>undefined</code> in strict mode).</li>
-
-<li>The value of <code>this</code> is dependent on how a function is called.</li>
+  <li><code>this</code> declarted in functions refer to the global context and it would be defined as <code>window</code> in a browser or <code>global</code> in Node.</li>
+  <li>If you specify <code>use strict</code> within that function, <code>this</code> would then be <code>undefined</code> instead.</li>
+  <li>If control enters a constructor like <code>new someObject()</code>, the <code>this</code> value will refer to the current object.</li>
+  <li>So if a function is called on an object, or by using the <code>new</code> operator, then the value of <code>this</code> will be the current instance of the object, otherwise it will be the global context (or <code>undefined</code> in strict mode).</li>
+  <li>The value of <code>this</code> is dependent on how a function is called.</li>
 </ul>
 
-<h2 id='examples'>Examples</h2>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>someName</span><span class='p'>(</span><span class='nx'>x</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='k'>this</span><span class='p'>);</span>
-  <span class='k'>return</span> <span class='nx'>x</span><span class='p'>;</span>
-<span class='p'>}</span>
+<h2 id="examples">Examples</h2>
 
-<span class='nx'>someName</span><span class='p'>(</span><span class='mi'>1</span><span class='p'>);</span> <span class='c1'>// `this` refers to the global object, window</span>
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">someName</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
 
-
-<span class='kd'>function</span> <span class='nx'>someName</span><span class='p'>(</span><span class='nx'>x</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='s1'>&#39;use strict&#39;</span><span class='p'>;</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='k'>this</span><span class='p'>);</span>
-  <span class='k'>return</span> <span class='nx'>x</span><span class='p'>;</span>
-<span class='p'>}</span>
-
-<span class='nx'>someName</span><span class='p'>(</span><span class='mi'>1</span><span class='p'>);</span> <span class='c1'>// `this` is undefined</span>
+<span class="nx">someName</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// `this` refers to the global object, window</span>
 
 
-<span class='kd'>function</span> <span class='nx'>Box</span><span class='p'>()</span> <span class='p'>{</span>
-  <span class='k'>this</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>=</span> <span class='mi'>4</span><span class='p'>;</span>
-  <span class='k'>this</span><span class='p'>.</span><span class='nx'>y</span> <span class='o'>=</span> <span class='mi'>10</span><span class='p'>;</span>
-<span class='p'>}</span>
+<span class="kd">function</span> <span class="nx">someName</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class='kd'>var</span> <span class='nx'>rectangle</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>Box</span><span class='p'>();</span> <span class='c1'>// `this` refers to the instance, in this case `rectangle`</span>
+<span class="nx">someName</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// `this` is undefined</span>
+
+
+<span class="kd">function</span> <span class="nx">Box</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">rectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Box</span><span class="p">();</span> <span class="c1">// `this` refers to the instance, in this case `rectangle`</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

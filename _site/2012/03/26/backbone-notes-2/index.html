@@ -59,62 +59,64 @@
 
         <div class="body-post">
             
-                <h2 id='notes_on_backbonejs'>Notes on Backbone.js</h2>
+                
+<h2 id="notes-on-backbonejs">Notes on Backbone.js</h2>
 
-<p>Dependency is <a href='http://documentcloud.github.com/underscore/'>Underscore.js</a></p>
+<p>Dependency is <a href="http://documentcloud.github.com/underscore/">Underscore.js</a></p>
 
 <p>Underscore = library for Javascript functions that help in binding, templating, testing and more.</p>
 
 <p>Has 4 major classes:</p>
 
 <ol>
-<li>Model</li>
-
-<li>Collection</li>
-
-<li>View</li>
-
-<li>Router (was Controller)</li>
+  <li>Model</li>
+  <li>Collection</li>
+  <li>View</li>
+  <li>Router (was Controller)</li>
 </ol>
 
-<h3 id='model'>Model</h3>
+<h3 id="model">Model</h3>
 
 <p>Represents a single entity, eg., a record in a database. Gives a way to read and write arbitrary properties or attributes on a data set.</p>
-<div class='highlight'><pre><code class='js'>	<span class='kd'>var</span> <span class='nx'>ObjectName</span> <span class='o'>=</span> <span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>Model</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>({</span>
-		<span class='nx'>initialize</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>(){</span>
-			<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s2'>&quot;init fired upon new&quot;</span><span class='p'>);</span>
-		<span class='p'>},</span>
-		<span class='nx'>defaults</span><span class='o'>:</span> <span class='p'>{</span>
-			<span class='nx'>name</span><span class='o'>:</span> <span class='s1'>&#39;Default title&#39;</span><span class='p'>,</span>
-			<span class='nx'>anotherProperty</span><span class='o'>:</span> <span class='s1'>&#39;random value&#39;</span>
-		<span class='p'>}</span>
-	<span class='p'>});</span>
+
+<div class="highlight"><pre><code class="js">	<span class="kd">var</span> <span class="nx">ObjectName</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+		<span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;init fired upon new&quot;</span><span class="p">);</span>
+		<span class="p">},</span>
+		<span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
+			<span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Default title&#39;</span><span class="p">,</span>
+			<span class="nx">anotherProperty</span><span class="o">:</span> <span class="s1">&#39;random value&#39;</span>
+		<span class="p">}</span>
+	<span class="p">});</span>
 </code></pre></div>
-<h3 id='collection'>Collection</h3>
+
+<h3 id="collection">Collection</h3>
 
 <p>Essentially just a collection of models. Using database analogy, collections are the result from a query where the results are a number of records models.</p>
-<div class='highlight'><pre><code class='js'>	<span class='kd'>var</span> <span class='nx'>ObjectCollection</span> <span class='o'>=</span> <span class='nx'>Backbone</span><span class='p'>.</span><span class='nx'>Collection</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>({</span>
-		<span class='nx'>model</span><span class='o'>:</span> <span class='nx'>ObjectName</span><span class='p'>,</span>	<span class='c1'>//specify model that has been created</span>
-		<span class='nx'>someMethod</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-			<span class='k'>return</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>object</span><span class='p'>)</span> <span class='p'>{</span>
-				<span class='nx'>object</span><span class='p'>.</span><span class='nx'>get</span><span class='p'>(</span><span class='s1'>&#39;specificPropertyName&#39;</span><span class='p'>);</span>
-			<span class='p'>};</span>
-		<span class='p'>}</span>
-	<span class='p'>});</span>
+
+<div class="highlight"><pre><code class="js">	<span class="kd">var</span> <span class="nx">ObjectCollection</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+		<span class="nx">model</span><span class="o">:</span> <span class="nx">ObjectName</span><span class="p">,</span>	<span class="c1">//specify model that has been created</span>
+		<span class="nx">someMethod</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">object</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">object</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;specificPropertyName&#39;</span><span class="p">);</span>
+			<span class="p">};</span>
+		<span class="p">}</span>
+	<span class="p">});</span>
 </code></pre></div>
-<h3 id='view'>View</h3>
+
+<h3 id="view">View</h3>
 
 <p>Views resemble controllers:</p>
 
 <ol>
-<li>Listen to events thrown by the DOM and models/collections</li>
-
-<li>Represent the application&#8217;s state and model to the user.</li>
+  <li>Listen to events thrown by the DOM and models/collections</li>
+  <li>Represent the application&rsquo;s state and model to the user.</li>
 </ol>
 
-<p>Sample templating libraries to use with <code>render</code> function: <a href='http://github.com/janl/mustache.js'>Mustache.js</a>, <a href='http://github.com/creationix/haml-js'>Haml-js</a>, <a href='http://github.com/sstephenson/eco'>Eco</a>, as well as Underscore.js <code>.template</code>.</p>
+<p>Sample templating libraries to use with <code>render</code> function: <a href="http://github.com/janl/mustache.js">Mustache.js</a>, <a href="http://github.com/creationix/haml-js">Haml-js</a>, <a href="http://github.com/sstephenson/eco">Eco</a>, as well as Underscore.js <code>.template</code>.</p>
 
 <p>Recommendation: whatever is used, nice if <em>never</em> have to put strings of HTML in your Javascript.</p>
+
             
 
             <!-- if tags -->

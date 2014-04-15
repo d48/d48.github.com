@@ -59,53 +59,47 @@
 
         <div class="body-post">
             
-                <h2 id='notes'>Notes</h2>
+                
+<h2 id="notes">Notes</h2>
 
-<p>I need to wrap my head on the underlying process that&#8217;s happening when JavaScript is parsed and interpreted so I can make better decision in how I&#8217;m declaring variables and functions. I assume this will produce better, quality code with less headache in fixing bugs. As well as provide a performance boost if I know how my function and variable declarations are effecting the execution of the JavaScript.</p>
+<p>I need to wrap my head on the underlying process that&rsquo;s happening when JavaScript is parsed and interpreted so I can make better decision in how I&rsquo;m declaring variables and functions. I assume this will produce better, quality code with less headache in fixing bugs. As well as provide a performance boost if I know how my function and variable declarations are effecting the execution of the JavaScript.</p>
 
-<h2 id='execution_context_stack'>Execution Context Stack</h2>
+<h2 id="execution-context-stack">Execution Context Stack</h2>
 
-<p>When a browser begins to run through a JavaScript file, it first enters through a <code>global context</code> which gets added to a stack. When it enters into a function, it enters a new <code>execution context</code>, and this gets added on top of the stack. As the script leaves a function or execution context,</p>
+<p>When a browser begins to run through a JavaScript file, it first enters through a <code>global context</code> which gets added to a stack. When it enters into a function, it enters a new <code>execution context</code>, and this gets added on top of the stack. As the script leaves a function or execution context, </p>
 
-<h2 id='execution_context_detail'>Execution Context detail</h2>
+<h2 id="execution-context-detail">Execution Context detail</h2>
 
 <p>Inside the JavaScript interpeter, there are 2 stages that happen:</p>
 
 <ol>
-<li>
-<p>Creation stage</p>
-
-<ul>
-<li>The function is called but no code gets executed inside yet</li>
-
-<li>Creates variables, functions, and arguments</li>
-
-<li>Creates the Scope Chain</li>
-
-<li>Determines the value of <code>this</code></li>
-
-<li>This is where the <code>execution content object</code> is created</li>
-</ul>
-</li>
-
-<li>
-<p>Activation / Code Execution stage</p>
-
-<ul>
-<li>Assign values and references to functions, also interpret / execute code.</li>
-
-<li>These var values are assigned as code is executed line by line</li>
-</ul>
-</li>
+  <li>Creation stage
+    <ul>
+      <li>The function is called but no code gets executed inside yet</li>
+      <li>Creates variables, functions, and arguments</li>
+      <li>Creates the Scope Chain</li>
+      <li>Determines the value of <code>this</code></li>
+      <li>This is where the <code>execution content object</code> is created</li>
+    </ul>
+  </li>
+  <li>Activation / Code Execution stage
+    <ul>
+      <li>Assign values and references to functions, also interpret / execute code.</li>
+      <li>These var values are assigned as code is executed line by line</li>
+    </ul>
+  </li>
 </ol>
 
 <p>The execution context can be seen as an object with these properties:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>executionContextObj</span> <span class='o'>=</span> <span class='p'>{</span>
-    <span class='nx'>variableObj</span><span class='o'>:</span> <span class='p'>{</span> <span class='cm'>/* func args, parameters, inner var and func declarations */</span> <span class='p'>}</span>
-  <span class='p'>,</span> <span class='nx'>scopeChain</span><span class='o'>:</span> <span class='p'>{</span> <span class='cm'>/* variableObj + all parent execution context&#39;s variableObj*/</span> <span class='p'>}</span>
-  <span class='p'>,</span> <span class='k'>this</span><span class='o'>:</span> <span class='p'>{}</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="nx">executionContextObj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">variableObj</span><span class="o">:</span> <span class="p">{</span> <span class="cm">/* func args, parameters, inner var and func declarations */</span> <span class="p">}</span>
+  <span class="p">,</span> <span class="nx">scopeChain</span><span class="o">:</span> <span class="p">{</span> <span class="cm">/* variableObj + all parent execution context&#39;s variableObj*/</span> <span class="p">}</span>
+  <span class="p">,</span> <span class="k">this</span><span class="o">:</span> <span class="p">{}</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

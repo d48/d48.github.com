@@ -59,26 +59,25 @@
 
         <div class="body-post">
             
-                <p><strong>CSS Specificity</strong> is what&#8217;s used by web browsers to determine how the page components and elements should be styled, eg., font size, color, widths, etc. In order for me to remember specificity, here&#8217;s a couple good ways to remember:</p>
+                
+<p><strong>CSS Specificity</strong> is what’s used by web browsers to determine how the page components and elements should be styled, eg., font size, color, widths, etc. In order for me to remember specificity, here’s a couple good ways to remember:</p>
 
 <ul>
-<li>Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element. So in:</li>
+  <li>Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element. So in:</li>
 </ul>
 
 <p><code>body #content .data img:hover</code></p>
 
-<p>the specificity value would be 122 (0,1,2,2 or 0122): 100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img.</p>
-
-<blockquote>
-<p>style attribute is inline-style on an html element like <code>&lt;p style=&quot;color: 
-red&quot;&gt;</code> or <code>&lt;styles type=&quot;text/css&quot;&gt;</code> block.</p>
-</blockquote>
+<p>the specificity value would be 122 (0,1,2,2 or 0122): 100 for #content, 10 for .data, 10 for :hover, 1 for body and 1 for img.
+&gt; style attribute is inline-style on an html element like <code>&lt;p style="color: 
+&gt; red"&gt;</code> or <code>&lt;styles type="text/css"&gt;</code> block.</p>
 
 <ul>
-<li>Alternative way: “Count the number of ID attributes in the selector (= a). Count the number of other attributes and pseudo-classes in the selector (= b). Count the number of element names and pseudo-elements in the selector (= c). Concatenating the three numbers <strong>a-b-c gives the specificity</strong>.</li>
+  <li>Alternative way: “Count the number of ID attributes in the selector (= a). Count the number of other attributes and pseudo-classes in the selector (= b). Count the number of element names and pseudo-elements in the selector (= c). Concatenating the three numbers <strong>a-b-c gives the specificity</strong>.</li>
 </ul>
 
-<p>More info from here: <a href='http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know'>http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know</a></p>
+<p>More info from here: <a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know">http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know</a></p>
+
             
 
             <!-- if tags -->

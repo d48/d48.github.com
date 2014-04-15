@@ -59,45 +59,42 @@
 
         <div class="body-post">
             
-                <h1 id='book_notes_on_metadata_driven_applications'>Book notes on Meta-Data driven applications</h1>
+                
+<h1 id="book-notes-on-meta-data-driven-applications">Book notes on Meta-Data driven applications</h1>
 
 <p><strong>Metadata</strong> is used to define preferences or configuration details for an application at runtime, not compile time, so as to provide implementation details to achieve greater flexibility in the code, as well as adapt to ever-changing requirements and needs of business use.</p>
 
-<h2 id='goals'>Goals</h2>
+<h2 id="goals">Goals</h2>
 
 <ol>
-<li>to think declaratively (specifying <em>what</em> is to be done, not <em>how</em>)</li>
-
-<li>create highly adaptable and dynamic programs (not get stuck in one way/solution)</li>
+  <li>to think declaratively (specifying <em>what</em> is to be done, not <em>how</em>)</li>
+  <li>create highly adaptable and dynamic programs (not get stuck in one way/solution)</li>
 </ol>
 
-<h2 id='why_we_would_use'>Why we would use</h2>
+<h2 id="why-we-would-use">Why we would use</h2>
 
 <ul>
-<li>Business policy and rules change</li>
-
-<li>Dodo bird analogy: species that don&#8217;t adapt to the ever-changing environment, die.</li>
+  <li>Business policy and rules change</li>
+  <li>Dodo bird analogy: species that don&rsquo;t adapt to the ever-changing environment, die.</li>
 </ul>
 
-<h2 id='how_to_achieve'>How to achieve</h2>
+<h2 id="how-to-achieve">How to achieve</h2>
 
 <p>Adopt this general rule:</p>
 
 <blockquote>
-<p>Program for the general case, then provide the specifics somewhere else, outside the compiled code</p>
+  <p>Program for the general case, then provide the specifics somewhere else, outside the compiled code</p>
 </blockquote>
 
-<h2 id='benefits'>Benefits:</h2>
+<h2 id="benefits">Benefits:</h2>
 
 <ul>
-<li>It forces you to decouple your design</li>
-
-<li>Forces you to create a more abstract, robust design by deferring details - providing later outside of the program</li>
-
-<li>Customize the application without recompiling it (ex. CSS can be a type of implementation detail, but more specifically and traditionally a config file in xml or json)</li>
-
-<li>May be able to implement different projects using same application engine but with different metadata (ex., widgets enabled/disabled, language files, dev vs production)</li>
+  <li>It forces you to decouple your design</li>
+  <li>Forces you to create a more abstract, robust design by deferring details - providing later outside of the program </li>
+  <li>Customize the application without recompiling it (ex. CSS can be a type of implementation detail, but more specifically and traditionally a config file in xml or json)</li>
+  <li>May be able to implement different projects using same application engine but with different metadata (ex., widgets enabled/disabled, language files, dev vs production)</li>
 </ul>
+
             
 
             <!-- if tags -->

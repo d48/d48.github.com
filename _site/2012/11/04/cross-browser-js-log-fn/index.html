@@ -59,23 +59,27 @@
 
         <div class="body-post">
             
-                <h1 id='to_try_for_ie'>To try for IE</h1>
+                
+<h1 id="to-try-for-ie">To try for IE</h1>
 
 <p>More from Secrets from a JavaScript Ninja book. A cross-browser function to implement logging in debugging</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>log</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='k'>try</span> <span class='p'>{</span>
-		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>.</span><span class='nx'>apply</span><span class='p'>(</span><span class='nx'>console</span><span class='p'>,</span> <span class='nx'>arguments</span><span class='p'>);</span>
-	<span class='p'>}</span>
-	<span class='k'>catch</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-		<span class='k'>try</span> <span class='p'>{</span>
-			<span class='nx'>opera</span><span class='p'>.</span><span class='nx'>postError</span><span class='p'>.</span><span class='nx'>apply</span><span class='p'>(</span><span class='nx'>opera</span><span class='p'>,</span> <span class='nx'>arguments</span><span class='p'>);</span>
-		<span class='p'>}</span>
-		<span class='k'>catch</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-			<span class='nx'>alert</span><span class='p'>(</span><span class='nb'>Array</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>join</span><span class='p'>.</span><span class='nx'>call</span><span class='p'>(</span><span class='nx'>arguments</span><span class='p'>,</span> <span class='s2'>&quot; &quot;</span><span class='p'>));</span>
-		<span class='p'>}</span>
-	<span class='p'>}</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">log</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">try</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">try</span> <span class="p">{</span>
+			<span class="nx">opera</span><span class="p">.</span><span class="nx">postError</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">opera</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">join</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">));</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

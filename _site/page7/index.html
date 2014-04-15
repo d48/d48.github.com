@@ -66,53 +66,47 @@
 
         <div class="body-post">
             
-                <h2 id='notes'>Notes</h2>
+                
+<h2 id="notes">Notes</h2>
 
-<p>I need to wrap my head on the underlying process that&#8217;s happening when JavaScript is parsed and interpreted so I can make better decision in how I&#8217;m declaring variables and functions. I assume this will produce better, quality code with less headache in fixing bugs. As well as provide a performance boost if I know how my function and variable declarations are effecting the execution of the JavaScript.</p>
+<p>I need to wrap my head on the underlying process that&rsquo;s happening when JavaScript is parsed and interpreted so I can make better decision in how I&rsquo;m declaring variables and functions. I assume this will produce better, quality code with less headache in fixing bugs. As well as provide a performance boost if I know how my function and variable declarations are effecting the execution of the JavaScript.</p>
 
-<h2 id='execution_context_stack'>Execution Context Stack</h2>
+<h2 id="execution-context-stack">Execution Context Stack</h2>
 
-<p>When a browser begins to run through a JavaScript file, it first enters through a <code>global context</code> which gets added to a stack. When it enters into a function, it enters a new <code>execution context</code>, and this gets added on top of the stack. As the script leaves a function or execution context,</p>
+<p>When a browser begins to run through a JavaScript file, it first enters through a <code>global context</code> which gets added to a stack. When it enters into a function, it enters a new <code>execution context</code>, and this gets added on top of the stack. As the script leaves a function or execution context, </p>
 
-<h2 id='execution_context_detail'>Execution Context detail</h2>
+<h2 id="execution-context-detail">Execution Context detail</h2>
 
 <p>Inside the JavaScript interpeter, there are 2 stages that happen:</p>
 
 <ol>
-<li>
-<p>Creation stage</p>
-
-<ul>
-<li>The function is called but no code gets executed inside yet</li>
-
-<li>Creates variables, functions, and arguments</li>
-
-<li>Creates the Scope Chain</li>
-
-<li>Determines the value of <code>this</code></li>
-
-<li>This is where the <code>execution content object</code> is created</li>
-</ul>
-</li>
-
-<li>
-<p>Activation / Code Execution stage</p>
-
-<ul>
-<li>Assign values and references to functions, also interpret / execute code.</li>
-
-<li>These var values are assigned as code is executed line by line</li>
-</ul>
-</li>
+  <li>Creation stage
+    <ul>
+      <li>The function is called but no code gets executed inside yet</li>
+      <li>Creates variables, functions, and arguments</li>
+      <li>Creates the Scope Chain</li>
+      <li>Determines the value of <code>this</code></li>
+      <li>This is where the <code>execution content object</code> is created</li>
+    </ul>
+  </li>
+  <li>Activation / Code Execution stage
+    <ul>
+      <li>Assign values and references to functions, also interpret / execute code.</li>
+      <li>These var values are assigned as code is executed line by line</li>
+    </ul>
+  </li>
 </ol>
 
 <p>The execution context can be seen as an object with these properties:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>executionContextObj</span> <span class='o'>=</span> <span class='p'>{</span>
-    <span class='nx'>variableObj</span><span class='o'>:</span> <span class='p'>{</span> <span class='cm'>/* func args, parameters, inner var and func declarations */</span> <span class='p'>}</span>
-  <span class='p'>,</span> <span class='nx'>scopeChain</span><span class='o'>:</span> <span class='p'>{</span> <span class='cm'>/* variableObj + all parent execution context&#39;s variableObj*/</span> <span class='p'>}</span>
-  <span class='p'>,</span> <span class='k'>this</span><span class='o'>:</span> <span class='p'>{}</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="nx">executionContextObj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">variableObj</span><span class="o">:</span> <span class="p">{</span> <span class="cm">/* func args, parameters, inner var and func declarations */</span> <span class="p">}</span>
+  <span class="p">,</span> <span class="nx">scopeChain</span><span class="o">:</span> <span class="p">{</span> <span class="cm">/* variableObj + all parent execution context&#39;s variableObj*/</span> <span class="p">}</span>
+  <span class="p">,</span> <span class="k">this</span><span class="o">:</span> <span class="p">{}</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -158,21 +152,20 @@
 
         <div class="body-post">
             
-                <p>Just saving some config notes about setting up home emails via Outlook on a pc. How come I feel like I don&#8217;t need to do this for a mac? Oh wait, that&#8217;s probably because I don&#8217;t have to.</p>
+                
+<p>Just saving some config notes about setting up home emails via Outlook on a pc. How come I feel like I don&rsquo;t need to do this for a mac? Oh wait, that&rsquo;s probably because I don&rsquo;t have to.</p>
 
-<h2 id='anyways'>Anyways</h2>
+<h2 id="anyways">Anyways</h2>
 
-<p>In order to use stmp.att.yahoo.com SMTP server, I need to verify the email address I&#8217;m sending from via my att.net email account.</p>
+<p>In order to use stmp.att.yahoo.com SMTP server, I need to verify the email address I&rsquo;m sending from via my att.net email account. </p>
 
 <ol>
-<li>Log onto mail.yahoo.com with that att.net account I received from Uverse</li>
-
-<li>Go to Mail Options -&gt; Accounts -&gt; Add email. Then save.</li>
-
-<li>Click on link to verify that I receive in email.</li>
-
-<li>Now I can configure email program to use yahoo&#8217;s SMTP and set outgoing port to 465 SSL. Woot.</li>
+  <li>Log onto mail.yahoo.com with that att.net account I received from Uverse</li>
+  <li>Go to Mail Options -&gt; Accounts -&gt; Add email. Then save.</li>
+  <li>Click on link to verify that I receive in email.</li>
+  <li>Now I can configure email program to use yahoo&rsquo;s SMTP and set outgoing port to 465 SSL. Woot.</li>
 </ol>
+
             
 
             <!-- if tags -->
@@ -206,25 +199,22 @@
 
         <div class="body-post">
             
-                <p>I was configuring <code>livereload</code> on a new computer for local dev work on a web project and I ran into an issue where the Chrome extension wasn&#8217;t reloading and my <code>guard</code> commands weren&#8217;t working. It was saying that it expects Livereload 2.3 or newer or a server to connect to.</p>
+                
+<p>I was configuring <code>livereload</code> on a new computer for local dev work on a web project and I ran into an issue where the Chrome extension wasn&rsquo;t reloading and my <code>guard</code> commands weren&rsquo;t working. It was saying that it expects Livereload 2.3 or newer or a server to connect to.</p>
 
 <p>Some updates I made to get it to work were:</p>
 
 <ol>
-<li>Install <code>rvm</code>, the ruby version manager</li>
-
-<li>Made sure I was using Ruby version 1.9.2-p320</li>
-
-<li><code>$ sudo gem install guard-livereload</code></li>
-
-<li><code>$ sudo gem install yajl-ruby</code> for making sure socket listening responded faster</li>
-
-<li>error when running and recommended to <code>gem install rb-fsevents</code></li>
-
-<li>Create new guard file that configured to watch .styl file changes</li>
+  <li>Install <code>rvm</code>, the ruby version manager</li>
+  <li>Made sure I was using Ruby version 1.9.2-p320</li>
+  <li><code>$ sudo gem install guard-livereload</code></li>
+  <li><code>$ sudo gem install yajl-ruby</code> for making sure socket listening responded faster</li>
+  <li>error when running and recommended to <code>gem install rb-fsevents</code></li>
+  <li>Create new guard file that configured to watch .styl file changes</li>
 </ol>
 
 <p>Ahhh, itworks now. Hello livereload.</p>
+
             
 
             <!-- if tags -->
@@ -262,27 +252,31 @@
 
         <div class="body-post">
             
-                <p>I wanted to put some click functionality on the images for the blog post so I created a little function to do just that. The nifty little bit is using the JavaScript closure to bind the iterator variable so it&#8217;s unique to each element that I&#8217;m creating a callback for.</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>setImageLinks</span><span class='p'>()</span> <span class='p'>{</span>
-  <span class='kd'>var</span> <span class='nx'>parent</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>getElementById</span><span class='p'>(</span><span class='s1'>&#39;post&#39;</span><span class='p'>)</span>
-    <span class='p'>,</span> <span class='nx'>images</span> <span class='o'>=</span> <span class='nx'>parent</span><span class='p'>.</span><span class='nx'>getElementsByTagName</span><span class='p'>(</span><span class='s1'>&#39;img&#39;</span><span class='p'>)</span>
-    <span class='p'>;</span>
+                
+<p>I wanted to put some click functionality on the images for the blog post so I created a little function to do just that. The nifty little bit is using the JavaScript closure to bind the iterator variable so it&rsquo;s unique to each element that I&rsquo;m creating a callback for.</p>
 
-  <span class='k'>for</span><span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>,</span> <span class='nx'>len</span> <span class='o'>=</span> <span class='nx'>images</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span> <span class='o'>&lt;</span> <span class='nx'>len</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>){</span>
-    <span class='c1'>// bind i variable to a function not inside the same scope</span>
-    <span class='p'>(</span><span class='kd'>function</span> <span class='p'>(</span><span class='nx'>index</span><span class='p'>)</span> <span class='p'>{</span>
-      <span class='kd'>var</span> <span class='nx'>src</span> <span class='o'>=</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>index</span><span class='p'>].</span><span class='nx'>getAttribute</span><span class='p'>(</span><span class='s1'>&#39;src&#39;</span><span class='p'>);</span>
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">setImageLinks</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+    <span class="p">,</span> <span class="nx">images</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
+    <span class="p">;</span>
 
-      <span class='nx'>images</span><span class='p'>[</span><span class='nx'>index</span><span class='p'>].</span><span class='nx'>addEventListener</span><span class='p'>(</span><span class='s1'>&#39;click&#39;</span><span class='p'>,</span> <span class='kd'>function</span> <span class='nx'>setImageClickEvent</span><span class='p'>()</span> <span class='p'>{</span>
-        <span class='nb'>window</span><span class='p'>.</span><span class='nx'>open</span><span class='p'>(</span><span class='nx'>src</span><span class='p'>);</span>
-      <span class='p'>},</span> <span class='kc'>false</span><span class='p'>);</span>
-    <span class='p'>}</span> <span class='p'>(</span><span class='nx'>i</span><span class='p'>));</span>
-  <span class='p'>}</span>
-<span class='p'>}</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">// bind i variable to a function not inside the same scope</span>
+    <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">src</span> <span class="o">=</span> <span class="nx">images</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">);</span>
+
+      <span class="nx">images</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">setImageClickEvent</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">src</span><span class="p">);</span>
+      <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span> <span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='click_zee_image'>Click zee image</h2>
 
-<p><img alt='codercat' src='http://design48.net/i/codercat.jpg' /></p>
+<h2 id="click-zee-image">Click zee image</h2>
+
+<p><img src="http://design48.net/i/codercat.jpg" alt="codercat" /></p>
+
             
 
             <!-- if tags -->
@@ -318,19 +312,21 @@
 
         <div class="body-post">
             
-                <h2 id='out_with_the_old'>Out with the old</h2>
+                
+<h2 id="out-with-the-old">Out with the old</h2>
 
-<p>I came across some blog layouts from developers I follow on twitter and I noticed an engine they used that I really like the layout for. So&#8230;I copied it. Here&#8217;s the old and new layout.</p>
+<p>I came across some blog layouts from developers I follow on twitter and I noticed an engine they used that I really like the layout for. So&hellip;I copied it. Here&rsquo;s the old and new layout.</p>
 
 <p>The major differences are that the site identity remains while you scroll through the blog posts. And the code highlighting is more prominent. I love syntax highlighting. Check it out:</p>
 
-<h2 id='old'>Old</h2>
+<h2 id="old">Old</h2>
 
-<p><img alt='old layout' src='http://design48.net/i/blog-layout-old.png' /></p>
+<p><img src="http://design48.net/i/blog-layout-old.png" alt="old layout" /></p>
 
-<h2 id='new'>New</h2>
+<h2 id="new">New</h2>
 
-<p><img alt='new layout' src='http://design48.net/i/blog-layout-new.png' /></p>
+<p><img src="http://design48.net/i/blog-layout-new.png" alt="new layout" /></p>
+
             
 
             <!-- if tags -->

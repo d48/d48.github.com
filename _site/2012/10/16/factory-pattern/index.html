@@ -59,16 +59,20 @@
 
         <div class="body-post">
             
-                <p>Pattern where different objects of a class are created depending on parameters passed through to it. The <em>factory</em> configures the object based on what is declared.</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// example of Factory</span>
-<span class='kd'>var</span> <span class='nx'>car</span>        <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>VehicleMaker</span><span class='p'>(</span><span class='s1'>&#39;car&#39;</span><span class='p'>);</span>
-<span class='kd'>var</span> <span class='nx'>motorcycle</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>VehicleMaker</span><span class='p'>(</span><span class='s1'>&#39;motorcycle&#39;</span><span class='p'>);</span>
-<span class='kd'>var</span> <span class='nx'>bike</span>       <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>VehicleMaker</span><span class='p'>(</span><span class='s1'>&#39;bike&#39;</span><span class='p'>);</span>
+                
+<p>Pattern where different objects of a class are created depending on parameters passed through to it. The <em>factory</em> configures the object based on what is declared.</p>
 
-<span class='nx'>car</span><span class='p'>.</span><span class='nx'>info</span><span class='p'>();</span> <span class='c1'>// &#39;car&#39; has 4 wheels and a v6 engine</span>
-<span class='nx'>motorcycle</span><span class='p'>.</span><span class='nx'>info</span><span class='p'>();</span> <span class='c1'>// &#39;motorcycle&#39; has 2 wheels and a v-twin engine</span>
-<span class='nx'>bike</span><span class='p'>.</span><span class='nx'>info</span><span class='p'>();</span> <span class='c1'>// &#39;bike&#39; has 2 wheels and no engine</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// example of Factory</span>
+<span class="kd">var</span> <span class="nx">car</span>        <span class="o">=</span> <span class="k">new</span> <span class="nx">VehicleMaker</span><span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">motorcycle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VehicleMaker</span><span class="p">(</span><span class="s1">&#39;motorcycle&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bike</span>       <span class="o">=</span> <span class="k">new</span> <span class="nx">VehicleMaker</span><span class="p">(</span><span class="s1">&#39;bike&#39;</span><span class="p">);</span>
+
+<span class="nx">car</span><span class="p">.</span><span class="nx">info</span><span class="p">();</span> <span class="c1">// &#39;car&#39; has 4 wheels and a v6 engine</span>
+<span class="nx">motorcycle</span><span class="p">.</span><span class="nx">info</span><span class="p">();</span> <span class="c1">// &#39;motorcycle&#39; has 2 wheels and a v-twin engine</span>
+<span class="nx">bike</span><span class="p">.</span><span class="nx">info</span><span class="p">();</span> <span class="c1">// &#39;bike&#39; has 2 wheels and no engine</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

@@ -59,29 +59,35 @@
 
         <div class="body-post">
             
-                <h1 id='from_secrets_of_a_javascript_ninja_book'>From Secrets of a JavaScript Ninja book</h1>
-<div class='highlight'><pre><code class='js'><span class='c1'>// named function</span>
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>}</span>
+                
+<h1 id="from-secrets-of-a-javascript-ninja-book">From Secrets of a JavaScript Ninja book</h1>
 
-<span class='c1'>// anonymous function</span>
-<span class='kd'>var</span> <span class='nx'>myName2</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// named function</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span>
 
-<span class='c1'>// anonymous function defined as property</span>
-<span class='nb'>window</span><span class='p'>.</span><span class='nx'>myName3</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>}</span>
+<span class="c1">// anonymous function</span>
+<span class="kd">var</span> <span class="nx">myName2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c1">// anonymous function defined as property</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">myName3</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
-<p><strong>named functions</strong> can be defined after the function is called within a scope and it will be evaluated. This is also called <strong>forward-referencing</strong>, a property that <strong>anonymous functions</strong> don&#8217;t have since they are assigned to variable or a property which can&#8217;t be forward-referenced.</p>
+
+<p><strong>named functions</strong> can be defined after the function is called within a scope and it will be evaluated. This is also called <strong>forward-referencing</strong>, a property that <strong>anonymous functions</strong> don&rsquo;t have since they are assigned to variable or a property which can&rsquo;t be forward-referenced.</p>
 
 <p><strong>forward-reference</strong> in regards to functions means that no matter where in the scope that a function is defined, it will be accessible through that scope.</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// testing function calls and if they are available when called</span>
-<span class='nx'>assert</span><span class='p'>(</span><span class='nx'>myName</span><span class='p'>(),</span> <span class='s1'>&#39;works even though defined below&#39;</span><span class='p'>);</span>
-<span class='nx'>assert</span><span class='p'>(</span><span class='nx'>myName2</span><span class='p'>(),</span> <span class='s2'>&quot;doesn&#39;t work since defined below and assigned to variable&quot;</span><span class='p'>);</span>
 
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>};</span>
-<span class='kd'>var</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>};</span>
-<span class='kd'>var</span> <span class='nx'>myName3</span><span class='p'>()</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>};</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// testing function calls and if they are available when called</span>
+<span class="nx">assert</span><span class="p">(</span><span class="nx">myName</span><span class="p">(),</span> <span class="s1">&#39;works even though defined below&#39;</span><span class="p">);</span>
+<span class="nx">assert</span><span class="p">(</span><span class="nx">myName2</span><span class="p">(),</span> <span class="s2">&quot;doesn&#39;t work since defined below and assigned to variable&quot;</span><span class="p">);</span>
 
-<span class='nx'>assert</span><span class='p'>(</span><span class='nx'>myName3</span><span class='p'>(),</span> <span class='s1'>&#39;works since defined before this assert called&#39;</span><span class='p'>);</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">myName2</span><span class="p">()</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">myName3</span><span class="p">()</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+
+<span class="nx">assert</span><span class="p">(</span><span class="nx">myName3</span><span class="p">(),</span> <span class="s1">&#39;works since defined before this assert called&#39;</span><span class="p">);</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

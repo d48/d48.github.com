@@ -66,23 +66,27 @@
 
         <div class="body-post">
             
-                <h1 id='to_try_for_ie'>To try for IE</h1>
+                
+<h1 id="to-try-for-ie">To try for IE</h1>
 
 <p>More from Secrets from a JavaScript Ninja book. A cross-browser function to implement logging in debugging</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>log</span><span class='p'>()</span> <span class='p'>{</span>
-	<span class='k'>try</span> <span class='p'>{</span>
-		<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>.</span><span class='nx'>apply</span><span class='p'>(</span><span class='nx'>console</span><span class='p'>,</span> <span class='nx'>arguments</span><span class='p'>);</span>
-	<span class='p'>}</span>
-	<span class='k'>catch</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-		<span class='k'>try</span> <span class='p'>{</span>
-			<span class='nx'>opera</span><span class='p'>.</span><span class='nx'>postError</span><span class='p'>.</span><span class='nx'>apply</span><span class='p'>(</span><span class='nx'>opera</span><span class='p'>,</span> <span class='nx'>arguments</span><span class='p'>);</span>
-		<span class='p'>}</span>
-		<span class='k'>catch</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>)</span> <span class='p'>{</span>
-			<span class='nx'>alert</span><span class='p'>(</span><span class='nb'>Array</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>join</span><span class='p'>.</span><span class='nx'>call</span><span class='p'>(</span><span class='nx'>arguments</span><span class='p'>,</span> <span class='s2'>&quot; &quot;</span><span class='p'>));</span>
-		<span class='p'>}</span>
-	<span class='p'>}</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">log</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">try</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">try</span> <span class="p">{</span>
+			<span class="nx">opera</span><span class="p">.</span><span class="nx">postError</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">opera</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">join</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">));</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -120,17 +124,21 @@
 
         <div class="body-post">
             
-                <h1 id='javascript_timers'>Javascript Timers</h1>
+                
+<h1 id="javascript-timers">Javascript Timers</h1>
 
 <ul>
-<li>JavaScript engines only have a <strong>single thread</strong>, forcing asynchronous events to<br />queue waiting for execution.</li>
-
-<li><code>setTimeout</code> and <code>setInterval</code> are fundamentally different in how they execute asynchronous code.</li>
-
-<li>If a timer is blocked from immediately being executed it will be delayed until the next possible time of execution (which will be longer than the desired delay).</li>
-
-<li>Intervals may execute back-to-back with no delay if they take long enough to execute (longer than the specified delay).</li>
+  <li>JavaScript  engines  only  have  a  <strong>single  thread</strong>,  forcing  asynchronous  events  to<br />
+queue  waiting  for execution.</li>
+  <li><code>setTimeout</code> and <code>setInterval</code> are fundamentally different in how they execute 
+asynchronous code.</li>
+  <li>If a timer is blocked from immediately being executed it will be delayed until the next 
+possible time of execution (which will be longer than the desired delay).</li>
+  <li>Intervals may execute back-to-back with no delay if they take long enough to 
+execute (longer than the specified delay).</li>
 </ul>
+
+
             
 
             <!-- if tags -->
@@ -166,37 +174,38 @@
 
         <div class="body-post">
             
-                <h1 id='book_notes'>Book notes</h1>
+                
+<h1 id="book-notes">Book notes</h1>
 
-<p>Starting to read this book from John Resig. It&#8217;s promising as it cites core of Javascript regarding <strong>objects, function, and closures</strong>, and how the use of timers and regular expressions in popular javascript libraries can help you write better web applications.</p>
+<p>Starting to read this book from John Resig. It&rsquo;s promising as it cites core of Javascript regarding <strong>objects, function, and closures</strong>, and how the use of timers and regular expressions in popular javascript libraries can help you write better web applications.</p>
 
-<p>I&#8217;ve been digging into coding cross-browser javascript for my current place of work at <a href='http://www.blackline.com'>BlackLine</a> so I&#8217;m looking forward to learning more of how John contributed to the <em>jQuery</em> library and insights from those efforts.</p>
+<p>I&rsquo;ve been digging into coding cross-browser javascript for my current place of work at <a href="http://www.blackline.com">BlackLine</a> so I&rsquo;m looking forward to learning more of how John contributed to the <em>jQuery</em> library and insights from those efforts.</p>
 
-<h1 id='things_to_consider'>Things to consider</h1>
+<h1 id="things-to-consider">Things to consider</h1>
 
 <ul>
-<li>Best practices: testing and perforamnce analysis</li>
-
-<li>simple assert function will do</li>
+  <li>Best practices: testing and perforamnce analysis</li>
+  <li>simple assert function will do</li>
 </ul>
 
-<h1 id='quote'>Quote</h1>
+<h1 id="quote">Quote</h1>
 
 <blockquote>
-<p>Robert Frost wrote that good fences make good neighbors, but in the world of web applications, indeed any programming discipline, good tests make good code.</p>
+  <p>Robert Frost wrote that good fences make good neighbors, but in the world of web
+applications, indeed any programming discipline, good tests make good code.</p>
 </blockquote>
 
-<h1 id='on_testing'>On Testing</h1>
+<h1 id="on-testing">On Testing</h1>
 
 <p>Good test exhibit 3 characteristics:</p>
 
 <ol>
-<li><strong>Repeatability</strong> - tests should be highly reproducible and have the same results.</li>
-
-<li><strong>Simplicity</strong> - tests should focus on one thing.</li>
-
-<li><strong>Independence</strong> - tests should execute in isolation, break them down in smallest possible unit, which helps determine the source of bugs</li>
+  <li><strong>Repeatability</strong> - tests should be highly reproducible and have the same results.</li>
+  <li><strong>Simplicity</strong> - tests should focus on one thing.</li>
+  <li><strong>Independence</strong> - tests should execute in isolation, break them down in smallest possible unit, which helps determine the source of bugs</li>
 </ol>
+
+
             
 
             <!-- if tags -->
@@ -236,19 +245,20 @@
 
         <div class="body-post">
             
-                <h1 id='designing_mongodb_schemas_with_embedded_and_bucket_structures'>Designing MongoDB Schemas with embedded and bucket structures</h1>
+                
+<h1 id="designing-mongodb-schemas-with-embedded-and-bucket-structures">Designing MongoDB Schemas with embedded and bucket structures</h1>
 
-<p>I found this link to a <a href='https://openshift.redhat.com/community/blogs/designing-mongodb-schemas-with-embedded-non-embedded-and-bucket-structures'>blog article</a> on how to define your MongoDB schema and make choices for <strong>embedded</strong> and <strong>non-embedded</strong> structures, as well as the use of buckets.</p>
+<p>I found this link to a <a href="https://openshift.redhat.com/community/blogs/designing-mongodb-schemas-with-embedded-non-embedded-and-bucket-structures">blog article</a> on how to define your MongoDB schema and make choices for <strong>embedded</strong> and <strong>non-embedded</strong> structures, as well as the use of buckets.</p>
 
 <p>The main takeways are at the conclusion:</p>
 
 <ol>
-<li>The nature of MongoDB and storage strategy is that you have the ability to change the structure. This allows you to move from simple to more complex strategies at will</li>
-
-<li>Starting simple, can maintain development velocity early and migrate to a more scalable strategy as the need arises. I like this as I will be testing a small feature for the <a href='https://github.com/design48/mytestimony'>mytestimony web app</a> project I want to implement.</li>
+  <li>The nature of MongoDB and storage strategy is that you have the ability to change the structure. This allows you to move from simple to more complex strategies at will</li>
+  <li>Starting simple, can maintain development velocity early and migrate to a more scalable strategy as the need arises. I like this as I will be testing a small feature for the <a href="https://github.com/design48/mytestimony">mytestimony web app</a> project I want to implement.</li>
 </ol>
 
-<p>More and more I&#8217;m liking MongoDB because of the easy nature of working with JSON data, and MongoDB&#8217;s api for database queries are straight forward.</p>
+<p>More and more I&rsquo;m liking MongoDB because of the easy nature of working with JSON data, and MongoDB&rsquo;s api for database queries are straight forward.</p>
+
             
 
             <!-- if tags -->
@@ -286,20 +296,18 @@
 
         <div class="body-post">
             
-                <h1 id='some_notes'>some notes</h1>
+                
+<h1 id="some-notes">some notes</h1>
 
 <p>Just wanted to record what I did to get command-T working on a windows machine. There were problems with the ruby and gcc compilation of the plugin so I needed to make sure I had the correct versions of each to what the command-T plugin was built.</p>
 
 <p>So some steps:</p>
 
 <ol>
-<li>Made sure I installed vim 7.3 with +ruby support</li>
-
-<li>Made sure I had a Ruby version of 1.9.1 that was used to compile command-T</li>
-
-<li>Had the gcc compiler so I can remake/compile the command-T plugin with ruby</li>
-
-<li>Run these commands in the ~.vim/bundle/command-t/ruby/command-t folder</li>
+  <li>Made sure I installed vim 7.3 with +ruby support</li>
+  <li>Made sure I had a Ruby version of 1.9.1 that was used to compile command-T</li>
+  <li>Had the gcc compiler so I can remake/compile the command-T plugin with ruby</li>
+  <li>Run these commands in the ~.vim/bundle/command-t/ruby/command-t folder</li>
 </ol>
 
 <p><code>$ ruby extconf.rb</code></p>
@@ -307,6 +315,7 @@
 <p><code>$ make</code></p>
 
 <p>And then I was able to <code>ctrl+t</code> while in vim and voila. yay :thumbsup:</p>
+
             
 
             <!-- if tags -->

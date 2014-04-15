@@ -59,33 +59,39 @@
 
         <div class="body-post">
             
-                <p>Given the code below:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>alert</span><span class='p'>(</span><span class='nx'>fn</span><span class='p'>());</span>
+                
+<p>Given the code below:</p>
 
-<span class='kd'>function</span> <span class='nx'>fn</span><span class='p'>()</span> <span class='p'>{</span> 
-	<span class='k'>return</span> <span class='s1'>&#39;this is my function declaration&#39;</span><span class='p'>;</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="nx">alert</span><span class="p">(</span><span class="nx">fn</span><span class="p">());</span>
+
+<span class="kd">function</span> <span class="nx">fn</span><span class="p">()</span> <span class="p">{</span> 
+	<span class="k">return</span> <span class="s1">&#39;this is my function declaration&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>Even though <code>fn</code> is defined after the alert method, it will still be evaluated since <strong>function declarations</strong> are parsed and evaluated before any expressions contained in scope.</p>
+
+<p>Even though <code>fn</code> is defined after the alert method, it will still be evaluated since <strong>function declarations</strong> are parsed and evaluated before any expressions contained in scope. </p>
 
 <p>There are some nuances on what makes a function a declaration or an expression. Some more code examples are below to show how this changes:</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// function declaration because it&#39;s part of a Program</span>
-<span class='kd'>function</span> <span class='nx'>foo</span><span class='p'>(){}</span> 
 
-<span class='c1'>// function expression: due to grouping operator of the outside parens, similar to (var x = 5), this is considered an expression</span>
-<span class='p'>(</span><span class='kd'>function</span> <span class='nx'>foo</span><span class='p'>(){});</span> 
+<div class="highlight"><pre><code class="js"><span class="c1">// function declaration because it&#39;s part of a Program</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){}</span> 
 
-<span class='c1'>// function expression, since it&#39;s part of an AssignmentExpression</span>
-<span class='kd'>var</span> <span class='nx'>bar</span> <span class='o'>=</span> <span class='kd'>function</span> <span class='nx'>foo</span><span class='p'>(){};</span> 
+<span class="c1">// function expression: due to grouping operator of the outside parens, similar to (var x = 5), this is considered an expression</span>
+<span class="p">(</span><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){});</span> 
 
-<span class='c1'>// function expression, since it&#39;s part of a NewExpression</span>
-<span class='k'>new</span> <span class='kd'>function</span> <span class='nx'>bar</span><span class='p'>()</span> <span class='p'>{};</span>  
+<span class="c1">// function expression, since it&#39;s part of an AssignmentExpression</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">foo</span><span class="p">(){};</span> 
 
-<span class='p'>(</span><span class='kd'>function</span><span class='p'>(){</span> 
-	<span class='c1'>// function declaration, since it&#39;s part of a FunctionBody</span>
-	<span class='kd'>function</span> <span class='nx'>bar</span><span class='p'>(){};</span> 	
-<span class='p'>})();</span>
+<span class="c1">// function expression, since it&#39;s part of a NewExpression</span>
+<span class="k">new</span> <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{};</span>  
+
+<span class="p">(</span><span class="kd">function</span><span class="p">(){</span> 
+	<span class="c1">// function declaration, since it&#39;s part of a FunctionBody</span>
+	<span class="kd">function</span> <span class="nx">bar</span><span class="p">(){};</span> 	
+<span class="p">})();</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

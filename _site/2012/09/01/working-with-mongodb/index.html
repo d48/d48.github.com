@@ -59,84 +59,89 @@
 
         <div class="body-post">
             
-                <h1 id='working_with_mongodb'>Working with MongoDB</h1>
+                
+<h1 id="working-with-mongodb">Working with MongoDB</h1>
 
-<p>Today I was looking through the MongoDB docs learning how to create and query a collection, here&#8217;s a few helpful commands to insert, query, and filter through some document sets. I&#8217;m really liking it and forward to building an app for the MyTestimony.com idea I&#8217;ve been wanting to do.</p>
+<p>Today I was looking through the MongoDB docs learning how to create and query a collection, here&rsquo;s a few helpful commands to insert, query, and filter through some document sets. I&rsquo;m really liking it and forward to building an app for the MyTestimony.com idea I&rsquo;ve been wanting to do.</p>
 
 <p>Given a MongoDB collection below:</p>
-<div class='highlight'><pre><code class='js'><span class='p'>{</span>
-	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;5042743d26af8681f05582f9&quot;</span><span class='p'>),</span>
-		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;This is my sample testimonty&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Ryan&quot;</span>
-<span class='p'>}</span>
-<span class='p'>{</span>
-	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;504277f826af8681f0558314&quot;</span><span class='p'>),</span>
-		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Once upon a time it was like this&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Reginald&quot;</span>
-<span class='p'>}</span>
-<span class='p'>{</span>
-	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50427d01e4ba90f9269360bf&quot;</span><span class='p'>),</span>
-		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Rya&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is awesome&quot;</span>
-<span class='p'>}</span>
-<span class='p'>{</span>
-	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50427d3ce4ba90f9269360c0&quot;</span><span class='p'>),</span>
-		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Rya&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is awesome&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;tags&quot;</span> <span class='o'>:</span> <span class='p'>[</span>
-			<span class='s2'>&quot;cool&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;awesome&quot;</span>
-			<span class='p'>]</span>
-<span class='p'>}</span>
-<span class='p'>{</span>
-	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50427d77e4ba90f9269360c1&quot;</span><span class='p'>),</span>
-		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Rya&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is awesome&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;tags&quot;</span> <span class='o'>:</span> <span class='p'>[</span>
-			<span class='s2'>&quot;cool&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;awesome&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;fantastic&quot;</span>
-			<span class='p'>]</span>
-<span class='p'>}</span>
-<span class='p'>{</span>
-	<span class='s2'>&quot;_id&quot;</span> <span class='o'>:</span> <span class='nx'>ObjectId</span><span class='p'>(</span><span class='s2'>&quot;50428194e4ba90f9269360c2&quot;</span><span class='p'>),</span>
-		<span class='s2'>&quot;username&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;Ray&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;testimony&quot;</span> <span class='o'>:</span> <span class='s2'>&quot;God is so faithful&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;tags&quot;</span> <span class='o'>:</span> <span class='p'>[</span>
-			<span class='s2'>&quot;cool&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;awesome&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;fantastic&quot;</span><span class='p'>,</span>
-		<span class='s2'>&quot;glorious&quot;</span>
-			<span class='p'>]</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5042743d26af8681f05582f9&quot;</span><span class="p">),</span>
+		<span class="s2">&quot;testimony&quot;</span> <span class="o">:</span> <span class="s2">&quot;This is my sample testimonty&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;username&quot;</span> <span class="o">:</span> <span class="s2">&quot;Ryan&quot;</span>
+<span class="p">}</span>
+<span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;504277f826af8681f0558314&quot;</span><span class="p">),</span>
+		<span class="s2">&quot;testimony&quot;</span> <span class="o">:</span> <span class="s2">&quot;Once upon a time it was like this&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;username&quot;</span> <span class="o">:</span> <span class="s2">&quot;Reginald&quot;</span>
+<span class="p">}</span>
+<span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;50427d01e4ba90f9269360bf&quot;</span><span class="p">),</span>
+		<span class="s2">&quot;username&quot;</span> <span class="o">:</span> <span class="s2">&quot;Rya&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;testimony&quot;</span> <span class="o">:</span> <span class="s2">&quot;God is awesome&quot;</span>
+<span class="p">}</span>
+<span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;50427d3ce4ba90f9269360c0&quot;</span><span class="p">),</span>
+		<span class="s2">&quot;username&quot;</span> <span class="o">:</span> <span class="s2">&quot;Rya&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;testimony&quot;</span> <span class="o">:</span> <span class="s2">&quot;God is awesome&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;tags&quot;</span> <span class="o">:</span> <span class="p">[</span>
+			<span class="s2">&quot;cool&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;awesome&quot;</span>
+			<span class="p">]</span>
+<span class="p">}</span>
+<span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;50427d77e4ba90f9269360c1&quot;</span><span class="p">),</span>
+		<span class="s2">&quot;username&quot;</span> <span class="o">:</span> <span class="s2">&quot;Rya&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;testimony&quot;</span> <span class="o">:</span> <span class="s2">&quot;God is awesome&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;tags&quot;</span> <span class="o">:</span> <span class="p">[</span>
+			<span class="s2">&quot;cool&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;awesome&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;fantastic&quot;</span>
+			<span class="p">]</span>
+<span class="p">}</span>
+<span class="p">{</span>
+	<span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;50428194e4ba90f9269360c2&quot;</span><span class="p">),</span>
+		<span class="s2">&quot;username&quot;</span> <span class="o">:</span> <span class="s2">&quot;Ray&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;testimony&quot;</span> <span class="o">:</span> <span class="s2">&quot;God is so faithful&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;tags&quot;</span> <span class="o">:</span> <span class="p">[</span>
+			<span class="s2">&quot;cool&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;awesome&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;fantastic&quot;</span><span class="p">,</span>
+		<span class="s2">&quot;glorious&quot;</span>
+			<span class="p">]</span>
+<span class="p">}</span>
 </code></pre></div>
-<h3 id='to_obtain_all_documents'>To obtain all documents</h3>
+
+<h3 id="to-obtain-all-documents">To obtain all documents</h3>
 
 <p><code>$ db.collectioname.find();</code></p>
 
-<h3 id='to_obtain_all_documents_that_have_tags'>To obtain all documents that have &#8220;tags&#8221;</h3>
+<h3 id="to-obtain-all-documents-that-have-tags">To obtain all documents that have &ldquo;tags&rdquo;</h3>
 
 <p><code>$ db.collectioname.find( { tags: {$exists: true} } );</code></p>
 
-<h3 id='to_obtain_all_documents_that_have_tags_with_cool_key_in_the_array'>To obtain all documents that have &#8220;tags&#8221; with &#8216;cool&#8217; key in the array</h3>
+<h3 id="to-obtain-all-documents-that-have-tags-with-cool-key-in-the-array">To obtain all documents that have &ldquo;tags&rdquo; with &lsquo;cool&rsquo; key in the array</h3>
 
-<p><code>$ db.collectioname.find( { tags: { $all : [&#39;cool&#39;] }} );</code></p>
+<p><code>$ db.collectioname.find( { tags: { $all : ['cool'] }} );</code></p>
 
-<h3 id='to_obtain_first_10_documents_in_a_collection'>To obtain first 10 documents in a collection</h3>
+<h3 id="to-obtain-first-10-documents-in-a-collection">To obtain first 10 documents in a collection</h3>
 
 <p><code>$ db.collectioname.find().limit(10);</code></p>
 
-<h3 id='to_obtain_next_10_documents_in_a_collection_with_offset_of_5'>To obtain next 10 documents in a collection with offset of 5</h3>
+<h3 id="to-obtain-next-10-documents-in-a-collection-with-offset-of-5">To obtain next 10 documents in a collection with offset of 5</h3>
 
 <p><code>$ db.collectioname.find().skip(5).limit(10);</code></p>
 
-<h3 id='to_return_all_documents_only_showing_tags_field'>To return all documents only showing &#8220;tags&#8221; field</h3>
+<h3 id="to-return-all-documents-only-showing-tags-field">To return all documents only showing &ldquo;tags&rdquo; field</h3>
 
 <p><code>$ db.collectioname.find( {}, { tags: 1 } );</code></p>
 
-<h3 id='to_return_all_documents_only_with_specified_value_only_returning_tags_key'>To return all documents only with specified value only returning &#8220;tags&#8221; key</h3>
+<h3 id="to-return-all-documents-only-with-specified-value-only-returning-tags-key">To return all documents only with specified value only returning &ldquo;tags&rdquo; key</h3>
 
-<p><code>$ db.collectioname.find( {tags: {$all: [&#39;cool&#39;]} }, {tags: 1} );</code></p>
+<p><code>$ db.collectioname.find( {tags: {$all: ['cool']} }, {tags: 1} );</code> </p>
+
+
             
 
             <!-- if tags -->

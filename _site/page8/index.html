@@ -66,39 +66,43 @@
 
         <div class="body-post">
             
-                <p>Just wanted to save some notes from using sinon library for stubs within the mocha test framework in a node.js app i&#8217;m hacking away at. When trying to run this particular code for stubbing the <code>console.log</code> method:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>sinon</span><span class='p'>.</span><span class='nx'>stub</span><span class='p'>(</span><span class='nx'>console</span><span class='p'>,</span> <span class='s1'>&#39;log&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>text</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='kd'>var</span> <span class='nx'>string</span><span class='p'>;</span>
-  <span class='nx'>string</span> <span class='o'>+=</span> <span class='s2'>&quot;#1: general\n&quot;</span><span class='p'>;</span>
-  <span class='nx'>string</span> <span class='o'>+=</span> <span class='s2'>&quot;#2: grocery\n&quot;</span><span class='p'>;</span>
+                
+<p>Just wanted to save some notes from using sinon library for stubs within the mocha test framework in a node.js app i&rsquo;m hacking away at. When trying to run this particular code for stubbing the <code>console.log</code> method:</p>
 
-  <span class='nx'>text</span><span class='p'>.</span><span class='nx'>should</span><span class='p'>.</span><span class='nx'>eql</span><span class='p'>(</span><span class='nx'>string</span><span class='p'>);</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>.</span><span class='nx'>restore</span><span class='p'>();</span>
-<span class='p'>});</span>
+<div class="highlight"><pre><code class="js"><span class="nx">sinon</span><span class="p">.</span><span class="nx">stub</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">string</span> <span class="o">+=</span> <span class="s2">&quot;#1: general\n&quot;</span><span class="p">;</span>
+  <span class="nx">string</span> <span class="o">+=</span> <span class="s2">&quot;#2: grocery\n&quot;</span><span class="p">;</span>
+
+  <span class="nx">text</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">eql</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+<span class="p">});</span>
 </code></pre></div>
+
 <p>In my <code>todos</code> app, I redefine <code>console.log</code> into a variable called <code>log</code> for shorthand. This trips up sinon.js in the stubbing mechanisim above. A small inconvenince as this forces me to rewrite my app just so I can cover these test cases. The parameters that the stub method is expecting are:</p>
 
 <ol>
-<li>object</li>
-
-<li>method</li>
-
-<li>callback</li>
+  <li>object</li>
+  <li>method</li>
+  <li>callback</li>
 </ol>
 
 <p>Because of this, I just rewrote my output method to export a single string that I can test against since it will ignore multiple console.log calls from a given stubbed method</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// instead of this output</span>
-<span class='k'>for</span><span class='p'>(...)</span> <span class='p'>{</span> 
-	<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;string...&#39;</span><span class='p'>);</span>	
-<span class='p'>}</span>
 
-<span class='c1'>// i wrote this so i can use the sinon.stub</span>
-<span class='kd'>var</span> <span class='nx'>string</span><span class='p'>;</span>
-<span class='k'>for</span><span class='p'>(...)</span> <span class='p'>{</span> 
-	<span class='nx'>string</span> <span class='o'>+=</span> <span class='s1'>&#39;string...&#39;</span><span class='p'>;</span>		
-<span class='p'>}</span>
-<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;string... string...&#39;</span><span class='p'>);</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// instead of this output</span>
+<span class="k">for</span><span class="p">(...)</span> <span class="p">{</span> 
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;string...&#39;</span><span class="p">);</span>	
+<span class="p">}</span>
+
+<span class="c1">// i wrote this so i can use the sinon.stub</span>
+<span class="kd">var</span> <span class="nx">string</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(...)</span> <span class="p">{</span> 
+	<span class="nx">string</span> <span class="o">+=</span> <span class="s1">&#39;string...&#39;</span><span class="p">;</span>		
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;string... string...&#39;</span><span class="p">);</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -138,11 +142,13 @@
 
         <div class="body-post">
             
-                <h1 id='notes'>Notes</h1>
+                
+<h1 id="notes">Notes</h1>
 
-<p>So just taking some notes for myself. I have a new dev machine and when trying to set up my <code>.tmux.conf</code> file, there was issues when tmux launched in parsing the file. I read somewhere on the net it had to do with some invisible bytes.</p>
+<p>So just taking some notes for myself. I have a new dev machine and when trying to set up my <code>.tmux.conf</code> file, there was issues when tmux launched in parsing the file. I read somewhere on the net it had to do with some invisible bytes. </p>
 
-<p>I ended up fixing the parse by just creating a new .tmux.conf file and copy-pasted from my <code>.tmux.conf</code> file from my <a href='http://github.com/design48/dotfiles'>dotfiles repo</a> on GitHub. Woot.</p>
+<p>I ended up fixing the parse by just creating a new .tmux.conf file and copy-pasted from my <code>.tmux.conf</code> file from my <a href="http://github.com/design48/dotfiles">dotfiles repo</a> on GitHub. Woot.</p>
+
             
 
             <!-- if tags -->
@@ -182,51 +188,54 @@
 
         <div class="body-post">
             
-                <h1 id='some_progress'>Some progress</h1>
+                
+<h1 id="some-progress">Some progress</h1>
 
-<p>So I&#8217;ve been doing some testing on the json structure for enabling multiple lists on the todo cli tool that I&#8217;ve been hacking away at. There&#8217;s two components to get this working;</p>
+<p>So I&rsquo;ve been doing some testing on the json structure for enabling multiple lists on the todo cli tool that I&rsquo;ve been hacking away at. There&rsquo;s two components to get this working; </p>
 
 <p><strong>One</strong></p>
 
-<p>Have a nested object with arrays so can iterate through list names and each lists&#8217;s todo items:</p>
+<p>Have a nested object with arrays so can iterate through list names and each lists&rsquo;s todo items:</p>
 
-<p><img alt='json sample' src='http://content.screencast.com/users/User48/folders/Jing/media/086178f4-48e4-441f-8204-b41b5db9cfc1/00000101.png' /></p>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/086178f4-48e4-441f-8204-b41b5db9cfc1/00000101.png" alt="json sample" /></p>
 
 <p><strong>Two</strong></p>
 
-<p>Having a persitent data store to get the selected list name so as to apply actions to. Since there is no sense of state in a node.js cli app we need to create one.</p>
+<p>Having a persitent data store to get the selected list name so as to apply actions to. Since there is no sense of state in a node.js cli app we need to create one. </p>
 
-<p>We are already saving a list of todo items in a json file, we can save this hash of what the <code>current</code> list is in the same or separate file. I didn&#8217;t want to pollute this existing json file storage of todos so I decided to place it in a separate file.</p>
+<p>We are already saving a list of todo items in a json file, we can save this hash of what the <code>current</code> list is in the same or separate file. I didn&rsquo;t want to pollute this existing json file storage of todos so I decided to place it in a separate file.</p>
 
 <p>Now when we return back to our todo app to run commands on it, a sense of <code>state</code> has been established by pulling this name from the file, and then we can resume with our actions of listing, adding, or removing items from the main data store with this saved name as the key, yeehaw.</p>
 
 <p><strong>Commands</strong></p>
 
 <p>The command I want to set up would then look like this:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>$</span> <span class='nx'>todo</span> <span class='nx'>show</span> <span class='nx'>lists</span>
 
-<span class='c1'>// returns</span>
-	<span class='err'>#</span><span class='mi'>1</span><span class='o'>:</span> <span class='nx'>work</span>
-	<span class='err'>#</span><span class='mi'>2</span><span class='o'>:</span> <span class='nx'>groceries</span>
-	<span class='err'>#</span><span class='mi'>3</span><span class='o'>:</span> <span class='nx'>inventions</span>
+<div class="highlight"><pre><code class="js"><span class="nx">$</span> <span class="nx">todo</span> <span class="nx">show</span> <span class="nx">lists</span>
 
-<span class='nx'>$</span> <span class='nx'>todo</span> <span class='nx'>select</span> <span class='mi'>2</span>
+<span class="c1">// returns</span>
+	<span class="err">#</span><span class="mi">1</span><span class="o">:</span> <span class="nx">work</span>
+	<span class="err">#</span><span class="mi">2</span><span class="o">:</span> <span class="nx">groceries</span>
+	<span class="err">#</span><span class="mi">3</span><span class="o">:</span> <span class="nx">inventions</span>
 
-<span class='c1'>// returns</span>
-	<span class='s1'>&#39;groceries&#39;</span> <span class='nx'>list</span> <span class='nx'>selected</span><span class='p'>.</span> <span class='nx'>Ready</span> <span class='k'>for</span> <span class='nx'>actions</span>
+<span class="nx">$</span> <span class="nx">todo</span> <span class="nx">select</span> <span class="mi">2</span>
 
-<span class='nx'>$</span> <span class='nx'>todo</span> <span class='nx'>add</span> <span class='s2'>&quot;get plums&quot;</span>
+<span class="c1">// returns</span>
+	<span class="s1">&#39;groceries&#39;</span> <span class="nx">list</span> <span class="nx">selected</span><span class="p">.</span> <span class="nx">Ready</span> <span class="k">for</span> <span class="nx">actions</span>
 
-<span class='c1'>// #1 already existed, so returns</span>
+<span class="nx">$</span> <span class="nx">todo</span> <span class="nx">add</span> <span class="s2">&quot;get plums&quot;</span>
 
-	<span class='err'>#</span><span class='mi'>1</span><span class='o'>:</span> <span class='nx'>bananas</span>
-	<span class='err'>#</span><span class='mi'>2</span><span class='o'>:</span> <span class='nx'>get</span> <span class='nx'>plums</span>
+<span class="c1">// #1 already existed, so returns</span>
+
+	<span class="err">#</span><span class="mi">1</span><span class="o">:</span> <span class="nx">bananas</span>
+	<span class="err">#</span><span class="mi">2</span><span class="o">:</span> <span class="nx">get</span> <span class="nx">plums</span>
 </code></pre></div>
-<h1 id='note'>Note</h1>
 
-<p>This is still a work in progress but I&#8217;m making small steps to finally get my own todos working at the command line the way I like it.</p>
+<h1 id="note">Note</h1>
+<p>This is still a work in progress but I&rsquo;m making small steps to finally get my own todos working at the command line the way I like it.</p>
 
-<p><a href='https://github.com/design48/todo/commit/94291cd86a52dc8f31d8c5732e882d5d9f7b2ea5'>Some code for the work in progress</a></p>
+<p><a href="https://github.com/design48/todo/commit/94291cd86a52dc8f31d8c5732e882d5d9f7b2ea5">Some code for the work in progress</a></p>
+
             
 
             <!-- if tags -->
@@ -262,22 +271,27 @@
 
         <div class="body-post">
             
-                <p>Working with <strong>mongdob</strong> on the <a href='http://github.com/design48/mytestimony'>MyTestimony.com web project</a>, I had a chance to update the routes to include a user clicking on a <em>View</em> button to open a testimony page.</p>
+                
+<p>Working with <strong>mongdob</strong> on the <a href="http://github.com/design48/mytestimony">MyTestimony.com web project</a>, I had a chance to update the routes to include a user clicking on a <em>View</em> button to open a testimony page.</p>
 
-<h1 id='mondodb_native_driver_api'>MondoDB native driver api</h1>
+<h1 id="mondodb-native-driver-api">MondoDB native driver api</h1>
 
 <p>The method to find a testimony with specific id is:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>db</span><span class='p'>.</span><span class='nx'>collectionName</span><span class='p'>.</span><span class='nx'>findOne</span><span class='p'>({</span><span class='nx'>_id</span><span class='o'>:</span> <span class='k'>new</span> <span class='nx'>ObjectID</span><span class='p'>(</span><span class='s1'>&#39;generatedstring&#39;</span><span class='p'>)});</span>
+
+<div class="highlight"><pre><code class="js"><span class="nx">db</span><span class="p">.</span><span class="nx">collectionName</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ObjectID</span><span class="p">(</span><span class="s1">&#39;generatedstring&#39;</span><span class="p">)});</span>
 </code></pre></div>
-<h1 id='screenshots'>Screenshots</h1>
+
+<h1 id="screenshots">Screenshots</h1>
 
 <p>This allowed me to have button for <em>View</em>:</p>
 
-<p><img alt='button' src='http://f.cl.ly/items/0F0q3D0C0u1V3F0l3s0C/Screen%20Shot%202012-12-12%20at%2012.10.49%20AM.png' /></p>
+<p><img src="http://f.cl.ly/items/0F0q3D0C0u1V3F0l3s0C/Screen%20Shot%202012-12-12%20at%2012.10.49%20AM.png" alt="button" /></p>
 
 <p>Click to open a testimony page:</p>
 
-<p><img alt='detail' src='http://f.cl.ly/items/10413q2F37153b1H1M1h/Screen%20Shot%202012-12-12%20at%2012.11.37%20AM.png' /></p>
+<p><img src="http://f.cl.ly/items/10413q2F37153b1H1M1h/Screen%20Shot%202012-12-12%20at%2012.11.37%20AM.png" alt="detail" /></p>
+
+
             
 
             <!-- if tags -->
@@ -313,25 +327,25 @@
 
         <div class="body-post">
             
-                <p>I recently updated a node.js library that allows you to create and manage a todo list at the command line or OSX terminal. This is handy especially when you&#8217;re programming within that environment and want to quickly make a note of an item you need <strong>todo</strong> of course.</p>
+                
+<p>I recently updated a node.js library that allows you to create and manage a todo list at the command line or OSX terminal. This is handy especially when you&rsquo;re programming within that environment and want to quickly make a note of an item you need <strong>todo</strong> of course.</p>
 
-<p>I&#8217;m just getting to learn node.js and I needed a way to have a module update another module to do some functionality upon an &#8220;event&#8221;. Using the <a href='http://nodejs.org/api/events.html'>Event Emitter</a> class in node.js worked perfect.</p>
+<p>I&rsquo;m just getting to learn node.js and I needed a way to have a module update another module to do some functionality upon an &ldquo;event&rdquo;. Using the <a href="http://nodejs.org/api/events.html">Event Emitter</a> class in node.js worked perfect.</p>
 
-<p>So here&#8217;s the use case, I needed a way to always show the list of todo items upon an action like</p>
+<p>So here&rsquo;s the use case, I needed a way to always show the list of todo items upon an action like</p>
 
 <ul>
-<li>adding to the list</li>
-
-<li>removing from the list</li>
-
-<li>or clearing it out</li>
+  <li>adding to the list</li>
+  <li>removing from the list</li>
+  <li>or clearing it out</li>
 </ul>
 
-<p>The original package didn&#8217;t have it, so I added it using a <strong>custom event</strong>. Upon a given user action, the object <strong>emits</strong> an event name to any object that is <strong>listening</strong>. Each listening object can define what they do upon the event being received. It just so happens I have my object list out all the todo items. Awesome.</p>
+<p>The original package didn&rsquo;t have it, so I added it using a <strong>custom event</strong>. Upon a given user action, the object <strong>emits</strong> an event name to any object that is <strong>listening</strong>. Each listening object can define what they do upon the event being received. It just so happens I have my object list out all the todo items. Awesome.</p>
 
-<p><img alt='show list upon each action' src='http://content.screencast.com/users/User48/folders/Jing/media/570d6898-8480-46b7-acda-2a182df2dba2/00000090.png' /></p>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/570d6898-8480-46b7-acda-2a182df2dba2/00000090.png" alt="show list upon each action" /></p>
 
-<p>The <a href='https://github.com/design48/todo/commit/dec8347b2613979287042706bb05a8d940d5d52a'>source code highlighted</a> lists out the lines below it that were added</p>
+<p>The <a href="https://github.com/design48/todo/commit/dec8347b2613979287042706bb05a8d940d5d52a">source code highlighted</a> lists out the lines below it that were added</p>
+
             
 
             <!-- if tags -->

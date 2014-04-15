@@ -59,27 +59,39 @@
 
         <div class="body-post">
             
-                <h2 id='primitive_and_reference_values'>Primitive and Reference Values</h2>
+                
+<h2 id="primitive-and-reference-values">Primitive and Reference Values</h2>
 
-<p>ECMAScript variables may contain two different types of data: primitive values and reference values. <strong>Primitive values</strong> are simple atomic pieces of data, while <strong>reference values</strong> are objects that may be made up of multiple values.</p>
+<p>ECMAScript variables may contain two different types of data: primitive values and reference
+values. <strong>Primitive values</strong> are simple atomic pieces of data, while <strong>reference values</strong> are objects
+that may be made up of multiple values.</p>
 
-<p>When a value is assigned to a variable, the JavaScript engine must determine if it&#8217;s a primitive or a reference. The five primitive types were discussed in the previous chapter: Undefi ned, Null, Boolean, Number, and String. These variables are said to be accessed by <strong>value</strong>, because you are manipulating the actual value stored in the variable.</p>
+<p>When a value is assigned to a variable, the JavaScript engine must determine if it&rsquo;s a primitive
+or a reference. The five primitive types were discussed in the previous chapter: Undefi ned,
+Null, Boolean, Number, and String. These variables are said to be accessed by <strong>value</strong>, because
+you are manipulating the actual value stored in the variable.</p>
 
-<p>Reference values are objects stored in memory. Unlike other languages, JavaScript does not permit direct access of memory locations, so direct manipulation of the object&#8217;s memory space is not allowed. When you manipulate an object, you&#8217;re really working on a reference to that object rather than the actual object itself. For this reason, such values are said to be accessed by <strong>reference</strong>.</p>
+<p>Reference values are objects stored in memory. Unlike other languages, JavaScript does not permit
+direct access of memory locations, so direct manipulation of the object&rsquo;s memory space is not
+allowed. When you manipulate an object, you&rsquo;re really working on a reference to that object rather
+than the actual object itself. For this reason, such values are said to be accessed by <strong>reference</strong>.</p>
 
 <p>How two primitives data types (variables) are assigned reference values (Objects) and are created that point to 2 different areas in the heap:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>a</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nb'>Object</span><span class='p'>();</span>
-<span class='kd'>var</span> <span class='nx'>b</span> <span class='o'>=</span> <span class='nx'>a</span><span class='p'>;</span>
-<span class='c1'>// these point to the same object in the heap</span>
 
-<span class='c1'>// assigning another variable c = new Object(); would point to a different object on the heap</span>
-<span class='c1'>// which would mean a != c even though the properties within those 2 objects are null or undefined</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+<span class="c1">// these point to the same object in the heap</span>
+
+<span class="c1">// assigning another variable c = new Object(); would point to a different object on the heap</span>
+<span class="c1">// which would mean a != c even though the properties within those 2 objects are null or undefined</span>
 </code></pre></div>
-<p><img alt='reference values' src='http://content.screencast.com/users/User48/folders/Jing/media/5c64e640-77fb-4660-9689-999cf2e9b7de/2012-06-14_0059.png' /></p>
+
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/5c64e640-77fb-4660-9689-999cf2e9b7de/2012-06-14_0059.png" alt="reference values" /></p>
 
 <blockquote>
-<p><strong>heap</strong>: dynamically allocated memory</p>
+  <p><strong>heap</strong>: dynamically allocated memory</p>
 </blockquote>
+
             
 
             <!-- if tags -->

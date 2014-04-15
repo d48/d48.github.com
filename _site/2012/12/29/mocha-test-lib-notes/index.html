@@ -59,39 +59,43 @@
 
         <div class="body-post">
             
-                <p>Just wanted to save some notes from using sinon library for stubs within the mocha test framework in a node.js app i&#8217;m hacking away at. When trying to run this particular code for stubbing the <code>console.log</code> method:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>sinon</span><span class='p'>.</span><span class='nx'>stub</span><span class='p'>(</span><span class='nx'>console</span><span class='p'>,</span> <span class='s1'>&#39;log&#39;</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>text</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='kd'>var</span> <span class='nx'>string</span><span class='p'>;</span>
-  <span class='nx'>string</span> <span class='o'>+=</span> <span class='s2'>&quot;#1: general\n&quot;</span><span class='p'>;</span>
-  <span class='nx'>string</span> <span class='o'>+=</span> <span class='s2'>&quot;#2: grocery\n&quot;</span><span class='p'>;</span>
+                
+<p>Just wanted to save some notes from using sinon library for stubs within the mocha test framework in a node.js app i&rsquo;m hacking away at. When trying to run this particular code for stubbing the <code>console.log</code> method:</p>
 
-  <span class='nx'>text</span><span class='p'>.</span><span class='nx'>should</span><span class='p'>.</span><span class='nx'>eql</span><span class='p'>(</span><span class='nx'>string</span><span class='p'>);</span>
-  <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>.</span><span class='nx'>restore</span><span class='p'>();</span>
-<span class='p'>});</span>
+<div class="highlight"><pre><code class="js"><span class="nx">sinon</span><span class="p">.</span><span class="nx">stub</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">string</span> <span class="o">+=</span> <span class="s2">&quot;#1: general\n&quot;</span><span class="p">;</span>
+  <span class="nx">string</span> <span class="o">+=</span> <span class="s2">&quot;#2: grocery\n&quot;</span><span class="p">;</span>
+
+  <span class="nx">text</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">eql</span><span class="p">(</span><span class="nx">string</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+<span class="p">});</span>
 </code></pre></div>
+
 <p>In my <code>todos</code> app, I redefine <code>console.log</code> into a variable called <code>log</code> for shorthand. This trips up sinon.js in the stubbing mechanisim above. A small inconvenince as this forces me to rewrite my app just so I can cover these test cases. The parameters that the stub method is expecting are:</p>
 
 <ol>
-<li>object</li>
-
-<li>method</li>
-
-<li>callback</li>
+  <li>object</li>
+  <li>method</li>
+  <li>callback</li>
 </ol>
 
 <p>Because of this, I just rewrote my output method to export a single string that I can test against since it will ignore multiple console.log calls from a given stubbed method</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// instead of this output</span>
-<span class='k'>for</span><span class='p'>(...)</span> <span class='p'>{</span> 
-	<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;string...&#39;</span><span class='p'>);</span>	
-<span class='p'>}</span>
 
-<span class='c1'>// i wrote this so i can use the sinon.stub</span>
-<span class='kd'>var</span> <span class='nx'>string</span><span class='p'>;</span>
-<span class='k'>for</span><span class='p'>(...)</span> <span class='p'>{</span> 
-	<span class='nx'>string</span> <span class='o'>+=</span> <span class='s1'>&#39;string...&#39;</span><span class='p'>;</span>		
-<span class='p'>}</span>
-<span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='s1'>&#39;string... string...&#39;</span><span class='p'>);</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// instead of this output</span>
+<span class="k">for</span><span class="p">(...)</span> <span class="p">{</span> 
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;string...&#39;</span><span class="p">);</span>	
+<span class="p">}</span>
+
+<span class="c1">// i wrote this so i can use the sinon.stub</span>
+<span class="kd">var</span> <span class="nx">string</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(...)</span> <span class="p">{</span> 
+	<span class="nx">string</span> <span class="o">+=</span> <span class="s1">&#39;string...&#39;</span><span class="p">;</span>		
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;string... string...&#39;</span><span class="p">);</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

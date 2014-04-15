@@ -59,35 +59,43 @@
 
         <div class="body-post">
             
-                <h2 id='avoid_polluting_the_global_scope'>Avoid polluting the global scope</h2>
+                
+<h2 id="avoid-polluting-the-global-scope">Avoid polluting the global scope</h2>
 
 <p>Using global variables is messy because in large applications in can easily eat up a lot of memory. Also strong chance upon execution that a collision will occur where same variable is being used for different uses.</p>
 
-<p>To avoid polluting global scope, declare variables into a namespaced object structure. For variables that don&#8217;t fit or belong in these structures, can declare in a &#8220;self-invoking function&#8221; = a function that gets executed when the definition is parsed by the browser or client.</p>
+<p>To avoid polluting global scope, declare variables into a namespaced object structure. For variables that don&rsquo;t fit or belong in these structures, can declare in a &ldquo;self-invoking function&rdquo; = a function that gets executed when the definition is parsed by the browser or client.</p>
 
-<h3 id='selfinvoking_function_example'>Self-invoking function example</h3>
-<div class='highlight'><pre><code class='js'><span class='p'>(</span><span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-  <span class='c1'>// All your JS code here</span>
-  <span class='c1'>// Declare variables to be in this scope like so:</span>
-  <span class='c1'>// var someVariable = &quot;some value&quot;;</span>
-<span class='p'>})();</span>
+<h3 id="self-invoking-function-example">Self-invoking function example</h3>
+
+<div class="highlight"><pre><code class="js"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// All your JS code here</span>
+  <span class="c1">// Declare variables to be in this scope like so:</span>
+  <span class="c1">// var someVariable = &quot;some value&quot;;</span>
+<span class="p">})();</span>
 </code></pre></div>
-<ul>
-<li>
-<p>Traditional accessors methods are used (getters/setters) to manipulate variables that are withing that scope or closure that is defined.</p>
-</li>
 
-<li>
-<p>_ underscore used to indicate that these are private members. Just a visual aid for the programmer.</p>
-</li>
+<ul>
+  <li>
+    <p>Traditional accessors methods are used (getters/setters) to manipulate variables that are withing that scope or closure that is defined.</p>
+  </li>
+  <li>
+    <p>_ underscore used to indicate that these are private members. Just a visual aid for the programmer.</p>
+  </li>
 </ul>
 
-<h2 id='sources'>Sources</h2>
+<h2 id="sources">Sources</h2>
 
-<p>Advanced Javascript: Namespaces, Closures, Self-Invoking Functions, and much, much, more&#8230;<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/'>http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+<p>Advanced Javascript: Namespaces, Closures, Self-Invoking Functions, and much, much, more&hellip;<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/">http://sparecycles.wordpress.com/2008/06/29/advanced-javascript/</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->

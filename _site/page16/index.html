@@ -66,51 +66,44 @@
 
         <div class="body-post">
             
-                <h2 id='unit_testing'>Unit Testing</h2>
+                
+<h2 id="unit-testing">Unit Testing</h2>
 
 <p>Testing done on each module, in isolation, to verify its behavior. Typically will establish an artificial environment, then invoke routines on the module being tested.</p>
 
-<h2 id='test_against_contract'>Test Against Contract</h2>
+<h2 id="test-against-contract">Test Against Contract</h2>
 
 <p>Test that the module delivers the functionality it promises, over a wide range of test cases and boundary conditions.</p>
 
-<p>Module may be dependent on other modules, so how do we test? One approach is to test subcomponents contarct in full of a module first thoroughly. Once that has been verified, then the module itself can be tested.</p>
+<p>Module may be dependent on other modules, so how do we test? One approach is to test subcomponents contarct in full of a module first thoroughly. Once that has been verified, then the module itself can be tested. </p>
 
 <p>Hepful in debugging: If Module A tests failed but its dependent modules 1a and 2a tests have passed, can be pretty sure issue is in Module A, and not waste time reexamining its dependent modules. Purpose is to avoid disasters that may come up down the line.</p>
 
-<p><strong>Tip:</strong></p>
+<p><strong>Tip:</strong>
+&gt; When you design a module or single routine, design both its contract and the the code to test that contract. This may take care of boundary conditions and other issues.</p>
 
-<blockquote>
-<p>When you design a module or single routine, design both its contract and the the code to test that contract. This may take care of boundary conditions and other issues.</p>
-</blockquote>
-
-<h2 id='test_harness'>Test Harness</h2>
+<h2 id="test-harness">Test Harness</h2>
 
 <p>Handle common operations such as:</p>
 
 <ol>
-<li>logging status</li>
-
-<li>analyzing output for expected results</li>
-
-<li>selecting and running the tests</li>
-
-<li>standardized form of failture reporting</li>
-
-<li>specify setup and cleanup</li>
+  <li>logging status</li>
+  <li>analyzing output for expected results</li>
+  <li>selecting and running the tests</li>
+  <li>standardized form of failture reporting</li>
+  <li>specify setup and cleanup</li>
 </ol>
 
 <p>In OO languages and envrionments, might create a base class that provides these common operations.</p>
 
-<p><strong>Tip:</strong></p>
+<p><strong>Tip:</strong>
+&gt; Logs are helpful once application is in production environment to see what&rsquo;s going on internally. </p>
 
 <blockquote>
-<p>Logs are helpful once application is in production environment to see what&#8217;s going on internally.</p>
+  <p>Use of &lsquo;hot-key&rsquo; sequence to launch a diagnostic control window with status message and information. &lsquo;Easter Egg&rsquo; for debugging.</p>
 </blockquote>
 
-<blockquote>
-<p>Use of &#8216;hot-key&#8217; sequence to launch a diagnostic control window with status message and information. &#8216;Easter Egg&#8217; for debugging.</p>
-</blockquote>
+
             
 
             <!-- if tags -->
@@ -144,13 +137,15 @@
 
         <div class="body-post">
             
-                <h2 id='yeah_i_dig_markdown'>Yeah, I dig Markdown</h2>
+                
+<h2 id="yeah-i-dig-markdown">Yeah, I dig Markdown</h2>
 
 <p>Just came across this editor. Pretty slick. Shortcuts for editing and also has export to HTML. Looking into this for automating a hosted blog.</p>
 
-<p><img alt='mouapp' src='http://content.screencast.com/users/User48/folders/Jing/media/24d8fe1e-0f60-43f4-a564-21499c2bf516/00000026.png' /></p>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/24d8fe1e-0f60-43f4-a564-21499c2bf516/00000026.png" alt="mouapp" /></p>
 
-<p>Check it out, it&#8217;s called <a href='http://mouapp.com/'>Mou</a>.</p>
+<p>Check it out, it&rsquo;s called <a href="http://mouapp.com/">Mou</a>.</p>
+
             
 
             <!-- if tags -->
@@ -184,11 +179,13 @@
 
         <div class="body-post">
             
-                <h2 id='caching_with_akavache'>Caching with Akavache</h2>
+                
+<h2 id="caching-with-akavache">Caching with Akavache</h2>
 
-<p>Github just posted this about Akavache, a library to allow for creating cache store for writing native desktop and mobile application in C#. I&#8217;m creating a web/mobile application that I want to design taking caching and fetching remote data into consideration while still keeping the UI responsive, even in offline mode.</p>
+<p>Github just posted this about Akavache, a library to allow for creating cache store for writing native desktop and mobile application in C#. I&rsquo;m creating a web/mobile application that I want to design taking caching and fetching remote data into consideration while still keeping the UI responsive, even in offline mode.</p>
 
-<p>Learn more about <a href='https://github.com/blog/1113-akavache-is-now-open-source'>Akavache</a>.</p>
+<p>Learn more about <a href="https://github.com/blog/1113-akavache-is-now-open-source">Akavache</a>.</p>
+
             
 
             <!-- if tags -->
@@ -220,20 +217,24 @@
 
         <div class="body-post">
             
-                <h2 id='css_and_boxsizing_property'>CSS and box-sizing property</h2>
+                
+<h2 id="css-and-box-sizing-property">CSS and box-sizing property</h2>
 
-<p>I just came across <a href='http://paulirish.com/2012/box-sizing-border-box-ftw/'>this blog post from Paul Irish</a> and I&#8217;m eager to use this once I&#8217;m on a project that doesn&#8217;t need to support IE7 natively, although there is a polyfill, or <a href='https://github.com/Schepp/box-sizing-polyfill'>plugin/method, available to handle it on github</a>.</p>
+<p>I just came across <a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">this blog post from Paul Irish</a> and I&rsquo;m eager to use this once I&rsquo;m on a project that doesn&rsquo;t need to support IE7 natively, although there is a polyfill, or <a href="https://github.com/Schepp/box-sizing-polyfill">plugin/method, available to handle it on github</a>. </p>
 
-<p>This basially allows you to define how boxes in your layout will handle padding when content is inside. Before this box-sizing property was used, users would often have to modify their predfined width/height setting to accomodate if content filled up the box or not in order to achieve the final net size that was intended.</p>
+<p>This basially allows you to define how boxes in your layout will handle padding when content is inside. Before this box-sizing property was used, users would often have to modify their predfined width/height setting to accomodate if content filled up the box or not in order to achieve the final net size that was intended. </p>
 
 <p><strong>For example</strong></p>
 
 <p>If I wanted a 200 pixel wide box and added content in it that had padding of 20 pixels on each side, I would have to update the the css definition for that box to be -40 pixels to final width of 160 pixels.</p>
 
 <p>Yes, very irritating. I just want to define it once and be done with that. box-sizing to the rescue:</p>
-<div class='highlight'><pre><code class='js'>	<span class='cm'>/* In css file, vendor prefix to handle cross-browser */</span>
-	<span class='o'>*</span> <span class='p'>{</span> <span class='o'>-</span><span class='nx'>moz</span><span class='o'>-</span><span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='o'>-</span><span class='nx'>webkit</span><span class='o'>-</span><span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='nx'>box</span><span class='o'>-</span><span class='nx'>sizing</span><span class='o'>:</span> <span class='nx'>border</span><span class='o'>-</span><span class='nx'>box</span><span class='p'>;</span> <span class='p'>}</span> <span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js">	<span class="cm">/* In css file, vendor prefix to handle cross-browser */</span>
+	<span class="o">*</span> <span class="p">{</span> <span class="o">-</span><span class="nx">moz</span><span class="o">-</span><span class="nx">box</span><span class="o">-</span><span class="nx">sizing</span><span class="o">:</span> <span class="nx">border</span><span class="o">-</span><span class="nx">box</span><span class="p">;</span> <span class="o">-</span><span class="nx">webkit</span><span class="o">-</span><span class="nx">box</span><span class="o">-</span><span class="nx">sizing</span><span class="o">:</span> <span class="nx">border</span><span class="o">-</span><span class="nx">box</span><span class="p">;</span> <span class="nx">box</span><span class="o">-</span><span class="nx">sizing</span><span class="o">:</span> <span class="nx">border</span><span class="o">-</span><span class="nx">box</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -265,15 +266,17 @@
 
         <div class="body-post">
             
-                <h2 id='loving_design'>Loving Design</h2>
+                
+<h2 id="loving-design">Loving Design</h2>
 
-<p>Even though I&#8217;ve been programming a lot lately, I still dig a lot of design. Just came across this goodie:</p>
+<p>Even though I&rsquo;ve been programming a lot lately, I still dig a lot of design. Just came across this goodie:</p>
 
-<p><img alt='Video of someone sketching and coloring a treadmill' src='http://www.sketch-a-day.com/wp-content/uploads/2012/03/sketch-a-day-356.jpg' /></p>
+<p><img src="http://www.sketch-a-day.com/wp-content/uploads/2012/03/sketch-a-day-356.jpg" alt="Video of someone sketching and coloring a treadmill" /></p>
 
-<p>Vid on the process here with a Wacom tablet. Gyea&#8230;</p>
+<p>Vid on the process here with a Wacom tablet. Gyea&hellip;</p>
 
-<p><a href='http://www.sketch-a-day.com/posts/sketch-a-day-356/'>http://www.sketch-a-day.com/posts/sketch-a-day-356/</a></p>
+<p><a href="http://www.sketch-a-day.com/posts/sketch-a-day-356/">http://www.sketch-a-day.com/posts/sketch-a-day-356/</a></p>
+
             
 
             <!-- if tags -->

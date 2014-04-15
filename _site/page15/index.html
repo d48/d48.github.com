@@ -66,17 +66,19 @@
 
         <div class="body-post">
             
-                <h2 id='mediator_pattern'>Mediator Pattern</h2>
+                
+<h2 id="mediator-pattern">Mediator Pattern</h2>
 
 <blockquote>
-<p><strong>Tight coupling</strong> - When objects know too much about each other and communicate directly; calling each other&#8217;s methods and changing properties.</p>
+  <p><strong>Tight coupling</strong> - When objects know too much about each other and communicate directly; calling each other&rsquo;s methods and changing properties.</p>
 </blockquote>
 
-<p>Mediator pattern promotes <strong>loose coupling</strong> and helps improve maintainability since updating an object is contained within itself and won&#8217;t effect others. Independent objects (colleagues) do not communicate directly but through a <strong>mediator</strong> object. When one of the colleagues change state, it notifies the mediator and the mediator handles communicating that change to the colleagues that should know about it.</p>
+<p>Mediator pattern promotes <strong>loose coupling</strong> and helps improve maintainability since updating an object is contained within itself and won&rsquo;t effect others. Independent objects (colleagues) do not communicate directly but through a <strong>mediator</strong> object. When one of the colleagues change state, it notifies the mediator and the mediator handles communicating that change to the colleagues that should know about it.</p>
 
-<p><img alt='mediator pattern' src='http://content.screencast.com/users/User48/folders/Jing/media/9d0d4d3b-1f24-4879-9714-eb0b93951baf/00000033.png' /></p>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/9d0d4d3b-1f24-4879-9714-eb0b93951baf/00000033.png" alt="mediator pattern" /></p>
 
-<p><a href='http://jspatterns.com/book/7/mediator.html'>Demo for mediator pattern</a></p>
+<p><a href="http://jspatterns.com/book/7/mediator.html">Demo for mediator pattern</a></p>
+
             
 
             <!-- if tags -->
@@ -114,11 +116,14 @@
 
         <div class="body-post">
             
-                <h2 id='controllers'>Controllers</h2>
+                
+<h2 id="controllers">Controllers</h2>
 
 <p>Controllers are an intermediary between models and views which are classically responsible for two tasks: they both update the view when the model changes and update the model when the user manipulates the view.</p>
 
-<p><em>So does Backbone.js have Controllers?</em> Not really. Backbone&#8217;s Views typically contain &#8220;controller&#8221; logic, and Routers are used to help manage application state, but neither are true Controllers according to classical MVC.</p>
+<p><em>So does Backbone.js have Controllers?</em> 
+Not really. Backbone&rsquo;s Views typically contain &ldquo;controller&rdquo; logic, and Routers are used to help manage application state, but neither are true Controllers according to classical MVC.</p>
+
             
 
             <!-- if tags -->
@@ -152,11 +157,13 @@
 
         <div class="body-post">
             
-                <h2 id='observer_pattern'>Observer Pattern</h2>
+                
+<h2 id="observer-pattern">Observer Pattern</h2>
 
-<p>Also called <em>subscriber/publisher</em> pattern, it&#8217;s mainly used to promote loose coupling between your pieces of code. An object subscribes to anothers object&#8217;s specific activity and gets notified. The subscriber is also called <strong>observer</strong>, while the object being observed is called <strong>publisher</strong> or <strong>subject</strong>. The publisher notifies or calls all the subscribers when an important event occurs and may often pass a message in the form of an event object.</p>
+<p>Also called <em>subscriber/publisher</em> pattern, it&rsquo;s mainly used to promote loose coupling between your pieces of code. An object subscribes to anothers object&rsquo;s specific activity and gets notified. The subscriber is also called <strong>observer</strong>, while the object being observed is called <strong>publisher</strong> or <strong>subject</strong>.  The publisher notifies or calls all the subscribers when an important event occurs and may often pass a message in the form of an event object.</p>
 
 <p>I believe this is the pattern used in Backbone.js with the models and views setup and how a view essentially watches or has <em>subscribed</em> for model changes and updates based on that change.</p>
+
             
 
             <!-- if tags -->
@@ -192,23 +199,24 @@
 
         <div class="body-post">
             
-                <h2 id='book_notes__refactoring__tip'>Book Notes - Refactoring : Tip</h2>
+                
+<h2 id="book-notes---refactoring--tip">Book Notes - Refactoring : Tip</h2>
 
 <p><strong>Tip:</strong></p>
 
 <blockquote>
-<p>When you find you have to add a feature to a program, and the program&#8217;s code is not structured in a convenient way to add the feature, first refactor the program to make iteasy to add the feature, then add the feature.</p>
+  <p>When you find you have to add a feature to a program, and the program&rsquo;s code is not structured in a convenient way to add the feature, first refactor the program to make iteasy to add the feature, then add the feature.</p>
 </blockquote>
 
 <p><strong>First Step in Refactoring:</strong></p>
 
-<p>Make sure your refactoring doesn&#8217;t introduce bugs.</p>
+<p>Make sure your refactoring doesn&rsquo;t introduce bugs.</p>
 
 <ol>
-<li>Build a set of solid test cases for that code.</li>
-
-<li>Make the tests self-checking: check for validity of expected value and actual value.</li>
+  <li>Build a set of solid test cases for that code. </li>
+  <li>Make the tests self-checking: check for validity of expected value and actual value.</li>
 </ol>
+
             
 
             <!-- if tags -->
@@ -240,36 +248,38 @@
 
         <div class="body-post">
             
-                <h2 id='book_notes'>Book notes</h2>
+                
+<h2 id="book-notes">Book notes</h2>
 
 <p>Exercises in refactoring code using:</p>
-<div class='highlight'><pre><code class='js'><span class='kr'>public</span> <span class='kr'>class</span> <span class='nx'>Square</span> <span class='kr'>extends</span> <span class='nx'>Shape</span> <span class='p'>{</span>
-    <span class='kr'>public</span> <span class='nx'>Square</span><span class='p'>(</span><span class='kr'>double</span> <span class='nx'>size</span><span class='p'>)</span> <span class='p'>{</span>
-        <span class='kr'>super</span><span class='p'>(</span><span class='nx'>size</span><span class='p'>);</span>
-    <span class='p'>}</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kr">public</span> <span class="kr">class</span> <span class="nx">Square</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="kr">public</span> <span class="nx">Square</span><span class="p">(</span><span class="kr">double</span> <span class="nx">size</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">size</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
  
  
-<span class='kr'>public</span> <span class='kr'>class</span> <span class='nx'>Window</span> <span class='p'>{</span>
-    <span class='kr'>private</span> <span class='nx'>Shape</span> <span class='nx'>shape</span><span class='p'>;</span>
-    <span class='kr'>public</span> <span class='nx'>Window</span><span class='p'>(</span><span class='nx'>Shape</span> <span class='nx'>shape</span><span class='p'>)</span> <span class='p'>{</span>
-        <span class='k'>this</span><span class='p'>.</span><span class='nx'>shape</span> <span class='o'>=</span> <span class='nx'>shape</span><span class='p'>;</span>
-    <span class='p'>}</span>
-<span class='p'>}</span>
+<span class="kr">public</span> <span class="kr">class</span> <span class="nx">Window</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">Shape</span> <span class="nx">shape</span><span class="p">;</span>
+    <span class="kr">public</span> <span class="nx">Window</span><span class="p">(</span><span class="nx">Shape</span> <span class="nx">shape</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shape</span> <span class="o">=</span> <span class="nx">shape</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <ol>
-<li>
-<p>Subclassing vs. Delegation. Difference that an object is a &#8216;kind-of&#8217; of something vs. the object &#8216;has-a&#8217; characteristic, respectively.</p>
-</li>
-
-<li>
-<p>Circle is a kind-of shape = Use subclasses</p>
-</li>
-
-<li>
-<p>A Window has-a shape = Delegation</p>
-</li>
+  <li>
+    <p>Subclassing vs. Delegation. Difference that an object is a &lsquo;kind-of&rsquo; of something vs. the object &lsquo;has-a&rsquo; characteristic, respectively.</p>
+  </li>
+  <li>
+    <p>Circle is a kind-of shape = Use subclasses</p>
+  </li>
+  <li>
+    <p>A Window has-a shape = Delegation</p>
+  </li>
 </ol>
+
             
 
             <!-- if tags -->

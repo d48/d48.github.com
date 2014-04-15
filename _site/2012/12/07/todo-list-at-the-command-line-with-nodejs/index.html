@@ -59,22 +59,51 @@
 
         <div class="body-post">
             
-                <h1 id='some_progress'>Some progress</h1>
+                
+<h1 id="some-progress">Some progress</h1>
 
-<p>I&#8217;ve been making more progress on modifying the todo list app made from this githubber: <a href='https://github.com/vesln/todo'>https://github.com/vesln/todo</a></p>
+<p>I&rsquo;ve been making more progress on modifying the todo list app made from this githubber: <a href="https://github.com/vesln/todo">https://github.com/vesln/todo</a></p>
 
-<p>Initially they set it up to only be one list. I&#8217;m changing it so it can have multiple lists that you can add to, check off, rename, and delete easily.</p>
+<p>Initially they set it up to only be one list. I&rsquo;m changing it so it can have multiple lists that you can add to, check off, rename, and delete easily.</p>
 
-<p><img alt='todo list cli tool' src='http://content.screencast.com/users/User48/folders/Jing/media/a8663943-fb10-4e79-9a3c-f438f759e9ed/00000085.png' /></p>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/a8663943-fb10-4e79-9a3c-f438f759e9ed/00000085.png" alt="todo list cli tool" /></p>
 
-<p>Next on my list is to sort out how I want my api to be to this command line tool. I&#8217;m having fun sorting out and working with modules and just some nice practices on organizing the code.</p>
-<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td style='text-align: left;'><code>$ todo select &lt;listnumber&gt;</code></td><td style='text-align: left;'>Makes specific list active so more actions can be taken</td>
-</tr><tr><td style='text-align: left;'><code>$ todo rename &quot;&lt;new name&gt;&quot;</code></td><td style='text-align: left;'>Rename currently selected list</td>
-</tr><tr><td style='text-align: left;'><code>$ todo add &quot;&lt;my todo item&gt;&quot;</code></td><td style='text-align: left;'>Adds todo to currently selected list</td>
-</tr><tr><td style='text-align: left;'><code>$ todo clear</code></td><td style='text-align: left;'>Clears out currently selected list.</td>
-</tr><tr><td style='text-align: left;'><code>$ todo copy</code></td><td style='text-align: left;'>Copies current list in a pretty format to the buffer that can be pasted</td>
-</tr></tbody></table>
-<p>Lastly, there&#8217;s a <a href='https://github.com/vesln/todo/pull/6'>pull request</a> opened to enable multiple lists that moves the data directory to <code>$HOME</code> and also maps an options/command list that reuses the original functions. I like that but want my api a little different so will implement that as well.</p>
+<p>Next on my list is to sort out how I want my api to be to this command line tool. I&rsquo;m having fun sorting out and working with modules and just some nice practices on organizing the code.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Command</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>$ todo select &lt;listnumber&gt;</code></td>
+      <td style="text-align: left">Makes specific list active so more actions can be taken</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>$ todo rename "&lt;new name&gt;"</code></td>
+      <td style="text-align: left">Rename currently selected list</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>$ todo add "&lt;my todo item&gt;"</code></td>
+      <td style="text-align: left">Adds todo to currently selected list</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>$ todo clear</code></td>
+      <td style="text-align: left">Clears out currently selected list.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>$ todo copy</code></td>
+      <td style="text-align: left">Copies current list in a pretty format to the buffer that can be pasted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Lastly, there&rsquo;s a <a href="https://github.com/vesln/todo/pull/6">pull request</a> opened to enable multiple lists that moves the data directory to <code>$HOME</code> and also maps an options/command list that reuses the original functions. I like that but want my api a little different so will implement that as well.</p>
+
+
             
 
             <!-- if tags -->

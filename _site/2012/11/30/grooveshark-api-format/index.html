@@ -59,62 +59,65 @@
 
         <div class="body-post">
             
-                <h1 id='finally'>Finally!</h1>
+                
+<h1 id="finally">Finally!</h1>
 
-<p>Finally figured out the darn formatting needed for Grooveshark. Either I need a better visual or just need to learn how to read better, but here&#8217;s an example in case anyone needs it with some steps to produce</p>
+<p>Finally figured out the darn formatting needed for Grooveshark. Either I need a better visual or just need to learn how to read better, but here&rsquo;s an example in case anyone needs it with some steps to produce</p>
 
-<h1 id='json_payload_to_start_a_session'>JSON Payload to start a session</h1>
-<div class='highlight'><pre><code class='js'><span class='c1'>// to start a session</span>
-<span class='p'>{</span>
-    <span class='s2'>&quot;method&quot;</span><span class='o'>:</span> <span class='s2'>&quot;startSession&quot;</span><span class='p'>,</span>
-    <span class='s2'>&quot;parameters&quot;</span><span class='o'>:</span> <span class='p'>{},</span>
-    <span class='s2'>&quot;header&quot;</span><span class='o'>:</span> <span class='p'>{</span>
-        <span class='s2'>&quot;wsKey&quot;</span><span class='o'>:</span> <span class='s2'>&quot;uniquekeyfromgrooveshark&quot;</span>
-    <span class='p'>}</span>
-<span class='p'>}</span>
+<h1 id="json-payload-to-start-a-session">JSON Payload to start a session</h1>
+
+<div class="highlight"><pre><code class="js"><span class="c1">// to start a session</span>
+<span class="p">{</span>
+    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;startSession&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="o">:</span> <span class="p">{},</span>
+    <span class="s2">&quot;header&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;wsKey&quot;</span><span class="o">:</span> <span class="s2">&quot;uniquekeyfromgrooveshark&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='command_line'>Command line</h2>
 
-<p>Then from the command line, where <em>sig</em> is a hash string created from an <strong>hmac</strong> function using:</p>
-
-<ul>
-<li>unique <em>secret</em> provided by Grooveshark upon <a href='http://developer.grooveshark.com/api'>api credentials request</a></li>
-
-<li><em>JSON payload</em> above</li>
-
-<li>set to <em>md5</em> format</li>
-
-<li>digest is <em>hex</em></li>
-</ul>
+<h2 id="command-line">Command line</h2>
+<p>Then from the command line, where <em>sig</em> is a hash string created from an <strong>hmac</strong> function using:
+* unique <em>secret</em> provided by Grooveshark upon <a href="http://developer.grooveshark.com/api">api credentials request</a>
+* <em>JSON payload</em> above
+* set to <em>md5</em> format 
+* digest is <em>hex</em></p>
 
 <p>Make sure this is all on one line</p>
 
-<p><code>$ curl -X POST https://api.grooveshark.com/ws3.php?sig=123cc3d7f0f56c201e2b251eb888abc \</code> -d &#8216;{&#8220;method&#8221;: &#8220;startSession&#8221;,&#8221;parameters&#8221;: {},&#8221;header&#8221;: {&#8220;wsKey&#8221;: &#8220;uniquekeyfromgrooveshark&#8221;}}&#8217;</p>
+<p><code>$ curl -X POST https://api.grooveshark.com/ws3.php?sig=123cc3d7f0f56c201e2b251eb888abc \</code>
+-d &lsquo;{&ldquo;method&rdquo;: &ldquo;startSession&rdquo;,&rdquo;parameters&rdquo;: {},&rdquo;header&rdquo;: {&ldquo;wsKey&rdquo;: &ldquo;uniquekeyfromgrooveshark&rdquo;}}&rsquo;</p>
 
 <p>Sample <strong>hmac</strong> function using node.js:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>crypto</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s1'>&#39;crypto&#39;</span><span class='p'>)</span>
-  <span class='c1'>// refer to payload format above</span>
-  <span class='p'>,</span> <span class='nx'>payload</span> <span class='o'>=</span> <span class='s1'>&#39;{&quot;method&quot;:&quot;startSession&quot;, ...&#39;</span>
-  <span class='p'>,</span> <span class='nx'>secret</span> <span class='o'>=</span> <span class='s1'>&#39;abcdeg&#39;</span>
-  <span class='p'>,</span> <span class='nx'>hash</span>
-  <span class='p'>;</span>
 
-<span class='nx'>hash</span> <span class='o'>=</span> <span class='nx'>crypto</span><span class='p'>.</span><span class='nx'>createHmac</span><span class='p'>(</span><span class='s1'>&#39;md5&#39;</span><span class='p'>,</span> <span class='nx'>secret</span><span class='p'>).</span><span class='nx'>update</span><span class='p'>(</span><span class='nx'>payload</span><span class='p'>).</span><span class='nx'>digest</span><span class='p'>(</span><span class='s1'>&#39;hex&#39;</span><span class='p'>);</span>
-<span class='k'>return</span> <span class='nx'>hash</span><span class='p'>;</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;crypto&#39;</span><span class="p">)</span>
+  <span class="c1">// refer to payload format above</span>
+  <span class="p">,</span> <span class="nx">payload</span> <span class="o">=</span> <span class="s1">&#39;{&quot;method&quot;:&quot;startSession&quot;, ...&#39;</span>
+  <span class="p">,</span> <span class="nx">secret</span> <span class="o">=</span> <span class="s1">&#39;abcdeg&#39;</span>
+  <span class="p">,</span> <span class="nx">hash</span>
+  <span class="p">;</span>
+
+<span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="s1">&#39;md5&#39;</span><span class="p">,</span> <span class="nx">secret</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">payload</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">);</span>
+<span class="k">return</span> <span class="nx">hash</span><span class="p">;</span>
 </code></pre></div>
-<h2 id='response_from_curl_request'>Response from curl request</h2>
-<div class='highlight'><pre><code class='js'><span class='c1'>// then cache/reuse this sessionID for future</span>
-<span class='p'>{</span>
-    <span class='s2'>&quot;header&quot;</span><span class='o'>:</span> <span class='p'>{</span>
-        <span class='s2'>&quot;hostname&quot;</span><span class='o'>:</span> <span class='s2'>&quot;someStringABC123&quot;</span>
-    <span class='p'>},</span>
-    <span class='s2'>&quot;result&quot;</span><span class='o'>:</span> <span class='p'>{</span>
-        <span class='s2'>&quot;success&quot;</span><span class='o'>:</span> <span class='kc'>true</span><span class='p'>,</span>
-        <span class='s2'>&quot;sessionID&quot;</span><span class='o'>:</span> <span class='s2'>&quot;777efa594291a1f4d804cb7192abc123&quot;</span>
-    <span class='p'>}</span>
-<span class='p'>}</span>
+
+<h2 id="response-from-curl-request">Response from curl request</h2>
+
+<div class="highlight"><pre><code class="js"><span class="c1">// then cache/reuse this sessionID for future</span>
+<span class="p">{</span>
+    <span class="s2">&quot;header&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;hostname&quot;</span><span class="o">:</span> <span class="s2">&quot;someStringABC123&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;success&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;sessionID&quot;</span><span class="o">:</span> <span class="s2">&quot;777efa594291a1f4d804cb7192abc123&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <p>Hope this can help someone.</p>
+
+
             
 
             <!-- if tags -->

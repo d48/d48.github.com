@@ -59,7 +59,8 @@
 
         <div class="body-post">
             
-                <h2 id='nosql_databases'>NoSQL databases</h2>
+                
+<h2 id="nosql-databases">NoSQL databases</h2>
 
 <p>These are considered often by the way they store data: <em>document store, key-value stores, BigTable implementation, and graph databases</em>, different from their relational database counterparts due to that:</p>
 
@@ -67,47 +68,55 @@
 2. The data stores may not required fixed table schemas
 3. Do not support join operations
 4. May not give full ACID (atomocity, consistency, isolation, durability) guarantees
-5. Typically scale horizontally = to add more nodes to a system, e.g., adding a new computer to a distributed software application, or scaling from one web server to three.</code></pre>
+5. Typically scale horizontally = to add more nodes to a system, e.g., adding a new computer to a distributed software application, or scaling from one web server to three.
+</code></pre>
 
-<h2 id='mapreduce_function'>Map/Reduce function</h2>
+<h2 id="mapreduce-function">Map/Reduce function</h2>
 
 <p>Used by Google to index the entire World Wide Web. Take a given set to compute or input, Map function used to break and distribute into smaller parts to form computation by worker nodes. Reduce function used to collect or bring these computations together to come to a refined or <em>reduced</em> result, or output. This software framework usually stores inputs and outputs into a distributed file system.</p>
 
-<p><img alt='Sample computation' src='http://content.screencast.com/users/User48/folders/Jing/media/5736b7e3-da11-4800-bd8a-6c830bb56189/2012-04-06_0042.png' />(Sample computation)<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// Map function</span>
-<span class='kd'>function</span><span class='p'>(</span><span class='nx'>ticket</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='nx'>emit</span><span class='p'>(</span><span class='kc'>null</span><span class='p'>,</span> <span class='nx'>ticket</span><span class='p'>.</span><span class='nx'>checkout</span><span class='p'>);</span>
-<span class='p'>}</span>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/5736b7e3-da11-4800-bd8a-6c830bb56189/2012-04-06_0042.png" alt="Sample computation" />(Sample computation)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
 
-<span class='c1'>// Reduce function</span>
-<span class='kd'>function</span><span class='p'>(</span><span class='nx'>key</span><span class='p'>,</span> <span class='nx'>checkouts</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='k'>return</span> <span class='nx'>sum</span><span class='p'>(</span><span class='nx'>checkouts</span><span class='p'>);</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// Map function</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">ticket</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">emit</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">ticket</span><span class="p">.</span><span class="nx">checkout</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Reduce function</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">checkouts</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">checkouts</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='why_the_change_from_traditional_rdbms_solutions'>Why The Change from Traditional RDBMS Solutions</h2>
 
-<p>Google, Amazon, Twitter and Facebook had significantly different challenges in dealing with data that needed to scale horizontally due to the large volume. Performance and real-time nature more important than consistency, which traditional relational databases spent a high amount of processing time to achieve. <strong>NoSQL-Databases</strong> are often highly optimized for retrive and append operations and offer little functionality beyond record storage, or <em>key-value stores</em>.<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup></p>
+<h2 id="why-the-change-from-traditional-rdbms-solutions">Why The Change from Traditional RDBMS Solutions</h2>
 
-<h2 id='couchdb_vs_mongodb'>CouchDB vs. MongoDB<sup id='fnref:3'><a href='#fn:3' rel='footnote'>3</a></sup></h2>
+<p>Google, Amazon, Twitter and Facebook had significantly different challenges in dealing with data that needed to scale horizontally due to the large volume. Performance and real-time nature more important than consistency, which traditional relational databases spent a high amount of processing time to achieve. <strong>NoSQL-Databases</strong> are often highly optimized for retrive and append operations and offer little functionality beyond record storage, or <em>key-value stores</em>.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<h2 id="couchdb-vs-mongodb3">CouchDB vs. MongoDB<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></h2>
 
 <p>I would try CouchDB over MongoDB for these reasons.</p>
 
 <ol>
-<li>Better for offline storage and then syncing and replicating database once online</li>
-
-<li><em>Crash-only</em> design, where the database can terminate any time and remain consistent.</li>
-
-<li>Map/Reduce inherent in CouchDB in building all views (performance)</li>
-
-<li>Mobile embedded databases on phones because of its online/offline replication/sync capabilities.</li>
+  <li>Better for offline storage and then syncing and replicating database once online</li>
+  <li><em>Crash-only</em> design, where the database can terminate any time and remain consistent.</li>
+  <li>Map/Reduce inherent in CouchDB in building all views (performance)</li>
+  <li>Mobile embedded databases on phones because of its online/offline replication/sync capabilities.</li>
 </ol>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://en.wikipedia.org/wiki/NoSQL'>Wikipedia: NoSQL Databases</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
-<p><a href='http://www.slideshare.net/gabriele.lana/couchdb-vs-mongodb-2982288'>CouchDB vs. MongoDB slides</a></p>
-<a href='#fnref:2' rev='footnote'>&#8617;</a></li><li id='fn:3'>
-<p><a href='http://www.mongodb.org/display/DOCS/Comparing+Mongo+DB+and+Couch+DB'>Comparing CouchDB vs. MongoDB - from mongodb.org</a></p>
-<a href='#fnref:3' rev='footnote'>&#8617;</a></li></ol></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://en.wikipedia.org/wiki/NoSQL">Wikipedia: NoSQL Databases</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://www.slideshare.net/gabriele.lana/couchdb-vs-mongodb-2982288">CouchDB vs. MongoDB slides</a><a href="#fnref:2" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="http://www.mongodb.org/display/DOCS/Comparing+Mongo+DB+and+Couch+DB">Comparing CouchDB vs. MongoDB - from mongodb.org</a><a href="#fnref:3" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->

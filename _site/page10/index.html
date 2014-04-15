@@ -66,11 +66,13 @@
 
         <div class="body-post">
             
-                <h1 id='definition'>Definition</h1>
+                
+<h1 id="definition">Definition</h1>
 
-<p><strong>Delegation</strong> pattern is where an object, instead of performing one of its tasks, delegates the task to an associated helper object. The helper object is known as a <strong>delegate</strong> and is given the responsibility to execute a task for the <strong>delegator</strong>. This pattern is one of the fundamental abstraction patterns that underlie other software patterns such as <strong>composition</strong>, <strong>mixins</strong> and <strong>aspects</strong>.</p>
+<p><strong>Delegation</strong> pattern is where an object, instead of performing one of its tasks, delegates the task to an associated helper object. The helper object is known as a <strong>delegate</strong> and is given the responsibility to execute a task for the <strong>delegator</strong>. This pattern is one of the fundamental abstraction patterns that underlie other software patterns such as <strong>composition</strong>, <strong>mixins</strong> and <strong>aspects</strong>. </p>
 
-<p>An example of a delegation pattern in <strong>JavaScript MVC</strong> is the use of a <em>Sandbox</em> or <em>Hub</em> that delegates to a helper object like it&#8217;s Application core which can then delegate again to it&#8217;s Base Library. This is a concept that JavsScript guru Nicholas Zakas presents in his talks regarding <a href='http://www.slideshare.net/nzakas/scalable-javascript-application-architecture'>Scalable Javascript Application Architecture</a>.</p>
+<p>An example of a delegation pattern in <strong>JavaScript MVC</strong> is the use of a <em>Sandbox</em> or <em>Hub</em> that delegates to a helper object like it&rsquo;s Application core which can then delegate again to it&rsquo;s Base Library. This is a concept that JavsScript guru Nicholas Zakas presents in his talks regarding <a href="http://www.slideshare.net/nzakas/scalable-javascript-application-architecture">Scalable Javascript Application Architecture</a>.</p>
+
             
 
             <!-- if tags -->
@@ -114,29 +116,35 @@
 
         <div class="body-post">
             
-                <h1 id='from_secrets_of_a_javascript_ninja_book'>From Secrets of a JavaScript Ninja book</h1>
-<div class='highlight'><pre><code class='js'><span class='c1'>// named function</span>
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>}</span>
+                
+<h1 id="from-secrets-of-a-javascript-ninja-book">From Secrets of a JavaScript Ninja book</h1>
 
-<span class='c1'>// anonymous function</span>
-<span class='kd'>var</span> <span class='nx'>myName2</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// named function</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span>
 
-<span class='c1'>// anonymous function defined as property</span>
-<span class='nb'>window</span><span class='p'>.</span><span class='nx'>myName3</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>}</span>
+<span class="c1">// anonymous function</span>
+<span class="kd">var</span> <span class="nx">myName2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c1">// anonymous function defined as property</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">myName3</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
-<p><strong>named functions</strong> can be defined after the function is called within a scope and it will be evaluated. This is also called <strong>forward-referencing</strong>, a property that <strong>anonymous functions</strong> don&#8217;t have since they are assigned to variable or a property which can&#8217;t be forward-referenced.</p>
+
+<p><strong>named functions</strong> can be defined after the function is called within a scope and it will be evaluated. This is also called <strong>forward-referencing</strong>, a property that <strong>anonymous functions</strong> don&rsquo;t have since they are assigned to variable or a property which can&rsquo;t be forward-referenced.</p>
 
 <p><strong>forward-reference</strong> in regards to functions means that no matter where in the scope that a function is defined, it will be accessible through that scope.</p>
-<div class='highlight'><pre><code class='js'><span class='c1'>// testing function calls and if they are available when called</span>
-<span class='nx'>assert</span><span class='p'>(</span><span class='nx'>myName</span><span class='p'>(),</span> <span class='s1'>&#39;works even though defined below&#39;</span><span class='p'>);</span>
-<span class='nx'>assert</span><span class='p'>(</span><span class='nx'>myName2</span><span class='p'>(),</span> <span class='s2'>&quot;doesn&#39;t work since defined below and assigned to variable&quot;</span><span class='p'>);</span>
 
-<span class='kd'>function</span> <span class='nx'>myName</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>};</span>
-<span class='kd'>var</span> <span class='nx'>myName2</span><span class='p'>()</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>};</span>
-<span class='kd'>var</span> <span class='nx'>myName3</span><span class='p'>()</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span> <span class='p'>};</span>
+<div class="highlight"><pre><code class="js"><span class="c1">// testing function calls and if they are available when called</span>
+<span class="nx">assert</span><span class="p">(</span><span class="nx">myName</span><span class="p">(),</span> <span class="s1">&#39;works even though defined below&#39;</span><span class="p">);</span>
+<span class="nx">assert</span><span class="p">(</span><span class="nx">myName2</span><span class="p">(),</span> <span class="s2">&quot;doesn&#39;t work since defined below and assigned to variable&quot;</span><span class="p">);</span>
 
-<span class='nx'>assert</span><span class='p'>(</span><span class='nx'>myName3</span><span class='p'>(),</span> <span class='s1'>&#39;works since defined before this assert called&#39;</span><span class='p'>);</span>
+<span class="kd">function</span> <span class="nx">myName</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">myName2</span><span class="p">()</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">myName3</span><span class="p">()</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">};</span>
+
+<span class="nx">assert</span><span class="p">(</span><span class="nx">myName3</span><span class="p">(),</span> <span class="s1">&#39;works since defined before this assert called&#39;</span><span class="p">);</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -178,22 +186,26 @@
 
         <div class="body-post">
             
-                <blockquote>
-<p><strong>serialization</strong></p>
+                
+<blockquote>
+  <p><strong>serialization</strong></p>
 
-<p>converting an object structure into text/binary form suitable for storing onto disk or transmitting over a network.</p>
+  <p>converting an object structure into text/binary form suitable for storing onto disk or transmitting over a network.</p>
 </blockquote>
 
 <blockquote>
-<p><strong>deserialization</strong></p>
+  <p><strong>deserialization</strong></p>
 
-<p>is the reverse process. Eg., a javascript object into json string</p>
+  <p>is the reverse process. Eg., a javascript object into json string</p>
 </blockquote>
-<div class='highlight'><pre><code class='js'><span class='p'>{</span><span class='nx'>foo</span><span class='o'>:</span> <span class='p'>[</span><span class='mi'>1</span><span class='p'>,</span><span class='mi'>4</span><span class='p'>,</span><span class='mi'>7</span><span class='p'>,</span><span class='mi'>8</span><span class='p'>],</span> <span class='nx'>bar</span><span class='o'>:</span> <span class='s2'>&quot;baz&quot;</span><span class='p'>}</span>
 
-<span class='c1'>// serialize into json string</span>
-<span class='p'>{</span><span class='s2'>&quot;foo&quot;</span><span class='o'>:</span> <span class='p'>[</span><span class='mi'>1</span><span class='p'>,</span><span class='mi'>4</span><span class='p'>,</span><span class='mi'>7</span><span class='p'>,</span><span class='mi'>8</span><span class='p'>],</span> <span class='s2'>&quot;bar&quot;</span><span class='o'>:</span> <span class='s2'>&quot;baz&quot;</span><span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="p">{</span><span class="nx">foo</span><span class="o">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="nx">bar</span><span class="o">:</span> <span class="s2">&quot;baz&quot;</span><span class="p">}</span>
+
+<span class="c1">// serialize into json string</span>
+<span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="o">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="s2">&quot;bar&quot;</span><span class="o">:</span> <span class="s2">&quot;baz&quot;</span><span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->
@@ -225,11 +237,16 @@
 
         <div class="body-post">
             
-                <blockquote>
-<p><strong>lambda expression</strong></p>
+                
+<blockquote>
+  <p><strong>lambda expression</strong></p>
 
-<p>An anonymous function that you can use to create delegates or expression tree types. You can write local functions that can be passed as arguments or returned as the value of functions calls. They are particularly useful for writing LINQ query expressions, or .NET&#8217;s feature to query and update data for various data stores.</p>
+  <p>An anonymous function that you can use to create delegates or expression tree types. 
+You can write local functions that can be passed as arguments or returned as the value
+of functions calls. They are particularly useful for writing LINQ query expressions,
+or .NET&rsquo;s feature to query and update data for various data stores.</p>
 </blockquote>
+
             
 
             <!-- if tags -->
@@ -275,19 +292,20 @@
 
         <div class="body-post">
             
-                <h1 id='definition'>Definition</h1>
+                
+<h1 id="definition">Definition</h1>
 
 <p>A programming language is said to have <strong>first-class functions</strong> if it treats its functions as <strong>first-class citizens</strong>(an object, entity, or value), or an entity that can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned to a variable.</p>
 
-<p>First-class functions are a necessity in a functional programming style, in which use of higher-order functions is a standard practice.</p>
+<p>First-class functions are a necessity in a functional programming style, in which use of higher-order functions is a standard practice. </p>
 
 <p>In mathematics and computer science, <strong>higher-order functions</strong> (also functional form, functional, or functor) is a function that does at least one of the following:</p>
 
 <ul>
-<li>take one or more functions as an input</li>
-
-<li>output a function</li>
+  <li>take one or more functions as an input</li>
+  <li>output a function </li>
 </ul>
+
             
 
             <!-- if tags -->

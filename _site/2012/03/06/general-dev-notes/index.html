@@ -59,50 +59,49 @@
 
         <div class="body-post">
             
-                <h2 id='api_development'>API development</h2>
+                
+<h2 id="api-development">API development</h2>
 
 <ul>
-<li>URL structure</li>
-
-<li>CRUD methods - Create, Read, Update, Delete</li>
+  <li>URL structure</li>
+  <li>CRUD methods - Create, Read, Update, Delete</li>
 </ul>
 
-<h2 id='pivotaltracker'>PivotalTracker</h2>
+<h2 id="pivotaltracker">PivotalTracker</h2>
 
 <ul>
-<li>project management tool</li>
-
-<li>create Stories for estimating time to complete work</li>
-
-<li>prioritize work in the Backlog</li>
-
-<li>iterations</li>
-
-<li>velocity = to keep track or predict how much your team will complete each week</li>
-
-<li>can also use for bugs, chores, releases</li>
+  <li>project management tool</li>
+  <li>create Stories for estimating time to complete work</li>
+  <li>prioritize work in the Backlog</li>
+  <li>iterations</li>
+  <li>velocity = to keep track or predict how much your team will complete each week</li>
+  <li>can also use for bugs, chores, releases</li>
 </ul>
 
-<h2 id='memcached'>memcached</h2>
+<h2 id="memcached">memcached</h2>
 
 <p>Used to enhance performance of website by caching data and objects in RAM to reduce number of times an external data source (such as a database or API) must be read.</p>
 
 <p>Code sample:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>get_foo</span><span class='p'>(</span><span class='kr'>int</span> <span class='nx'>userid</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='cm'>/* first try the cache */</span>
-    <span class='nx'>data</span> <span class='o'>=</span> <span class='nx'>memcached_fetch</span><span class='p'>(</span><span class='s2'>&quot;userrow:&quot;</span> <span class='o'>+</span> <span class='nx'>userid</span><span class='p'>);</span>
-    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nx'>data</span><span class='p'>)</span> <span class='p'>{</span>
-       <span class='cm'>/* not found : request database */</span>
-       <span class='nx'>data</span> <span class='o'>=</span> <span class='nx'>db_select</span><span class='p'>(</span><span class='s2'>&quot;SELECT * FROM users WHERE userid = ?&quot;</span><span class='p'>,</span> <span class='nx'>userid</span><span class='p'>);</span>
-       <span class='cm'>/* then store in cache until next get */</span>
-       <span class='nx'>memcached_add</span><span class='p'>(</span><span class='s2'>&quot;userrow:&quot;</span> <span class='o'>+</span> <span class='nx'>userid</span><span class='p'>,</span> <span class='nx'>data</span><span class='p'>);</span>
-    <span class='p'>}</span>
-    <span class='k'>return</span> <span class='nx'>data</span><span class='p'>;</span>
-<span class='p'>}</span>
-</code></pre></div>
-<h2 id='to_look_into'>To look into</h2>
 
-<p><a href='http://zeptojs.com/'>Zepto.js</a> <a href='http://documentcloud.github.com/underscore/'>Underscore.js</a></p>
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">get_foo</span><span class="p">(</span><span class="kr">int</span> <span class="nx">userid</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* first try the cache */</span>
+    <span class="nx">data</span> <span class="o">=</span> <span class="nx">memcached_fetch</span><span class="p">(</span><span class="s2">&quot;userrow:&quot;</span> <span class="o">+</span> <span class="nx">userid</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+       <span class="cm">/* not found : request database */</span>
+       <span class="nx">data</span> <span class="o">=</span> <span class="nx">db_select</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users WHERE userid = ?&quot;</span><span class="p">,</span> <span class="nx">userid</span><span class="p">);</span>
+       <span class="cm">/* then store in cache until next get */</span>
+       <span class="nx">memcached_add</span><span class="p">(</span><span class="s2">&quot;userrow:&quot;</span> <span class="o">+</span> <span class="nx">userid</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="to-look-into">To look into</h2>
+
+<p><a href="http://zeptojs.com/">Zepto.js</a>
+<a href="http://documentcloud.github.com/underscore/">Underscore.js</a></p>
+
             
 
             <!-- if tags -->

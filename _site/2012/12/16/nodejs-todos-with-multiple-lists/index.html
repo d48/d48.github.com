@@ -59,51 +59,54 @@
 
         <div class="body-post">
             
-                <h1 id='some_progress'>Some progress</h1>
+                
+<h1 id="some-progress">Some progress</h1>
 
-<p>So I&#8217;ve been doing some testing on the json structure for enabling multiple lists on the todo cli tool that I&#8217;ve been hacking away at. There&#8217;s two components to get this working;</p>
+<p>So I&rsquo;ve been doing some testing on the json structure for enabling multiple lists on the todo cli tool that I&rsquo;ve been hacking away at. There&rsquo;s two components to get this working; </p>
 
 <p><strong>One</strong></p>
 
-<p>Have a nested object with arrays so can iterate through list names and each lists&#8217;s todo items:</p>
+<p>Have a nested object with arrays so can iterate through list names and each lists&rsquo;s todo items:</p>
 
-<p><img alt='json sample' src='http://content.screencast.com/users/User48/folders/Jing/media/086178f4-48e4-441f-8204-b41b5db9cfc1/00000101.png' /></p>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/086178f4-48e4-441f-8204-b41b5db9cfc1/00000101.png" alt="json sample" /></p>
 
 <p><strong>Two</strong></p>
 
-<p>Having a persitent data store to get the selected list name so as to apply actions to. Since there is no sense of state in a node.js cli app we need to create one.</p>
+<p>Having a persitent data store to get the selected list name so as to apply actions to. Since there is no sense of state in a node.js cli app we need to create one. </p>
 
-<p>We are already saving a list of todo items in a json file, we can save this hash of what the <code>current</code> list is in the same or separate file. I didn&#8217;t want to pollute this existing json file storage of todos so I decided to place it in a separate file.</p>
+<p>We are already saving a list of todo items in a json file, we can save this hash of what the <code>current</code> list is in the same or separate file. I didn&rsquo;t want to pollute this existing json file storage of todos so I decided to place it in a separate file.</p>
 
 <p>Now when we return back to our todo app to run commands on it, a sense of <code>state</code> has been established by pulling this name from the file, and then we can resume with our actions of listing, adding, or removing items from the main data store with this saved name as the key, yeehaw.</p>
 
 <p><strong>Commands</strong></p>
 
 <p>The command I want to set up would then look like this:</p>
-<div class='highlight'><pre><code class='js'><span class='nx'>$</span> <span class='nx'>todo</span> <span class='nx'>show</span> <span class='nx'>lists</span>
 
-<span class='c1'>// returns</span>
-	<span class='err'>#</span><span class='mi'>1</span><span class='o'>:</span> <span class='nx'>work</span>
-	<span class='err'>#</span><span class='mi'>2</span><span class='o'>:</span> <span class='nx'>groceries</span>
-	<span class='err'>#</span><span class='mi'>3</span><span class='o'>:</span> <span class='nx'>inventions</span>
+<div class="highlight"><pre><code class="js"><span class="nx">$</span> <span class="nx">todo</span> <span class="nx">show</span> <span class="nx">lists</span>
 
-<span class='nx'>$</span> <span class='nx'>todo</span> <span class='nx'>select</span> <span class='mi'>2</span>
+<span class="c1">// returns</span>
+	<span class="err">#</span><span class="mi">1</span><span class="o">:</span> <span class="nx">work</span>
+	<span class="err">#</span><span class="mi">2</span><span class="o">:</span> <span class="nx">groceries</span>
+	<span class="err">#</span><span class="mi">3</span><span class="o">:</span> <span class="nx">inventions</span>
 
-<span class='c1'>// returns</span>
-	<span class='s1'>&#39;groceries&#39;</span> <span class='nx'>list</span> <span class='nx'>selected</span><span class='p'>.</span> <span class='nx'>Ready</span> <span class='k'>for</span> <span class='nx'>actions</span>
+<span class="nx">$</span> <span class="nx">todo</span> <span class="nx">select</span> <span class="mi">2</span>
 
-<span class='nx'>$</span> <span class='nx'>todo</span> <span class='nx'>add</span> <span class='s2'>&quot;get plums&quot;</span>
+<span class="c1">// returns</span>
+	<span class="s1">&#39;groceries&#39;</span> <span class="nx">list</span> <span class="nx">selected</span><span class="p">.</span> <span class="nx">Ready</span> <span class="k">for</span> <span class="nx">actions</span>
 
-<span class='c1'>// #1 already existed, so returns</span>
+<span class="nx">$</span> <span class="nx">todo</span> <span class="nx">add</span> <span class="s2">&quot;get plums&quot;</span>
 
-	<span class='err'>#</span><span class='mi'>1</span><span class='o'>:</span> <span class='nx'>bananas</span>
-	<span class='err'>#</span><span class='mi'>2</span><span class='o'>:</span> <span class='nx'>get</span> <span class='nx'>plums</span>
+<span class="c1">// #1 already existed, so returns</span>
+
+	<span class="err">#</span><span class="mi">1</span><span class="o">:</span> <span class="nx">bananas</span>
+	<span class="err">#</span><span class="mi">2</span><span class="o">:</span> <span class="nx">get</span> <span class="nx">plums</span>
 </code></pre></div>
-<h1 id='note'>Note</h1>
 
-<p>This is still a work in progress but I&#8217;m making small steps to finally get my own todos working at the command line the way I like it.</p>
+<h1 id="note">Note</h1>
+<p>This is still a work in progress but I&rsquo;m making small steps to finally get my own todos working at the command line the way I like it.</p>
 
-<p><a href='https://github.com/design48/todo/commit/94291cd86a52dc8f31d8c5732e882d5d9f7b2ea5'>Some code for the work in progress</a></p>
+<p><a href="https://github.com/design48/todo/commit/94291cd86a52dc8f31d8c5732e882d5d9f7b2ea5">Some code for the work in progress</a></p>
+
             
 
             <!-- if tags -->

@@ -59,25 +59,22 @@
 
         <div class="body-post">
             
-                <p>I was configuring <code>livereload</code> on a new computer for local dev work on a web project and I ran into an issue where the Chrome extension wasn&#8217;t reloading and my <code>guard</code> commands weren&#8217;t working. It was saying that it expects Livereload 2.3 or newer or a server to connect to.</p>
+                
+<p>I was configuring <code>livereload</code> on a new computer for local dev work on a web project and I ran into an issue where the Chrome extension wasn&rsquo;t reloading and my <code>guard</code> commands weren&rsquo;t working. It was saying that it expects Livereload 2.3 or newer or a server to connect to.</p>
 
 <p>Some updates I made to get it to work were:</p>
 
 <ol>
-<li>Install <code>rvm</code>, the ruby version manager</li>
-
-<li>Made sure I was using Ruby version 1.9.2-p320</li>
-
-<li><code>$ sudo gem install guard-livereload</code></li>
-
-<li><code>$ sudo gem install yajl-ruby</code> for making sure socket listening responded faster</li>
-
-<li>error when running and recommended to <code>gem install rb-fsevents</code></li>
-
-<li>Create new guard file that configured to watch .styl file changes</li>
+  <li>Install <code>rvm</code>, the ruby version manager</li>
+  <li>Made sure I was using Ruby version 1.9.2-p320</li>
+  <li><code>$ sudo gem install guard-livereload</code></li>
+  <li><code>$ sudo gem install yajl-ruby</code> for making sure socket listening responded faster</li>
+  <li>error when running and recommended to <code>gem install rb-fsevents</code></li>
+  <li>Create new guard file that configured to watch .styl file changes</li>
 </ol>
 
 <p>Ahhh, itworks now. Hello livereload.</p>
+
             
 
             <!-- if tags -->

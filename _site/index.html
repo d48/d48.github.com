@@ -66,24 +66,26 @@
 
         <div class="body-post">
             
-                <h2 id='heres_how_it_works_'>Here&#8217;s how it works <sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></h2>
+                
+<h2 id="heres-how-it-works-1">Here’s how it works <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h2>
 
 <ol>
-<li>Instead of asking users for a password when they try to log in to your app or website, just ask them for their username (or email or mobile phone number).</li>
-
-<li>Create a temporary authorization code on the backend server and store it in your database.</li>
-
-<li>Send the user an email or SMS with a link that contains the code.</li>
-
-<li>The user clicks the link which opens your app or website and sends the authorization code to your server.</li>
-
-<li>On your backend server, verify that the code is valid and exchange it for a long-lived token, which is stored in your database and sent back to be stored on the client device as well.</li>
-
-<li>The user is now logged in, and doesn’t have to repeat this process again until their token expires or they want to authenticate on a new device.</li>
+  <li>Instead of asking users for a password when they try to log in to your app or website, just ask them for their username (or email or mobile phone number).</li>
+  <li>Create a temporary authorization code on the backend server and store it in your database.</li>
+  <li>Send the user an email or SMS with a link that contains the code.</li>
+  <li>The user clicks the link which opens your app or website and sends the authorization code to your server.</li>
+  <li>On your backend server, verify that the code is valid and exchange it for a long-lived token, which is stored in your database and sent back to be stored on the client device as well.</li>
+  <li>The user is now logged in, and doesn’t have to repeat this process again until their token expires or they want to authenticate on a new device.</li>
 </ol>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='https://medium.com/p/9ed56d483eb'>article on medium</a> regarding going passwordless for web apps</p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://medium.com/p/9ed56d483eb">article on medium</a> regarding going passwordless for web apps<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->
@@ -123,23 +125,21 @@
 
         <div class="body-post">
             
-                <h2 id='stress_testing'>Stress testing</h2>
+                
+<h2 id="stress-testing">Stress testing</h2>
 
 <p>Or torture testing, a form of deliberate intense and thorough testing to determine the stability of a given system or entity. It involves testing beyond normal operational capacity, often to a breaking point, in order to observe the results.</p>
 
-<h3 id='software_commonly_used_for_stress_testing'>Software commonly used for stress testing</h3>
+<h3 id="software-commonly-used-for-stress-testing">Software commonly used for stress testing</h3>
 
 <ul>
-<li>Prime95</li>
-
-<li>Intel Burn Text</li>
-
-<li>Memtest86+</li>
-
-<li>LinX</li>
-
-<li>OCCT</li>
+  <li>Prime95</li>
+  <li>Intel Burn Text</li>
+  <li>Memtest86+</li>
+  <li>LinX</li>
+  <li>OCCT</li>
 </ul>
+
             
 
             <!-- if tags -->
@@ -171,18 +171,25 @@
 
         <div class="body-post">
             
-                <h1 id='imperative_vs_declarative_animations_'>Imperative vs Declarative Animations <sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></h1>
+                
+<h1 id="imperative-vs-declarative-animations-1">Imperative vs Declarative Animations <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h1>
 
 <p><em>Imperative</em> is animation with JavaScript</p>
 
 <p><em>Declarative</em> is animation via CSS</p>
 
-<p>Running animations imperatively runs in JavaScript on the browser&#8217;s main thread. You may experience jank, or unwanted hiccups and bad performance due to other elements doing style calculations, layout and painting.</p>
+<p>Running animations imperatively runs in JavaScript on the browser&rsquo;s main thread. You may experience jank, or unwanted hiccups and bad performance due to other elements doing style calculations, layout and painting.</p>
 
-<p>Running them declaratively allows the browser to optimize the animations. It can create layers if necessary and run some operations separate from the main thread which gives good performance. The drawback is that there&#8217;s a lack of expressiveness compared to animating via JavaScript. Authoring animations can get complex and error-prone.</p>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/'>High Performance Animations</a></p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+<p>Running them declaratively allows the browser to optimize the animations. It can create layers if necessary and run some operations separate from the main thread which gives good performance. The drawback is that there&rsquo;s a lack of expressiveness compared to animating via JavaScript. Authoring animations can get complex and error-prone.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">High Performance Animations</a><a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->
@@ -218,36 +225,40 @@
 
         <div class="body-post">
             
-                <p>I needed this pattern the other day when I was tasked to build out some functionality for a site utility that emails a report to a set user. The Lazy Function Pattern allows a function to be redefined after first pass. This is great for initialization code where assignment happens on first run or useful for cross-browser feature detection to check what is supported and apply execution based on browser.</p>
+                
+<p>I needed this pattern the other day when I was tasked to build out some functionality for a site utility that emails a report to a set user. The Lazy Function Pattern allows a function to be redefined after first pass. This is great for initialization code where assignment happens on first run or useful for cross-browser feature detection to check what is supported and apply execution based on browser.</p>
 
-<h2 id='sample_code'>Sample code</h2>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>person</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-  <span class='kd'>var</span> <span class='nx'>bornDate</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nb'>Date</span><span class='p'>();</span>
+<h2 id="sample-code">Sample code</h2>
 
-  <span class='nx'>person</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-      <span class='k'>return</span> <span class='nx'>bornDate</span><span class='p'>;</span>
-  <span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">bornDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
 
-  <span class='k'>return</span> <span class='nx'>person</span><span class='p'>();</span>
-<span class='p'>};</span>
+  <span class="nx">person</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">bornDate</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">person</span><span class="p">();</span>
+<span class="p">};</span>
 </code></pre></div>
-<h2 id='breakdown_of_code'>Breakdown of code</h2>
 
-<p>When we first call <code>person()</code>, the variable <code>bornDate</code> is assigned the current Date/time. <code>person</code> is then reassigned to a new function object with the <code>bornDate</code> variable in it&#8217;s closure. The return value at this point will now always be what is within the <code>person</code> variable reassignment, which is <code>bornDate</code>.</p>
+<h2 id="breakdown-of-code">Breakdown of code</h2>
+
+<p>When we first call <code>person()</code>, the variable <code>bornDate</code> is assigned the current Date/time. <code>person</code> is then reassigned to a new function object with the <code>bornDate</code> variable in it&rsquo;s closure. The return value at this point will now always be what is within the <code>person</code> variable reassignment, which is <code>bornDate</code>.</p>
 
 <p>Subsequent calls will now always return with the variable <code>bornDate</code> value that is within its closure.</p>
 
-<h2 id='promise'>Promise</h2>
+<h2 id="promise">Promise</h2>
 
-<p>Another way to look at this function is that the outer first assigned to <code>person</code> is a &#8220;promise&#8221;. It promises that the first time it is run it will redefine <code>person</code> to a more useful function.</p>
+<p>Another way to look at this function is that the outer first assigned to <code>person</code> is a &ldquo;promise&rdquo;. It promises that the first time it is run it will redefine <code>person</code> to a more useful function.</p>
 
-<h2 id='crossbrowser_use'>Cross-browser use</h2>
+<h2 id="cross-browser-use">Cross-browser use</h2>
 
 <p>Using the lazy function definition pattern is great when you want to run browser-specific code when doing initial checks. This pattern is efficient because it will only run the check once and each subsequent call to it will execute the browser specific code. Win!</p>
 
-<h2 id='personal_application'>Personal application</h2>
+<h2 id="personal-application">Personal application</h2>
 
-<p>The other day I was building out a function for a page utility that created a mailto link of a report for a button. The actual mailto body was a concatenated url encoded string from the contents of the report. I only want this mailto link building to occur once if the user clicks the button, and I save on code execution if the user never even clicks the button, making the utility slightly more performant. This was a good candidate for lazy function definition so that initial click will build the mailto link and would then resolve, and any subsequent links would just have the link resolution occur. Good to know this pattern is available. I can&#8217;t wait to use it.</p>
+<p>The other day I was building out a function for a page utility that created a mailto link of a report for a button. The actual mailto body was a concatenated url encoded string from the contents of the report. I only want this mailto link building to occur once if the user clicks the button, and I save on code execution if the user never even clicks the button, making the utility slightly more performant. This was a good candidate for lazy function definition so that initial click will build the mailto link and would then resolve, and any subsequent links would just have the link resolution occur. Good to know this pattern is available. I can&rsquo;t wait to use it.</p>
+
             
 
             <!-- if tags -->
@@ -285,42 +296,48 @@
 
         <div class="body-post">
             
-                <p>OOCSS methodology helps to break up your css code so that you can logically separate objects into modules and classes for reuse and to avoid duplicating code.</p>
+                
+<p>OOCSS methodology helps to break up your css code so that you can logically separate objects into modules and classes for reuse and to avoid duplicating code.</p>
 
 <p>Instead of:</p>
-<div class='highlight'><pre><code class='css'><span class='nf'>#button</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='m'>30px</span><span class='p'>;</span>
-  <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
-  <span class='k'>border</span><span class='o'>:</span> <span class='m'>1px</span> <span class='k'>solid</span> <span class='nb'>green</span><span class='p'>;</span>
-  <span class='n'>box</span><span class='o'>-</span><span class='n'>shadow</span><span class='o'>:</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>122</span><span class='o'>,</span> <span class='m'>244</span><span class='o'>,</span> <span class='o'>.</span><span class='m'>5</span><span class='p'>)</span> <span class='m'>2px</span> <span class='m'>2px</span> <span class='m'>5px</span><span class='p'>;</span>
-<span class='p'>}</span>
 
-<span class='nf'>#box</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>100px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='k'>auto</span><span class='p'>;</span>
-  <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
-  <span class='k'>border</span><span class='o'>:</span> <span class='m'>1px</span> <span class='k'>solid</span> <span class='nb'>green</span><span class='p'>;</span>
-  <span class='n'>box</span><span class='o'>-</span><span class='n'>shadow</span><span class='o'>:</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>122</span><span class='o'>,</span> <span class='m'>244</span><span class='o'>,</span> <span class='o'>.</span><span class='m'>5</span><span class='p'>)</span> <span class='m'>2px</span> <span class='m'>2px</span> <span class='m'>5px</span><span class='p'>;</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="css"><span class="nf">#button</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">122</span><span class="o">,</span> <span class="m">244</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#box</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">122</span><span class="o">,</span> <span class="m">244</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <p>You would write this to reuse code and also to separate how these tie in logically (applying one skin to multiple objects that appear the same):</p>
-<div class='highlight'><pre><code class='css'><span class='nc'>.button</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='m'>30px</span><span class='p'>;</span>
-<span class='p'>}</span>
 
-<span class='nc'>.box</span> <span class='p'>{</span>
-  <span class='k'>width</span><span class='o'>:</span> <span class='m'>100px</span><span class='p'>;</span>
-  <span class='k'>height</span><span class='o'>:</span> <span class='k'>auto</span><span class='p'>;</span>
-<span class='p'>}</span>
+<div class="highlight"><pre><code class="css"><span class="nc">.button</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class='nc'>.skin</span> <span class='p'>{</span>
-  <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
-  <span class='k'>border</span><span class='o'>:</span> <span class='m'>1px</span> <span class='k'>solid</span> <span class='nb'>green</span><span class='p'>;</span>
-  <span class='n'>box</span><span class='o'>-</span><span class='n'>shadow</span><span class='o'>:</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>122</span><span class='o'>,</span> <span class='m'>244</span><span class='o'>,</span> <span class='o'>.</span><span class='m'>5</span><span class='p'>)</span> <span class='m'>2px</span> <span class='m'>2px</span> <span class='m'>5px</span><span class='p'>;</span>
-<span class='p'>}</span>
+<span class="nc">.box</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.skin</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">122</span><span class="o">,</span> <span class="m">244</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

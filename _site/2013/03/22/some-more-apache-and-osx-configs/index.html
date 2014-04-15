@@ -59,17 +59,21 @@
 
         <div class="body-post">
             
-                <p>Hacking away on my local dev for another apache based site that uses a .htaccess file for url routing. Just recording a note I can refer to if I end up copying a repo to work on using a different computer.</p>
+                
+<p>Hacking away on my local dev for another apache based site that uses a .htaccess file for url routing. Just recording a note I can refer to if I end up copying a repo to work on using a different computer.</p>
 
 <p>This particular site has a .htaccess file that has <code>Rewrite</code> rules that need to override default settings. Add this to my <code>.conf</code> file</p>
-<div class='highlight'><pre><code class='js'><span class='err'>#</span> <span class='nx'>In</span> <span class='o'>/</span><span class='kr'>private</span><span class='o'>/</span><span class='nx'>etc</span><span class='o'>/</span><span class='nx'>apache2</span><span class='o'>/</span><span class='nx'>users</span><span class='o'>/</span><span class='nx'>ryanregalado</span><span class='p'>.</span><span class='nx'>conf</span>
-<span class='o'>&lt;</span><span class='nx'>Directory</span> <span class='s2'>&quot;/Users/ryanregalado/Dropbox/Dev&quot;</span><span class='o'>&gt;</span>
-    <span class='nx'>Options</span> <span class='nx'>Indexes</span> <span class='nx'>MultiViews</span> <span class='nx'>FollowSymLinks</span>
-    <span class='nx'>AllowOverride</span> <span class='nx'>All</span>
-    <span class='nx'>Order</span> <span class='nx'>allow</span><span class='p'>,</span><span class='nx'>deny</span>
-    <span class='nx'>Allow</span> <span class='nx'>from</span> <span class='nx'>all</span>
-<span class='o'>&lt;</span><span class='err'>/Directory&gt;</span>
+
+<div class="highlight"><pre><code class="js"><span class="err">#</span> <span class="nx">In</span> <span class="o">/</span><span class="kr">private</span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">apache2</span><span class="o">/</span><span class="nx">users</span><span class="o">/</span><span class="nx">ryanregalado</span><span class="p">.</span><span class="nx">conf</span>
+<span class="o">&lt;</span><span class="nx">Directory</span> <span class="s2">&quot;/Users/ryanregalado/Dropbox/Dev&quot;</span><span class="o">&gt;</span>
+    <span class="nx">Options</span> <span class="nx">Indexes</span> <span class="nx">MultiViews</span> <span class="nx">FollowSymLinks</span>
+    <span class="nx">AllowOverride</span> <span class="nx">All</span>
+    <span class="nx">Order</span> <span class="nx">allow</span><span class="p">,</span><span class="nx">deny</span>
+    <span class="nx">Allow</span> <span class="nx">from</span> <span class="nx">all</span>
+<span class="o">&lt;</span><span class="err">/Directory&gt;</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

@@ -59,25 +59,25 @@
 
         <div class="body-post">
             
-                <p>I recently updated a node.js library that allows you to create and manage a todo list at the command line or OSX terminal. This is handy especially when you&#8217;re programming within that environment and want to quickly make a note of an item you need <strong>todo</strong> of course.</p>
+                
+<p>I recently updated a node.js library that allows you to create and manage a todo list at the command line or OSX terminal. This is handy especially when you&rsquo;re programming within that environment and want to quickly make a note of an item you need <strong>todo</strong> of course.</p>
 
-<p>I&#8217;m just getting to learn node.js and I needed a way to have a module update another module to do some functionality upon an &#8220;event&#8221;. Using the <a href='http://nodejs.org/api/events.html'>Event Emitter</a> class in node.js worked perfect.</p>
+<p>I&rsquo;m just getting to learn node.js and I needed a way to have a module update another module to do some functionality upon an &ldquo;event&rdquo;. Using the <a href="http://nodejs.org/api/events.html">Event Emitter</a> class in node.js worked perfect.</p>
 
-<p>So here&#8217;s the use case, I needed a way to always show the list of todo items upon an action like</p>
+<p>So here&rsquo;s the use case, I needed a way to always show the list of todo items upon an action like</p>
 
 <ul>
-<li>adding to the list</li>
-
-<li>removing from the list</li>
-
-<li>or clearing it out</li>
+  <li>adding to the list</li>
+  <li>removing from the list</li>
+  <li>or clearing it out</li>
 </ul>
 
-<p>The original package didn&#8217;t have it, so I added it using a <strong>custom event</strong>. Upon a given user action, the object <strong>emits</strong> an event name to any object that is <strong>listening</strong>. Each listening object can define what they do upon the event being received. It just so happens I have my object list out all the todo items. Awesome.</p>
+<p>The original package didn&rsquo;t have it, so I added it using a <strong>custom event</strong>. Upon a given user action, the object <strong>emits</strong> an event name to any object that is <strong>listening</strong>. Each listening object can define what they do upon the event being received. It just so happens I have my object list out all the todo items. Awesome.</p>
 
-<p><img alt='show list upon each action' src='http://content.screencast.com/users/User48/folders/Jing/media/570d6898-8480-46b7-acda-2a182df2dba2/00000090.png' /></p>
+<p><img src="http://content.screencast.com/users/User48/folders/Jing/media/570d6898-8480-46b7-acda-2a182df2dba2/00000090.png" alt="show list upon each action" /></p>
 
-<p>The <a href='https://github.com/design48/todo/commit/dec8347b2613979287042706bb05a8d940d5d52a'>source code highlighted</a> lists out the lines below it that were added</p>
+<p>The <a href="https://github.com/design48/todo/commit/dec8347b2613979287042706bb05a8d940d5d52a">source code highlighted</a> lists out the lines below it that were added</p>
+
             
 
             <!-- if tags -->

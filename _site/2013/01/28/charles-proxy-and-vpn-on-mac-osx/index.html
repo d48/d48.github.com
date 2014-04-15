@@ -59,19 +59,19 @@
 
         <div class="body-post">
             
-                <p><strong>Charles Proxy</strong> is a program that allows you to monitor network requests through an HTTP proxy. This is also a great tool to use for debugging and changing up files that get routed from a request. A use case for debugging or general web developement would be that on a production server, if there was a bug happening but not on my local dev machine, I can route the production asset to hit a file on my local dev machine that I suspect is the issue, and it will run the website as if it was obtaining it from the server.</p>
+                
+<p><strong>Charles Proxy</strong> is a program that allows you to monitor network requests through an HTTP proxy. This is also a great tool to use for debugging and changing up files that get routed from a request. A use case for debugging or general web developement would be that on a production server, if there was a bug happening but not on my local dev machine, I can route the production asset to hit a file on my local dev machine that I suspect is the issue, and it will run the website as if it was obtaining it from the server.</p>
 
-<p>I have configured Charles Proxy to run on my Mac OSX through my company&#8217;s VPN and there were a few caveats to be aware of:</p>
+<p>I have configured Charles Proxy to run on my Mac OSX through my company&rsquo;s VPN and there were a few caveats to be aware of:</p>
 
 <ol>
-<li>Make sure Charles Proxy is running before connecting to VPN else the program won&#8217;t read the traffic.</li>
-
-<li>For Remote Mapping files to local, https to http, you need to enable the host on Charles Proxy -&gt; Proxy Settings, e.g., with wildcard <code>*.myremote-host.com</code></li>
-
-<li>Charles Proxy will change up your Mac OSX proxy network settings so you may not be able to connect to the internet even after shutting down the program. Just uncheck the boxes for Web Proxy (HTTP) and Secure Web Proxy (HTTPS) and be sure to close and restart your browser. VPN being on may also be hanging your requests. Either shut that down or restart it as well.</li>
+  <li>Make sure Charles Proxy is running before connecting to VPN else the program won&rsquo;t read the traffic.</li>
+  <li>For Remote Mapping files to local, https to http, you need to enable the host on Charles Proxy -&gt; Proxy Settings, e.g., with wildcard <code>*.myremote-host.com</code></li>
+  <li>Charles Proxy will change up your Mac OSX proxy network settings so you may not be able to connect to the internet even after shutting down the program. Just uncheck the boxes for Web Proxy (HTTP) and Secure Web Proxy (HTTPS) and be sure to close and restart your browser. VPN being on may also be hanging your requests. Either shut that down or restart it as well.</li>
 </ol>
 
-<p><img alt='uncheck boxes for proxy' src='http://f.cl.ly/items/19153u363V1p2C40373F/Screen%20Shot%202013-01-28%20at%207.35.42%20PM.png' /></p>
+<p><img src="http://f.cl.ly/items/19153u363V1p2C40373F/Screen%20Shot%202013-01-28%20at%207.35.42%20PM.png" alt="uncheck boxes for proxy" /></p>
+
             
 
             <!-- if tags -->

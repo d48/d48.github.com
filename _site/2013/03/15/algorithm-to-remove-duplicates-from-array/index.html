@@ -59,73 +59,86 @@
 
         <div class="body-post">
             
-                <p>Was thinking about this problem to remove duplicates from an array and thought of an algorithm whose runtime is linear given the hash function is good (uniform distribution of hash values that helps with low or no collisions) and the load factor is low.</p>
-<div class='highlight'><pre><code class='js'><span class='cm'>/*</span>
-<span class='cm'> * Removes duplicate elements in array via use of hash table.</span>
-<span class='cm'> * Hash Table will create buckets with prime table size.</span>
-<span class='cm'> * Iterate through array in linear time with O(1) runtime for hash table operations.</span>
-<span class='cm'> * If element not in the table, push to array that is returned as result.</span>
-<span class='cm'> * </span>
-<span class='cm'> * @param {Array} arr - array of strings</span>
-<span class='cm'> * @return {Array} results - array with duplicate entries removed </span>
-<span class='cm'> */</span>
-<span class='kd'>function</span> <span class='nx'>removeDuplicatesWithHashTable</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='kd'>var</span> <span class='nx'>results</span> <span class='o'>=</span> <span class='p'>[],</span> 
-        <span class='nx'>ht</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>HashTable</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>);</span>
+                
+<p>Was thinking about this problem to remove duplicates from an array and thought of an algorithm whose runtime is linear given the hash function is good (uniform distribution of hash values that helps with low or no collisions) and the load factor is low.</p>
 
-    <span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span> <span class='o'>&lt;</span> <span class='nx'>arr</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
-        <span class='c1'>// not a duplicate?</span>
-        <span class='k'>if</span> <span class='p'>(</span><span class='nx'>ht</span><span class='p'>.</span><span class='nx'>find</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>])</span> <span class='o'>===</span> <span class='kc'>null</span><span class='p'>)</span> <span class='p'>{</span>
-            <span class='nx'>ht</span><span class='p'>.</span><span class='nx'>insert</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]);</span> <span class='c1'>// save</span>
-            <span class='nx'>results</span><span class='p'>.</span><span class='nx'>push</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]);</span>
-        <span class='p'>}</span>
-    <span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="cm">/*</span>
+<span class="cm"> * Removes duplicate elements in array via use of hash table.</span>
+<span class="cm"> * Hash Table will create buckets with prime table size.</span>
+<span class="cm"> * Iterate through array in linear time with O(1) runtime for hash table operations.</span>
+<span class="cm"> * If element not in the table, push to array that is returned as result.</span>
+<span class="cm"> * </span>
+<span class="cm"> * @param {Array} arr - array of strings</span>
+<span class="cm"> * @return {Array} results - array with duplicate entries removed </span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">removeDuplicatesWithHashTable</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">[],</span> 
+        <span class="nx">ht</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HashTable</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 
-    <span class='k'>return</span> <span class='nx'>results</span><span class='p'>;</span>
-<span class='p'>}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// not a duplicate?</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ht</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ht</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span> <span class="c1">// save</span>
+            <span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">results</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='hash_tables'>Hash Tables</h2>
+
+<h2 id="hash-tables">Hash Tables</h2>
 
 <p>A practical application of hash tables are in-memory tables, such as an associative array where the indices are strings or other complicated objects. In JavaScript, there are associative arrays we can use from the language in place of a separate hash table construct for this algorithm. Updated implementation below:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>removeDuplicates</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='kd'>var</span> <span class='nx'>results</span> <span class='o'>=</span> <span class='p'>[],</span> <span class='nx'>dups</span> <span class='o'>=</span> <span class='p'>[];</span> 
 
-    <span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span> <span class='o'>&lt;</span> <span class='nx'>arr</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
-  
-        <span class='c1'>// check if not a duplicate</span>
-        <span class='k'>if</span> <span class='p'>(</span><span class='nx'>dups</span><span class='p'>[</span><span class='nx'>arr</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]]</span> <span class='o'>===</span> <span class='kc'>undefined</span><span class='p'>)</span> <span class='p'>{</span>
-  
-            <span class='c1'>// save for next check to indicate duplicate</span>
-            <span class='nx'>dups</span><span class='p'>[</span><span class='nx'>arr</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]]</span> <span class='o'>=</span> <span class='mi'>1</span><span class='p'>;</span> 
-  
-            <span class='c1'>// is unique. append to output array</span>
-            <span class='nx'>results</span><span class='p'>.</span><span class='nx'>push</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]);</span>
-        <span class='p'>}</span>
-    <span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">removeDuplicates</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">dups</span> <span class="o">=</span> <span class="p">[];</span> 
 
-    <span class='k'>return</span> <span class='nx'>results</span><span class='p'>;</span>
-<span class='p'>}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  
+        <span class="c1">// check if not a duplicate</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">dups</span><span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+  
+            <span class="c1">// save for next check to indicate duplicate</span>
+            <span class="nx">dups</span><span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+  
+            <span class="c1">// is unique. append to output array</span>
+            <span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">results</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
-<h2 id='using_objectkeys'>Using Object.keys<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></h2>
 
-<p>Was discussing with a co-worker the use of associative arrays and he mentioned JavaScript&#8217;s <code>Object.keys</code> method that returns an array of the enumerable properties of an object that is passed through.</p>
+<h2 id="using-objectkeys1">Using Object.keys<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h2>
 
-<p>Using this instead I can just map the values of the input array to keys of another array. Taking advantage of the associative array property of not duplicating a key, the <code>Object.keys</code> method will just return my unique strings.</p>
+<p>Was discussing with a co-worker the use of associative arrays and he mentioned JavaScript&rsquo;s <code>Object.keys</code> method that returns an array of the enumerable properties of an object that is passed through. </p>
+
+<p>Using this instead I can just map the values of the input array to keys of another array. Taking advantage of the associative array property of not duplicating a key, the <code>Object.keys</code> method will just return my unique strings. </p>
 
 <p>Our run time is still linear O(n) plus the operation for Object.keys</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>removeDuplicates</span><span class='p'>(</span><span class='nx'>arr</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='kd'>var</span> <span class='nx'>results</span> <span class='o'>=</span> <span class='p'>[];</span>
 
-    <span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span> <span class='o'>&lt;</span> <span class='nx'>arr</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
-        <span class='c1'>// just insert into result array</span>
-        <span class='nx'>results</span><span class='p'>[</span><span class='nx'>arr</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]]</span> <span class='o'>=</span> <span class='kc'>null</span><span class='p'>;</span> 
-    <span class='p'>}</span>
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">removeDuplicates</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">[];</span>
 
-    <span class='k'>return</span> <span class='nb'>Object</span><span class='p'>.</span><span class='nx'>keys</span><span class='p'>(</span><span class='nx'>results</span><span class='p'>);</span>
-<span class='p'>}</span>
-</code></pre></div><div class='footnotes'><hr /><ol><li id='fn:1'>
-<p>Updated 03/15/2013 to include Object.keys method</p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// just insert into result array</span>
+        <span class="nx">results</span><span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Updated 03/15/2013 to include Object.keys method<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
             
 
             <!-- if tags -->

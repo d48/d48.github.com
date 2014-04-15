@@ -59,17 +59,21 @@
 
         <div class="body-post">
             
-                <h1 id='function_type_checking'>Function type checking</h1>
+                
+<h1 id="function-type-checking">Function type checking</h1>
 
 <p>Instead of writing 2 seperate functions that work on 2 different data types but do the same functionality, like searching for instance, just create a function (or API) that is generic that can do type checking.</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>apisearch</span> <span class='p'>(</span><span class='nx'>stack</span><span class='p'>,</span> <span class='nx'>needle</span><span class='p'>)</span> <span class='p'>{</span>
-    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>isArray</span><span class='p'>(</span><span class='nx'>stack</span><span class='p'>))(</span> <span class='p'>{</span>
-      <span class='c1'>//searchArray(stack, needle);</span>
-    <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
-      <span class='c1'>//searchMap(stack, needle);</span>
-    <span class='p'>}</span>
-  <span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">apisearch</span> <span class="p">(</span><span class="nx">stack</span><span class="p">,</span> <span class="nx">needle</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">stack</span><span class="p">))(</span> <span class="p">{</span>
+      <span class="c1">//searchArray(stack, needle);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">//searchMap(stack, needle);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

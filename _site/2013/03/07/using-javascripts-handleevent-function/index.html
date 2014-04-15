@@ -59,26 +59,30 @@
 
         <div class="body-post">
             
-                <p>The <code>handleEvent</code> method is called whenever an event occurs of the type for which the <code>EventListener</code> interface was registered. In this case below, I am explicitly assigning what statements are executed and in which context via <code>handler</code>. <a href='http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-EventListener'>More on handleEvent from the W3C specification</a></p>
-<div class='highlight'><pre><code class='js'><span class='kd'>var</span> <span class='nx'>Core</span> <span class='o'>=</span> <span class='p'>{</span> 
-    <span class='nx'>self</span><span class='o'>:</span> <span class='k'>this</span><span class='p'>,</span>
+                
+<p>The <code>handleEvent</code> method is called whenever an event occurs of the type for which the <code>EventListener</code> interface was registered. In this case below, I am explicitly assigning what statements are executed and in which context via <code>handler</code>. <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-EventListener">More on handleEvent from the W3C specification</a></p>
 
-    <span class='nx'>objVar</span><span class='o'>:</span> <span class='s1'>&#39;something&#39;</span><span class='p'>,</span>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">Core</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="nx">self</span><span class="o">:</span> <span class="k">this</span><span class="p">,</span>
 
-    <span class='nx'>init</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> 
-        <span class='kd'>var</span> <span class='nx'>handler</span> <span class='o'>=</span> <span class='p'>{</span>
-            <span class='nx'>handleEvent</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
-              <span class='nx'>self</span><span class='p'>.</span><span class='nx'>someMethod</span><span class='p'>();</span>
-            <span class='p'>}</span>
-        <span class='p'>};</span>
-        <span class='nx'>el</span><span class='p'>.</span><span class='nx'>addEventListener</span><span class='p'>(</span><span class='s1'>&#39;click&#39;</span><span class='p'>,</span> <span class='nx'>handler</span><span class='p'>,</span> <span class='kc'>false</span><span class='p'>);</span> <span class='c1'>// some dom element el</span>
-    <span class='p'>},</span>
+    <span class="nx">objVar</span><span class="o">:</span> <span class="s1">&#39;something&#39;</span><span class="p">,</span>
 
-    <span class='nx'>someMethod</span><span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> 
-        <span class='k'>this</span><span class='p'>.</span><span class='nx'>objVar</span> <span class='o'>=</span> <span class='p'>...;</span> <span class='c1'>// do something with objVar</span>
-    <span class='p'>}</span>
-<span class='p'>}</span>
+    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="kd">var</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">handleEvent</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+              <span class="nx">self</span><span class="p">.</span><span class="nx">someMethod</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">handler</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// some dom element el</span>
+    <span class="p">},</span>
+
+    <span class="nx">someMethod</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="k">this</span><span class="p">.</span><span class="nx">objVar</span> <span class="o">=</span> <span class="p">...;</span> <span class="c1">// do something with objVar</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
+
+
             
 
             <!-- if tags -->

@@ -59,20 +59,18 @@
 
         <div class="body-post">
             
-                <h1 id='some_notes'>some notes</h1>
+                
+<h1 id="some-notes">some notes</h1>
 
 <p>Just wanted to record what I did to get command-T working on a windows machine. There were problems with the ruby and gcc compilation of the plugin so I needed to make sure I had the correct versions of each to what the command-T plugin was built.</p>
 
 <p>So some steps:</p>
 
 <ol>
-<li>Made sure I installed vim 7.3 with +ruby support</li>
-
-<li>Made sure I had a Ruby version of 1.9.1 that was used to compile command-T</li>
-
-<li>Had the gcc compiler so I can remake/compile the command-T plugin with ruby</li>
-
-<li>Run these commands in the ~.vim/bundle/command-t/ruby/command-t folder</li>
+  <li>Made sure I installed vim 7.3 with +ruby support</li>
+  <li>Made sure I had a Ruby version of 1.9.1 that was used to compile command-T</li>
+  <li>Had the gcc compiler so I can remake/compile the command-T plugin with ruby</li>
+  <li>Run these commands in the ~.vim/bundle/command-t/ruby/command-t folder</li>
 </ol>
 
 <p><code>$ ruby extconf.rb</code></p>
@@ -80,6 +78,7 @@
 <p><code>$ make</code></p>
 
 <p>And then I was able to <code>ctrl+t</code> while in vim and voila. yay :thumbsup:</p>
+
             
 
             <!-- if tags -->

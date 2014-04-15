@@ -59,33 +59,27 @@
 
         <div class="body-post">
             
-                <h1 id='tightly_coupled_code'>Tightly Coupled Code</h1>
+                
+<h1 id="tightly-coupled-code">Tightly Coupled Code</h1>
 
 <p>Why is this bad? It increases the risk that a change to unrelated code somewhere in the system can effect your code.</p>
 
 <p>If <em>n objects</em> know about each other, a change to one object may need the other <em>n-1</em> objects to be updated.</p>
 
-<h1 id='law_of_demeter_for_functions'>Law of Demeter for functions</h1>
+<h1 id="law-of-demeter-for-functions">Law of Demeter for functions</h1>
 
 <ul>
-<li>
-<p>attempts to minimize coupling between modules in any given program by limiting an objects reach to another objects&#8217;s methods</p>
-</li>
-
-<li>
-<p>this law states that any method of an object should only call methods belonging to:</p>
-
-<ul>
-<li>itself</li>
-
-<li>any parameters passed into the method</li>
-
-<li>any objects it created</li>
-
-<li>any directly held component objects</li>
+  <li>attempts to minimize coupling between modules in any given program by limiting an objects reach to another objects&rsquo;s methods</li>
+  <li>this law states that any method of an object should only call methods belonging to:
+    <ul>
+      <li>itself</li>
+      <li>any parameters passed into the method</li>
+      <li>any objects it created</li>
+      <li>any directly held component objects</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
             
 
             <!-- if tags -->

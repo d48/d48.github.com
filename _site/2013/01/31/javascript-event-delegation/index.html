@@ -59,43 +59,44 @@
 
         <div class="body-post">
             
-                <h2 id='on_event_delegation'>On event delegation</h2>
+                
+<h2 id="on-event-delegation">On event delegation</h2>
 
 <p>Given this function:</p>
-<div class='highlight'><pre><code class='js'><span class='nb'>document</span><span class='p'>.</span><span class='nx'>onclick</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>event</span><span class='p'>){</span>
-    <span class='c1'>//IE doesn&#39;t pass in the event object</span>
-    <span class='nx'>event</span> <span class='o'>=</span> <span class='nx'>event</span> <span class='o'>||</span> <span class='nb'>window</span><span class='p'>.</span><span class='nx'>event</span><span class='p'>;</span>
-    
-    <span class='c1'>//IE uses srcElement as the target</span>
-    <span class='kd'>var</span> <span class='nx'>target</span> <span class='o'>=</span> <span class='nx'>event</span><span class='p'>.</span><span class='nx'>target</span> <span class='o'>||</span> <span class='nx'>event</span><span class='p'>.</span><span class='nx'>srcElement</span><span class='p'>;</span>    
 
-    <span class='k'>switch</span><span class='p'>(</span><span class='nx'>target</span><span class='p'>.</span><span class='nx'>id</span><span class='p'>){</span>
-        <span class='k'>case</span> <span class='s2'>&quot;help-btn&quot;</span><span class='o'>:</span>
-            <span class='nx'>openHelp</span><span class='p'>();</span>
-            <span class='k'>break</span><span class='p'>;</span>
-        <span class='k'>case</span> <span class='s2'>&quot;save-btn&quot;</span><span class='o'>:</span>
-            <span class='nx'>saveDocument</span><span class='p'>();</span>
-            <span class='k'>break</span><span class='p'>;</span>
-        <span class='k'>case</span> <span class='s2'>&quot;undo-btn&quot;</span><span class='o'>:</span>
-            <span class='nx'>undoChanges</span><span class='p'>();</span>
-            <span class='k'>break</span><span class='p'>;</span>
-        <span class='c1'>//others?</span>
-    <span class='p'>}</span>
-<span class='p'>};</span>
+<div class="highlight"><pre><code class="js"><span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="c1">//IE doesn&#39;t pass in the event object</span>
+    <span class="nx">event</span> <span class="o">=</span> <span class="nx">event</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">;</span>
+    
+    <span class="c1">//IE uses srcElement as the target</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span> <span class="o">||</span> <span class="nx">event</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">;</span>    
+
+    <span class="k">switch</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="p">){</span>
+        <span class="k">case</span> <span class="s2">&quot;help-btn&quot;</span><span class="o">:</span>
+            <span class="nx">openHelp</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s2">&quot;save-btn&quot;</span><span class="o">:</span>
+            <span class="nx">saveDocument</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s2">&quot;undo-btn&quot;</span><span class="o">:</span>
+            <span class="nx">undoChanges</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="c1">//others?</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
+
 <p>All click events are handled by a single function which then <strong>delegates</strong> to the appropriate function depending on the target of the event.</p>
 
-<h2 id='benefits'>Benefits</h2>
+<h2 id="benefits">Benefits</h2>
 
 <ol>
-<li>Fewer functions to manage</li>
-
-<li>Takes up less memory</li>
-
-<li>Fewer ties between your code and the DOM</li>
-
-<li>Don&#8217;t need to worry about removing event handlers when changing the DOM via <code>innerHTML</code></li>
+  <li>Fewer functions to manage</li>
+  <li>Takes up less memory</li>
+  <li>Fewer ties between your code and the DOM</li>
+  <li>Don&rsquo;t need to worry about removing event handlers when changing the DOM via <code>innerHTML</code></li>
 </ol>
+
             
 
             <!-- if tags -->

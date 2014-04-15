@@ -66,19 +66,22 @@
 
         <div class="body-post">
             
-                <p>Came across this while reading an article on binding JavaScript context and this was referred to as something to avoid when there are possible conflicts in user interface interactions.</p>
+                
+<p>Came across this while reading an article on binding JavaScript context and this was referred to as something to avoid when there are possible conflicts in user interface interactions.</p>
 
 <blockquote>
-<p><strong>Principle of Least Astonishment</strong> - or POLA/PLA applies to user interface design, software design, and ergonomics. Also known as <strong>rule</strong> or <strong>principle of least surprise (POLS)</strong>.</p>
+  <p><strong>Principle of Least Astonishment</strong> - or POLA/PLA applies to user interface design, software design, and ergonomics. Also known as <strong>rule</strong> or <strong>principle of least surprise (POLS)</strong>.</p>
 
-<p>The principle goal is to exploit users&#8217; pre-existing knowlege as a way to minimize the learning curve by designing interfaces that borrow heavily from &#8220;functionally similar or analagous programs or systems with the users are likely to be familiar&#8221;.</p>
+  <p>The principle goal is to exploit users&rsquo; pre-existing knowlege as a way to minimize the learning curve by designing interfaces that borrow heavily from &ldquo;functionally similar or analagous programs or systems with the users are likely to be familiar&rdquo;.</p>
 
-<p>When two elements of an interface conflict, or are ambiguous, the behavior should be that which will least &#8220;surprise&#8221; the user.</p>
+  <p>When two elements of an interface conflict, or are ambiguous, the behavior should be that which will least &ldquo;surprise&rdquo; the user. </p>
 </blockquote>
 
-<p>The design should match the user&#8217;s experience, excpectations, and mental models. What is least surprising may depend on the expected audience, user, programmers, or system admins.</p>
+<p>The design should match the user&rsquo;s experience, excpectations, and mental models. What is least surprising may depend on the expected audience, user, programmers, or system admins.</p>
 
 <p><em>Example:</em> a programmer should try to think of the behavior that will least surpise someone who uses the program, rather than that behavior that is natural from knowing the inner workings of the program.</p>
+
+
             
 
             <!-- if tags -->
@@ -116,9 +119,11 @@
 
         <div class="body-post">
             
-                <p>Just got some markers and sketch pad in the mail. Starting to loosen up and practice sketching. Study from Instragram photo below</p>
+                
+<p>Just got some markers and sketch pad in the mail. Starting to loosen up and practice sketching. Study from Instragram photo below</p>
 
-<p><img alt='figure study' src='http://f.cl.ly/items/30323J0H0a0E44182t2y/illustration-dress-study.jpg' /></p>
+<p><img src="http://f.cl.ly/items/30323J0H0a0E44182t2y/illustration-dress-study.jpg" alt="figure study" /></p>
+
             
 
             <!-- if tags -->
@@ -160,16 +165,21 @@
 
         <div class="body-post">
             
-                <h2 id='notes_from_secrets_of_a_javascript_ninja_book'>Notes from Secrets of a JavaScript Ninja book</h2>
+                
+<h2 id="notes-from-secrets-of-a-javascript-ninja-book">Notes from Secrets of a JavaScript Ninja book</h2>
 
 <p>Given this code:</p>
-<div class='highlight'><pre><code class='js'><span class='kd'>function</span> <span class='nx'>loop</span><span class='p'>(</span><span class='nx'>array</span><span class='p'>,</span> <span class='nx'>fn</span><span class='p'>)</span> <span class='p'>{</span>
-  <span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span><span class='o'>=</span><span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>&lt;</span><span class='nx'>array</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> 
-    <span class='c1'>// pass function back in with arguments </span>
-    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>fn</span><span class='p'>.</span><span class='nx'>call</span><span class='p'>(</span><span class='nx'>array</span><span class='p'>,</span> <span class='nx'>array</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>],</span> <span class='nx'>i</span><span class='p'>)</span> <span class='o'>===</span> <span class='kc'>false</span><span class='p'>)</span> <span class='k'>break</span><span class='p'>;</span>
-<span class='p'>}</span>
+
+<div class="highlight"><pre><code class="js"><span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="c1">// pass function back in with arguments </span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">i</span><span class="p">)</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
+
 <p><strong>Callbacks</strong> are employed in relation to asynchronous, or nondeterminisitc, behavior such as a user clicking a button, an Ajax request completing, or some number of values being found in array.</p>
+
+
             
 
             <!-- if tags -->
@@ -203,43 +213,44 @@
 
         <div class="body-post">
             
-                <h2 id='on_event_delegation'>On event delegation</h2>
+                
+<h2 id="on-event-delegation">On event delegation</h2>
 
 <p>Given this function:</p>
-<div class='highlight'><pre><code class='js'><span class='nb'>document</span><span class='p'>.</span><span class='nx'>onclick</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>(</span><span class='nx'>event</span><span class='p'>){</span>
-    <span class='c1'>//IE doesn&#39;t pass in the event object</span>
-    <span class='nx'>event</span> <span class='o'>=</span> <span class='nx'>event</span> <span class='o'>||</span> <span class='nb'>window</span><span class='p'>.</span><span class='nx'>event</span><span class='p'>;</span>
-    
-    <span class='c1'>//IE uses srcElement as the target</span>
-    <span class='kd'>var</span> <span class='nx'>target</span> <span class='o'>=</span> <span class='nx'>event</span><span class='p'>.</span><span class='nx'>target</span> <span class='o'>||</span> <span class='nx'>event</span><span class='p'>.</span><span class='nx'>srcElement</span><span class='p'>;</span>    
 
-    <span class='k'>switch</span><span class='p'>(</span><span class='nx'>target</span><span class='p'>.</span><span class='nx'>id</span><span class='p'>){</span>
-        <span class='k'>case</span> <span class='s2'>&quot;help-btn&quot;</span><span class='o'>:</span>
-            <span class='nx'>openHelp</span><span class='p'>();</span>
-            <span class='k'>break</span><span class='p'>;</span>
-        <span class='k'>case</span> <span class='s2'>&quot;save-btn&quot;</span><span class='o'>:</span>
-            <span class='nx'>saveDocument</span><span class='p'>();</span>
-            <span class='k'>break</span><span class='p'>;</span>
-        <span class='k'>case</span> <span class='s2'>&quot;undo-btn&quot;</span><span class='o'>:</span>
-            <span class='nx'>undoChanges</span><span class='p'>();</span>
-            <span class='k'>break</span><span class='p'>;</span>
-        <span class='c1'>//others?</span>
-    <span class='p'>}</span>
-<span class='p'>};</span>
+<div class="highlight"><pre><code class="js"><span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="c1">//IE doesn&#39;t pass in the event object</span>
+    <span class="nx">event</span> <span class="o">=</span> <span class="nx">event</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">;</span>
+    
+    <span class="c1">//IE uses srcElement as the target</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span> <span class="o">||</span> <span class="nx">event</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">;</span>    
+
+    <span class="k">switch</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="p">){</span>
+        <span class="k">case</span> <span class="s2">&quot;help-btn&quot;</span><span class="o">:</span>
+            <span class="nx">openHelp</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s2">&quot;save-btn&quot;</span><span class="o">:</span>
+            <span class="nx">saveDocument</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s2">&quot;undo-btn&quot;</span><span class="o">:</span>
+            <span class="nx">undoChanges</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="c1">//others?</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
+
 <p>All click events are handled by a single function which then <strong>delegates</strong> to the appropriate function depending on the target of the event.</p>
 
-<h2 id='benefits'>Benefits</h2>
+<h2 id="benefits">Benefits</h2>
 
 <ol>
-<li>Fewer functions to manage</li>
-
-<li>Takes up less memory</li>
-
-<li>Fewer ties between your code and the DOM</li>
-
-<li>Don&#8217;t need to worry about removing event handlers when changing the DOM via <code>innerHTML</code></li>
+  <li>Fewer functions to manage</li>
+  <li>Takes up less memory</li>
+  <li>Fewer ties between your code and the DOM</li>
+  <li>Don&rsquo;t need to worry about removing event handlers when changing the DOM via <code>innerHTML</code></li>
 </ol>
+
             
 
             <!-- if tags -->
@@ -277,19 +288,19 @@
 
         <div class="body-post">
             
-                <p><strong>Charles Proxy</strong> is a program that allows you to monitor network requests through an HTTP proxy. This is also a great tool to use for debugging and changing up files that get routed from a request. A use case for debugging or general web developement would be that on a production server, if there was a bug happening but not on my local dev machine, I can route the production asset to hit a file on my local dev machine that I suspect is the issue, and it will run the website as if it was obtaining it from the server.</p>
+                
+<p><strong>Charles Proxy</strong> is a program that allows you to monitor network requests through an HTTP proxy. This is also a great tool to use for debugging and changing up files that get routed from a request. A use case for debugging or general web developement would be that on a production server, if there was a bug happening but not on my local dev machine, I can route the production asset to hit a file on my local dev machine that I suspect is the issue, and it will run the website as if it was obtaining it from the server.</p>
 
-<p>I have configured Charles Proxy to run on my Mac OSX through my company&#8217;s VPN and there were a few caveats to be aware of:</p>
+<p>I have configured Charles Proxy to run on my Mac OSX through my company&rsquo;s VPN and there were a few caveats to be aware of:</p>
 
 <ol>
-<li>Make sure Charles Proxy is running before connecting to VPN else the program won&#8217;t read the traffic.</li>
-
-<li>For Remote Mapping files to local, https to http, you need to enable the host on Charles Proxy -&gt; Proxy Settings, e.g., with wildcard <code>*.myremote-host.com</code></li>
-
-<li>Charles Proxy will change up your Mac OSX proxy network settings so you may not be able to connect to the internet even after shutting down the program. Just uncheck the boxes for Web Proxy (HTTP) and Secure Web Proxy (HTTPS) and be sure to close and restart your browser. VPN being on may also be hanging your requests. Either shut that down or restart it as well.</li>
+  <li>Make sure Charles Proxy is running before connecting to VPN else the program won&rsquo;t read the traffic.</li>
+  <li>For Remote Mapping files to local, https to http, you need to enable the host on Charles Proxy -&gt; Proxy Settings, e.g., with wildcard <code>*.myremote-host.com</code></li>
+  <li>Charles Proxy will change up your Mac OSX proxy network settings so you may not be able to connect to the internet even after shutting down the program. Just uncheck the boxes for Web Proxy (HTTP) and Secure Web Proxy (HTTPS) and be sure to close and restart your browser. VPN being on may also be hanging your requests. Either shut that down or restart it as well.</li>
 </ol>
 
-<p><img alt='uncheck boxes for proxy' src='http://f.cl.ly/items/19153u363V1p2C40373F/Screen%20Shot%202013-01-28%20at%207.35.42%20PM.png' /></p>
+<p><img src="http://f.cl.ly/items/19153u363V1p2C40373F/Screen%20Shot%202013-01-28%20at%207.35.42%20PM.png" alt="uncheck boxes for proxy" /></p>
+
             
 
             <!-- if tags -->
